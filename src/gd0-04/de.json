@@ -1,0 +1,403 @@
+{
+  "tieu_de": "Trắc nghiệm bài 0.4: Kế hoạch và triển khai CRM theo giai đoạn",
+  "muc_dich": "tu_hoc",
+  "che_do_cham": "tung_phan",
+  "muc_tieu": {
+    "M1": "Tính và đọc NPV, phân biệt lợi ích tức thời với lợi ích tiềm ẩn, chọn cấu trúc công ty hợp với CRM",
+    "M2": "Đặt công cụ vào đúng giai đoạn trong năm giai đoạn triển khai và áp quản lý thay đổi vào tình huống",
+    "M3": "Đối chiếu kế hoạch 7 giai đoạn, cổng kiểm và nhật ký của đồ án với giáo trình",
+    "M4": "Giải thích vì sao đồ án thiết kế quy trình dự án như vậy và nói trung thực về tiến độ, sổ tay"
+  },
+  "cau_hoi": [
+    {
+      "id": "Q01",
+      "phan": "kt",
+      "muc_tieu": "M1",
+      "muc_nhan_thuc": "van_dung",
+      "do_kho": "TB",
+      "loai": "mot_dap_an",
+      "cau_hoi": "Một công ty chi 200 triệu đồng cho CRM hôm nay. Lợi ích thu về là 100 triệu ở cuối năm 1 và 150 triệu ở cuối năm 2; tỉ lệ chiết khấu 10% mỗi năm. NPV (giá trị hiện tại ròng) gần nhất với số nào, tính bằng triệu đồng?",
+      "dap_an": {
+        "A": "6,61",
+        "B": "14,88",
+        "C": "50,00",
+        "D": "214,88"
+      },
+      "dung": [
+        "B"
+      ],
+      "loi_sai": {
+        "A": "chiết khấu cả hai khoản cho hai năm",
+        "C": "cộng lợi ích rồi trừ vốn, không chiết khấu",
+        "D": "quên trừ vốn đầu tư"
+      },
+      "giai_thich": "Giá trị hiện tại: 100/1,1 = 90,91 và 150/1,1² = 123,97, tổng 214,88. Trừ vốn 200 được NPV = 14,88. A là kết quả khi chia cả hai khoản cho 1,1² (tính nhầm năm 1 thành năm 2). C bỏ bước chiết khấu (250 − 200). D là tổng giá trị hiện tại, chưa trừ vốn bỏ ra.",
+      "doan_goc": "Chương 12, tr. 286–287",
+      "do_chac": null
+    },
+    {
+      "id": "Q02",
+      "phan": "kt",
+      "muc_tieu": "M1",
+      "muc_nhan_thuc": "hieu",
+      "do_kho": "TB",
+      "loai": "nhieu_dap_an",
+      "cau_hoi": "Theo giáo trình, mục nào dưới đây thuộc lợi ích tiềm ẩn (latent), tức xuất hiện sau khi công ty có thêm năng lực và hiểu biết về khách? (chọn 2 đáp án)",
+      "dap_an": {
+        "A": "Chi phí tìm khách mới giảm nhờ quản lý khách tiềm năng tốt hơn",
+        "B": "Sản phẩm, dịch vụ mới xuất phát từ hiểu biết sâu hơn về khách",
+        "C": "Doanh thu tăng nhờ bán thêm cho những khách đã mua",
+        "D": "Năng lực mới cho phép theo đuổi chiến lược mà hiện giờ chưa hình dung được"
+      },
+      "dung": [
+        "B",
+        "D"
+      ],
+      "loi_sai": {
+        "A": "nhầm lợi ích tức thời (giảm chi phí tìm khách) với lợi ích tiềm ẩn",
+        "C": "nhầm lợi ích tức thời (bán thêm cho khách cũ) với lợi ích tiềm ẩn"
+      },
+      "giai_thich": "B và D nằm trong cột lợi ích tiềm ẩn của giáo trình: sản phẩm mới từ hiểu biết sâu hơn, và năng lực cho chiến lược chưa hình dung. A là lợi ích tức thời (chi phí tìm khách thấp hơn). C cũng là lợi ích tức thời (bán thêm cho khách hiện có).",
+      "doan_goc": "Chương 13, tr. 304, Bảng 13.1",
+      "do_chac": null
+    },
+    {
+      "id": "Q03",
+      "phan": "kt",
+      "muc_tieu": "M1",
+      "muc_nhan_thuc": "van_dung",
+      "do_kho": "TB",
+      "loai": "mot_dap_an",
+      "cau_hoi": "Một công ty bán máy công nghiệp cho khoảng hai chục khách doanh nghiệp lớn. Mỗi khách có quyền mặc cả mạnh và yêu cầu riêng. Công ty muốn dùng CRM để phục vụ sát từng khách. Theo giáo trình, cấu trúc tổ chức nào thường hợp nhất?",
+      "dap_an": {
+        "A": "Theo chức năng, mỗi khâu có một trưởng bộ phận phụ trách riêng",
+        "B": "Theo địa lý, mỗi vùng có một đội bán hàng phụ trách riêng",
+        "C": "Theo thương hiệu, mỗi nhãn có một quản lý phụ trách riêng",
+        "D": "Theo khách hàng, mỗi khách trọng yếu có người phụ trách"
+      },
+      "dung": [
+        "D"
+      ],
+      "loi_sai": {
+        "A": "ưu tiên làm tốt từng khâu thay vì hành trình khách",
+        "B": "nhầm vị trí của khách với nhu cầu riêng của khách",
+        "C": "nhầm quản lý theo nhãn với quản lý theo khách"
+      },
+      "giai_thich": "Khi người mua có quyền lực lớn và yêu cầu riêng, cấu trúc theo khách hàng (kể cả quản lý khách trọng yếu, KAM) hợp CRM nhất. A làm từng khâu tốt nhưng khó nhìn hành trình khách như một. B gom khách theo vùng trong khi khách khác nhau về nhu cầu. C làm các nhãn tranh nguồn lực và khách gặp mức phục vụ khác nhau.",
+      "doan_goc": "Chương 12, tr. 290–296; slide 8, 12",
+      "do_chac": null
+    },
+    {
+      "id": "Q04",
+      "phan": "kt",
+      "muc_tieu": "M2",
+      "muc_nhan_thuc": "van_dung",
+      "do_kho": "De",
+      "loai": "mot_dap_an",
+      "cau_hoi": "Nhóm dự án vẽ một khối ba chiều gồm phân khúc khách, dòng sản phẩm và kênh bán để thấy công ty đang bán gì, cho ai, qua đâu. Công cụ này được dùng chủ yếu ở giai đoạn nào của dự án triển khai CRM?",
+      "dap_an": {
+        "A": "Giai đoạn 1: xây chiến lược CRM, qua phân tích hiện trạng",
+        "B": "Giai đoạn 2: dựng nền dự án, qua cơ cấu quản trị và rủi ro",
+        "C": "Giai đoạn 3: đặc tả nhu cầu, qua phân tích quy trình và dữ liệu",
+        "D": "Giai đoạn 4: thực hiện dự án, qua thử nghiệm mẫu và triển khai"
+      },
+      "dung": [
+        "A"
+      ],
+      "loi_sai": {
+        "B": "nhầm công cụ phân tích hiện trạng với công cụ quản trị dự án",
+        "C": "nhầm phân tích hiện trạng với đặc tả nhu cầu công nghệ",
+        "D": "nhầm phân tích hiện trạng với làm mẫu thử"
+      },
+      "giai_thich": "Khối chiến lược khách hàng (Customer Strategy Cube) dùng cho phân tích hiện trạng ở giai đoạn 1: công ty đang phục vụ phân khúc nào, bán sản phẩm nào, qua kênh nào. B dùng ban chỉ đạo, Gantt, Kotter; C dùng phân loại quy trình và RFP; D dùng mẫu thử và triển khai theo đợt.",
+      "doan_goc": "Chương 13, tr. 300–301; slide 4",
+      "do_chac": null
+    },
+    {
+      "id": "Q05",
+      "phan": "kt",
+      "muc_tieu": "M2",
+      "muc_nhan_thuc": "van_dung",
+      "do_kho": "TB",
+      "loai": "mot_dap_an",
+      "cau_hoi": "Chấm hai nhà cung cấp CRM bằng thang có trọng số: chức năng 60%, chi phí 40% (điểm cao là tốt). X được 9 điểm chức năng và 5 điểm chi phí; Y được 6 và 8. Kết quả đúng là gì?",
+      "dap_an": {
+        "A": "X được 6,6 và Y được 7,2, nên Y hơn",
+        "B": "X được 7,0 và Y được 7,0, nên hai bên bằng nhau",
+        "C": "X được 7,4 và Y được 6,8, nên X hơn",
+        "D": "X được 5,4 và Y được 3,6, nên X hơn"
+      },
+      "dung": [
+        "C"
+      ],
+      "loi_sai": {
+        "A": "đảo trọng số giữa hai tiêu chí",
+        "B": "tính trung bình cộng, bỏ qua trọng số",
+        "D": "chỉ nhân trọng số cho tiêu chí chức năng, quên chi phí"
+      },
+      "giai_thich": "X = 0,6×9 + 0,4×5 = 7,4; Y = 0,6×6 + 0,4×8 = 6,8, nên X hơn. A đổi 60% sang chi phí (0,4×9 + 0,6×5 = 6,6; 0,4×6 + 0,6×8 = 7,2). B là trung bình không trọng số (7 và 7). D bỏ phần chi phí (0,6×9 = 5,4; 0,6×6 = 3,6).",
+      "doan_goc": "Chương 13, tr. 315 (thang chấm có trọng số và không trọng số)",
+      "do_chac": null
+    },
+    {
+      "id": "Q06",
+      "phan": "kt",
+      "muc_tieu": "M2",
+      "muc_nhan_thuc": "phan_tich",
+      "do_kho": "Kho",
+      "loai": "mot_dap_an",
+      "cau_hoi": "Công ty có 40 nhân viên bán hàng. Khảo sát: 10 người hiểu lý do thay đổi và hào hứng; 15 người hiểu nhưng không hào hứng; 5 người hào hứng nhưng chưa hiểu; 10 người không hiểu và không hào hứng. Theo ma trận đồng thuận và triển khai theo đợt, nên làm gì?",
+      "dap_an": {
+        "A": "Thử cho 15 người đứng ngoài vì họ đông nhất; cần lo nhất là 5 người bốc đồng",
+        "B": "Thử cho 5 người bốc đồng vì họ hào hứng nhất; cần lo nhất là 15 người đứng ngoài",
+        "C": "Thử cho 10 người ủng hộ vì họ đủ lý trí và cảm xúc; cần lo nhất là 10 mắt xích yếu",
+        "D": "Triển khai cho cả 40 người cùng lúc để công bằng; cần lo nhất là 15 người đứng ngoài"
+      },
+      "dung": [
+        "C"
+      ],
+      "loi_sai": {
+        "A": "chọn nhóm chưa hào hứng làm nhóm thử",
+        "B": "chọn nhóm chưa hiểu làm nhóm thử",
+        "D": "bỏ qua triển khai theo đợt"
+      },
+      "giai_thich": "Người ủng hộ (10, tức 25%) là nhóm đủ cả lý trí và cảm xúc nên thử trước; mắt xích yếu (thiếu cả hai) rủi ro nhất nếu làm việc trực tiếp với khách, vì chỉ một sự cố cũng phá lòng tin. A và B chọn nhóm thử là nhóm còn thiếu đồng thuận. D bỏ cách làm từng đợt để sửa lỗi trước khi mở rộng.",
+      "doan_goc": "Chương 13, tr. 307–308, 315–316",
+      "do_chac": null
+    },
+    {
+      "id": "Q07",
+      "phan": "ud",
+      "muc_tieu": "M3",
+      "muc_nhan_thuc": "van_dung",
+      "do_kho": "TB",
+      "loai": "mot_dap_an",
+      "cau_hoi": "Giai đoạn 3 của giáo trình có việc viết RFP và chọn đối tác công nghệ. Điều nào đúng với đồ án?",
+      "dap_an": {
+        "A": "Nhóm viết RFP rút gọn gửi hai nhà cung cấp, rồi thầy chọn Frappe CRM trong số đó",
+        "B": "Nhóm không viết RFP vì thầy đã chỉ định Frappe CRM, nên không có bước chọn đối tác",
+        "C": "Nhóm dùng bảng tiêu chí của thầy làm RFP và chấm điểm Frappe CRM cạnh Odoo",
+        "D": "Nhóm hoãn việc chọn đối tác sang giai đoạn 6, khi ba bạn còn lại tự cài đặt"
+      },
+      "dung": [
+        "B"
+      ],
+      "loi_sai": {
+        "A": "bịa việc gửi RFP mà nhật ký không ghi",
+        "C": "nhầm bảng tiêu chí (yêu cầu) với RFP và so sánh",
+        "D": "nhầm việc tự cài của ba bạn với việc chọn đối tác"
+      },
+      "giai_thich": "Yêu cầu của thầy (đầu PLAN.md) là dựa trên Frappe CRM, nên không có RFP, không chọn đối tác. A và C đưa ra việc không có trong tài liệu. D nhầm việc ba bạn còn lại tự cài đặt theo sổ tay với việc chọn đối tác.",
+      "doan_goc": "PLAN.md dòng 4; Chương 13, tr. 313–315",
+      "do_chac": null
+    },
+    {
+      "id": "Q08",
+      "phan": "ud",
+      "muc_tieu": "M3",
+      "muc_nhan_thuc": "phan_tich",
+      "do_kho": "TB",
+      "loai": "mot_dap_an",
+      "cau_hoi": "Khi chạy thử quy trình ở giai đoạn 2, nhóm thấy Frappe CRM 16.0.1 không có đối tượng đổi trả, đồng ý nhận tin hay duyệt chiết khấu, nên ghi tạm bằng việc cần làm và giao giai đoạn 3. Hạng mục nào của giáo trình gần nhất với việc này?",
+      "dap_an": {
+        "A": "Xác định nhu cầu tùy biến công nghệ, vì phần mềm có sẵn không đủ",
+        "B": "Đánh giá kết quả kinh doanh, vì cần so mục tiêu ban đầu với kết quả đạt",
+        "C": "Chọn cấu trúc tổ chức, vì cần quyết định ai là người phụ trách đổi trả",
+        "D": "Tính NPV của business case, vì phải ước lượng chi phí để thêm tính năng"
+      },
+      "dung": [
+        "A"
+      ],
+      "loi_sai": {
+        "B": "nhầm đánh giá sau triển khai với phát hiện thiếu chức năng khi thử",
+        "C": "nhầm chuyện thiếu chức năng phần mềm với chuyện phân công trong công ty",
+        "D": "nhầm phát hiện nhu cầu tùy biến với tính toán tài chính"
+      },
+      "giai_thich": "Giáo trình nói công nghệ có sẵn hiếm khi đáp ứng hết nên cần xác định nhu cầu tùy biến (giai đoạn 4). Đây là điều nhóm thấy khi chạy thử. B là giai đoạn 5, sau khi triển khai. C bàn về cơ cấu công ty, không liên quan tới thiếu đối tượng trong phần mềm. D là phần của business case ở giai đoạn 1.",
+      "doan_goc": "Chương 13, tr. 315; docs/phase-report.md mục 2.3",
+      "do_chac": null
+    },
+    {
+      "id": "Q09",
+      "phan": "ud",
+      "muc_tieu": "M3",
+      "muc_nhan_thuc": "van_dung",
+      "do_kho": "TB",
+      "loai": "nhieu_dap_an",
+      "cau_hoi": "Phát biểu nào về cổng kiểm và nhật ký phase-report của đồ án là đúng? (chọn 2 đáp án)",
+      "dap_an": {
+        "A": "Cổng giai đoạn 0 có 7 điều kiện, cổng giai đoạn 1 có 8 điều kiện",
+        "B": "Cổng giai đoạn 0 có 8 điều kiện, cổng giai đoạn 1 có 7 điều kiện",
+        "C": "Phiên bản phần mềm trong phase-report đo từ kết quả lệnh thật, ghi ngay sau mỗi bước",
+        "D": "Phiên bản phần mềm trong phase-report lấy từ trang tài liệu của hãng, rà lại cuối giai đoạn"
+      },
+      "dung": [
+        "A",
+        "C"
+      ],
+      "loi_sai": {
+        "B": "đảo số điều kiện của hai cổng",
+        "D": "nhầm nguồn phiên bản đo thật với tài liệu hãng"
+      },
+      "giai_thich": "A đúng theo hai bảng cổng kiểm trong phase-report. C đúng theo quy tắc của PLAN và dòng đầu phase-report. B đảo số điều kiện. D sai vì nhóm lấy phiên bản từ lệnh thật; tài liệu của hãng chỉ ghi bản latest.",
+      "doan_goc": "docs/phase-report.md (bảng Cổng kiểm giai đoạn 0 và 1; đầu tệp); PLAN.md mục 0",
+      "do_chac": null
+    },
+    {
+      "id": "Q10",
+      "phan": "ud",
+      "muc_tieu": "M3",
+      "muc_nhan_thuc": "van_dung",
+      "do_kho": "TB",
+      "loai": "mot_dap_an",
+      "cau_hoi": "Giáo trình nêu một nghiên cứu cho dự án CRM thật dài trung bình khoảng 21 tháng; PLAN dự kiến đồ án làm trong 7 ngày. Nếu quy mỗi tháng 30 ngày, dự án thật dài gấp khoảng bao nhiêu lần dự kiến của đồ án?",
+      "dap_an": {
+        "A": "3 lần",
+        "B": "30 lần",
+        "C": "90 lần",
+        "D": "630 lần"
+      },
+      "dung": [
+        "C"
+      ],
+      "loi_sai": {
+        "A": "chia số tháng cho số ngày, lẫn đơn vị",
+        "B": "quy một tháng thành 10 ngày",
+        "D": "đổi ra ngày nhưng quên chia cho 7"
+      },
+      "giai_thich": "21 tháng × 30 ngày = 630 ngày; 630 / 7 = 90 lần. A chia 21 cho 7 mà không đổi đơn vị. B ứng với mỗi tháng 10 ngày (210/7 = 30). D dừng ở 630 ngày, chưa so với 7 ngày.",
+      "doan_goc": "Chương 13, tr. 299; PLAN.md mục 2",
+      "do_chac": null
+    },
+    {
+      "id": "Q11",
+      "phan": "da",
+      "muc_tieu": "M4",
+      "muc_nhan_thuc": "hieu",
+      "do_kho": "TB",
+      "loai": "mot_dap_an",
+      "cau_hoi": "Dựa vào bảng giai đoạn trong PLAN, lập luận nào về lý do chia 7 giai đoạn đứng vững nhất? (PLAN không có đoạn giải thích riêng nên đây là suy luận)",
+      "dap_an": {
+        "A": "Mỗi giai đoạn do một thành viên phụ trách, và nhóm bốn người luân phiên qua bảy giai đoạn",
+        "B": "Mỗi giai đoạn ứng với một chương của báo cáo, và bảy chương phủ đủ A4.1 đến A4.11",
+        "C": "Mỗi giai đoạn chiếm đúng một ngày làm việc, nên một tuần chia thành bảy phần bằng nhau",
+        "D": "Mỗi giai đoạn phủ một cụm tiêu chí, và cả bảy cùng phủ đủ A4.1 đến A4.11 trong một tuần"
+      },
+      "dung": [
+        "D"
+      ],
+      "loi_sai": {
+        "B": "nhầm giai đoạn làm việc với chương của báo cáo",
+        "C": "bỏ qua việc các giai đoạn chồng ngày (GĐ1 ngày 1–2, GĐ2 ngày 2–3…)",
+        "A": "nhầm cổng kiểm và giai đoạn với phân công theo mảng"
+      },
+      "giai_thich": "Bảng PLAN gắn mỗi giai đoạn với một cụm tiêu chí A4.x và cả bảy phủ đủ A4.1–A4.11 trong khoảng một tuần. B sai vì cấu trúc Report không khớp một-một với giai đoạn. C sai vì các giai đoạn chồng ngày (ví dụ GĐ1 ngày 1–2, GĐ2 ngày 2–3). A sai vì phân công theo mảng ở mục 3, không luân phiên theo giai đoạn.",
+      "doan_goc": "PLAN.md mục 2 và mục 4; Chương 13, tr. 299–316",
+      "do_chac": null
+    },
+    {
+      "id": "Q12",
+      "phan": "da",
+      "muc_tieu": "M4",
+      "muc_nhan_thuc": "phan_tich",
+      "do_kho": "TB",
+      "loai": "mot_dap_an",
+      "cau_hoi": "PLAN đặt nguyên tắc “không qua cổng thì không sang giai đoạn sau”. Căn cứ nào có trong nhật ký giải thích nguyên tắc này?",
+      "dap_an": {
+        "A": "Nhật ký có sự cố mất dữ liệu khi gỡ site cũ, nên nhóm đòi xác nhận bản sao lưu trước khi sang giai đoạn sau",
+        "B": "Nhật ký có sự cố script báo xong nhưng chưa xong, nên nhóm đòi bằng chứng kiểm thật trước khi sang giai đoạn sau",
+        "C": "Nhật ký có sự cố lệch phiên bản giữa các máy, nên nhóm đòi các máy cùng phiên bản trước khi sang giai đoạn sau",
+        "D": "Nhật ký có sự cố trùng cổng giữa MariaDB và XAMPP, nên nhóm đòi dừng hết dịch vụ trước khi sang giai đoạn sau"
+      },
+      "dung": [
+        "B"
+      ],
+      "loi_sai": {
+        "A": "bịa sự cố mất dữ liệu (nhóm đã sao lưu trước khi gỡ)",
+        "C": "bịa sự cố lệch phiên bản giữa các máy",
+        "D": "nhầm một sự cố có thật (trùng cổng) với căn cứ của nguyên tắc cổng kiểm"
+      },
+      "giai_thich": "Nhật ký ghi script WordPress dừng ở bước cuối và tạo database thất bại âm thầm; bài học “script báo xong không đồng nghĩa là xong” dẫn tới việc đòi bằng chứng kiểm thật. A sai vì không có sự cố mất dữ liệu, nhóm sao lưu trước khi gỡ. C sai vì giai đoạn 0 làm trên một máy. D là sự cố có thật nhưng được xử lý bằng đổi cổng 3307, không phải căn cứ của cổng kiểm.",
+      "doan_goc": "PLAN.md mục 0 nguyên tắc 4; docs/phase-report.md (bảng Sự cố giai đoạn 0)",
+      "do_chac": null
+    },
+    {
+      "id": "Q13",
+      "phan": "da",
+      "muc_tieu": "M4",
+      "muc_nhan_thuc": "van_dung",
+      "do_kho": "TB",
+      "loai": "nhieu_dap_an",
+      "cau_hoi": "Về sổ tay cài đặt thống nhất cho ba bạn còn lại, phát biểu nào đúng theo tài liệu tính đến 2026-11-23? (chọn 2 đáp án)",
+      "dap_an": {
+        "A": "Sổ tay chưa được viết; tệp quy trình cài đặt dự định làm nền cũng chưa có trong thư mục docs",
+        "B": "Sổ tay đã được viết nhưng chưa ai chạy thử; tệp quy trình cài đặt làm nền đã có trong thư mục docs",
+        "C": "Sổ tay cần ghi bảng phiên bản, thứ tự script, tham số riêng như tên site và email người cài, và các sự cố đã gặp",
+        "D": "Sổ tay cần ghi bảng phiên bản, mật khẩu quản trị mặc định, thứ tự script và danh sách email của cả nhóm"
+      },
+      "dung": [
+        "A",
+        "C"
+      ],
+      "loi_sai": {
+        "B": "nói quá tình trạng đã làm",
+        "D": "đưa mật khẩu và email cả nhóm vào sổ tay"
+      },
+      "giai_thich": "A đúng: checklist ghi N6 là Chưa và tệp docs/quy-trinh-cai-dat.md chưa tồn tại. C đúng theo những gì nhật ký và script đã có. B sai vì sổ tay chưa viết và tệp nền chưa có. D sai vì nhóm không ghi mật khẩu vào tài liệu, và mỗi người dùng email của chính mình.",
+      "doan_goc": "docs/checklist-tieu-chi.md (N6, N7); docs/phase-report.md; scripts/lib_frappe.py",
+      "do_chac": null
+    },
+    {
+      "id": "Q14",
+      "phan": "da",
+      "muc_tieu": "M4",
+      "muc_nhan_thuc": "phan_tich",
+      "do_kho": "Kho",
+      "loai": "mot_dap_an",
+      "cau_hoi": "Khi một bạn cài lại Frappe CRM trên máy mình theo sổ tay, thầy hỏi email của tài khoản quản trị là của ai và dựa vào đâu. Trả lời nào đúng với tài liệu?",
+      "dap_an": {
+        "A": "Email do thầy cấp cho từng người, vì tiêu chí yêu cầu vậy; script nhận email đó khi chạy",
+        "B": "Email chung của nhóm, vì tiêu chí yêu cầu vậy; script setup wizard đọc email từ tệp cấu hình chung",
+        "C": "Email của người cài, vì script setup wizard tự lấy email từ tài khoản Windows đang đăng nhập",
+        "D": "Email của người cài, vì tiêu chí yêu cầu vậy; script setup wizard nhận họ tên và email khi chạy"
+      },
+      "dung": [
+        "D"
+      ],
+      "loi_sai": {
+        "B": "bịa cấu hình email chung",
+        "C": "bịa cách script lấy email",
+        "A": "bịa việc thầy cấp email"
+      },
+      "giai_thich": "Checklist (lưu ý chung A4.2) ghi email admin là email của sinh viên thực hiện; script gd1-01-setup-wizard.py nhận họ tên và email khi chạy. B bịa tệp cấu hình chung. C bịa cách script lấy email. A bịa việc thầy cấp email.",
+      "doan_goc": "docs/checklist-tieu-chi.md (lưu ý chung A4.2); scripts/gd1-01-setup-wizard.py",
+      "do_chac": null
+    },
+    {
+      "id": "Q15",
+      "phan": "da",
+      "muc_tieu": "M4",
+      "muc_nhan_thuc": "phan_tich",
+      "do_kho": "TB",
+      "loai": "mot_dap_an",
+      "cau_hoi": "Thầy hỏi: “Nhóm đã làm đúng kế hoạch 7 ngày chưa?” Trả lời nào trung thực với nhật ký tính đến 2026-11-23?",
+      "dap_an": {
+        "A": "Kịp: GĐ0 đến GĐ2 xong ngày 14/11, GĐ3 đến GĐ6 làm trong tuần sau đó",
+        "B": "Chưa kịp: GĐ0, GĐ1 làm ngày 14/11, GĐ2 xong ngày 22/11, GĐ3–6 chưa làm",
+        "C": "Chưa kịp: GĐ0 đến GĐ3 xong ngày 22/11, còn GĐ4 đến GĐ6 chưa làm",
+        "D": "Kịp: bảy giai đoạn đều xong ngày 22/11, còn lại việc chờ người duyệt"
+      },
+      "dung": [
+        "B"
+      ],
+      "loi_sai": {
+        "A": "khai ngày và phạm vi đã xong sai",
+        "C": "khai GĐ3 đã xong",
+        "D": "nói quá phần đã làm"
+      },
+      "giai_thich": "Nhật ký ghi GĐ0 và GĐ1 xong ngày 2026-11-14, GĐ2 phần của Claude xong ngày 2026-11-22, GĐ3 đến GĐ6 chưa có mục nào; PLAN ghi hạn nộp chưa rõ. A và D nói quá tiến độ. C khai GĐ3 đã xong.",
+      "doan_goc": "PLAN.md mục 2 và mục 4; docs/phase-report.md (bảng Tổng hợp, mục Cập nhật 2026-11-22)",
+      "do_chac": null
+    }
+  ]
+}

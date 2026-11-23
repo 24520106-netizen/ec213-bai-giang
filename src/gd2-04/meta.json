@@ -1,0 +1,19 @@
+{
+  "id": "gd2-04",
+  "gd": "gd2",
+  "thu_tu": "2.4",
+  "tieu_de": "Bán hàng: quy trình chung và bán cho đại lý",
+  "tom_tat": "Tự động hóa lực lượng bán hàng (SFA) và tỉ lệ chuyển đổi theo giáo trình, rồi áp vào hai quy trình của Biti's: từ lead trên website đến đơn hàng, và bán cho đại lý có vòng báo giá lặp lại.",
+  "muc_tieu_bai": [
+    "Phân biệt được lead, lead đã đạt chuẩn (qualified), cơ hội (opportunity), pipeline và báo giá trong SFA",
+    "Tính và diễn giải được tỉ lệ chuyển đổi của một phễu bán hàng, và không nhầm nó với Conversion Model của Hofmeyr",
+    "Tính lại được hai báo giá của đồ án (18.796.800 ₫ và 43.608.000 ₫ → 41.712.000 ₫) và đọc được vòng lặp, cổng ba nhánh trên sơ đồ",
+    "Giải thích được Convert to Deal, Assignment Rule và duyệt chiết khấu thật sự làm gì trong Frappe CRM, cái nào của Frappe, cái nào của nhóm"
+  ],
+  "nguon": [
+    { "ten": "Prior, Buttle & Maklan (2024), Customer Relationship Management, 5th ed.", "chi_tiet": "Chương 8 (slide 3–13; giáo trình tr. 188–196) và Chương 3 (slide 7–8, 17; giáo trình tr. 64, 80–83)" },
+    { "ten": "Tài liệu Frappe CRM, Assignment Rule", "chi_tiet": "tai-lieu-chinh-thong/frappe/02-assignment-rule.txt (bản latest, tải 2026-11-16)" },
+    { "ten": "Mã nguồn Frappe CRM, crm_lead.py", "chi_tiet": "tai-lieu-chinh-thong/tich-hop/83-src-crm-lead-py.txt (tải 2026-11-16; người điều phối đã đối chiếu với bản 16.0.1 đang cài)" },
+    { "ten": "Dự án đồ án (nguồn sự thật của phần 2 và 3)", "chi_tiet": "docs/quy-trinh-sop.md; evidence/A4-3/chay-thu.json (C1–C14, B1–B12); scripts/gd2-01-chay-thu.py; scripts/gd2/quy-trinh.js; scripts/gd1-06-du-lieu-demo.py (giá sản phẩm); docs/phase-report.md mục Giai đoạn 2" }
+  ]
+}

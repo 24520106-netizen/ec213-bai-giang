@@ -1,0 +1,18 @@
+{
+  "id": "gd0-03",
+  "gd": "gd0",
+  "thu_tu": "0.3",
+  "tieu_de": "Nền tảng kỹ thuật: Frappe, bench, site và máy chủ",
+  "tom_tat": "Một ứng dụng web nhiều thành phần chạy ra sao, CRM đặt trên máy chủ nội bộ hay đám mây khác gì; rồi Frappe, bench, site, app và các cổng thật trên máy của đồ án.",
+  "muc_tieu_bai": [
+    "Phân biệt được vai trò của trình duyệt, máy chủ ứng dụng, cơ sở dữ liệu, bộ nhớ đệm, hàng đợi và tiến trình nền, và nói được CRM trên máy chủ nội bộ khác đám mây ở đâu",
+    "Phân biệt được framework, app, site, bench và DocType của Frappe",
+    "Chỉ ra được từng thành phần, phiên bản và cổng thật của đồ án (WSL, Frappe, MariaDB, Redis, XAMPP, WordPress)",
+    "Giải thích được vì sao đổi cổng XAMPP sang 3307, vì sao site khác app, hai script khởi động và dừng làm gì, và kiểm từng thành phần chạy thế nào"
+  ],
+  "nguon": [
+    { "ten": "Prior, Buttle & Maklan (2024), Customer Relationship Management, 5th ed.", "chi_tiet": "Chương 1, slide 9–10 (CRM 1.0 và CRM 2.0, on-premises và SaaS); Phụ lục 'CRM hosting options' (on-premise versus cloud-based); Chương 11, slide 3 và 7 (cơ sở dữ liệu quan hệ, chọn công nghệ cơ sở dữ liệu)" },
+    { "ten": "Tài liệu Frappe Framework (bản latest, tải 2026-11-16)", "chi_tiet": "tai-lieu-chinh-thong/frappe/: 03-arch.txt, 01-directory-structure.txt, 01-guide-sites.txt, 01-guide-apps.txt, 01-basics-apps.txt, 03-doctypes.txt, 01-bench-ref-new-site.txt, 01-bench-ref-drop-site.txt, 01-bench-ref-backup.txt, 01-bench-commands.txt; URL gốc ghi trong INDEX.md (docs.frappe.io/framework/user/en/...)" },
+    { "ten": "Tài liệu của đồ án", "chi_tiet": "docs/phase-report.md (bảng phiên bản, mục 0.2–0.4), scripts/frappe-start.ps1, scripts/frappe-stop.ps1, docs/ghi-chu-phan-bien-thay.md; các số đã kiểm lại trên máy ngày 2026-11-23" }
+  ]
+}

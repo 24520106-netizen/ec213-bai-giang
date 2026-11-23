@@ -1,0 +1,414 @@
+{
+  "tieu_de": "Bán hàng: quy trình chung và bán cho đại lý (bài 2.4)",
+  "muc_dich": "tu_hoc",
+  "che_do_cham": "tung_phan",
+  "ghi_chu": "Ba phần kt, ud, da. kt có hai mục tiêu (3 câu mỗi mục tiêu).",
+  "muc_tieu": {
+    "M1": "Phân biệt lead, lead đạt chuẩn, cơ hội, pipeline và báo giá trong SFA theo giáo trình",
+    "M2": "Tính và diễn giải tỉ lệ chuyển đổi và chi phí thu hút khách, không nhầm với Conversion Model của Hofmeyr",
+    "M3": "Tính lại báo giá của hai quy trình và đọc được vòng lặp, cổng, nút hệ thống trên sơ đồ bán hàng",
+    "M4": "Giải thích Convert to Deal, Assignment Rule, duyệt chiết khấu thật sự làm gì và kiểm bằng bản ghi nào"
+  },
+  "cau_hoi": [
+    {
+      "id": "Q01",
+      "phan": "kt",
+      "muc_tieu": "M1",
+      "muc_nhan_thuc": "van_dung",
+      "do_kho": "TB",
+      "loai": "mot_dap_an",
+      "cau_hoi": "Một người điền form hỏi giá giày trên website của cửa hàng. Nhân viên gọi lại và xác nhận người đó cần mua 24 đôi trong tháng này và đủ khả năng chi trả. Sau cuộc gọi, theo giáo trình, bản ghi của người này là gì?",
+      "dap_an": {
+        "A": "Cơ hội đã chốt (closed-won opportunity), vì khách đã nói rõ số lượng cần mua",
+        "B": "Khách hàng mới (new customer), vì khách đã trò chuyện trực tiếp với nhân viên",
+        "C": "Lead đạt chuẩn (qualified lead), vì khách có khả năng và sẵn lòng mua",
+        "D": "Lead chưa đạt chuẩn, vì chưa có báo giá nào được gửi cho khách"
+      },
+      "dung": [
+        "C"
+      ],
+      "loi_sai": {
+        "A": "nhầm xác nhận nhu cầu với việc đã chốt đơn",
+        "B": "nhầm có liên hệ với đã mua hàng",
+        "D": "nhầm điều kiện đạt chuẩn với việc đã gửi báo giá"
+      },
+      "giai_thich": "Lead trở thành đạt chuẩn khi công ty xác nhận khách vừa có khả năng vừa sẵn lòng mua, và ưu đãi phù hợp nhu cầu; xác nhận có thể do chính khách nói. Chưa cần có báo giá (D) và chưa phải chốt đơn (A). Khách chưa mua thì chưa phải khách hàng (B).",
+      "doan_goc": "Chương 3, giáo trình tr. 66 (lead đạt chuẩn)"
+    },
+    {
+      "id": "Q02",
+      "phan": "kt",
+      "muc_tieu": "M1",
+      "muc_nhan_thuc": "hieu",
+      "do_kho": "TB",
+      "loai": "mot_dap_an",
+      "cau_hoi": "Trong phần mềm SFA, pipeline (đường ống bán hàng) là gì?",
+      "dap_an": {
+        "A": "Quản lý chu trình bán từ tìm khách đến chốt, chia giai đoạn có xác suất chốt tăng dần",
+        "B": "Danh sách các khách đã mua trong năm, sắp theo giá trị từng đơn hàng đã giao",
+        "C": "Bản đề xuất có thương hiệu gửi cho khách, soạn từ dữ liệu sản phẩm có sẵn trong hệ thống",
+        "D": "Bộ luật tự giao lead cho nhân viên theo lãnh thổ, vai trò hoặc chuyên môn sản phẩm"
+      },
+      "dung": [
+        "A"
+      ],
+      "loi_sai": {
+        "B": "nhầm pipeline với danh sách khách hàng đã mua",
+        "C": "nhầm pipeline với đề xuất, báo giá (proposal)",
+        "D": "nhầm pipeline với phân công lead (lead assignment)"
+      },
+      "giai_thich": "Giáo trình mô tả pipeline là việc quản lý cả chu trình bán, thường 5 đến 7 giai đoạn, và xác suất chốt tăng khi cơ hội đi sâu hơn (ví dụ 5% ở giai đoạn gặp lần đầu, 60% ở giai đoạn trình bày bán hàng). Danh sách khách đã mua là dữ liệu khách hàng. Bản đề xuất là proposal. Luật tự giao lead là phân bổ lead trong quản lý lead.",
+      "doan_goc": "Chương 8, giáo trình tr. 191 (pipeline management); tr. 193 (proposal generation); tr. 188–189 (lead management)"
+    },
+    {
+      "id": "Q03",
+      "phan": "kt",
+      "muc_tieu": "M1",
+      "muc_nhan_thuc": "hieu",
+      "do_kho": "TB",
+      "loai": "nhieu_dap_an",
+      "cau_hoi": "Theo giáo trình, chức năng nào thuộc quản lý lead (lead management)? (chọn 2 đáp án)",
+      "dap_an": {
+        "A": "Soạn hợp đồng bán hàng và theo dõi chữ ký của khách",
+        "B": "Chấm điểm lead theo tiêu chí do quản lý bán hàng đặt ra",
+        "C": "Tự giao lead cho nhân viên theo vai trò, lãnh thổ hoặc chuyên môn",
+        "D": "Tính thưởng cho nhân viên theo số lead mà họ nhận được"
+      },
+      "dung": [
+        "B",
+        "C"
+      ],
+      "loi_sai": {
+        "A": "nhầm với quản lý hợp đồng (contract management)",
+        "D": "nhầm với quản lý khuyến khích (incentive management)"
+      },
+      "giai_thich": "Quản lý lead cho phép thu lead từ nhiều điểm chạm, chấm điểm lead theo tiêu chí do quản lý đặt (B), và tự giao lead theo luật người dùng định nghĩa như vai trò, lãnh thổ, chuyên môn sản phẩm (C). Quản lý hợp đồng và quản lý khuyến khích là hai chức năng khác trong danh sách công cụ SFA.",
+      "doan_goc": "Chương 8, giáo trình tr. 188–189; slide 8 (danh sách chức năng)"
+    },
+    {
+      "id": "Q04",
+      "phan": "kt",
+      "muc_tieu": "M2",
+      "muc_nhan_thuc": "van_dung",
+      "do_kho": "TB",
+      "loai": "mot_dap_an",
+      "cau_hoi": "Một tháng, cửa hàng có 500 lead; trong đó 150 lead đạt chuẩn, 75 người nhận báo giá và 15 người mua. Tính tỉ lệ chuyển đổi từ lead đạt chuẩn sang người mua (số đã chuyển ÷ số vào bước đó).",
+      "dap_an": {
+        "A": "3%",
+        "B": "10%",
+        "C": "20%",
+        "D": "50%"
+      },
+      "dung": [
+        "B"
+      ],
+      "loi_sai": {
+        "A": "lấy tổng số lead (500) làm mẫu số thay vì số lead đạt chuẩn",
+        "C": "lấy số người nhận báo giá (75) làm mẫu số",
+        "D": "tính nhầm bước từ lead đạt chuẩn sang nhận báo giá (75 ÷ 150)"
+      },
+      "giai_thich": "Tỉ lệ chuyển đổi bước này là 15 ÷ 150 = 10%. 3% là 15 ÷ 500 (cả phễu). 20% là 15 ÷ 75 (từ báo giá sang mua). 50% là 75 ÷ 150 (từ đạt chuẩn sang nhận báo giá). Giáo trình chỉ nêu tỉ lệ chuyển đổi là một KPI, cách tính này là cách tính phổ biến.",
+      "doan_goc": "Chương 3, slide 17; giáo trình tr. 81 (KPI chuyển đổi); công thức do bài giảng nêu, không phải của giáo trình"
+    },
+    {
+      "id": "Q05",
+      "phan": "kt",
+      "muc_tieu": "M2",
+      "muc_nhan_thuc": "van_dung",
+      "do_kho": "TB",
+      "loai": "mot_dap_an",
+      "cau_hoi": "Cửa hàng chi 24.000.000 ₫ cho quảng cáo trong tháng và thu được 15 khách mới (tháng đó có 500 lead và 150 lead đạt chuẩn). Chi phí thu hút mỗi khách mới là bao nhiêu?",
+      "dap_an": {
+        "A": "360.000.000 ₫",
+        "B": "24.000.000 ₫",
+        "C": "1.600.000 ₫",
+        "D": "160.000 ₫"
+      },
+      "dung": [
+        "C"
+      ],
+      "loi_sai": {
+        "A": "nhân thay vì chia",
+        "B": "lấy tổng chi phí làm chi phí mỗi khách",
+        "D": "chia cho số lead đạt chuẩn thay vì số khách mới thu được"
+      },
+      "giai_thich": "Chi phí thu hút mỗi khách mới = tổng chi ÷ số khách mới = 24.000.000 ÷ 15 = 1.600.000 ₫. 360.000.000 là 24.000.000 × 15 (sai phép tính). 24.000.000 là tổng chi. 160.000 là 24.000.000 ÷ 150 (chia cho lead đạt chuẩn, không phải khách mới). Đây là KPI loại hai trong ba loại của giáo trình.",
+      "doan_goc": "Chương 3, slide 17; giáo trình tr. 81 và tr. 83 (chi phí thu hút khách mới)"
+    },
+    {
+      "id": "Q06",
+      "phan": "kt",
+      "muc_tieu": "M2",
+      "muc_nhan_thuc": "hieu",
+      "do_kho": "TB",
+      "loai": "mot_dap_an",
+      "cau_hoi": "Mô hình chuyển đổi (Conversion Model) của Hofmeyr trong giáo trình dùng để làm gì?",
+      "dap_an": {
+        "A": "Tính phần trăm lead trở thành khách mua ở từng giai đoạn của phễu bán hàng",
+        "B": "Ước lượng xác suất chốt của mỗi cơ hội theo giai đoạn trong pipeline",
+        "C": "Chuyển lead đạt chuẩn thành cơ hội bằng một nút trên phần mềm CRM",
+        "D": "Phân loại khách theo mức gắn bó để biết ai dễ đổi sang nhà cung cấp khác"
+      },
+      "dung": [
+        "D"
+      ],
+      "loi_sai": {
+        "A": "nhầm với tỉ lệ chuyển đổi của phễu",
+        "B": "nhầm với xác suất chốt theo giai đoạn pipeline",
+        "C": "nhầm với việc chuyển lead thành cơ hội (Convert to Deal)"
+      },
+      "giai_thich": "Mô hình của Hofmeyr phân khách và người chưa là khách thành các nhóm theo mức gắn bó/mức sẵn sàng chuyển, đo bằng bốn câu hỏi. Tỉ lệ chuyển đổi là phép chia đếm số người ở phễu (A). Xác suất theo giai đoạn thuộc pipeline (B). Chuyển lead thành cơ hội là một thao tác của phần mềm (C). Ba thứ này không phải mô hình của Hofmeyr dù có chữ chuyển/conversion.",
+      "doan_goc": "Chương 3, slide 7–8; giáo trình tr. 64"
+    },
+    {
+      "id": "Q07",
+      "phan": "ud",
+      "muc_tieu": "M3",
+      "muc_nhan_thuc": "van_dung",
+      "do_kho": "TB",
+      "loai": "mot_dap_an",
+      "cau_hoi": "Báo giá của quy trình chung gồm 12 đôi BT-001 và 12 đôi BT-002, mỗi đôi 890.000 ₫, giảm 12%. Tổng sau giảm là bao nhiêu?",
+      "dap_an": {
+        "A": "18.796.800 ₫",
+        "B": "19.224.000 ₫",
+        "C": "21.360.000 ₫",
+        "D": "23.923.200 ₫"
+      },
+      "dung": [
+        "A"
+      ],
+      "loi_sai": {
+        "B": "dùng mức giảm 10% (ngưỡng tự duyệt) thay vì 12%",
+        "C": "quên áp chiết khấu",
+        "D": "cộng chiết khấu vào thay vì trừ"
+      },
+      "giai_thich": "Tổng trước giảm: 24 × 890.000 = 21.360.000 ₫. Giảm 12%: 21.360.000 × 0,12 = 2.563.200 ₫. Sau giảm: 21.360.000 − 2.563.200 = 18.796.800 ₫. 19.224.000 là giảm 10%. 21.360.000 là chưa giảm. 23.923.200 là 21.360.000 × 1,12.",
+      "doan_goc": "scripts/gd2-01-chay-thu.py (khối C, bước 6); evidence/A4-3/chay-thu.json; giá niêm yết từ scripts/gd1-06-du-lieu-demo.py"
+    },
+    {
+      "id": "Q08",
+      "phan": "ud",
+      "muc_tieu": "M3",
+      "muc_nhan_thuc": "van_dung",
+      "do_kho": "TB",
+      "loai": "mot_dap_an",
+      "cau_hoi": "Đại lý nhập 60 đôi giày, giá niêm yết 790.000 ₫/đôi (tổng 47.400.000 ₫). Báo giá lần 1 giảm 8% là 43.608.000 ₫. Quản lý duyệt mức giảm 12%; mức này thay hẳn mức 8% cũ. Tổng báo giá lần 2 là bao nhiêu?",
+      "dap_an": {
+        "A": "37.920.000 ₫",
+        "B": "38.375.040 ₫",
+        "C": "41.712.000 ₫",
+        "D": "43.608.000 ₫"
+      },
+      "dung": [
+        "C"
+      ],
+      "loi_sai": {
+        "A": "cộng dồn hai mức chiết khấu",
+        "B": "chồng chiết khấu mới lên giá đã giảm",
+        "D": "không cập nhật chiết khấu khi lập báo giá lần 2"
+      },
+      "giai_thich": "Chiết khấu 12% là mức mới thay mức 8%, tính trên giá niêm yết: 47.400.000 × 0,88 = 41.712.000 ₫, thấp hơn lần 1 là 1.896.000 ₫. A là 47.400.000 × 0,80 (cộng dồn). B là 43.608.000 × 0,88. D là không đổi báo giá.",
+      "doan_goc": "scripts/gd2-01-chay-thu.py (khối B, bước 6 và 9); docs/quy-trinh-sop.md (B6, B9)"
+    },
+    {
+      "id": "Q09",
+      "phan": "ud",
+      "muc_tieu": "M3",
+      "muc_nhan_thuc": "van_dung",
+      "do_kho": "TB",
+      "loai": "mot_dap_an",
+      "cau_hoi": "Trên sơ đồ BPMN của quy trình bán cho đại lý, việc báo giá có thể lặp lại khi đại lý trả giá thêm được vẽ bằng cách nào?",
+      "dap_an": {
+        "A": "Hai nút \"Gửi báo giá lần 1\" và \"Gửi báo giá lần 2\" nối tiếp nhau",
+        "B": "Một cổng song song tách thành hai báo giá chạy cùng một lúc",
+        "C": "Một sự kiện hẹn giờ lặp lại bước báo giá sau mỗi 7 ngày",
+        "D": "Một mũi tên từ nút \"Duyệt giá mới\" quay lại nút \"Gửi báo giá\" cho khách hàng"
+      },
+      "dung": [
+        "D"
+      ],
+      "loi_sai": {
+        "A": "chép bước thay vì vẽ vòng lặp",
+        "B": "nhầm vòng lặp với việc chạy song song",
+        "C": "bịa ra cơ chế hẹn giờ không có trong sơ đồ"
+      },
+      "giai_thich": "Sơ đồ chỉ có một nút \"Gửi báo giá\" và một mũi tên quay lại từ \"Duyệt giá mới\", nên lặp bao nhiêu vòng cũng vẽ đúng một nghĩa. Chép bước (A) cố định số vòng. Cổng song song (B) làm hai việc cùng lúc, không phải lặp lại. Sơ đồ không có sự kiện hẹn giờ (C).",
+      "doan_goc": "scripts/gd2/quy-trinh.js (quy trình Bán hàng đại lý: luồng duyệt → bg); docs/quy-trinh-sop.md (B9)"
+    },
+    {
+      "id": "Q10",
+      "phan": "ud",
+      "muc_tieu": "M3",
+      "muc_nhan_thuc": "hieu",
+      "do_kho": "TB",
+      "loai": "nhieu_dap_an",
+      "cau_hoi": "Về cổng \"Đại lý phản hồi thế nào?\" trên sơ đồ bán cho đại lý, nhận định nào đúng? (chọn 2 đáp án)",
+      "dap_an": {
+        "A": "Cả ba nhánh được thực hiện cùng lúc để rút ngắn thời gian bán",
+        "B": "Mỗi lần đi qua cổng, chỉ một trong các nhánh được chọn",
+        "C": "Cổng có hai nhánh Có và Không",
+        "D": "Cổng có ba nhánh tên Từ chối, Đồng ý và Trả giá"
+      },
+      "dung": [
+        "B",
+        "D"
+      ],
+      "loi_sai": {
+        "A": "nhầm cổng loại trừ (XOR) với cổng song song",
+        "C": "nhầm số nhánh: cổng này có ba nhánh"
+      },
+      "giai_thich": "Đây là cổng XOR với ba nhánh Từ chối, Đồng ý, Trả giá; mỗi lần chỉ đi một nhánh (B, D). Cổng song song mới chạy các nhánh cùng lúc (A). Ở quy trình chung các cổng có hai nhánh Có/Không, nhưng cổng của đại lý có ba nhánh (C sai).",
+      "doan_goc": "scripts/gd2/quy-trinh.js (quy trình Bán hàng đại lý, cổng g2)"
+    },
+    {
+      "id": "Q11",
+      "phan": "ud",
+      "muc_tieu": "M3",
+      "muc_nhan_thuc": "van_dung",
+      "do_kho": "TB",
+      "loai": "mot_dap_an",
+      "cau_hoi": "Trong quy trình chung (23 nút), nút nào là nút do hệ thống tự làm (service task), không cần người bấm trên màn hình?",
+      "dap_an": {
+        "A": "\"Ghi nhận lead vào CRM\" của Marketing",
+        "B": "\"Giao lead cho nhân viên\" của Bán hàng",
+        "C": "\"Gửi báo giá\" cho khách hàng",
+        "D": "\"Chuyển lead thành cơ hội\" của Bán hàng"
+      },
+      "dung": [
+        "B"
+      ],
+      "loi_sai": {
+        "A": "nhầm việc người nhập lead với hệ thống tự chạy",
+        "C": "nhầm việc người làm trên deal với hệ thống tự chạy",
+        "D": "nhầm nút Convert to Deal (người bấm) với hệ thống tự chuyển"
+      },
+      "giai_thich": "Chỉ nút \"Giao lead cho nhân viên\" là service task vì Assignment Rule tự chạy khi lead được tạo. Ghi nhận lead, gửi báo giá và chuyển lead thành cơ hội đều do người thao tác trên màn hình (user task); Convert to Deal là nút người bấm.",
+      "doan_goc": "scripts/gd2/quy-trinh.js (quy trình chung: nút giao kiểu V); docs/quy-trinh-sop.md (C2)"
+    },
+    {
+      "id": "Q12",
+      "phan": "da",
+      "muc_tieu": "M4",
+      "muc_nhan_thuc": "van_dung",
+      "do_kho": "TB",
+      "loai": "mot_dap_an",
+      "cau_hoi": "Với lead đã Qualified, khi người dùng bấm Convert to Deal (hàm convert_to_deal của Frappe CRM 16.0.1), điều gì đúng?",
+      "dap_an": {
+        "A": "Tạo Contact, Organization (nếu có) và Deal; đặt converted = 1 và đặt trạng thái lead thành Qualified",
+        "B": "Tạo Deal rồi xóa lead gốc khỏi hệ thống, dữ liệu của lead được chuyển sang deal mới",
+        "C": "Tạo Contact và Deal, đồng thời đặt trạng thái lead thành một trạng thái mới tên Converted",
+        "D": "Tạo Deal; các trường của lead không đổi vì hàm sao chép dữ liệu sang deal mới"
+      },
+      "dung": [
+        "A"
+      ],
+      "loi_sai": {
+        "B": "nhầm chuyển đổi với xóa và chép dữ liệu",
+        "C": "nhầm với trạng thái Converted (mô tả sai ban đầu của script)",
+        "D": "bỏ qua việc lead được đánh dấu converted và đặt Qualified"
+      },
+      "giai_thich": "Mã nguồn bản đang cài (Frappe CRM 16.0.1) cho thấy convert_to_deal tạo Contact, Organization (nếu có), Deal rồi gọi mark_converted: đặt converted = 1 và đặt trạng thái lead thành Qualified. Lead không bị xóa và không có trạng thái Converted. Hàm cũng từ chối chuyển lead có trạng thái loại Lost.",
+      "doan_goc": "mã nguồn crm_lead.py (convert_to_deal, mark_converted); evidence/A4-3/chay-thu.json (C5); docs/phase-report.md mục 2.3"
+    },
+    {
+      "id": "Q13",
+      "phan": "da",
+      "muc_tieu": "M4",
+      "muc_nhan_thuc": "phan_tich",
+      "do_kho": "Kho",
+      "loai": "mot_dap_an",
+      "cau_hoi": "Việc \"Quản lý đã duyệt chiết khấu 12%\" của deal CRM-DEAL-2026-00031 được ghi ở đâu, và hệ thống làm gì để bảo đảm có duyệt trước khi chốt Won?",
+      "dap_an": {
+        "A": "Trong CRM Task giao Quản lý và ghi chú; chỉ là bản ghi, hệ thống không chặn Won khi thiếu duyệt",
+        "B": "Trong một Workflow của Frappe, và hệ thống không cho chuyển sang Won khi chưa có người duyệt",
+        "C": "Trong trường chiết khấu tối đa của deal, và hệ thống báo lỗi khi mức giảm vượt ngưỡng cho phép",
+        "D": "Trong Assignment Rule, và hệ thống tự giao deal cho Quản lý khi mức giảm vượt quá 10%"
+      },
+      "dung": [
+        "A"
+      ],
+      "loi_sai": {
+        "B": "tưởng đã dùng Workflow nên có chặn",
+        "C": "tưởng CRM có ràng buộc ngưỡng chiết khấu",
+        "D": "nhầm Assignment Rule (giao lead) với luồng duyệt"
+      },
+      "giai_thich": "Frappe CRM 16.0.1 không có luồng duyệt chiết khấu, nên nhóm ghi bằng CRM Task (số 41) và ghi chú. Đó chỉ là bản ghi: việc chuyển deal sang Won khi chưa duyệt không bị chặn, thứ tự do con người và quy trình giữ. B, C, D tả những cơ chế nhóm chưa làm và Frappe không có sẵn.",
+      "doan_goc": "docs/phase-report.md mục 2.3 (phát hiện a); evidence/A4-3/chay-thu.json (C8); docs/quy-trinh-sop.md (C8)"
+    },
+    {
+      "id": "Q14",
+      "phan": "da",
+      "muc_tieu": "M4",
+      "muc_nhan_thuc": "van_dung",
+      "do_kho": "TB",
+      "loai": "nhieu_dap_an",
+      "cau_hoi": "Nhật ký chạy thử ghi: lead 00073 (Miền Nam) được Assignment Rule điền trường lead_owner, trường _assign rỗng; địa bàn Miền Trung và Xuất khẩu chưa có luật; nhóm Bán hàng miền Bắc chỉ có một nhân viên. Từ đó, nhận định nào đúng? (chọn 2 đáp án)",
+      "dap_an": {
+        "A": "Muốn biết lead Miền Nam được giao cho ai, phải đọc trường lead_owner chứ không phải _assign",
+        "B": "Trường _assign là nơi Frappe CRM lưu người được giao, còn lead_owner là người tạo lead",
+        "C": "Lead Miền Trung do trưởng nhóm giao tay, không có luật nào tự giao",
+        "D": "Luật miền Bắc chia lead đại lý luân phiên giữa nhiều nhân viên của nhóm"
+      },
+      "dung": [
+        "A",
+        "C"
+      ],
+      "loi_sai": {
+        "B": "đảo vai trò của hai trường theo nhật ký",
+        "D": "bỏ qua việc nhóm miền Bắc chỉ có một người nên không có luân phiên thật"
+      },
+      "giai_thich": "Theo nhật ký, Assignment Rule điền lead_owner còn _assign rỗng (A đúng, B sai). Miền Trung chưa có luật nên trưởng nhóm giao tay (C đúng). Nhóm miền Bắc chỉ có một người nên mọi lead đại lý vào người đó, không có luân phiên thật (D sai). Tài liệu Frappe CRM nêu hai cách chia: xoay vòng và theo khối lượng việc.",
+      "doan_goc": "docs/phase-report.md mục 2.3 (phát hiện d); docs/quy-trinh-sop.md (C2, B2)"
+    },
+    {
+      "id": "Q15",
+      "phan": "da",
+      "muc_tieu": "M4",
+      "muc_nhan_thuc": "phan_tich",
+      "do_kho": "Kho",
+      "loai": "mot_dap_an",
+      "cau_hoi": "Thầy hỏi: \"Chạy thử có 15 lead và 8 deal, vậy tỉ lệ chuyển đổi lead sang deal của Biti's là 8 ÷ 15 ≈ 53% đúng không?\" Câu trả lời đúng là gì?",
+      "dap_an": {
+        "A": "Đúng, 53% là tỉ lệ chuyển đổi của Biti's vì dữ liệu đã nhập vào Frappe thật",
+        "B": "Đúng, nhưng phải trừ các lead bị loại ra khỏi mẫu số trước khi chia",
+        "C": "Không, vì Frappe CRM không lưu được quan hệ giữa lead và deal",
+        "D": "Không, vì dữ liệu do nhóm tạo bằng script, mỗi lead là một kịch bản"
+      },
+      "dung": [
+        "D"
+      ],
+      "loi_sai": {
+        "A": "nhầm dữ liệu thử với dữ liệu thật của doanh nghiệp",
+        "B": "sửa công thức nhưng vẫn coi dữ liệu thử là thật",
+        "C": "nhầm: Frappe có lưu, lead được đánh dấu converted"
+      },
+      "giai_thich": "Các lead và deal chạy thử do nhóm tạo ra theo kịch bản, nhiều lead chỉ để thử một nhánh ngoại lệ, nên tỉ lệ 8 ÷ 15 không nói gì về khách thật. Frappe có ghi nhận lead đã chuyển (cờ converted = 1) nên C sai. Chỉnh mẫu số (B) không cứu được chuyện dữ liệu không phải dữ liệu thật.",
+      "doan_goc": "docs/phase-report.md mục 2.3 (15 lead, 8 deal chạy thử); evidence/A4-3/chay-thu.json"
+    },
+    {
+      "id": "Q16",
+      "phan": "da",
+      "muc_tieu": "M4",
+      "muc_nhan_thuc": "van_dung",
+      "do_kho": "TB",
+      "loai": "mot_dap_an",
+      "cau_hoi": "Muốn chứng minh deal đại lý CRM-DEAL-2026-00033 đã đi hai vòng báo giá, nên mở bằng chứng nào?",
+      "dap_an": {
+        "A": "Tệp chung_bao-gia.pdf, vì đó là báo giá đầu tiên của các deal trong đồ án, dùng cho cả deal đại lý",
+        "B": "Hai tệp daily_bao-gia-lan1.pdf, daily_bao-gia-lan2.pdf và CRM Task duyệt giá của deal",
+        "C": "Trang lead CRM-LEAD-2026-00076, vì lead lưu cả lịch sử các báo giá đã gửi cho khách",
+        "D": "Deal CRM-DEAL-2026-00034, vì đó là deal đại lý có ghi rõ lý do thất bại"
+      },
+      "dung": [
+        "B"
+      ],
+      "loi_sai": {
+        "A": "nhầm tệp báo giá của quy trình chung với của quy trình đại lý",
+        "C": "nhầm báo giá thuộc lead với báo giá thuộc deal",
+        "D": "nhầm deal ngoại lệ thất bại với deal chính đã thắng"
+      },
+      "giai_thich": "Hai PDF lần 1 và lần 2 là hai báo giá của deal 00033 (43.608.000 ₫ và 41.712.000 ₫), cộng với CRM Task duyệt giá mới (số 44) và ghi chú đại lý trả giá. chung_bao-gia.pdf thuộc deal 00031. Báo giá thuộc deal, không thuộc lead. Deal 00034 là deal đại lý thất bại, không qua hai vòng báo giá.",
+      "doan_goc": "evidence/A4-3/ (daily_bao-gia-lan1.pdf, daily_bao-gia-lan2.pdf); evidence/A4-3/chay-thu.json (B6–B9)"
+    }
+  ]
+}

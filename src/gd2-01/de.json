@@ -1,0 +1,429 @@
+{
+  "tieu_de": "Trắc nghiệm bài 2.1: Mô hình hóa quy trình và BPMN",
+  "muc_dich": "tu_hoc",
+  "che_do_cham": "tung_phan",
+  "muc_tieu": {
+    "M1": "Chọn đúng ký hiệu BPMN (pool, lane, loại task, end event) và đặt tên đúng quy ước",
+    "M2": "Giải thích vai trò của mô hình quy trình và cách xây dựng từ đường suôn sẻ rồi thêm ngoại lệ",
+    "M3": "Đọc năm sơ đồ BPMN của nhóm: nhận ra ký hiệu, đếm đúng và đánh giá chỗ đúng, chỗ chưa đạt",
+    "M4": "Giải thích vì sao nhóm sinh sơ đồ bằng script, ảnh xuất bằng gì, và phân biệt phần của Frappe với phần của nhóm"
+  },
+  "cau_hoi": [
+    {
+      "id": "Q01",
+      "phan": "kt",
+      "muc_tieu": "M1",
+      "muc_nhan_thuc": "van_dung",
+      "do_kho": "TB",
+      "loai": "mot_dap_an",
+      "cau_hoi": "Một công ty có ba phòng: Kinh doanh, Kho, Kế toán. Cả ba cùng tham gia một quy trình xử lý đơn hàng. Cách vẽ đúng chuẩn BPMN và quy ước Camunda là gì?",
+      "dap_an": {
+        "A": "Một pool mang tên công ty, trong đó mỗi lane là một quy trình riêng",
+        "B": "Một pool đặt theo tên quy trình, chia thành ba lane theo ba phòng",
+        "C": "Ba pool, mỗi pool là một phòng, nối nhau bằng các sequence flow",
+        "D": "Một pool, một lane, tên phòng ghi vào từng task"
+      },
+      "dung": [
+        "B"
+      ],
+      "loi_sai": {
+        "A": "nhầm pool là công ty, lane là quy trình (đảo vai trò pool và lane)",
+        "C": "nhầm pool là phòng ban; sequence flow không đi qua ranh giới giữa hai pool",
+        "D": "bỏ lane nên mất thông tin ai chịu trách nhiệm"
+      },
+      "giai_thich": "Pool đại diện cho một quy trình và được đặt tên theo quy trình; lane chia pool theo vai trò tổ chức. Ở đây quy trình là xử lý đơn hàng, ba phòng là ba vai trò nên thành ba lane. Cách \"pool là công ty, lane là quy trình\" đảo ngược vai trò hai ký hiệu. Ba pool riêng cho từng phòng nhầm pool với phòng ban và còn sai về ký hiệu: đường nối giữa hai pool phải là message flow chứ không phải sequence flow. Một lane duy nhất, ghi tên phòng vào task, làm mất lợi ích chính của lane là cho thấy ai chịu trách nhiệm đoạn nào.",
+      "doan_goc": "OMG BPMN 2.0.2, trang PDF 57 (Pool, Lane); Camunda 16-camunda-quy-uoc-dat-ten.txt (mục Naming processes)",
+      "do_chac": null
+    },
+    {
+      "id": "Q02",
+      "phan": "kt",
+      "muc_tieu": "M1",
+      "muc_nhan_thuc": "hieu",
+      "do_kho": "De",
+      "loai": "mot_dap_an",
+      "cau_hoi": "Quán trà sữa có bốn việc. Việc nào nên vẽ là manual task (việc thủ công)?",
+      "dap_an": {
+        "A": "Pha trà sữa bằng tay, không có phần mềm nào hỗ trợ",
+        "B": "Thu ngân nhập đơn lên máy tính tiền của quán",
+        "C": "Máy tự in tem dán lên mỗi ly khi đơn được nhập",
+        "D": "Hệ thống tự cộng điểm tích lũy vào thẻ thành viên của khách"
+      },
+      "dung": [
+        "A"
+      ],
+      "loi_sai": {
+        "B": "nhầm việc có phần mềm hỗ trợ (user task) với việc thủ công",
+        "C": "nhầm việc máy tự làm (service task) với việc thủ công",
+        "D": "nhầm việc hệ thống tự làm với việc thủ công"
+      },
+      "giai_thich": "Manual task là việc làm mà không cần phần mềm điều hành quy trình hay ứng dụng nào hỗ trợ; pha trà bằng tay đúng như vậy. Nhập đơn lên máy tính tiền là việc người làm với sự trợ giúp của phần mềm nên là user task. Máy tự in tem và hệ thống tự cộng điểm là việc ứng dụng tự động làm, đó là service task.",
+      "doan_goc": "OMG BPMN 2.0.2, trang PDF 186 (Service Task), 190 (User Task), 191 (Manual Task)",
+      "do_chac": null
+    },
+    {
+      "id": "Q03",
+      "phan": "kt",
+      "muc_tieu": "M1",
+      "muc_nhan_thuc": "van_dung",
+      "do_kho": "TB",
+      "loai": "mot_dap_an",
+      "cau_hoi": "Sau cổng \"Thẻ có hợp lệ?\", nhánh Không dẫn tới kết quả khách bị từ chối thanh toán. Tên nào đặt cho end event này đúng quy ước Camunda?",
+      "dap_an": {
+        "A": "Kết thúc quy trình thanh toán",
+        "B": "Đã xử lý xong thanh toán",
+        "C": "Thanh toán bị từ chối",
+        "D": "Từ chối thanh toán thẻ"
+      },
+      "dung": [
+        "C"
+      ],
+      "loi_sai": {
+        "A": "tên không nói kết quả nghiệp vụ nào",
+        "B": "dùng động từ chung chung nên không phân biệt được thành công với thất bại",
+        "D": "đặt tên end event như một việc (động từ) thay vì một trạng thái đạt được"
+      },
+      "giai_thich": "Camunda: end event nên mô tả trạng thái mà quy trình đạt được, nói rõ thành công hay thất bại, nên \"Thanh toán bị từ chối\" là tên đúng. \"Kết thúc…\" không cho biết kết quả. \"Đã xử lý xong…\" giống \"Invoice processed\" trong ví dụ của Camunda: có thể là thành, có thể là bại. \"Từ chối thanh toán thẻ\" nghe như một việc phải làm, hợp với task hơn là end event.",
+      "doan_goc": "Camunda 16-camunda-quy-uoc-dat-ten.txt (mục Naming events)",
+      "do_chac": null
+    },
+    {
+      "id": "Q04",
+      "phan": "kt",
+      "muc_tieu": "M2",
+      "muc_nhan_thuc": "hieu",
+      "do_kho": "TB",
+      "loai": "mot_dap_an",
+      "cau_hoi": "Bạn chuẩn bị vẽ quy trình \"Đặt phòng khách sạn\". Theo Camunda, nên làm theo thứ tự nào?",
+      "dap_an": {
+        "A": "Liệt kê hết ngoại lệ có thể xảy ra, rồi vẽ chúng cùng đường chính trong một lần",
+        "B": "Vẽ các hoạt động trước, đến cuối cùng mới tìm sự kiện bắt đầu và sự kiện kết thúc của quy trình",
+        "C": "Vẽ mỗi ngoại lệ thành một sơ đồ riêng và để chúng tách khỏi đường chính của quy trình",
+        "D": "Chốt kết quả cuối và sự kiện bắt đầu, vẽ việc luôn phải làm, rồi thêm từng ngoại lệ một"
+      },
+      "dung": [
+        "D"
+      ],
+      "loi_sai": {
+        "A": "vẽ mọi thứ một lúc nên sơ đồ rối, khó soát",
+        "B": "bỏ qua bước chốt kết quả cuối mong muốn ngay từ đầu",
+        "C": "tách ngoại lệ rời khỏi quy trình nên không thấy chúng rẽ ra từ chỗ nào"
+      },
+      "giai_thich": "Camunda gợi ý: định rõ kết quả cuối mong muốn, rồi sự kiện bắt đầu, rồi các hoạt động luôn phải làm (happy path), sau đó mới thêm từng vấn đề một. Vẽ mọi ngoại lệ một lần làm sơ đồ khó đọc. Vẽ hoạt động trước, chốt kết quả cuối sau thì dễ lạc hướng. Tách ngoại lệ thành sơ đồ riêng làm mất chỗ chúng rẽ ra từ đường chính, mà chỗ rẽ đó là thông tin quan trọng nhất.",
+      "doan_goc": "Camunda 18-camunda-ngoai-happy-path.txt (đầu trang và mục The happy path and beyond)",
+      "do_chac": null
+    },
+    {
+      "id": "Q05",
+      "phan": "kt",
+      "muc_tieu": "M2",
+      "muc_nhan_thuc": "hieu",
+      "do_kho": "TB",
+      "loai": "nhieu_dap_an",
+      "cau_hoi": "Wiegers và Hokanson nói về mô hình trong phân tích yêu cầu. (Chọn 2 đáp án đúng.)",
+      "dap_an": {
+        "A": "Nên thiết kế ký hiệu riêng cho dự án để sơ đồ sát nghiệp vụ hơn so với ký hiệu chuẩn",
+        "B": "Hai mô hình cùng mô tả một thông tin mà mâu thuẫn nhau thì chỗ lệch cho thấy yêu cầu sai, thiếu hoặc thừa",
+        "C": "Sơ đồ đã được các bên xem và đồng ý thì giữ nguyên đến cuối dự án, không vẽ lại nữa",
+        "D": "Gom nhiều chi tiết thành các khối trong sơ đồ giúp người soát xét kiểm đúng, đủ dễ hơn đọc danh sách dài"
+      },
+      "dung": [
+        "B",
+        "D"
+      ],
+      "loi_sai": {
+        "A": "tự chế ký hiệu; sách khuyên dùng ký hiệu chuẩn và tránh tự chế",
+        "C": "coi mô hình là việc làm một lần; sách nói mô hình được vẽ, soát, sửa nhiều lần"
+      },
+      "giai_thich": "Hai ý đúng: (1) khi hai mô hình của cùng một thông tin không khớp nhau thì sự lệch ấy cho thấy yêu cầu sai, thiếu hoặc thừa; (2) mô hình gom chi tiết thành khối ở mức cao hơn nên người soát xét, vốn chỉ nhớ được khoảng 7 ± 2 mục cùng lúc, kiểm tra được dễ hơn. Hai ý sai: sách khuyên tránh tự chế ký hiệu nếu đã có mô hình chuẩn truyền đạt được; và sách nhấn mạnh mô hình được cập nhật qua nhiều vòng khi hiểu biết tăng lên.",
+      "doan_goc": "Wiegers & Hokanson, Chương 4, thực hành #11, tr. 15–18 và 27–29",
+      "do_chac": null
+    },
+    {
+      "id": "Q06",
+      "phan": "kt",
+      "muc_tieu": "M2",
+      "muc_nhan_thuc": "phan_tich",
+      "do_kho": "Kho",
+      "loai": "mot_dap_an",
+      "cau_hoi": "Quán trà sữa đã có sơ đồ happy path. Nay thêm vấn đề: sau khi nhận tiền, đôi khi quán hết nguyên liệu. Theo Camunda, bước đầu tiên để đưa vấn đề này vào sơ đồ là gì?",
+      "dap_an": {
+        "A": "Thêm task \"Xử lý hết nguyên liệu\" ngay sau task nhận tiền rồi nối ngược lại về đường chính của quy trình",
+        "B": "Xác định kết quả không mong muốn (đơn hoàn tiền), rồi thêm cổng XOR dẫn tới end event đó",
+        "C": "Đặt một end event tên \"Lỗi\" ở đầu quy trình để các vấn đề của quán đều dẫn tới đó",
+        "D": "Thêm cả lỗi máy tính tiền bị hỏng vào sơ đồ vì đó cũng là một rủi ro của quán"
+      },
+      "dung": [
+        "B"
+      ],
+      "loi_sai": {
+        "A": "dùng task động từ chung chung thay cho một quyết định và một kết quả rõ ràng",
+        "C": "gom mọi vấn đề vào một end event mơ hồ",
+        "D": "nhầm lỗi kỹ thuật với ngoại lệ nghiệp vụ cần vẽ"
+      },
+      "giai_thich": "Camunda: với mỗi vấn đề, hỏi kết quả không mong muốn sẽ là gì (ở đây đơn bị hoàn tiền), đó là end event mới; rồi tìm chỗ vấn đề có thể xảy ra và dùng cổng XOR để rẽ nhánh. Task \"Xử lý…\" là tên quá chung và không thể hiện ai quyết định điều gì. End event \"Lỗi\" gộp mọi kết quả khác nhau thành một. Lỗi kỹ thuật như hỏng máy không đưa vào sơ đồ nghiệp vụ vì làm rối sơ đồ và có cách xử lý riêng.",
+      "doan_goc": "Camunda 18-camunda-ngoai-happy-path.txt (mục Modeling beyond the happy path by error scenarios, Dealing with errors)",
+      "do_chac": null
+    },
+    {
+      "id": "Q07",
+      "phan": "ud",
+      "muc_tieu": "M3",
+      "muc_nhan_thuc": "van_dung",
+      "do_kho": "De",
+      "loai": "mot_dap_an",
+      "cau_hoi": "Năm sơ đồ BPMN của nhóm (một chung, bốn cá nhân) có tất cả bao nhiêu end event?",
+      "dap_an": {
+        "A": "14",
+        "B": "18",
+        "C": "19",
+        "D": "21"
+      },
+      "dung": [
+        "C"
+      ],
+      "loi_sai": {
+        "A": "bỏ sót sơ đồ chung (5 end event)",
+        "B": "đếm thiếu một end event ở sơ đồ marketing hoặc online",
+        "D": "cho rằng cả bốn sơ đồ cá nhân đều có 4 end event"
+      },
+      "giai_thich": "Số end event: chung 5, đại lý 3, đổi trả 3, marketing 4, online 4, cộng lại 19 (đếm bằng lệnh từ scripts/gd2/quy-trinh.js và khớp với các file .bpmn). Mỗi kết quả nghiệp vụ khác nhau có một end event riêng. Con số 14 quên sơ đồ chung. 18 thiếu một end event. 21 giả định cả bốn sơ đồ cá nhân đều có 4 end event, trong khi đại lý và đổi trả chỉ có 3.",
+      "doan_goc": "scripts/gd2/quy-trinh.js; Nop-bai/Nhóm 04 - Đồ án CRM/*.bpmn",
+      "do_chac": null
+    },
+    {
+      "id": "Q08",
+      "phan": "ud",
+      "muc_tieu": "M3",
+      "muc_nhan_thuc": "van_dung",
+      "do_kho": "TB",
+      "loai": "mot_dap_an",
+      "cau_hoi": "Trong sơ đồ chung, nút nào là service task (việc hệ thống tự làm), và vì sao?",
+      "dap_an": {
+        "A": "\"Giao lead cho nhân viên\", vì Assignment Rule của Frappe tự chạy",
+        "B": "\"Gọi lại khách\", vì cuộc gọi được ghi vào nhật ký cuộc gọi của hệ thống",
+        "C": "\"Gửi báo giá\", vì bản PDF báo giá do Frappe xuất ra cho khách",
+        "D": "\"Duyệt chiết khấu\", vì được tạo thành một CRM Task trong Frappe"
+      },
+      "dung": [
+        "A"
+      ],
+      "loi_sai": {
+        "B": "nhầm việc người làm có ghi dữ liệu vào hệ thống với việc hệ thống tự làm",
+        "C": "nhầm công cụ xuất PDF với việc hệ thống tự làm; người bấm in",
+        "D": "nhầm CRM Task (việc giao cho người) với service task"
+      },
+      "giai_thich": "Trong sơ đồ chung chỉ có một service task: \"Giao lead cho nhân viên\", ứng với Assignment Rule kiểu Round Robin do nhóm cấu hình ở GĐ1 và Frappe tự chạy. Gọi khách, gửi báo giá và duyệt chiết khấu đều do người làm trên màn hình; việc có ghi vào hệ thống, có xuất PDF hay có tạo CRM Task không làm chúng thành việc hệ thống tự làm.",
+      "doan_goc": "docs/quy-trinh-sop.md, dòng C2, C3, C6, C8; scripts/gd2/quy-trinh.js",
+      "do_chac": null
+    },
+    {
+      "id": "Q09",
+      "phan": "ud",
+      "muc_tieu": "M3",
+      "muc_nhan_thuc": "phan_tich",
+      "do_kho": "TB",
+      "loai": "mot_dap_an",
+      "cau_hoi": "Trong file mẫu cũ của nhóm, cả hai nhánh Có và Không của cổng \"Khách đồng ý?\" cùng chảy vào end event tên \"Kết thúc\". Cách sửa nào đúng quy ước?",
+      "dap_an": {
+        "A": "Đổi tên end event đó thành \"Kết thúc quy trình lead\" cho bớt chung chung hơn",
+        "B": "Giữ một end event, đặt tên \"Lead đã được xử lý\" cho cả hai nhánh cùng chảy vào",
+        "C": "Bỏ end event đó đi, vì BPMN cho phép một quy trình không có sự kiện kết thúc",
+        "D": "Tách thành hai end event nêu kết quả: \"Lead đã thành cơ hội\" và \"Lead bị loại\""
+      },
+      "dung": [
+        "D"
+      ],
+      "loi_sai": {
+        "A": "tên vẫn không nói kết quả nào",
+        "B": "động từ chung \"đã xử lý\" gộp thành và bại làm một",
+        "C": "bỏ mất thông tin kết quả; Camunda khuyên luôn vẽ rõ start và end"
+      },
+      "giai_thich": "Hai kết quả khác nhau (khách mua, khách không mua) cần hai end event khác nhau và mỗi tên nêu trạng thái đạt được. Đổi tên \"Kết thúc\" thành \"Kết thúc quy trình lead\" hay \"Lead đã được xử lý\" vẫn không cho biết khách mua hay không. Bỏ end event: đặc tả BPMN cho phép nhưng sơ đồ mất đi thông tin về kết quả, và Camunda khuyên luôn vẽ rõ cả start lẫn end event.",
+      "doan_goc": "mau/mau-bpmn-2-lane.bpmn; Camunda 16 và 17 (Modeling start and end events)",
+      "do_chac": null
+    },
+    {
+      "id": "Q10",
+      "phan": "ud",
+      "muc_tieu": "M3",
+      "muc_nhan_thuc": "phan_tich",
+      "do_kho": "TB",
+      "loai": "mot_dap_an",
+      "cau_hoi": "Trong sơ đồ Khiếu nại và đổi trả, nút nào vẽ là manual task, và vì sao?",
+      "dap_an": {
+        "A": "\"Ghi nhận khiếu nại\", vì nhân viên nghe điện thoại rồi ghi ra giấy",
+        "B": "\"Từ chối đổi trả\", vì đó là một quyết định chứ không tạo bản ghi nào",
+        "C": "\"Gửi hàng về kho\", vì khách tự làm ngoài Frappe, không qua màn hình nào",
+        "D": "\"Kiểm tra hàng nhận về\", vì kho phải cầm hàng lên xem bằng tay, không dùng máy"
+      },
+      "dung": [
+        "C"
+      ],
+      "loi_sai": {
+        "A": "bịa ra cách làm ngoài hệ thống; nhóm ghi khiếu nại bằng ghi chú trên Frappe",
+        "B": "nhầm quyết định (cổng) với việc thủ công",
+        "D": "nhầm việc có ghi kết quả vào hệ thống với việc không dùng hệ thống"
+      },
+      "giai_thich": "Trong sơ đồ này chỉ có một manual task: \"Gửi hàng về kho\", nằm ở lane Khách hàng (biểu tượng bàn tay) vì khách tự đóng gói và gửi, không dùng Frappe. \"Ghi nhận khiếu nại\" là user task: nhóm ghi bằng ghi chú trên deal. \"Từ chối đổi trả\" là task của người (có CRM Task), còn quyết định nằm ở cổng phía trước. \"Kiểm tra hàng nhận về\" tuy cần cầm hàng nhưng kết quả được ghi bằng CRM Task và ghi chú nên vẽ là user task.",
+      "doan_goc": "docs/quy-trinh-sop.md, dòng K1, K4, K5, K7; scripts/gd2/quy-trinh.js",
+      "do_chac": null
+    },
+    {
+      "id": "Q11",
+      "phan": "ud",
+      "muc_tieu": "M3",
+      "muc_nhan_thuc": "phan_tich",
+      "do_kho": "TB",
+      "loai": "nhieu_dap_an",
+      "cau_hoi": "Chọn 2 phát biểu đúng về sơ đồ Khiếu nại và đổi trả của nhóm (3 lane, 13 nút).",
+      "dap_an": {
+        "A": "Có hai cổng XOR, tên mỗi cổng là một câu hỏi và nhánh ra ghi Có hoặc Không",
+        "B": "Có một service task, là bước kho tự tạo lệnh gửi hàng đổi cho khách",
+        "C": "Start event nằm ở lane Kho - Giao hàng vì kho là nơi nhận yêu cầu đầu tiên",
+        "D": "Có ba end event, mỗi end event nêu một kết quả nghiệp vụ khác nhau của quy trình"
+      },
+      "dung": [
+        "A",
+        "D"
+      ],
+      "loi_sai": {
+        "B": "nhầm: sơ đồ này không có service task; service task chỉ có ở sơ đồ chung và đại lý",
+        "C": "nhầm: start event \"Khách gửi yêu cầu đổi trả\" nằm ở lane Khách hàng"
+      },
+      "giai_thich": "Sơ đồ có 13 nút: 1 start (lane Khách hàng), 6 user task, 1 manual task, 2 cổng XOR (đều đặt tên là câu hỏi, nhánh Có và Không) và 3 end event (Yêu cầu đổi trả bị từ chối, Hàng cũ đã trả lại khách, Hàng đổi đã giao cho khách). Không có service task: service task duy nhất ở các sơ đồ cá nhân là \"Giao lead cho nhân viên\" của sơ đồ đại lý.",
+      "doan_goc": "scripts/gd2/quy-trinh.js (sơ đồ Khiếu nại và đổi trả); anh/bpmn-doi-tra.png",
+      "do_chac": null
+    },
+    {
+      "id": "Q12",
+      "phan": "da",
+      "muc_tieu": "M4",
+      "muc_nhan_thuc": "hieu",
+      "do_kho": "TB",
+      "loai": "mot_dap_an",
+      "cau_hoi": "Vì sao nhóm sinh file .bpmn bằng script từ bảng dữ liệu thay vì vẽ tay từng sơ đồ?",
+      "dap_an": {
+        "A": "Frappe CRM nạp file .bpmn do script sinh ra nhưng từ chối file vẽ tay",
+        "B": "Sửa một chỗ trong bảng là có lại đủ năm file; script tự báo nút đè nhau",
+        "C": "Camunda Modeler không lưu được file .bpmn có nhiều lane trong một pool",
+        "D": "Đặc tả BPMN yêu cầu bố cục sơ đồ phải do máy tính toán, không do người vẽ"
+      },
+      "dung": [
+        "B"
+      ],
+      "loi_sai": {
+        "A": "nhầm: Frappe CRM không nạp file .bpmn nào",
+        "C": "gán cho công cụ một hạn chế không có",
+        "D": "nhầm: đặc tả không quy định cách tạo bố cục"
+      },
+      "giai_thich": "Lý do thật: lặp lại được (đổi tên hay thêm nhánh ở bảng dữ liệu rồi chạy lại) và có kiểm tra tự động lỗi bố cục. Frappe CRM không đọc file .bpmn nên cách sinh file không liên quan tới việc Frappe nạp. Camunda Modeler lưu bình thường nhiều lane. Đặc tả BPMN quy định ký hiệu và cấu trúc, không quy định ai tạo bố cục.",
+      "doan_goc": "docs/phase-report.md mục 2.1; scripts/gd2/sinh-bpmn.js",
+      "do_chac": null
+    },
+    {
+      "id": "Q13",
+      "phan": "da",
+      "muc_tieu": "M4",
+      "muc_nhan_thuc": "nho",
+      "do_kho": "De",
+      "loai": "mot_dap_an",
+      "cau_hoi": "Ảnh PNG của năm sơ đồ trong thư mục Nop-bai được xuất bằng công cụ nào?",
+      "dap_an": {
+        "A": "bpmn-js 18.33.1 trong Edge ẩn, chụp qua giao thức DevTools",
+        "B": "Camunda Modeler 5.51.1, menu File rồi Export, chọn PNG",
+        "C": "bpmn-js 17.9.2 trong Chrome, bấm nút Save as image",
+        "D": "Export của Frappe CRM 16.0.1 với hệ số phóng 1,5"
+      },
+      "dung": [
+        "A"
+      ],
+      "loi_sai": {
+        "B": "nhầm với công cụ nhóm đã cài nhưng chưa dùng để xuất ảnh",
+        "C": "bịa phiên bản và cách xuất khác với script nhóm viết",
+        "D": "Frappe CRM không có bộ vẽ hay xuất BPMN"
+      },
+      "giai_thich": "phase-report mục 2.2: scripts/gd2/xuat-png.js nạp từng file vào bpmn-js 18.33.1 trong Edge chạy ẩn, chụp bằng DevTools hệ số 1,5. Ảnh không xuất bằng Camunda Modeler (nhóm đã cài 5.51.1 nhưng chưa mở 5 file này để xác nhận). Frappe CRM không có chức năng xuất BPMN. Hệ số 1,5 là của script nhóm, không phải của Frappe.",
+      "doan_goc": "docs/phase-report.md mục 2.2; scripts/gd2/xuat-png.js",
+      "do_chac": null
+    },
+    {
+      "id": "Q14",
+      "phan": "da",
+      "muc_tieu": "M4",
+      "muc_nhan_thuc": "phan_tich",
+      "do_kho": "Kho",
+      "loai": "mot_dap_an",
+      "cau_hoi": "Thầy hỏi: \"Sao nhóm vẽ Khách hàng thành lane thay vì pool riêng?\" Câu trả lời nào vừa đúng vừa trung thực?",
+      "dap_an": {
+        "A": "Nhóm chọn lane vì đặc tả BPMN yêu cầu các bên của một quy trình nằm trong cùng một pool",
+        "B": "Nhóm chọn lane vì pool riêng cho khách cần file BPMN chạy trên engine Camunda",
+        "C": "Nhóm chọn lane vì Frappe CRM quy định bên ngoài tổ chức được vẽ bằng lane",
+        "D": "Nhóm chọn lane vì ít đường chéo hơn; pool riêng nối bằng message flow là cách khác cũng hợp lệ"
+      },
+      "dung": [
+        "D"
+      ],
+      "loi_sai": {
+        "A": "đặc tả cho phép nhiều pool; không bắt buộc",
+        "B": "bịa điều kiện kỹ thuật cho pool riêng",
+        "C": "Frappe không liên quan tới ký hiệu BPMN"
+      },
+      "giai_thich": "Trả lời đúng: đây là quyết định đơn giản hóa của nhóm (hiến chương liệt kê Khách hàng trong danh sách lane); cách khác là pool riêng nối bằng message flow, vẫn hợp lệ. BPMN cho phép nhiều pool, không bắt buộc dồn các bên vào một pool. Pool riêng không cần engine. Frappe CRM không có quy định nào về ký hiệu BPMN.",
+      "doan_goc": "docs/case-study-hien-chuong.md mục 3; OMG BPMN 2.0.2 trang PDF 57",
+      "do_chac": null
+    },
+    {
+      "id": "Q15",
+      "phan": "da",
+      "muc_tieu": "M4",
+      "muc_nhan_thuc": "van_dung",
+      "do_kho": "Kho",
+      "loai": "mot_dap_an",
+      "cau_hoi": "Thầy hỏi: \"File .bpmn của nhóm nhắm tới Camunda 7 hay 8?\" Câu trả lời nào đúng với bằng chứng trong chính file?",
+      "dap_an": {
+        "A": "Camunda 7: file mang camunda:historyTimeToLive và modeler:executionPlatform",
+        "B": "Camunda 8: file mang zeebe:taskDefinition cho từng task và isExecutable=\"true\"",
+        "C": "Chưa gắn engine: BPMN 2.0 thuần, không có camunda: hay zeebe:, isExecutable=\"false\"",
+        "D": "Cả hai: file giữ cả camunda: lẫn zeebe: để chạy được trên engine nào cũng được"
+      },
+      "dung": [
+        "C"
+      ],
+      "loi_sai": {
+        "A": "bịa thuộc tính; tìm trong 5 file không thấy thuộc tính nào của Camunda",
+        "B": "bịa thuộc tính; file ghi isExecutable=\"false\"",
+        "D": "bịa thuộc tính; file không chứa thuộc tính của engine nào"
+      },
+      "giai_thich": "Mình tìm \"camunda\" và \"zeebe\" trong cả 5 file .bpmn, 0 kết quả; mỗi file ghi isExecutable=\"false\". Nên file là BPMN 2.0 thuần, để đọc, chưa gắn engine. Camunda Modeler hỗ trợ cả hai loại engine và chọn khi tạo file; 5 file này do script sinh chứ không tạo trong Modeler. Chỉ file mẫu cũ (tạo trong Modeler) chọn \"Camunda 7\".",
+      "doan_goc": "Nop-bai/Nhóm 04 - Đồ án CRM/*.bpmn; Camunda 02-camunda-desktop-modeler.txt",
+      "do_chac": null
+    },
+    {
+      "id": "Q16",
+      "phan": "da",
+      "muc_tieu": "M4",
+      "muc_nhan_thuc": "phan_tich",
+      "do_kho": "TB",
+      "loai": "mot_dap_an",
+      "cau_hoi": "Khi nhóm chạy thật quy trình chung, việc nào trong sơ đồ do chính Frappe CRM tự thực hiện?",
+      "dap_an": {
+        "A": "\"Cần duyệt chiết khấu?\": Frappe tự chặn deal khi chiết khấu vượt ngưỡng",
+        "B": "\"Giao lead cho nhân viên\": Assignment Rule điền chủ sở hữu lead",
+        "C": "\"Chuyển lead thành cơ hội\": Frappe tự làm khi lead đạt trạng thái Qualified",
+        "D": "\"Đóng gói và giao hàng\": module kho của Frappe tự tạo lệnh giao hàng"
+      },
+      "dung": [
+        "B"
+      ],
+      "loi_sai": {
+        "A": "nhầm: Frappe CRM không có luồng duyệt chiết khấu; nhóm ghi bằng CRM Task",
+        "C": "nhầm: người dùng phải bấm nút Convert to Deal",
+        "D": "nhầm: Frappe CRM không có module kho"
+      },
+      "giai_thich": "Chỉ nút \"Giao lead cho nhân viên\" là Frappe tự làm (Assignment Rule). Cổng duyệt chiết khấu không có trong Frappe CRM 16.0.1: nhóm ghi bằng CRM Task giao Quản lý. Chuyển lead thành cơ hội là một thao tác của người (nút Convert to Deal). Đóng gói và giao hàng: Frappe CRM không có module kho nên nhóm ghi bằng CRM Task và ghi chú.",
+      "doan_goc": "docs/phase-report.md mục 2.3 (a); docs/quy-trinh-sop.md dòng C2, C5, C8, C10",
+      "do_chac": null
+    }
+  ]
+}

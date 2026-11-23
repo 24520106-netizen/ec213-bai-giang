@@ -1,0 +1,429 @@
+{
+  "tieu_de": "Trắc nghiệm bài 2.6: Chạy thật, truy vết và kiểm chứng quy trình",
+  "muc_dich": "tu_hoc",
+  "che_do_cham": "tung_phan",
+  "muc_tieu": {
+    "M1": "Phân biệt xác minh với kiểm chứng và chọn cách kiểm chứng yêu cầu, mô hình (test trên sơ đồ, giá trị biên)",
+    "M2": "Giải thích truy vết và các bước quản lý thay đổi sau khi đã có baseline",
+    "M3": "Đọc và dùng bảng truy vết của nhóm với số liệu 48 bước, 15 lead, 8 deal và 31 ảnh",
+    "M4": "Giải thích cách nhóm chạy thật, những sai sót đã phát hiện và mức kiểm chứng thực sự đạt được"
+  },
+  "cau_hoi": [
+    {
+      "id": "Q01",
+      "phan": "kt",
+      "muc_tieu": "M1",
+      "muc_nhan_thuc": "phan_tich",
+      "do_kho": "TB",
+      "loai": "mot_dap_an",
+      "cau_hoi": "Một đội đã chạy hết test tự động, mã khớp thiết kế, thiết kế khớp tài liệu yêu cầu mà quản lý đã ký duyệt. Họ chưa hỏi người dùng thật xem bộ yêu cầu có đúng nhu cầu không. Nhận định nào đúng?",
+      "dap_an": {
+        "A": "Đội đã kiểm chứng đầy đủ, vì quản lý đã ký duyệt tài liệu và các test đều đạt",
+        "B": "Đội chưa làm xác minh gì, vì xác minh diễn ra sau khi người dùng dùng thử sản phẩm",
+        "C": "Đội đã kiểm chứng phần mã, còn phần tài liệu yêu cầu thì không cần kiểm chứng nữa",
+        "D": "Đội đã xác minh được làm đúng cách, nhưng chưa kiểm chứng được làm đúng việc"
+      },
+      "dung": [
+        "D"
+      ],
+      "loi_sai": {
+        "A": "coi ký duyệt và test đạt là kiểm chứng",
+        "B": "đảo nghĩa xác minh và kiểm chứng",
+        "C": "quên rằng yêu cầu chính là đối tượng của kiểm chứng"
+      },
+      "giai_thich": "Xác minh (verification) kiểm tra làm đúng cách: mã đạt test, mã khớp thiết kế, thiết kế khớp yêu cầu. Kiểm chứng (validation) kiểm tra làm đúng việc: yêu cầu có đáp ứng nhu cầu của người dùng và mục tiêu của doanh nghiệp không, và cần người cung cấp thông tin. Chữ ký duyệt là hành động phê duyệt, chưa chứng minh yêu cầu đúng nhu cầu. Đội đã làm xác minh nhưng chưa kiểm chứng. Xác minh không phải bước sau khi người dùng dùng thử, và đối tượng chính của kiểm chứng là yêu cầu.",
+      "doan_goc": "Wiegers & Hokanson, Chương 6, thực hành #18, tr. 1–3",
+      "do_chac": null
+    },
+    {
+      "id": "Q02",
+      "phan": "kt",
+      "muc_tieu": "M1",
+      "muc_nhan_thuc": "van_dung",
+      "do_kho": "Kho",
+      "loai": "mot_dap_an",
+      "cau_hoi": "Test: \"Cho giỏ hàng trống, khi khách từ chối thêm bánh, thì quy trình dừng.\" Khi đi theo test này trên sơ đồ quy trình, đường đi lại tới bước \"Gửi báo giá\" cho giỏ trống. Kết luận hợp lý nhất là gì?",
+      "dap_an": {
+        "A": "Sơ đồ thiếu nhánh hoặc sai; cần vẽ lại để test tới được kết quả dừng quy trình",
+        "B": "Test viết sai; cần sửa lại test cho khớp với sơ đồ hiện có của quy trình",
+        "C": "Bỏ qua, vì giỏ hàng trống là tình huống rất hiếm khi xảy ra trong thực tế bán bánh",
+        "D": "Thêm task \"Xử lý giỏ trống\" ngay sau task \"Gửi báo giá\" để nối vào đường chính"
+      },
+      "dung": [
+        "A"
+      ],
+      "loi_sai": {
+        "B": "sửa test cho khớp sơ đồ thay vì xét sơ đồ có sai không",
+        "C": "bỏ qua ngoại lệ chỉ vì hiếm",
+        "D": "thêm task chung chung đặt sau chỗ sai mà không sửa chỗ rẽ"
+      },
+      "giai_thich": "Khi một test không đi được trên mô hình, hoặc đi tới kết quả vô lý, thì hoặc test sai hoặc mô hình sai hoặc thiếu. Ở đây test hợp lý (giỏ trống thì không nên gửi báo giá) nên lỗi nằm ở sơ đồ, cần vẽ lại chỗ rẽ trước bước báo giá. Sửa test cho khớp sơ đồ giấu lỗi. Bỏ qua vì hiếm là bỏ qua ngoại lệ có thật. Thêm task \"Xử lý…\" sau bước báo giá thì báo giá rỗng vẫn đã bị gửi.",
+      "doan_goc": "Wiegers & Hokanson, Chương 6, thực hành #18, tr. 11–13 (ví dụ giỏ hàng trống trên process flow)",
+      "do_chac": null
+    },
+    {
+      "id": "Q03",
+      "phan": "kt",
+      "muc_tieu": "M1",
+      "muc_nhan_thuc": "van_dung",
+      "do_kho": "TB",
+      "loai": "mot_dap_an",
+      "cau_hoi": "Yêu cầu: mỗi đơn đặt bánh có từ 1 đến 20 chiếc. Bộ giá trị nào kiểm tra biên đúng theo phân tích giá trị biên?",
+      "dap_an": {
+        "A": "1, 2, 3, 18, 19, 20",
+        "B": "0, 5, 10, 15, 20, 25",
+        "C": "0, 1, 2, 19, 20, 21",
+        "D": "-1, 0, 21, 22, 100, 1000"
+      },
+      "dung": [
+        "C"
+      ],
+      "loi_sai": {
+        "A": "chỉ lấy giá trị trong khoảng sát biên, thiếu giá trị ngoài khoảng",
+        "B": "lấy mốc cách đều, không nhắm vào hai biên",
+        "D": "chỉ lấy giá trị cực đoan ngoài khoảng, thiếu giá trị hợp lệ ở biên"
+      },
+      "giai_thich": "Phân tích giá trị biên kiểm quanh hai đầu khoảng: ngay ngoài, ngay biên và ngay trong biên. Với 1 đến 20 là 0, 1, 2 và 19, 20, 21. Bộ chỉ có giá trị trong khoảng bỏ sót các giá trị ngoài khoảng (0 và 21). Bộ cách đều không nhắm vào biên nên bỏ sót chỗ lỗi hay dồn. Bộ chỉ ngoài khoảng thiếu mọi giá trị hợp lệ ở biên (1, 2, 19, 20).",
+      "doan_goc": "Wiegers & Hokanson, Chương 6, thực hành #18, tr. 14–15 (lớp tương đương và giá trị biên)",
+      "do_chac": null
+    },
+    {
+      "id": "Q04",
+      "phan": "kt",
+      "muc_tieu": "M2",
+      "muc_nhan_thuc": "hieu",
+      "do_kho": "De",
+      "loai": "mot_dap_an",
+      "cau_hoi": "Truy vết yêu cầu (requirements traceability) nghĩa là gì?",
+      "dap_an": {
+        "A": "Theo dõi thời gian từng thành viên đã làm cho mỗi yêu cầu trong dự án",
+        "B": "Ghi lại mối nối từ yêu cầu ngược về nguồn gốc và xuôi tới thiết kế, mã, test",
+        "C": "Lưu các phiên bản cũ của tài liệu yêu cầu để quay lại khi cần thiết",
+        "D": "Rà chính tả và độ thống nhất thuật ngữ trong tài liệu yêu cầu của nhóm trước khi chốt"
+      },
+      "dung": [
+        "B"
+      ],
+      "loi_sai": {
+        "A": "nhầm với theo dõi công việc và thời gian",
+        "C": "nhầm với quản lý phiên bản",
+        "D": "nhầm với soát xét ngôn ngữ"
+      },
+      "giai_thich": "Truy vết là ghi lại và giữ được các mối nối: ngược về nguồn gốc (ai, quy tắc nào đòi yêu cầu này) và xuôi tới thiết kế, mã, test và yêu cầu liên quan. Theo dõi thời gian là việc quản lý công việc. Lưu phiên bản là quản lý phiên bản, một hoạt động khác của quản lý yêu cầu. Rà chính tả là một dạng soát xét, không tạo ra mối nối nào.",
+      "doan_goc": "Wiegers & Hokanson, Chương 7, tr. 1–2 (các hoạt động quản lý yêu cầu)",
+      "do_chac": null
+    },
+    {
+      "id": "Q05",
+      "phan": "kt",
+      "muc_tieu": "M2",
+      "muc_nhan_thuc": "van_dung",
+      "do_kho": "TB",
+      "loai": "mot_dap_an",
+      "cau_hoi": "Đội đã chốt baseline cho đợt phát hành. Giữa đợt, khách đề nghị đổi một yêu cầu. Cách xử lý nào đúng theo sách?",
+      "dap_an": {
+        "A": "Từ chối ngay, vì baseline đã chốt nghĩa là không được đổi nữa trong suốt đợt phát hành này",
+        "B": "Sửa ngay theo ý khách rồi ghi vào tài liệu yêu cầu sau khi đã làm xong phần mã",
+        "C": "Để chính khách tự duyệt, vì họ hiểu rõ nhu cầu của mình hơn bất kỳ ai trong đội",
+        "D": "Ghi nhận đề nghị, đánh giá tác động, người có thẩm quyền quyết định rồi cập nhật baseline"
+      },
+      "dung": [
+        "D"
+      ],
+      "loi_sai": {
+        "A": "coi baseline là đóng băng; sách nói chốt không có nghĩa là đóng băng",
+        "B": "bỏ qua quy trình kiểm soát thay đổi",
+        "C": "người gửi tự duyệt thì thiếu cân nhắc chi phí và tác động"
+      },
+      "giai_thich": "Theo sách: baseline chốt không có nghĩa là đóng băng; cần một quy trình thay đổi nhẹ mà có thật: nhận đề nghị, đánh giá tác động, người có thẩm quyền quyết định, nếu duyệt thì cập nhật baseline và báo người liên quan. Từ chối mọi thay đổi gây tính năng vô dụng. Sửa trước ghi sau gây hỗn loạn và mất truy vết. Người đề nghị tự duyệt thì không ai cân nhắc chi phí và hệ quả cho các phần khác.",
+      "doan_goc": "Wiegers & Hokanson, Chương 7, thực hành #20, tr. 14–19",
+      "do_chac": null
+    },
+    {
+      "id": "Q06",
+      "phan": "kt",
+      "muc_tieu": "M2",
+      "muc_nhan_thuc": "van_dung",
+      "do_kho": "TB",
+      "loai": "mot_dap_an",
+      "cau_hoi": "Một đề nghị thay đổi vừa được người có thẩm quyền duyệt. Trạng thái hợp lý kế tiếp trong vòng đời theo sách là gì?",
+      "dap_an": {
+        "A": "Được đưa vào giải pháp, sau đó được xác minh rồi mới đóng",
+        "B": "Đã đóng ngay, vì quyết định duyệt là bước cuối của đề nghị",
+        "C": "Quay lại trạng thái đã gửi để đánh giá tác động lần nữa",
+        "D": "Chờ đánh giá tác động, vì phải biết tác động thì mới được duyệt"
+      },
+      "dung": [
+        "A"
+      ],
+      "loi_sai": {
+        "B": "bỏ qua việc đưa vào giải pháp và xác minh",
+        "C": "lùi lại bước đã xong",
+        "D": "đảo thứ tự: đánh giá tác động xảy ra trước quyết định, không phải sau"
+      },
+      "giai_thich": "Vòng đời đề nghị theo sách: đã gửi, được đánh giá tác động, duyệt hoặc từ chối, nếu duyệt thì được đưa vào giải pháp, được xác minh rồi đóng. Sau khi duyệt chưa thể đóng vì thay đổi chưa được thực hiện và kiểm. Quay về trạng thái đã gửi hoặc đánh giá tác động là lùi bước. Đánh giá tác động đã xảy ra trước khi duyệt.",
+      "doan_goc": "Wiegers & Hokanson, Chương 7, thực hành #20, tr. 21–22 (vòng đời đề nghị thay đổi)",
+      "do_chac": null
+    },
+    {
+      "id": "Q07",
+      "phan": "ud",
+      "muc_tieu": "M3",
+      "muc_nhan_thuc": "nho",
+      "do_kho": "De",
+      "loai": "mot_dap_an",
+      "cau_hoi": "Tệp chay-thu.json ghi lại bao nhiêu bước chạy thật của năm quy trình?",
+      "dap_an": {
+        "A": "31",
+        "B": "48",
+        "C": "75",
+        "D": "81"
+      },
+      "dung": [
+        "B"
+      ],
+      "loi_sai": {
+        "A": "nhầm với số ảnh minh chứng",
+        "C": "nhầm với tổng số lead sau khi chạy",
+        "D": "nhầm với tổng số nút của năm sơ đồ"
+      },
+      "giai_thich": "Số bước ghi nhận: chung 14, đại lý 12, đổi trả 8, marketing 6, online 8, cộng 48 (đếm bằng lệnh từ chay-thu.json). 31 là số ảnh khác nhau trong anh.json. 75 là tổng số lead trong hệ thống sau khi chạy (60 của GĐ1 cộng 15). 81 là tổng số nút của năm sơ đồ BPMN.",
+      "doan_goc": "evidence/A4-3/chay-thu.json; evidence/A4-3/anh.json; docs/phase-report.md mục 2.3",
+      "do_chac": null
+    },
+    {
+      "id": "Q08",
+      "phan": "ud",
+      "muc_tieu": "M3",
+      "muc_nhan_thuc": "van_dung",
+      "do_kho": "TB",
+      "loai": "mot_dap_an",
+      "cau_hoi": "Nhóm đã tạo thêm bao nhiêu lead và deal thử ở GĐ2 (không tính dữ liệu của GĐ1)?",
+      "dap_an": {
+        "A": "75 lead và 38 deal",
+        "B": "10 lead và 8 deal",
+        "C": "15 lead và 8 deal",
+        "D": "15 lead và 12 deal"
+      },
+      "dung": [
+        "C"
+      ],
+      "loi_sai": {
+        "A": "nhầm tổng sau khi chạy (đã cộng GĐ1) với số tạo thêm",
+        "B": "chỉ đếm lead có tên trong chay-thu.json, bỏ sót các lead không được nêu ở bước nào",
+        "D": "cộng nhầm deal của GĐ1 được dùng lại trong quy trình đổi trả"
+      },
+      "giai_thich": "Nhật ký phase-report mục 2.3: 15 lead (CRM-LEAD-2026-00073 đến 00087) và 8 deal (CRM-DEAL-2026-00031 đến 00038). Tổng trong hệ thống sau chạy là 75 lead và 38 deal vì cộng thêm 60 lead và 30 deal của GĐ1. Chay-thu.json chỉ nhắc 10 lead theo mã (vài lead chỉ xuất hiện qua deal của chúng). Quy trình đổi trả dùng lại deal 00031 của quy trình chung chứ không thêm deal GĐ1.",
+      "doan_goc": "docs/phase-report.md mục 2.3",
+      "do_chac": null
+    },
+    {
+      "id": "Q09",
+      "phan": "ud",
+      "muc_tieu": "M3",
+      "muc_nhan_thuc": "hieu",
+      "do_kho": "TB",
+      "loai": "mot_dap_an",
+      "cau_hoi": "Các bước C7, C14, K1, K2, K4 và K8 cùng trỏ tới ảnh C07_deals_notes.png. Giải thích nào đúng?",
+      "dap_an": {
+        "A": "Sáu bước đó thực ra là cùng một nút trên sơ đồ nên được dùng chung một ảnh",
+        "B": "Nhóm chụp nhầm và chưa kịp chụp lại ảnh riêng cho từng bước một trong sáu bước đó",
+        "C": "Mỗi bước được chụp ngay lúc xảy ra, vì cùng trang nên các ảnh giống hệt nhau",
+        "D": "Ảnh chụp sau khi chạy xong; thẻ Ghi chú của deal 00031 có ghi chú của cả sáu bước"
+      },
+      "dung": [
+        "D"
+      ],
+      "loi_sai": {
+        "A": "nhầm: sáu bước thuộc nhiều nút và nhiều quy trình",
+        "B": "cho là lỗi chụp, trong khi script cố ý chỉ chụp một lần cho mỗi màn hình",
+        "C": "tưởng ảnh chụp ngay từng bước, trong khi chụp sau cùng"
+      },
+      "giai_thich": "gd2-02-chup.py chụp sau khi chạy xong và chỉ chụp một lần cho mỗi đường dẫn màn hình cùng thẻ; mọi bước có cùng deal 00031 và cùng thẻ Ghi chú thì dùng chung ảnh. Hệ quả: ảnh chứng minh bản ghi tồn tại, không chứng minh thời điểm. Sáu bước này thuộc nhiều nút (C7, C14) và nhiều quy trình (chung và đổi trả). Đó không phải lỗi chụp mà là chủ ý của script.",
+      "doan_goc": "scripts/gd2-02-chup.py; evidence/A4-3/anh.json; docs/phase-report.md mục 2.4",
+      "do_chac": null
+    },
+    {
+      "id": "Q10",
+      "phan": "ud",
+      "muc_tieu": "M3",
+      "muc_nhan_thuc": "phan_tich",
+      "do_kho": "TB",
+      "loai": "mot_dap_an",
+      "cau_hoi": "Muốn xem bằng chứng cho nút \"Lead bị loại\" của sơ đồ chung (bước C12), bạn mở bản ghi nào?",
+      "dap_an": {
+        "A": "Lead CRM-LEAD-2026-00074: Unqualified, ảnh C12_leads_activity.png",
+        "B": "Deal CRM-DEAL-2026-00032: Lost, ảnh C13_deals_activity.png",
+        "C": "Lead CRM-LEAD-2026-00073: Qualified, ảnh C04_leads_notes.png",
+        "D": "Deal CRM-DEAL-2026-00031: Won, ảnh C05_deals_activity.png"
+      },
+      "dung": [
+        "A"
+      ],
+      "loi_sai": {
+        "B": "nhầm với nút Deal thất bại (bước C13)",
+        "C": "lấy lead của đường suôn sẻ thay vì lead bị loại",
+        "D": "lấy deal của đường suôn sẻ thay vì lead bị loại"
+      },
+      "giai_thich": "Bảng truy vết ghi C12: lead [GĐ2] Phạm Văn Bình (CRM-LEAD-2026-00074) bị loại với trạng thái Unqualified và lý do \"Chưa có nhu cầu\". Deal 00032 là nút Deal thất bại (C13). Lead 00073 và deal 00031 là đường suôn sẻ của quy trình chung, không phải ngoại lệ lead bị loại.",
+      "doan_goc": "docs/quy-trinh-sop.md dòng C4, C12, C13; evidence/A4-3/chay-thu.json",
+      "do_chac": null
+    },
+    {
+      "id": "Q11",
+      "phan": "ud",
+      "muc_tieu": "M3",
+      "muc_nhan_thuc": "phan_tich",
+      "do_kho": "TB",
+      "loai": "nhieu_dap_an",
+      "cau_hoi": "Chọn 2 phát biểu đúng về độ phủ của bảng truy vết của nhóm.",
+      "dap_an": {
+        "A": "Các end event đều đã chạy thử bằng dữ liệu riêng, kể cả giao thất bại và trả hàng cũ",
+        "B": "Tên của 42 task, 14 cổng có tên và các end event đều có trong quy-trinh-sop.md",
+        "C": "Việc tên nút có trong bảng chứng minh hàng đó có ảnh đúng và bản ghi đã được kiểm",
+        "D": "Đa số end event có dữ liệu thử riêng; hai end event còn lại chưa có dữ liệu riêng"
+      },
+      "dung": [
+        "B",
+        "D"
+      ],
+      "loi_sai": {
+        "A": "bỏ qua hai nhánh quy trình viết ghi là chưa có dữ liệu thử riêng",
+        "C": "nhầm so khớp tên với việc kiểm ảnh và bản ghi"
+      },
+      "giai_thich": "Mình kiểm bằng lệnh: tên của 42 task, 14 cổng có tên và 19 end event đều xuất hiện trong quy-trinh-sop.md; đối chiếu ngoại lệ thì 17 trên 19 end event có dữ liệu thử riêng, hai chỗ thiếu là \"Đơn giao thất bại\" của sơ đồ chung (ghi như quy trình Đơn hàng online) và \"Hàng cũ đã trả lại khách\" của sơ đồ đổi trả. So khớp tên chỉ cho biết nút có hàng trong bảng, không chứng minh hàng nào cũng có ảnh đúng.",
+      "doan_goc": "docs/quy-trinh-sop.md dòng C10, K6; scripts/gd2/quy-trinh.js",
+      "do_chac": null
+    },
+    {
+      "id": "Q12",
+      "phan": "da",
+      "muc_tieu": "M4",
+      "muc_nhan_thuc": "hieu",
+      "do_kho": "TB",
+      "loai": "mot_dap_an",
+      "cau_hoi": "Vì sao nhóm chạy thật bằng script gọi REST thay vì bấm tay từng bước?",
+      "dap_an": {
+        "A": "Giao diện Frappe CRM không cho tạo lead và deal bằng tay nên bắt buộc dùng script",
+        "B": "API xử lý đúng hệt như thao tác trên giao diện nên kết quả của hai cách giống nhau",
+        "C": "Script lặp lại được, mỗi bước để lại mã bản ghi và đường dẫn trong chay-thu.json",
+        "D": "Thầy yêu cầu phải dùng REST API để làm bài ở giai đoạn 2 của đồ án môn học"
+      },
+      "dung": [
+        "C"
+      ],
+      "loi_sai": {
+        "A": "bịa hạn chế: giao diện tạo được lead và deal bằng tay",
+        "B": "nhầm: nhóm đã thấy API khác giao diện ở xác suất deal Lost",
+        "D": "bịa một yêu cầu; việc gọi API ngoài là của giai đoạn 4"
+      },
+      "giai_thich": "Lý do thật: script lặp lại được và mỗi bước ghi mã bản ghi, đường dẫn màn hình vào chay-thu.json nên truy vết và đếm được. Giao diện Frappe CRM tạo lead và deal bằng tay được; nhóm chọn script cho tiện lặp lại và đối chiếu. API không phải lúc nào cũng hành xử như giao diện: ví dụ xác suất deal Lost. Ghi chú phản biện của thầy không có yêu cầu dùng REST ở giai đoạn 2; gọi API và webhook là việc giai đoạn 4.",
+      "doan_goc": "scripts/gd2-01-chay-thu.py; docs/phase-report.md mục 2.3",
+      "do_chac": null
+    },
+    {
+      "id": "Q13",
+      "phan": "da",
+      "muc_tieu": "M4",
+      "muc_nhan_thuc": "phan_tich",
+      "do_kho": "Kho",
+      "loai": "mot_dap_an",
+      "cau_hoi": "Nhóm đổi trạng thái deal sang Lost bằng API. Điều gì được quan sát, và nhóm xử lý thế nào?",
+      "dap_an": {
+        "A": "Deal tự chuyển sang Junk nên nhóm xóa các deal đó rồi tạo lại từ đầu bằng script",
+        "B": "Xác suất không tự về 0%; nhóm đặt lại 0% cho 4 deal Lost bằng một script",
+        "C": "Lead gốc tự về trạng thái Converted nên nhóm sửa tay từng lead một lần",
+        "D": "Lý do thất bại tự điền \"Giá cao\" nên nhóm đổi lại từng deal bằng tay"
+      },
+      "dung": [
+        "B"
+      ],
+      "loi_sai": {
+        "A": "bịa kết quả: deal không có trạng thái Junk, Junk là của lead",
+        "C": "nhầm với việc Convert to Deal, và Lost không đổi lead gốc",
+        "D": "bịa kết quả: script tự điền lý do, Frappe không điền hộ"
+      },
+      "giai_thich": "phase-report mục 2.3 (c): đổi trạng thái deal sang Lost bằng API không tự đặt xác suất 0%; script gd2-04-sua-xac-suat.py sửa 4 deal Lost. Deal Lost vẫn là Lost, không thành Junk (Junk là trạng thái của lead). Lead gốc không tự đổi trạng thái khi deal Lost. Lý do thất bại do chính script chay-thu điền theo kịch bản.",
+      "doan_goc": "docs/phase-report.md mục 2.3 (c); scripts/gd2-04-sua-xac-suat.py",
+      "do_chac": null
+    },
+    {
+      "id": "Q14",
+      "phan": "da",
+      "muc_tieu": "M4",
+      "muc_nhan_thuc": "van_dung",
+      "do_kho": "TB",
+      "loai": "mot_dap_an",
+      "cau_hoi": "Sau khi bấm Convert to Deal trong lúc chạy thật, lead gốc có trạng thái và trường converted thế nào?",
+      "dap_an": {
+        "A": "Trạng thái Converted, đồng thời converted = 1",
+        "B": "Trạng thái Qualified, đồng thời converted = 1",
+        "C": "Trạng thái Contacted, đồng thời converted = 1",
+        "D": "Trạng thái Won, đồng thời converted = 1"
+      },
+      "dung": [
+        "B"
+      ],
+      "loi_sai": {
+        "A": "tin vào tên trạng thái thay vì đọc trạng thái thật",
+        "C": "bịa việc hệ thống lùi về bước liên hệ",
+        "D": "nhầm trạng thái của deal với trạng thái của lead"
+      },
+      "giai_thich": "gd2-03-kiem-tra.py đọc lại thấy convert_to_deal đặt converted = 1 và đặt trạng thái lead thành Qualified (không phải Converted); mô tả ban đầu của script ghi sai là lead chuyển Converted và đã được sửa. Contacted là trạng thái trước Qualified. Won là trạng thái của deal chứ không phải của lead.",
+      "doan_goc": "docs/phase-report.md mục 2.3 (b) và đoạn lỗi mô tả; scripts/gd2-01-chay-thu.py",
+      "do_chac": null
+    },
+    {
+      "id": "Q15",
+      "phan": "da",
+      "muc_tieu": "M4",
+      "muc_nhan_thuc": "phan_tich",
+      "do_kho": "Kho",
+      "loai": "mot_dap_an",
+      "cau_hoi": "Thầy hỏi: \"Em đã kiểm chứng quy trình chưa?\" Câu trả lời nào đúng và trung thực nhất?",
+      "dap_an": {
+        "A": "Nhóm đã kiểm chứng gần như đầy đủ, vì các bước chạy thật đều thành công trong Frappe",
+        "B": "Nhóm đã kiểm chứng ở mức khá, vì thầy đã xem các sơ đồ trong buổi phản biện trên lớp",
+        "C": "Nhóm mới vẽ sơ đồ; việc chạy trong Frappe vẫn đang chờ thực hiện",
+        "D": "Nhóm đã chạy thử các nhánh bằng dữ liệu thử; việc soát xét với người của Biti's chưa làm"
+      },
+      "dung": [
+        "D"
+      ],
+      "loi_sai": {
+        "A": "coi chạy thử thành công là kiểm chứng đầy đủ",
+        "B": "coi sự phản biện của thầy là kiểm chứng và bịa việc thầy duyệt sơ đồ",
+        "C": "phủ nhận việc đã chạy thật trong Frappe"
+      },
+      "giai_thich": "Kiểm chứng đúng nghĩa cần người cung cấp thông tin và chuyên gia nghiệp vụ; nhóm không có đại diện Biti's. Nhóm đã chạy thử các nhánh bằng dữ liệu thử (17 trên 19 end event có dữ liệu riêng) và đối chiếu số liệu, chưa soát xét với người trong nghề và chưa chạy ca biên 7 ngày. Nói \"gần như đầy đủ\" thì quá lời; nói \"mới vẽ\" thì sai sự thật; ghi chú phản biện không nói thầy duyệt sơ đồ nào.",
+      "doan_goc": "docs/phase-report.md mục 2.3 và Còn lại; docs/ghi-chu-phan-bien-thay.md; Wiegers & Hokanson, Chương 6, tr. 1–5",
+      "do_chac": null
+    },
+    {
+      "id": "Q16",
+      "phan": "da",
+      "muc_tieu": "M4",
+      "muc_nhan_thuc": "van_dung",
+      "do_kho": "Kho",
+      "loai": "mot_dap_an",
+      "cau_hoi": "Giả sử đổi ngưỡng duyệt chiết khấu từ 10% sang 15%. Tìm chuỗi \"10%\" trong dự án, bạn thấy ở những tệp nào, và các file .bpmn có phải sinh lại không?",
+      "dap_an": {
+        "A": "Có ở quy-trinh.js, sinh-bpmn.js và các file .bpmn, nên phải sinh lại cả năm sơ đồ",
+        "B": "Có ở lib_frappe.py và phần cài đặt deal của Frappe CRM, nên tệp bài nộp không đổi",
+        "C": "Có ở sop-du-lieu.js, report-ch3.js, gd2-01-chay-thu.py và quy-trinh-sop.md; .bpmn không đổi",
+        "D": "Có ở xuat-png.js và chay-thu.json, nên phải xuất lại ảnh và chạy lại script"
+      },
+      "dung": [
+        "C"
+      ],
+      "loi_sai": {
+        "A": "tưởng ngưỡng được ghi trong tên cổng của sơ đồ",
+        "B": "gán ngưỡng cho Frappe, trong khi đây là giả định của nhóm",
+        "D": "nhầm: các tệp đó không chứa ngưỡng"
+      },
+      "giai_thich": "Chuỗi \"10%\" có ở sop-du-lieu.js (hàng C8), report-ch3.js, gd2-01-chay-thu.py (mô tả bước C7, tiêu đề và nội dung việc duyệt) và quy-trinh-sop.md (sinh từ sop-du-lieu.js). Tên cổng \"Cần duyệt chiết khấu?\" không chứa số nên quy-trinh.js và các file .bpmn không đổi. Frappe CRM không giữ ngưỡng này. Hệ quả thêm: hai lần duyệt 12% trong dữ liệu thử không còn cần duyệt vì 12% nhỏ hơn 15%.",
+      "doan_goc": "scripts/gd2/sop-du-lieu.js; scripts/gd2/report-ch3.js; scripts/gd2-01-chay-thu.py; docs/quy-trinh-sop.md",
+      "do_chac": null
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "id": "gd2-06",
+  "gd": "gd2",
+  "thu_tu": "2.6",
+  "tieu_de": "Chạy thật, truy vết và kiểm chứng quy trình",
+  "tom_tat": "Kiểm chứng (validation), truy vết và quản lý thay đổi theo sách Wiegers, rồi xem nhóm chạy thật 48 bước bằng script, lập bảng truy vết nút BPMN, màn hình Frappe, ảnh minh chứng, những sai sót tự phát hiện và việc còn lại.",
+  "muc_tieu_bai": [
+    "Phân biệt xác minh (verification) với kiểm chứng (validation), và nêu được các cách kiểm chứng yêu cầu và mô hình bằng soát xét và bằng test",
+    "Giải thích truy vết, đường truy vết xuôi và ngược, và các bước quản lý thay đổi sau khi đã có baseline",
+    "Đọc và dùng bảng truy vết của nhóm: nút BPMN, màn hình hoặc bản ghi Frappe, ảnh minh chứng, với số liệu 48 bước, 15 lead, 8 deal",
+    "Nói đúng nhóm đã chạy thật và kiểm lại thế nào, những sai sót nào đã tự phát hiện, và mức kiểm chứng thực sự đạt được"
+  ],
+  "nguon": [
+    { "ten": "Wiegers & Hokanson (2024), Software Requirements Essentials", "chi_tiet": "Chương 6, thực hành #18 \"Review and test the requirements\", tr. 1–17 trong bản trích của chương (xác minh và kiểm chứng, soát xét, test yêu cầu, test trên mô hình, tiêu chí chấp nhận, lớp tương đương, giá trị biên); Chương 7 mở đầu và thực hành #20 (truy vết, baseline, quản lý thay đổi), tr. 1–3 và 14–25" },
+    { "ten": "Tệp của nhóm", "chi_tiet": "docs/quy-trinh-sop.md (bảng truy vết); evidence/A4-3/chay-thu.json và anh.json; scripts/gd2-01-chay-thu.py, gd2-02-chup.py, gd2-03-kiem-tra.py, gd2-04-sua-xac-suat.py, gd2-05-cat-anh.py; docs/phase-report.md mục Giai đoạn 2 (2.3, 2.4 và Còn lại)" }
+  ]
+}

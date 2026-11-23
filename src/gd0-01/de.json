@@ -1,0 +1,403 @@
+{
+  "tieu_de": "Trắc nghiệm bài 0.1: CRM là gì và vì sao đồ án dùng Frappe CRM",
+  "muc_dich": "tu_hoc",
+  "che_do_cham": "tung_phan",
+  "muc_tieu": {
+    "M1": "Phân biệt ba dạng CRM, nhánh của CRM vận hành, vị trí của Social CRM và CRM 2.0 theo giáo trình",
+    "M2": "Nhận ra hiểu lầm về CRM, đọc đúng định nghĩa CRM và áp bốn bước IDIC vào số liệu",
+    "M3": "Đặt Frappe CRM và dữ liệu Biti's của đồ án vào đúng khái niệm CRM",
+    "M4": "Giải thích lựa chọn Frappe CRM, phạm vi giai đoạn 0 và ranh giới giữa Frappe với nhóm"
+  },
+  "cau_hoi": [
+    {
+      "id": "Q01",
+      "phan": "kt",
+      "muc_tieu": "M1",
+      "muc_nhan_thuc": "van_dung",
+      "do_kho": "De",
+      "loai": "mot_dap_an",
+      "cau_hoi": "Một chuỗi nhà sách quyết định thưởng nhân viên theo mức hài lòng của khách, và mỗi quý lãnh đạo họp bàn về khách hàng thay vì chỉ bàn doanh số. Việc này là biểu hiện của dạng CRM nào?",
+      "dap_an": {
+        "A": "CRM vận hành, vì liên quan đến cách nhân viên làm việc với khách hằng ngày",
+        "B": "CRM phân tích, vì cần đo mức hài lòng của khách để tính tiền thưởng",
+        "C": "CRM chiến lược, vì nói về văn hóa và thứ tự ưu tiên của cả công ty",
+        "D": "Social CRM, vì mục tiêu là cải thiện cảm nhận của khách về thương hiệu"
+      },
+      "dung": [
+        "C"
+      ],
+      "loi_sai": {
+        "A": "nhầm văn hóa công ty với tự động hóa quy trình hằng ngày",
+        "B": "thấy có đo lường là cho rằng thuộc dạng phân tích",
+        "D": "coi Social CRM là một dạng CRM riêng"
+      },
+      "giai_thich": "Thay đổi cách thưởng và cách lãnh đạo ưu tiên là chuyện văn hóa lấy khách làm trung tâm của cả công ty, tức CRM chiến lược. A sai vì CRM vận hành là tự động hóa và nối các quy trình bán hàng, marketing, dịch vụ. B sai vì việc đo mức hài lòng chỉ là công cụ, còn quyết định thưởng là chiến lược; CRM phân tích biến dữ liệu thành hiểu biết. D sai vì Social CRM không phải dạng riêng của giáo trình.",
+      "doan_goc": "Chương 1, tr. 6, Bảng 1.2; slide 4–5",
+      "do_chac": null
+    },
+    {
+      "id": "Q02",
+      "phan": "kt",
+      "muc_tieu": "M1",
+      "muc_nhan_thuc": "van_dung",
+      "do_kho": "TB",
+      "loai": "mot_dap_an",
+      "cau_hoi": "Một công ty giày dùng phần mềm tự chia khách mới cho từng nhân viên và soạn thư chào giá từ mẫu có sẵn. Chức năng này thuộc nhánh nào của CRM vận hành?",
+      "dap_an": {
+        "A": "MA (tự động hóa marketing), vì phần mềm chạy các tác vụ theo quy tắc, ít cần người can thiệp",
+        "B": "SFA (tự động hóa lực lượng bán hàng), vì hỗ trợ quản lý quá trình bán hàng",
+        "C": "SA (tự động hóa dịch vụ), vì phần mềm giao việc cho người xử lý yêu cầu",
+        "D": "CRM phân tích, vì phần mềm xử lý dữ liệu về khách để quyết định ai sẽ nhận khách mới"
+      },
+      "dung": [
+        "B"
+      ],
+      "loi_sai": {
+        "A": "nhầm tự động hóa theo quy tắc nói chung với marketing",
+        "C": "nhầm giao việc xử lý yêu cầu của khách với giao khách để bán",
+        "D": "nhầm việc dùng dữ liệu với dạng CRM phân tích"
+      },
+      "giai_thich": "Giao khách tiềm năng và tạo báo giá là việc điển hình của SFA: quản lý lead, cơ hội và báo giá. A sai vì MA chạy các hoạt động marketing như chiến dịch và email theo quy tắc. C sai vì SA lo yêu cầu, khiếu nại sau khi khách đã mua. D sai vì CRM phân tích tạo hiểu biết từ dữ liệu; ở đây phần mềm chỉ thực hiện việc giao và tạo báo giá.",
+      "doan_goc": "Chương 1, tr. 7–10, Bảng 1.3; slide 7",
+      "do_chac": null
+    },
+    {
+      "id": "Q03",
+      "phan": "kt",
+      "muc_tieu": "M1",
+      "muc_nhan_thuc": "hieu",
+      "do_kho": "TB",
+      "loai": "nhieu_dap_an",
+      "cau_hoi": "Theo giáo trình, phát biểu nào về Social CRM và CRM 2.0 là đúng? (chọn 2 đáp án)",
+      "dap_an": {
+        "A": "Social CRM là dạng CRM thứ tư, ngang hàng với chiến lược, vận hành và phân tích",
+        "B": "Dữ liệu từ mạng xã hội là thêm một nguồn dữ liệu cho CRM vận hành và CRM phân tích",
+        "C": "CRM 2.0 là bản nâng cấp của phần mềm cài tại công ty, dữ liệu vẫn nằm trên máy chủ nội bộ",
+        "D": "Mô hình SaaS phổ biến ở CRM 2.0: phần mềm thuê bao dùng qua trình duyệt, dữ liệu trên đám mây"
+      },
+      "dung": [
+        "B",
+        "D"
+      ],
+      "loi_sai": {
+        "A": "coi Social CRM là dạng CRM riêng",
+        "C": "nhầm CRM 2.0 với mô hình cài tại công ty (CRM 1.0)"
+      },
+      "giai_thich": "B đúng: giáo trình nói mạng xã hội là một dòng dữ liệu thêm, dùng cho CRM vận hành và phân tích. D đúng: CRM 2.0 gắn với SaaS và đám mây. A sai vì giáo trình nói rõ không coi Social CRM ngang hàng ba dạng kia. C sai vì cài tại công ty, dữ liệu trên máy chủ nội bộ là đặc điểm của CRM 1.0.",
+      "doan_goc": "Chương 1, tr. 14–16, Bảng 1.4; slide 9–10",
+      "do_chac": null
+    },
+    {
+      "id": "Q04",
+      "phan": "kt",
+      "muc_tieu": "M2",
+      "muc_nhan_thuc": "van_dung",
+      "do_kho": "TB",
+      "loai": "mot_dap_an",
+      "cau_hoi": "Giám đốc một chuỗi spa tuyên bố: “CRM là phần mềm. Phòng kỹ thuật cài xong, chạy ổn định là dự án đã đạt mục tiêu.” Cách nghĩ này rơi vào hiểu lầm nào trong bốn hiểu lầm của giáo trình?",
+      "dap_an": {
+        "A": "Hiểu lầm “CRM là việc của riêng marketing và bán hàng”",
+        "B": "Hiểu lầm “CRM tự động hóa toàn bộ công việc”",
+        "C": "Hiểu lầm “CRM là chương trình khách hàng thân thiết”",
+        "D": "Hiểu lầm “CRM là một hệ thống IT”"
+      },
+      "dung": [
+        "D"
+      ],
+      "loi_sai": {
+        "A": "nhầm hiểu lầm về người chịu trách nhiệm với hiểu lầm về bản chất",
+        "B": "nhầm hiểu lầm về mức độ tự động với hiểu lầm về bản chất",
+        "C": "nhầm CRM với một công cụ tích điểm"
+      },
+      "giai_thich": "Coi CRM là dự án phần mềm và đo thành công bằng việc chạy ổn định là hiểu lầm nghiêm trọng nhất theo giáo trình, vì làm mọi người bàn tiến độ, ngân sách thay vì giá trị cho khách. A là hiểu lầm về ai chịu trách nhiệm, B về chuyện tự động hóa hết việc, C về tích điểm; nhận định của giám đốc không nói tới những điều đó.",
+      "doan_goc": "Chương 1, tr. 17, hiểu lầm số 1; slide 12",
+      "do_chac": null
+    },
+    {
+      "id": "Q05",
+      "phan": "kt",
+      "muc_tieu": "M2",
+      "muc_nhan_thuc": "hieu",
+      "do_kho": "TB",
+      "loai": "mot_dap_an",
+      "cau_hoi": "Một công ty tính ra nhóm khách mà chi phí chinh phục và giữ khách cao hơn lợi nhuận họ mang lại. Cụm nào trong định nghĩa CRM của giáo trình giải thích vì sao không nên cố giữ nhóm khách này?",
+      "dap_an": {
+        "A": "“năng lực của tổ chức”",
+        "B": "“quan hệ khách hàng có lợi nhuận”",
+        "C": "“giá trị vượt trội so với đối thủ”",
+        "D": "“hiểu biết rút ra từ dữ liệu khách hàng”"
+      },
+      "dung": [
+        "B"
+      ],
+      "loi_sai": {
+        "A": "hiểu CRM là việc của tổ chức nhưng bỏ qua tiêu chí chọn khách",
+        "C": "nhầm giá trị trao cho khách với việc chọn khách đáng giữ",
+        "D": "nhầm nguồn của quyết định với tiêu chí của quyết định"
+      },
+      "giai_thich": "Định nghĩa nói CRM tạo và duy trì quan hệ khách hàng có lợi nhuận; vì thế khách tốn nhiều hơn lợi họ mang lại có thể không đáng theo đuổi. A nói về bản chất của CRM là năng lực tổ chức, C nói về chất lượng lời đề nghị so với đối thủ, D nói về chỗ dựa của quyết định là dữ liệu. Cả ba đúng là các thành phần của định nghĩa nhưng không trả lời câu hỏi về chọn khách.",
+      "doan_goc": "Chương 1, tr. 16–17; slide 11",
+      "do_chac": null
+    },
+    {
+      "id": "Q06",
+      "phan": "kt",
+      "muc_tieu": "M2",
+      "muc_nhan_thuc": "van_dung",
+      "do_kho": "TB",
+      "loai": "mot_dap_an",
+      "cau_hoi": "Chuỗi trà sữa có 2.000 khách, doanh thu tháng 400 triệu đồng. Nhóm phân tích tính 300 khách chi nhiều nhất đóng góp 180 triệu (180/400 = 45%), rồi so mức chi bình quân của 300 khách này (0,6 triệu) với 1.700 khách còn lại (khoảng 0,13 triệu). Việc này thuộc bước nào của IDIC?",
+      "dap_an": {
+        "A": "Identify, vì bước này nhận biết khách là ai và ghi lại thông tin của họ",
+        "B": "Interact, vì bước này tìm hiểu kỳ vọng của từng khách qua những lần trao đổi",
+        "C": "Differentiate, vì bước này xếp khách theo giá trị hiện tại và tương lai",
+        "D": "Customize, vì bước này chuẩn bị ưu đãi riêng cho từng nhóm khách"
+      },
+      "dung": [
+        "C"
+      ],
+      "loi_sai": {
+        "A": "nhầm việc có dữ liệu khách với việc so giá trị khách",
+        "B": "nhầm so sánh con số với việc hỏi khách",
+        "D": "nhầm bước phân nhóm với bước làm ưu đãi riêng"
+      },
+      "giai_thich": "So nhóm khách theo mức đóng góp doanh thu (45% từ 300 khách; bình quân 0,6 triệu so với 0,13 triệu, gấp khoảng 4,6 lần) là Differentiate. A là bước có dữ liệu để biết khách là ai, nhưng chưa so giá trị. B là hỏi và hiểu kỳ vọng của khách. D là làm ưu đãi riêng, xảy ra sau khi đã phân nhóm.",
+      "doan_goc": "Chương 1, tr. 21; slide 15",
+      "do_chac": null
+    },
+    {
+      "id": "Q07",
+      "phan": "ud",
+      "muc_tieu": "M3",
+      "muc_nhan_thuc": "van_dung",
+      "do_kho": "TB",
+      "loai": "mot_dap_an",
+      "cau_hoi": "Ở giai đoạn 2, nhóm thấy Frappe CRM 16.0.1 không có sẵn đối tượng đổi trả hay ghi nhận đồng ý nhận tin, nên tạm ghi bằng việc cần làm (CRM Task) và ghi chú. Kết luận nào phù hợp với giáo trình?",
+      "dap_an": {
+        "A": "Nên ghi nhận hạn chế trong báo cáo rồi giữ nguyên, vì CRM vận hành không bao gồm đổi trả",
+        "B": "Nên chọn CRM khác có sẵn đối tượng này, vì đổi trả là chức năng cốt lõi của CRM vận hành",
+        "C": "Nên chờ hãng ra bản mới rồi nâng cấp, vì thiếu đối tượng cho thấy bản 16.0.1 đã lỗi thời",
+        "D": "Phần mềm CRM cần được tùy biến thêm, không nên kỳ vọng có sẵn đầy đủ chức năng nghiệp vụ"
+      },
+      "dung": [
+        "D"
+      ],
+      "loi_sai": {
+        "B": "nhầm thiếu một chức năng với lý do đổi phần mềm",
+        "C": "nhầm giới hạn của phần mềm với việc phiên bản cũ",
+        "A": "nhầm phạm vi CRM vận hành (có dịch vụ khách hàng) với việc không cần xử lý đổi trả"
+      },
+      "giai_thich": "Giáo trình sửa hiểu lầm “CRM tự động hóa mọi thứ”: phần mềm cần chỉnh và thường phải tùy biến thêm (Chương 13, tr. 315). Nhật ký ghi thiếu đối tượng là hạn chế của bản 16.0.1 và giao giai đoạn 3. B đổi phần mềm chỉ vì thiếu một chức năng. C coi đó là lỗi thời của phiên bản. A sai vì dịch vụ khách hàng (xử lý khiếu nại, đổi trả) thuộc CRM vận hành.",
+      "doan_goc": "Chương 1, tr. 18; Chương 13, tr. 315; docs/phase-report.md mục 2.3",
+      "do_chac": null
+    },
+    {
+      "id": "Q08",
+      "phan": "ud",
+      "muc_tieu": "M3",
+      "muc_nhan_thuc": "phan_tich",
+      "do_kho": "Kho",
+      "loai": "mot_dap_an",
+      "cau_hoi": "Người duyệt hỏi: “Bước Differentiate của IDIC trong đồ án đã làm đến đâu?” Câu trả lời đúng với nhật ký là gì?",
+      "dap_an": {
+        "A": "Đã chia khách theo 5 địa bàn và 3 hạng giá trị; việc đo CLV đã xong ở giai đoạn 1",
+        "B": "Đã chia khách theo 3 hạng thành viên và 5 địa bàn; việc chấm CLV thuộc giai đoạn sau",
+        "C": "Đã chia khách theo 5 địa bàn và 7 trạng thái deal; việc phân theo giá trị thuộc giai đoạn sau",
+        "D": "Đã chia khách theo 7 địa bàn và 5 trạng thái deal; việc phân theo giá trị thuộc giai đoạn sau"
+      },
+      "dung": [
+        "C"
+      ],
+      "loi_sai": {
+        "B": "nhầm hạng thành viên Loyalty của Biti's với việc đã làm trong đồ án",
+        "A": "nhầm CLV (giai đoạn 5) với việc đã làm",
+        "D": "đảo số địa bàn và số trạng thái deal"
+      },
+      "giai_thich": "Nhật ký ghi nhóm chia khách theo 5 địa bàn (Territory) và 7 trạng thái deal; CLV nằm ở giai đoạn 5, chưa làm. B lấy hạng Bạc, Vàng, Bạch kim của Biti's làm việc của đồ án. A nói CLV đã xong. D đảo số địa bàn với số trạng thái.",
+      "doan_goc": "docs/phase-report.md mục 1.4, 1.6; docs/nghien-cuu-bitis.md mục 3",
+      "do_chac": null
+    },
+    {
+      "id": "Q09",
+      "phan": "ud",
+      "muc_tieu": "M3",
+      "muc_nhan_thuc": "phan_tich",
+      "do_kho": "TB",
+      "loai": "nhieu_dap_an",
+      "cau_hoi": "Phát biểu nào về dữ liệu trong đồ án là đúng? (chọn 2 đáp án)",
+      "dap_an": {
+        "A": "Năm phòng ban Marketing, Bán hàng, Kho – Giao hàng, CSKH, Quản lý là mô hình nhóm dựng từ chính sách công khai",
+        "B": "Con số khoảng 156 cửa hàng lấy từ trang hệ thống cửa hàng trên bitis.com.vn, có ghi ngày truy cập",
+        "C": "Tỉ lệ chuyển đổi lead sang deal của Biti's lấy từ báo cáo thường niên, nhóm đã ghi URL trong nghiên cứu",
+        "D": "Các lead, liên hệ, deal trong Frappe CRM do nhóm tạo bằng script với hạt ngẫu nhiên 213, không phải khách thật"
+      },
+      "dung": [
+        "A",
+        "D"
+      ],
+      "loi_sai": {
+        "B": "nhầm nguồn báo (MISA AMIS 2024) với trang chính thức",
+        "C": "tin rằng có số liệu công khai mà nguồn không có"
+      },
+      "giai_thich": "A đúng: cơ cấu phòng ban không có nguồn công khai nên là giả định. D đúng: dữ liệu demo tạo bằng script (hạt ngẫu nhiên 213). B sai vì trang cửa hàng tải bằng JavaScript nên chưa đọc được; số 156 lấy từ bài MISA AMIS ngày 03/10/2024. C sai vì tỉ lệ chuyển đổi nằm trong danh sách khoảng trống thông tin.",
+      "doan_goc": "docs/nghien-cuu-bitis.md mục 1 và 5; docs/phase-report.md mục 1.6",
+      "do_chac": null
+    },
+    {
+      "id": "Q10",
+      "phan": "ud",
+      "muc_tieu": "M3",
+      "muc_nhan_thuc": "van_dung",
+      "do_kho": "TB",
+      "loai": "mot_dap_an",
+      "cau_hoi": "Chương trình Biti's Loyalty: mua 10.000 đồng được 1 điểm, và 50 điểm đổi được 1 coupon. Một khách muốn đổi 2 coupon thì cần chi tiêu tối thiểu bao nhiêu đồng?",
+      "dap_an": {
+        "A": "100.000",
+        "B": "500.000",
+        "C": "1.000.000",
+        "D": "5.000.000"
+      },
+      "dung": [
+        "C"
+      ],
+      "loi_sai": {
+        "A": "nhầm 1 điểm ứng với 1.000 đồng",
+        "B": "chỉ tính cho 1 coupon",
+        "D": "nhầm 1 điểm ứng với 50.000 đồng"
+      },
+      "giai_thich": "2 coupon cần 2 × 50 = 100 điểm; mỗi điểm ứng với 10.000 đồng nên cần 100 × 10.000 = 1.000.000 đồng. B là số cho 1 coupon (50 × 10.000 = 500.000). A và D lệch vì dùng sai giá trị một điểm.",
+      "doan_goc": "docs/nghien-cuu-bitis.md mục 3 (bitis.com.vn/pages/bitis-loyalty)",
+      "do_chac": null
+    },
+    {
+      "id": "Q11",
+      "phan": "da",
+      "muc_tieu": "M4",
+      "muc_nhan_thuc": "hieu",
+      "do_kho": "TB",
+      "loai": "mot_dap_an",
+      "cau_hoi": "Thầy hỏi vì sao nhóm dùng Frappe CRM. Lý do nào khớp với tài liệu của đồ án?",
+      "dap_an": {
+        "A": "Đề bài yêu cầu dựa trên Frappe CRM; ngoài ra nó mã nguồn mở, tự cài được, mở rộng được bằng custom app",
+        "B": "Nhóm so sánh Frappe CRM với hai phần mềm CRM khác theo bảng điểm, rồi chọn Frappe vì cân bằng chi phí và chức năng",
+        "C": "Biti's đang dùng Frappe CRM cho bán hàng nên nhóm chọn cùng phần mềm để bài làm sát với thực tế",
+        "D": "Bảng tiêu chí của thầy viết sẵn cho Frappe CRM nên nhóm chọn phần mềm này để khỏi phải quy đổi"
+      },
+      "dung": [
+        "A"
+      ],
+      "loi_sai": {
+        "B": "bịa một quá trình so sánh mà nhật ký không ghi",
+        "C": "nhầm phần mềm của case study với phần mềm doanh nghiệp thật đang dùng",
+        "D": "nhầm bảng tiêu chí cho Odoo với bảng cho Frappe"
+      },
+      "giai_thich": "Đầu PLAN.md ghi yêu cầu của thầy: dựa trên Frappe CRM, không làm từ đầu. README nói đây là CRM mã nguồn mở, và giai đoạn 0 đã tự cài được. B sai vì nhật ký không có so sánh. C sai vì Biti's không dùng Frappe CRM, hệ thống CRM của họ chưa có nguồn công khai. D sai vì bảng tiêu chí năm 2025 viết cho Odoo và được quy đổi sang Frappe.",
+      "doan_goc": "PLAN.md dòng 4; docs/checklist-tieu-chi.md; tai-lieu-chinh-thong/frappe/02-github-crm-readme.md",
+      "do_chac": null
+    },
+    {
+      "id": "Q12",
+      "phan": "da",
+      "muc_tieu": "M4",
+      "muc_nhan_thuc": "van_dung",
+      "do_kho": "TB",
+      "loai": "mot_dap_an",
+      "cau_hoi": "Thầy mở trang http://nhom4.localhost:8000/crm rồi hỏi: “Đây có phải app của tụi em không?” Ở thời điểm kết thúc giai đoạn 0, trả lời nào đúng?",
+      "dap_an": {
+        "A": "Có: nhóm đã tùy biến /crm bằng bản dịch và mẫu in nên coi đó là app của nhóm mình",
+        "B": "Không: nhom4.localhost là tên site, /crm là giao diện do nhóm tạo bằng cấu hình site; nhóm chưa viết app",
+        "C": "Một phần: /crm là app crm của Frappe, còn nhom4.localhost là app nhóm đã cài thêm vào bên trong",
+        "D": "Không: nhom4.localhost là tên site, /crm là giao diện của app crm do Frappe làm; nhóm chưa có app riêng"
+      },
+      "dung": [
+        "D"
+      ],
+      "loi_sai": {
+        "B": "coi cấu hình site là việc tạo ra giao diện CRM",
+        "C": "nhầm site với app",
+        "A": "coi bản dịch và mẫu in (cấu hình) là app"
+      },
+      "giai_thich": "Site (nhom4.localhost) là bản triển khai của nhóm; /crm là giao diện của app crm do Frappe làm. Giai đoạn 0 đã gỡ app biti_crm cũ và chưa có app mới. B cho rằng giao diện CRM do cấu hình site tạo ra. C đảo vai trò site và app. A coi Translation và Print Format (cấu hình trên site) là app.",
+      "doan_goc": "docs/ghi-chu-phan-bien-thay.md (các dòng về /crm); docs/phase-report.md mục 0.2",
+      "do_chac": null
+    },
+    {
+      "id": "Q13",
+      "phan": "da",
+      "muc_tieu": "M4",
+      "muc_nhan_thuc": "van_dung",
+      "do_kho": "TB",
+      "loai": "nhieu_dap_an",
+      "cau_hoi": "Việc nào dưới đây thuộc phạm vi giai đoạn 0 của đồ án? (chọn 2 đáp án)",
+      "dap_an": {
+        "A": "Sao lưu hai site cũ, tạo site nhom4.localhost và cài app crm",
+        "B": "Tạo 3 Assignment Rule Round Robin chia lead theo địa bàn, thử bằng 7 lead",
+        "C": "Đổi cổng MySQL của XAMPP sang 3307 để tránh trùng MariaDB trong WSL",
+        "D": "Thêm khoảng 150 bản ghi Translation để Việt hóa nhãn giao diện CRM"
+      },
+      "dung": [
+        "A",
+        "C"
+      ],
+      "loi_sai": {
+        "B": "nhầm cấu hình giai đoạn 1 với nền giai đoạn 0",
+        "D": "nhầm Việt hóa giai đoạn 1 với nền giai đoạn 0"
+      },
+      "giai_thich": "A và C nằm trong giai đoạn 0 (mục 0.2 và 0.4 của phase-report). B (mục 1.4) và D (mục 1.9) là cấu hình ở giai đoạn 1.",
+      "doan_goc": "docs/phase-report.md mục 0.2, 0.4, 1.4; docs/bai-giang/gd0-chot-nen.html bài 0",
+      "do_chac": null
+    },
+    {
+      "id": "Q14",
+      "phan": "da",
+      "muc_tieu": "M4",
+      "muc_nhan_thuc": "phan_tich",
+      "do_kho": "Kho",
+      "loai": "mot_dap_an",
+      "cau_hoi": "Thầy hỏi: “Nhóm đã chứng minh Frappe chạy ổn định chưa?” Trả lời nào trung thực với nhật ký giai đoạn 0?",
+      "dap_an": {
+        "A": "Đã khởi động lại cả máy Windows rồi bật script, vẫn đăng nhập và tạo, xóa Lead được; chưa thử tắt hẳn WSL",
+        "B": "Đã tắt hẳn WSL rồi bật lại bằng script, vẫn đăng nhập và tạo, xóa Lead được; chưa thử khởi động lại Windows",
+        "C": "Đã tắt hẳn WSL rồi bật lại bằng script, vẫn đăng nhập được; chưa thử tạo, xóa Lead sau khi bật lại",
+        "D": "Đã chạy liên tục hai ngày không tắt, đăng nhập và tạo, xóa Lead đều ổn; chưa thử tắt bật lại lần nào"
+      },
+      "dung": [
+        "B"
+      ],
+      "loi_sai": {
+        "A": "đảo điều đã thử với điều chưa thử",
+        "C": "khai thiếu: nhật ký có thử tạo, xóa Lead sau khi bật lại",
+        "D": "bịa phép thử chạy liên tục"
+      },
+      "giai_thich": "Nhật ký ghi: chạy frappe-stop.ps1 (dừng bench và wsl --terminate) rồi frappe-start.ps1; sau đó đăng nhập và tạo, xóa Lead vẫn được; chưa thử khởi động lại cả Windows. A đảo hai việc. C bỏ phần đã kiểm với Lead. D không có trong nhật ký.",
+      "doan_goc": "docs/phase-report.md mục 0.3 và bảng Cổng kiểm giai đoạn 0",
+      "do_chac": null
+    },
+    {
+      "id": "Q15",
+      "phan": "da",
+      "muc_tieu": "M4",
+      "muc_nhan_thuc": "phan_tich",
+      "do_kho": "TB",
+      "loai": "mot_dap_an",
+      "cau_hoi": "Một bạn trong nhóm định nói với thầy rằng nhóm đã cân nhắc nhiều lựa chọn CRM trước khi dùng Frappe. Nên làm gì?",
+      "dap_an": {
+        "A": "Nên bỏ câu đó: tài liệu chỉ ghi đề bài chỉ định Frappe CRM, chưa thấy ghi việc so sánh phần mềm khác",
+        "B": "Nên giữ câu đó: giáo trình khuyên so sánh vài nhà cung cấp, và nhóm đã cân nhắc Odoo vì bảng tiêu chí gốc",
+        "C": "Nên sửa thành “so sánh hai phương án”: Frappe CRM và Odoo, vì tài liệu có nhắc cả hai, dù chưa có bảng điểm",
+        "D": "Nên giữ câu đó nhưng bỏ chữ “nhiều”: tài liệu ghi nhóm đã xem một phương án thay thế, dù chưa lưu kết quả"
+      },
+      "dung": [
+        "A"
+      ],
+      "loi_sai": {
+        "B": "dùng giáo trình để biện minh cho việc không có trong nhật ký",
+        "C": "nhầm việc nhắc tới Odoo (bảng tiêu chí) với việc so sánh",
+        "D": "bịa việc đã xem phương án thay thế"
+      },
+      "giai_thich": "Không tài liệu nào của nhóm ghi việc so sánh phần mềm: nên nói đúng là đề bài chỉ định. B dùng giáo trình để biện minh. C nhầm bảng tiêu chí viết cho Odoo với một lần so sánh. D bịa việc đã xem phương án khác.",
+      "doan_goc": "PLAN.md dòng 4; docs/phase-report.md giai đoạn 0; docs/checklist-tieu-chi.md dòng 3",
+      "do_chac": null
+    }
+  ]
+}

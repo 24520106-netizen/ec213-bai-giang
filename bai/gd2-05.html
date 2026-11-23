@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>2.5 Dịch vụ khách hàng: khiếu nại, đổi trả và đơn hàng online · EC213</title>
+<meta name="description" content="Dịch vụ khách hàng, chất lượng dịch vụ, tự động hóa dịch vụ và giữ chân khách theo giáo trình, rồi áp vào hai quy trình của Biti's: Khiếu nại và đổi trả (chính sách 7 ngày) và Đơn hàng online với ba nhánh thất bại.">
+<link rel="stylesheet" href="../assets/site.css">
+</head>
+<body data-root="../" data-id="gd2-05">
+<div class="progress" id="bar"></div>
+<div class="layout">
+<nav class="side" aria-label="Mục lục"></nav>
+<main>
+<header class="hero">
+  <div class="tag">Giai đoạn 2 · Quy trình BPMN · Bài 2.5</div>
+  <h1>Dịch vụ khách hàng: khiếu nại, đổi trả và đơn hàng online</h1>
+  <p>Dịch vụ khách hàng, chất lượng dịch vụ, tự động hóa dịch vụ và giữ chân khách theo giáo trình, rồi áp vào hai quy trình của Biti's: Khiếu nại và đổi trả (chính sách 7 ngày) và Đơn hàng online với ba nhánh thất bại.</p>
+  <div class="top"><button id="theme" type="button">Đổi sáng/tối</button><button id="reset" type="button">Xóa điểm đã làm</button><a class="btn2" href="../index.html">Trang chủ</a></div>
+</header>
+<div class="parts" aria-label="Các phần của bài"></div>
+<div class="goal"><b class="t">Học xong bài này bạn làm được</b><ul><li>Phân biệt được dịch vụ khách hàng, ba thành phần chất lượng dịch vụ, tự động hóa dịch vụ (SA) và quản lý ca (case management, escalation)</li><li>Tính và phân biệt được tỉ lệ giữ chân khách theo số khách, theo doanh số và theo lợi nhuận</li><li>Chỉ ra được nút nào của hai quy trình ứng với khái niệm dịch vụ khách hàng, và số liệu, bản ghi của các deal 00031, 00035, 00036–00038</li><li>Giải thích được vì sao nhóm ghi đổi trả bằng CRM Task và ghi chú, đơn online nhập tay, nhánh nào còn chưa có dữ liệu thử, và cách kiểm lại</li></ul></div>
+<section class="part" id="kt">
+  <h2><span class="n">1</span>Kiến thức tổng quát: dịch vụ khách hàng, tự động hóa dịch vụ và giữ chân khách</h2>
+
+  <div class="goal"><b class="t">Phần này trả lời</b>Dịch vụ khách hàng là gì và thế nào là "tốt"? Phần mềm giúp gì cho khâu xử lý khiếu nại? Và đo việc giữ chân khách bằng con số nào?</div>
+
+  <h3>Dịch vụ khách hàng (customer service)</h3>
+  <p>Giáo trình định nghĩa: dịch vụ khách hàng là những nỗ lực của công ty để thực hiện lời hứa giá trị (value proposition), giải quyết vấn đề của khách và tạo trải nghiệm tích cực (CX – customer experience) trong suốt hành trình khách hàng. Dịch vụ xảy ra ở mọi giai đoạn: trước, trong và sau khi mua (Chương 9, slide 3; giáo trình tr. 203).</p>
+  <div class="ex"><b class="t">Ví dụ ngoài đồ án</b>Một công ty mua máy móc cần tư vấn kỹ thuật trước khi mua, giúp viết đặc tả khi mua, và hướng dẫn vận hành sau khi mua. Cả ba lần đều là dịch vụ khách hàng (tr. 203).</div>
+
+  <h3>Chất lượng dịch vụ: ba thành phần của Grönroos</h3>
+  <div class="tablewrap"><table>
+    <thead><tr><th>Thành phần</th><th>Câu hỏi</th><th>Ví dụ: một tiệm sửa điện thoại</th></tr></thead>
+    <tbody>
+      <tr><td>Kỹ thuật (technical)</td><td>Kết quả dịch vụ có đạt kỳ vọng không?</td><td>Máy sửa xong chạy bình thường</td></tr>
+      <tr><td>Chức năng (functional)</td><td>Dịch vụ được thực hiện như thế nào?</td><td>Nhân viên lịch sự, giải thích rõ, hẹn đúng giờ</td></tr>
+      <tr><td>Danh tiếng (reputational)</td><td>Hình ảnh của nhà cung cấp ảnh hưởng thế nào lên đánh giá chất lượng?</td><td>Tiệm có tiếng nên khách tin trước khi vào</td></tr>
+    </tbody>
+  </table></div>
+  <div class="src"><b class="t">Trong giáo trình</b>Chương 9, slide 4; giáo trình tr. 203. Giáo trình còn nêu "chất lượng tích hợp" (integrative quality) khi quy trình, con người và công nghệ của công ty phối hợp trơn tru. Slide 5 liệt kê sáu đặc điểm của công ty dịch vụ xuất sắc của Wiersema; slide 6–7 nêu chuẩn Customer Service Excellence của Anh với năm nhóm tiêu chí.</div>
+  <div class="note"><b class="t">Cách hiểu dễ nhầm</b>Một dịch vụ có thể "đúng kết quả" mà vẫn bị đánh giá thấp vì cách thực hiện (chức năng). Hai thành phần này khác nhau: kỹ thuật là "cái khách nhận được", chức năng là "cách khách được đối xử".</div>
+
+  <h3>Tự động hóa dịch vụ (SA – service automation)</h3>
+  <p>SA là việc dùng công nghệ để hỗ trợ và quản lý các hoạt động dịch vụ của công ty, dù qua nhân viên trực tiếp hay qua kênh tự phục vụ (slide 9; tr. 206). Giáo trình nêu bốn bối cảnh dùng SA: trung tâm tương tác khách (customer engagement centre), tổng đài (call centre), bàn hỗ trợ (helpdesk) và dịch vụ hiện trường (field service) (slide 10).</p>
+  <div class="tablewrap"><table>
+    <thead><tr><th>Lợi ích (slide 11; tr. 208–209)</th><th>Chi phí (slide 12; tr. 211)</th></tr></thead>
+    <tbody>
+      <tr><td>Dịch vụ hiệu quả hơn về kết quả (ghi đúng yêu cầu, chuyển đúng người, theo dõi tiến độ)</td><td>Cú sốc văn hóa: đổi cách xử lý khiếu nại từ thủ công sang hệ thống</td></tr>
+      <tr><td>Hiệu quả hơn về chi phí (ít phải xử lý lại, tự phục vụ rẻ hơn)</td><td>Tập trung hóa quy trình: mọi yêu cầu đi qua một hệ thống trung tâm, quản lý quá chặt thì cứng nhắc</td></tr>
+      <tr><td>Năng suất và trải nghiệm làm việc của nhân viên tốt hơn</td><td>Cùng với chi phí triển khai, bảo trì như MA và SFA</td></tr>
+      <tr><td>CX tốt hơn, gắn bó tốt hơn, hiểu khách tốt hơn</td><td></td></tr>
+    </tbody>
+  </table></div>
+  <p>Giáo trình còn viết: chất lượng dịch vụ tốt giúp khách ít bỏ đi hơn, nghĩa là "chất lượng dịch vụ thúc đẩy giữ chân khách" (tr. 209). Đây là cầu nối sang phần giữ chân bên dưới.</p>
+
+  <h3>Quản lý ca (case management) và chuyển cấp (escalation)</h3>
+  <p>Quản lý ca bao trùm toàn bộ vòng đời của một việc khách phàn nàn, từ lúc nhận thông báo đến khi giải quyết xong. Một ca thường bắt đầu bằng "phiếu sự cố" (trouble ticket) tạo từ biểu mẫu web, email, điện thoại, mạng xã hội hoặc cửa hàng; hệ thống chạy theo quy trình công việc (workflow) với các quy tắc nghiệp vụ, tự báo khách khi có sự kiện, và dùng cơ sở tri thức để xử lý nhanh (tr. 217). Chuyển cấp là việc đẩy ca chưa giải quyết lên cấp có thẩm quyền cao hơn theo luật định trước.</p>
+  <div class="ex"><b class="t">Ví dụ số trong giáo trình (bảo hiểm sức khỏe, đô la Mỹ)</b>Nhân viên dịch vụ tự xử lý ca dưới 50; trưởng nhóm dưới 100; trưởng đơn vị dưới 500; giám đốc điều hành trên 2.000 (tr. 217). Một ca trị giá 80 thì ở cấp trưởng nhóm; ca 300 thì cấp trưởng đơn vị. Mức tiền càng lớn, cấp càng cao.</div>
+
+  <h3>Giữ chân khách (customer retention)</h3>
+  <p>Giữ chân khách là việc công ty duy trì quan hệ mua bán liên tục với cùng những khách hàng trong dài hạn. Nó là mặt đối lập của khách bỏ đi (churn): giữ chân cao tức là tỉ lệ bỏ đi thấp (Chương 4, slide 3; tr. 88). Giáo trình nêu ba cách đo (slide 4; tr. 89):</p>
+  <ul>
+    <li><b>Tỉ lệ giữ chân thô (raw retention rate):</b> số khách của đầu kỳ còn mua ở cuối kỳ, tính trên số khách đang hoạt động ở đầu kỳ.</li>
+    <li><b>Tỉ lệ giữ chân theo doanh số (sales-adjusted):</b> doanh số từ những khách còn lại, tính trên doanh số của mọi khách hoạt động ở đầu kỳ.</li>
+    <li><b>Tỉ lệ giữ chân theo lợi nhuận (profit-adjusted):</b> lợi nhuận từ những khách còn lại, tính trên lợi nhuận của mọi khách hoạt động ở đầu kỳ.</li>
+  </ul>
+  <div class="ex"><b class="t">Ví dụ số: tiệm cà phê (số giả định của bài)</b>Đầu năm có 200 khách quen, tạo doanh số 400.000.000 ₫ và lợi nhuận 80.000.000 ₫. Cuối năm 150 người trong số đó còn mua, tạo doanh số 340.000.000 ₫ và lợi nhuận 72.000.000 ₫.<br>Tỉ lệ giữ chân thô: 150 ÷ 200 = 75% (tỉ lệ khách bỏ đi: 25%). Theo doanh số: 340 ÷ 400 = 85%. Theo lợi nhuận: 72 ÷ 80 = 90%.<br>Cả ba con số đều có nghĩa: số khách giảm 25% nhưng khách còn lại là nhóm mua nhiều và sinh lời nhiều, nên mất đi không nặng như số khách gợi ra.</div>
+  <p>Có hai hướng giữ chân: tăng gắn bó (làm quan hệ rộng và sâu hơn, tạo sự hài lòng) hoặc tăng chi phí chuyển đổi của khách (switching cost), mỗi hướng có ưu và nhược riêng (slide 8–9; tr. 93–94). Khác với giữ chân, phát triển khách (customer development) là nâng giá trị của khách hiện có bằng bán chéo (cross-sell), bán thêm bản cao hơn (up-sell) và giảm chi phí phục vụ (slide 10).</p>
+
+  <h3>Hiểu nhầm hay gặp</h3>
+  <ul>
+    <li>"Dịch vụ khách hàng là việc của phòng chăm sóc khách hàng." Giáo trình (Wiersema, slide 5) nói công ty xuất sắc coi dịch vụ là trách nhiệm của mọi người, không giao riêng một phòng.</li>
+    <li>"Giữ chân thô cao là đủ." Ba cách đo cho kết quả khác nhau; chỉ nhìn số khách có thể che mất việc mất khách giá trị cao.</li>
+    <li>"Có phần mềm là có dịch vụ tốt." Giáo trình nêu cần cả con người, quy trình và công nghệ phối hợp (chất lượng tích hợp).</li>
+  </ul>
+<div class="quiz" data-quiz="kt"></div>
+</section>
+
+<section class="part" id="ud">
+  <h2><span class="n">2</span>Ứng dụng trong đồ án: Khiếu nại và đổi trả, Đơn hàng online</h2>
+
+  <div class="goal"><b class="t">Phần này trả lời</b>Hai quy trình dịch vụ của Biti's có những nút nào, đi qua dữ liệu thật nào, và khái niệm nào của giáo trình nằm ở đâu?</div>
+
+  <h3>Quy trình "Khiếu nại và đổi trả" (Hảo)</h3>
+  <p>Mục đích: xử lý yêu cầu đổi trả theo chính sách của Biti's [CHÍNH THỨC]: đổi trong 7 ngày kể từ ngày nhận hàng, sản phẩm mới 100%, chưa dùng, còn tem nhãn; chỉ đổi một lần; lỗi do Biti's thì miễn phí vận chuyển đổi hàng (bitis.com.vn/pages/chinh-sach-doi-tra, truy cập 2026-11-14). Có 3 làn (Khách hàng, Chăm sóc khách hàng, Kho - Giao hàng), 13 nút, 3 kết quả cuối: Yêu cầu đổi trả bị từ chối, Hàng cũ đã trả lại khách, Hàng đổi đã giao cho khách. Các làn là mô hình giả định của nhóm.</p>
+  <figure class="wide"><img src="../anh/bpmn-doi-tra.png" alt="Sơ đồ BPMN quy trình Khiếu nại và đổi trả"><figcaption>Sơ đồ Khiếu nại và đổi trả. Hai cổng: "Còn trong 7 ngày và còn tem nhãn?" ở làn Chăm sóc khách hàng, và "Lỗi thuộc Biti's?" ở làn Kho.</figcaption></figure>
+  <div class="tablewrap"><table>
+    <thead><tr><th>Khái niệm của giáo trình</th><th>Trong quy trình đổi trả</th><th>Mức đạt</th></tr></thead>
+    <tbody>
+      <tr><td>Phiếu sự cố / bắt đầu một ca (trouble ticket)</td><td>"Ghi nhận khiếu nại": ghi chú trên deal đã bán (FCRM Note)</td><td>Có, dạng ghi chú, không có đối tượng "ca" riêng</td></tr>
+      <tr><td>Quy trình công việc với quy tắc nghiệp vụ (workflow)</td><td>Sơ đồ BPMN và hai cổng; mỗi bước ghi bằng CRM Task</td><td>Có trên sơ đồ</td></tr>
+      <tr><td>Chuẩn dịch vụ (service standard)</td><td>Chính sách đổi trả 7 ngày của Biti's làm căn cứ ở cổng đầu</td><td>Có, [CHÍNH THỨC]</td></tr>
+      <tr><td>Chất lượng kỹ thuật và chức năng</td><td>Kỹ thuật: có hàng đổi miễn phí. Chức năng: có bước "Hướng dẫn gửi hàng về" cho khách</td><td>Có ở mức mô tả</td></tr>
+      <tr><td>Chuyển cấp (escalation)</td><td>Không có nút nào. Cổng "Lỗi thuộc Biti's?" là quyết định theo nguyên nhân, không phải chuyển cấp theo mức tiền</td><td>Chưa</td></tr>
+      <tr><td>Giữ chân</td><td>Đổi hàng lỗi miễn phí vận chuyển để khách không bỏ đi</td><td>Có ý đồ; chưa đo</td></tr>
+    </tbody>
+  </table></div>
+  <h4>Hai deal chạy thử</h4>
+  <div class="tablewrap"><table>
+    <thead><tr><th>Deal</th><th>Tình huống</th><th>Bản ghi trong Frappe</th></tr></thead>
+    <tbody>
+      <tr><td>CRM-DEAL-2026-00031 (đã bán 24 đôi)</td><td>Khách báo 1 đôi hở keo sau 5 ngày, còn trong 7 ngày, còn tem nhãn; kho kiểm tra thấy lỗi nhà sản xuất</td><td>Ghi chú khiếu nại; CRM Task 45 (hướng dẫn gửi hàng, giao Hảo), 46 (kiểm tra hàng, giao Kho), 47 (gửi hàng đổi miễn phí, giao Kho)</td></tr>
+      <tr><td>CRM-DEAL-2026-00035 (1 đôi BT-006)</td><td>Khách nhận hàng cách đây 12 ngày, đã dùng, quá 7 ngày và hết tem nhãn</td><td>Ghi chú khiếu nại; CRM Task 48 "Từ chối đổi trả (quá 7 ngày)", Done; hướng dẫn bảo hành nếu lỗi nhà sản xuất</td></tr>
+    </tbody>
+  </table></div>
+  <div class="ex"><b class="t">Phép tính với deal 00035</b>Quá hạn: 12 − 7 = 5 ngày. Với deal 00031, giá một đôi trong đơn sau giảm 12% là 890.000 × 0,88 = 783.200 ₫, bằng 783.200 ÷ 18.796.800 ≈ 4,2% giá trị đơn. Số này chỉ cho biết quy mô một đôi đổi, không phải chi phí thật của Biti's (giá vốn và phí vận chuyển nhóm không có).</div>
+  <div class="warn"><b class="t">Chưa có dữ liệu thử</b>Nhánh "Lỗi thuộc Biti's? = Không" (lỗi do khách) dẫn tới "Gửi trả hàng cũ cho khách". Nhánh này có trên sơ đồ và trong SOP nhưng chưa có bản ghi thử riêng; chay-thu.json (bước K8) ghi rõ không phát sinh dữ liệu.</div>
+
+  <h3>Quy trình "Đơn hàng online" (Thanh Tuyền)</h3>
+  <p>Mục đích: đưa một đơn đặt trên website thành khách hàng và lịch sử mua trong CRM: kiểm tra thanh toán, tồn kho, đóng gói, giao hàng, ghi kết quả. Có 3 làn (Khách hàng, Bán hàng Online, Kho - Giao hàng), 16 nút, 4 kết quả cuối: Đơn bị hủy, Đơn đã hoàn tiền, Đơn giao thất bại, Khách đã có lịch sử mua hàng. Đơn hiện được nhập tay; nối WooCommerce là việc của GĐ4.</p>
+  <figure class="wide"><img src="../anh/bpmn-online.png" alt="Sơ đồ BPMN quy trình Đơn hàng online"><figcaption>Sơ đồ Đơn hàng online với ba cổng liên tiếp: thanh toán, còn đủ hàng, giao hàng thành công.</figcaption></figure>
+  <div class="tablewrap"><table>
+    <thead><tr><th>Nhánh</th><th>Bản ghi thử</th><th>Kết quả cuối</th></tr></thead>
+    <tbody>
+      <tr><td>Thành công</td><td>Lead 00084 → deal CRM-DEAL-2026-00036: BT-006 (1.190.000 ₫) + BT-001 (890.000 ₫) = <b>2.080.000 ₫</b>, trạng thái Won; hai CRM Task 51, 52 giao Kho; mã vận đơn mẫu GD2-0002; ghi chú giao thành công</td><td>Khách đã có lịch sử mua hàng</td></tr>
+      <tr><td>Thanh toán lỗi</td><td>Lead 00085: ghi chú thẻ bị từ chối 2 lần; Unqualified, lý do "Khác"</td><td>Đơn bị hủy</td></tr>
+      <tr><td>Hết hàng</td><td>Deal 00037: ghi chú hết hàng và hoàn tiền; Lost, lý do "Hết hàng / giao chậm"</td><td>Đơn đã hoàn tiền</td></tr>
+      <tr><td>Giao thất bại</td><td>Deal 00038: giao thất bại 2 lần; CRM Task 53 "Nhận hàng hoàn về kho"; Lost, lý do "Không liên lạc được"</td><td>Đơn giao thất bại</td></tr>
+    </tbody>
+  </table></div>
+  <p>Kiểm phép cộng: 1.190.000 + 890.000 = 2.080.000. Khái niệm giáo trình ở đây: tự động hóa dịch vụ nằm ở chỗ đơn được ghi lại trong CRM để mọi bộ phận thấy cùng một thông tin, và kết quả cuối "Khách đã có lịch sử mua hàng" là dữ liệu đầu vào của việc đo giữ chân (một khách có ít nhất một đơn Won). Việc đo đó chưa làm.</p>
+  <div class="warn"><b class="t">Điểm yếu cần nói thật</b>Thanh toán thành công được "giả định" (COD hoặc thẻ), tồn kho do người quyết định (CRM không có module kho), hoàn tiền chỉ là một ghi chú, không có giao dịch tiền nào. Mã vận đơn GD2-0002 là mã mẫu. Chưa tính tỉ lệ giữ chân của Biti's vì không có dữ liệu thật.</div>
+<div class="quiz" data-quiz="ud"></div>
+</section>
+
+<section class="part" id="da">
+  <h2><span class="n">3</span>Hiểu sâu đồ án: ghi đổi trả bằng gì, đơn online từ đâu, chưa kiểm gì</h2>
+
+  <div class="goal"><b class="t">Phần này trả lời</b>Frappe có sẵn gì cho khiếu nại và đổi trả? Nhóm tự làm gì thay? Đơn online vào CRM bằng đường nào? Còn thiếu gì? Thầy sẽ hỏi gì?</div>
+
+  <h3>Vì sao ghi đổi trả bằng CRM Task và ghi chú trên deal đã bán</h3>
+  <ul>
+    <li><b>Hiện trạng:</b> Frappe CRM 16.0.1 không có đối tượng "Yêu cầu đổi trả" (docs/phase-report.md mục 2.3, phát hiện a). Giáo trình mô tả case management có phiếu sự cố, workflow, chuyển cấp; Frappe CRM không có sẵn các thứ đó cho khiếu nại.</li>
+    <li><b>Cách nhóm làm:</b> mỗi bước là một CRM Task giao đúng người (Hảo, Kho), kèm ghi chú kết luận, gắn vào deal đã bán. Gắn vào deal để truy ngược về đơn gốc và về khách.</li>
+    <li><b>Phương án khác:</b> tạo DocType riêng "Yêu cầu đổi trả" (có trạng thái, ngày nhận hàng, kết luận). Chưa làm ở GĐ2; docs ghi "GĐ3 xem xét bổ sung".</li>
+    <li><b>Hệ quả:</b> không có trường "ngày nhận hàng". Muốn kiểm "trong 7 ngày", người xử lý đọc ghi chú. Ở deal 00035, script đặt ngày chốt deal lùi 12 ngày và ghi chú "nhận hàng cách đây 12 ngày"; ngày chốt chỉ là xấp xỉ cho ngày nhận.</li>
+  </ul>
+
+  <h3>Đơn online: ghi bằng deal Won</h3>
+  <ul>
+    <li>Nhóm dùng một deal đã Won để đại diện cho một đơn hàng online. Đây là <b>quy ước của nhóm</b>; đơn hàng thật nằm trên website.</li>
+    <li>Nhập tay ở GĐ2: lead nguồn "Website Biti's", địa bàn Online. Kế hoạch GĐ4 là nối WooCommerce gửi đơn vào Frappe bằng webhook (docs/ke-hoach-tinh-chinh-gd1-6.md). Việc này <b>chưa làm</b>.</li>
+    <li>Ba nhánh thất bại có ba kiểu bản ghi khác nhau (lead Unqualified, deal Lost vì hết hàng, deal Lost vì giao thất bại) nhưng chung một khuôn: lý do thất bại là trường chọn (CRM Lost Reason) cộng ghi chú giải thích.</li>
+    <li>Khi đổi deal sang Lost bằng API, Frappe không tự đặt xác suất 0%; script gd2-04-sua-xac-suat.py đã sửa 4 deal Lost của giai đoạn 2 (theo nhật ký giai đoạn).</li>
+  </ul>
+
+  <h3>Của Frappe, của nhóm</h3>
+  <div class="tablewrap"><table>
+    <thead><tr><th>Của Frappe CRM (có sẵn)</th><th>Của nhóm</th></tr></thead>
+    <tbody>
+      <tr><td>Lead, Deal, Contact; CRM Task; ghi chú (FCRM Note); lý do thất bại (CRM Lost Reason)</td><td>Quy ước "đổi trả = CRM Task + ghi chú trên deal đã bán"; quy ước "đơn online = deal Won"</td></tr>
+      <tr><td>Giao việc cho người dùng, trạng thái Done, tab Nhiệm vụ</td><td>Sơ đồ BPMN, tên cổng, luật "7 ngày và còn tem nhãn" lấy từ chính sách Biti's</td></tr>
+      <tr><td>Không có: đối tượng đổi trả, kho, hoàn tiền, chuyển cấp</td><td>Dự định bổ sung ở GĐ3 (đổi trả) và GĐ4 (nối đơn WooCommerce); chưa làm</td></tr>
+    </tbody>
+  </table></div>
+
+  <h3>Cách tự kiểm tra</h3>
+  <ol>
+    <li>Mở deal CRM-DEAL-2026-00031, tab Nhiệm vụ: thấy các việc đổi trả (Hướng dẫn gửi hàng về, Kiểm tra hàng nhận về, Gửi hàng đổi miễn phí) và ghi chú khiếu nại, kết quả kiểm tra.</li>
+    <li>Mở deal 00035: ghi chú quá 7 ngày và việc "Từ chối đổi trả (quá 7 ngày)".</li>
+    <li>Mở deal 00036: tab Sản phẩm có 2 dòng, tổng 2.080.000 ₫, trạng thái Won; mở 00037 và 00038: Lost kèm lý do.</li>
+    <li>Đối chiếu evidence/A4-3/chay-thu.json (K1–K8, T1–T8) và ảnh K07, T01–T08 trong evidence/A4-3/.</li>
+  </ol>
+
+  <h3>Hạn chế đã biết</h3>
+  <ul>
+    <li>Cổng đầu của đổi trả chỉ kiểm hai điều kiện (7 ngày, còn tem nhãn). Chính sách Biti's còn có "chỉ đổi một lần", có hóa đơn hoặc email xác nhận, xử lý trong 7 ngày làm việc; sơ đồ chưa có nút kiểm các điều này.</li>
+    <li>Bảo hành là chính sách riêng của Biti's (thời hạn khác); sơ đồ chỉ nhắc "hướng dẫn bảo hành" trong ghi chú.</li>
+    <li>Chính sách được đọc ngày 2026-11-14, chưa kiểm lại; trang web có thể đã đổi.</li>
+    <li>Nhánh lỗi không thuộc Biti's chưa có dữ liệu thử.</li>
+    <li>Chưa có chuyển cấp, chưa đo giữ chân hay thời gian xử lý ca.</li>
+  </ul>
+
+  <h3>Thầy sẽ hỏi</h3>
+  <details><summary>1. Frappe CRM có sẵn chức năng khiếu nại và đổi trả không?</summary><p>Trả lời gợi ý: không. Nhóm dùng CRM Task và ghi chú trên deal đã bán; đối tượng riêng xem xét ở GĐ3. Chỉ tới docs/phase-report.md mục 2.3 và bản ghi deal 00031.</p></details>
+  <details><summary>2. Chính sách 7 ngày lấy ở đâu? Có chắc không?</summary><p>Từ trang chính sách đổi trả của Biti's, ghi ở docs/nghien-cuu-bitis.md, đánh dấu [CHÍNH THỨC], đọc ngày 2026-11-14 và chưa kiểm lại. Sáu làn phòng ban là giả định, không phải cơ cấu thật.</p></details>
+  <details><summary>3. Đơn online lấy từ đâu vào CRM?</summary><p>Hiện nhập tay (lead 00084 và các ca ngoại lệ). Nối WooCommerce bằng webhook là kế hoạch GĐ4, chưa làm.</p></details>
+  <details><summary>4. Nhánh lỗi không thuộc Biti's đã chạy thử chưa?</summary><p>Chưa. Có trên sơ đồ và SOP, chay-thu.json (K8) ghi không phát sinh dữ liệu riêng. Cần nói thẳng khi thầy hỏi.</p></details>
+  <details><summary>5. Hoàn tiền xử lý ở đâu trong hệ thống?</summary><p>Không xử lý. Chỉ là ghi chú trên deal 00037 báo đã hoàn tiền. CRM không có giao dịch tiền.</p></details>
+  <details><summary>6. Quy trình này giúp giữ chân khách thế nào, đo bằng gì?</summary><p>Theo giáo trình, chất lượng dịch vụ thúc đẩy giữ chân; đổi miễn phí lỗi nhà sản xuất là cách làm đó. Nhóm chưa đo; muốn đo cần tỉ lệ giữ chân (thô, theo doanh số, theo lợi nhuận) trên dữ liệu thật, nhóm chưa có.</p></details>
+<div class="quiz" data-quiz="da"></div>
+</section>
+
+<section class="refs"><h3>Tài liệu tham khảo của bài</h3><ul><li><b>Prior, Buttle &amp; Maklan (2024), Customer Relationship Management, 5th ed.</b>: Chương 9 (slide 3–12; giáo trình tr. 203–211, 217–218) và Chương 4 (slide 3–4, 8–10; giáo trình tr. 88–89, 93–94)</li><li><b>Chính sách đổi trả của Biti's [CHÍNH THỨC]</b>: bitis.com.vn/pages/chinh-sach-doi-tra, truy cập 2026-11-14 (ghi trong docs/nghien-cuu-bitis.md mục 3); chưa kiểm lại sau ngày đó</li><li><b>Dự án đồ án (nguồn sự thật của phần 2 và 3)</b>: docs/quy-trinh-sop.md (mục Khiếu nại và đổi trả, Đơn hàng online); evidence/A4-3/chay-thu.json (K1–K8, T1–T8); scripts/gd2-01-chay-thu.py; scripts/gd2/quy-trinh.js; docs/phase-report.md mục Giai đoạn 2; docs/nghien-cuu-bitis.md</li></ul><p><small class="kh">Bài giảng diễn đạt lại bằng lời của nhóm, không sao chép giáo trình. Chương và trang ghi để bạn tra lại bản gốc.</small></p></section>
+<div class="pager"></div>
+</main>
+</div>
+<script type="application/json" id="quiz-data">{"muc_tieu":{"M1":"Phân biệt dịch vụ khách hàng, ba thành phần chất lượng dịch vụ, tự động hóa dịch vụ và chuyển cấp trong quản lý ca","M2":"Tính và phân biệt tỉ lệ giữ chân khách theo số khách, theo doanh số và theo lợi nhuận","M3":"Ánh xạ nút và số liệu của hai quy trình đổi trả, đơn online với khái niệm dịch vụ khách hàng","M4":"Giải thích cách nhóm ghi đổi trả và đơn online, nhánh nào chưa có dữ liệu thử và cách kiểm bằng bản ghi"},"cau_hoi":[{"id":"Q01","phan":"kt","muc_tieu":"M1","loai":"mot_dap_an","cau_hoi":"Một khách mang đôi giày bị hở keo tới cửa hàng. Cửa hàng đổi đúng mẫu, đúng cỡ, nhưng nhân viên trả lời cộc lốc và để khách chờ 40 phút, nên khách đánh giá thấp. Theo ba thành phần chất lượng dịch vụ của Grönroos, nhận định nào đúng?","dap_an":{"A":"Thành phần danh tiếng kém vì nhân viên cộc lốc; thành phần kỹ thuật đạt","B":"Kỹ thuật đạt vì kết quả đúng; chức năng kém vì cách thực hiện","C":"Thành phần kỹ thuật kém vì khách không hài lòng; thành phần chức năng đạt","D":"Cả kỹ thuật và chức năng đều kém, vì tổng đánh giá của khách thấp"},"dung":["B"],"loi_sai":{"A":"nhầm cách đối xử của nhân viên với danh tiếng của nhà cung cấp","C":"đảo vai trò kỹ thuật (kết quả) và chức năng (cách thực hiện)","D":"suy từng thành phần từ đánh giá chung"},"giai_thich":"Kỹ thuật là kết quả dịch vụ có đạt kỳ vọng không: đổi đúng mẫu, đúng cỡ nên đạt. Chức năng là dịch vụ được thực hiện thế nào: cộc lốc và để khách chờ 40 phút là chức năng kém. Danh tiếng là hình ảnh nhà cung cấp tác động lên đánh giá chất lượng, không phải thái độ trong một lần phục vụ. Đánh giá thấp chung không có nghĩa mọi thành phần đều kém.","doan_goc":"Chương 9, slide 4; giáo trình tr. 203"},{"id":"Q02","phan":"kt","muc_tieu":"M1","loai":"mot_dap_an","cau_hoi":"Giáo trình ví dụ bảng chuyển cấp của một công ty bảo hiểm sức khỏe (đô la Mỹ): nhân viên dịch vụ xử lý ca dưới 50; trưởng nhóm dưới 100; trưởng đơn vị kinh doanh dưới 500; giám đốc điều hành trên 2.000. Một ca trị giá 300 thì thuộc cấp nào?","dap_an":{"A":"Nhân viên dịch vụ khách hàng","B":"Trưởng nhóm dịch vụ khách hàng","C":"Trưởng đơn vị kinh doanh","D":"Giám đốc điều hành của công ty"},"dung":["C"],"loi_sai":{"A":"bỏ qua việc chuyển cấp khi mức tiền vượt hạn mức cấp thấp","B":"lấy hạn mức cấp trưởng nhóm (100) cho ca đã vượt hạn mức đó","D":"chuyển lên cấp cao nhất dù ca chưa tới mức 2.000"},"giai_thich":"300 lớn hơn hạn mức của nhân viên (50) và trưởng nhóm (100), nhỏ hơn hạn mức trưởng đơn vị (500), nên ca ở cấp trưởng đơn vị. Chuyển cấp (escalation) là đẩy ca chưa giải quyết lên cấp có thẩm quyền cao hơn theo luật định trước, mức tiền càng lớn cấp càng cao.","doan_goc":"Chương 9, giáo trình tr. 217 (escalation)"},{"id":"Q03","phan":"kt","muc_tieu":"M1","loai":"nhieu_dap_an","cau_hoi":"Theo giáo trình, đâu là lợi ích của tự động hóa dịch vụ (SA)? (chọn 2 đáp án)","dap_an":{"A":"Công ty không còn cần nhân viên dịch vụ vì phần mềm xử lý được các yêu cầu","B":"Ghi chính xác yêu cầu của khách và chuyển đúng người, đúng bộ phận","C":"Quy trình trở nên linh hoạt hơn vì yêu cầu không còn đi qua hệ thống trung tâm","D":"Khách tự phục vụ qua ứng dụng hoặc web với chi phí xử lý thấp hơn khi qua nhân viên"},"dung":["B","D"],"loi_sai":{"A":"nhầm hỗ trợ nhân viên với thay thế hoàn toàn nhân viên","C":"đảo chiều: tập trung hóa quy trình là một chi phí của SA"},"giai_thich":"SA giúp dịch vụ hiệu quả hơn vì ghi đúng yêu cầu và chuyển đúng nơi (B), và hiệu quả chi phí hơn vì khách tự phục vụ rẻ hơn qua nhân viên (D). A sai: giáo trình nói bot xử lý các yêu cầu thường lệ để nhân viên lo việc giá trị cao, và có công ty còn coi nhân viên thật là lợi thế. C sai: SA đưa yêu cầu qua một hệ thống trung tâm và tập trung hóa quy trình được giáo trình liệt kê là một chi phí.","doan_goc":"Chương 9, slide 11–12; giáo trình tr. 208–209 và tr. 211"},{"id":"Q04","phan":"kt","muc_tieu":"M2","loai":"mot_dap_an","cau_hoi":"Đầu năm cửa hàng có 400 khách đang hoạt động. Trong năm có thêm 100 khách mới. Cuối năm cửa hàng có 400 khách đang mua, trong đó 300 là khách cũ của đầu năm. Tỉ lệ giữ chân thô là bao nhiêu?","dap_an":{"A":"25%","B":"60%","C":"75%","D":"100%"},"dung":["C"],"loi_sai":{"A":"lấy tỉ lệ khách bỏ đi thay vì tỉ lệ giữ chân","B":"chia khách cũ cho cả khách đầu năm lẫn khách mới (300 ÷ 500)","D":"đếm cả khách mới vào tử số (400 ÷ 400)"},"giai_thich":"Tỉ lệ giữ chân thô chỉ tính khách của đầu kỳ còn lại ở cuối kỳ, trên số khách đầu kỳ: 300 ÷ 400 = 75%. 25% là tỉ lệ khách bỏ đi (100 ÷ 400). 60% là 300 ÷ 500, đưa khách mới vào mẫu số. 100% là 400 ÷ 400, đếm khách mới như thể đã được giữ chân.","doan_goc":"Chương 4, slide 4; giáo trình tr. 89 (raw customer retention rate)"},{"id":"Q05","phan":"kt","muc_tieu":"M2","loai":"mot_dap_an","cau_hoi":"Đầu năm có 100 khách hoạt động, tạo doanh số 500 triệu ₫. Cuối năm 80 người trong số đó còn mua, tạo doanh số 440 triệu ₫. Tỉ lệ giữ chân theo doanh số (sales-adjusted) là bao nhiêu?","dap_an":{"A":"114%","B":"88%","C":"80%","D":"12%"},"dung":["B"],"loi_sai":{"A":"đảo tử số và mẫu số (500 ÷ 440)","C":"dùng tỉ lệ theo số khách (80 ÷ 100) thay vì theo doanh số","D":"lấy phần doanh số mất đi thay vì phần giữ lại"},"giai_thich":"Theo doanh số: doanh số từ khách còn lại ÷ doanh số của mọi khách đầu kỳ = 440 ÷ 500 = 88%. 80% là tỉ lệ giữ chân thô (80 ÷ 100). 12% là 100% − 88%, phần doanh số mất. 114% là 500 ÷ 440, đảo tử và mẫu.","doan_goc":"Chương 4, slide 4; giáo trình tr. 89 (sales-adjusted retention rate)"},{"id":"Q06","phan":"kt","muc_tieu":"M2","loai":"mot_dap_an","cau_hoi":"Một tiệm cà phê tính được tỉ lệ giữ chân thô là 75% nhưng tỉ lệ giữ chân theo lợi nhuận là 90%. Cách hiểu nào đúng?","dap_an":{"A":"Hai con số mâu thuẫn nhau, nên ít nhất một trong hai cách tính đã bị tính sai","B":"Công ty mất 10% số khách của đầu kỳ, vì 100% trừ 90% bằng 10%","C":"Những khách đã bỏ đi sinh lời nhiều hơn mức trung bình của nhóm khách đầu kỳ","D":"Khách còn lại sinh lời nhiều hơn mức trung bình của nhóm khách đầu kỳ"},"dung":["D"],"loi_sai":{"A":"tưởng các cách đo phải cho cùng kết quả","B":"nhầm tỉ lệ theo lợi nhuận với tỉ lệ theo số khách","C":"đảo chiều: nếu khách bỏ đi sinh lời cao thì tỉ lệ theo lợi nhuận phải thấp hơn tỉ lệ thô"},"giai_thich":"Ba cách đo trả lời ba câu hỏi khác nhau nên cho số khác nhau. Tỉ lệ theo lợi nhuận (90%) cao hơn tỉ lệ thô (75%) nghĩa là nhóm khách còn lại đóng góp lợi nhuận nhiều hơn phần của họ trong số khách, tức khách đã đi là nhóm sinh lời thấp hơn. B nhầm hai loại tỉ lệ. C đảo chiều. A không đúng vì không có mâu thuẫn.","doan_goc":"Chương 4, slide 4; giáo trình tr. 89"},{"id":"Q07","phan":"ud","muc_tieu":"M3","loai":"mot_dap_an","cau_hoi":"Trong quy trình Khiếu nại và đổi trả, nút \"Ghi nhận khiếu nại\" (ghi chú trên deal đã bán) ứng với khái niệm nào của giáo trình, và ở mức nào?","dap_an":{"A":"Phiếu sự cố (trouble ticket) mở đầu một ca, nhưng mới là ghi chú, chưa có đối tượng riêng","B":"Chuyển cấp (escalation) theo mức tiền, đã làm đầy đủ bằng chức năng có sẵn của Frappe","C":"Kịch bản hội thoại (scripting) cho nhân viên tổng đài, đã có sẵn trong Frappe CRM","D":"Cơ sở tri thức (knowledge base) giúp kỹ thuật viên chẩn đoán, đã có sẵn trong Frappe"},"dung":["A"],"loi_sai":{"B":"nhầm bước ghi nhận với chuyển cấp, và coi như đã làm","C":"nhầm với kịch bản cuộc gọi, và coi như đã có","D":"nhầm với cơ sở tri thức, và coi như đã có"},"giai_thich":"Giáo trình nói một ca thường bắt đầu bằng phiếu sự cố. Nhóm không có đối tượng \"ca\" hay \"yêu cầu đổi trả\", nên dùng ghi chú trên deal đã bán thay. Quy trình không có nút chuyển cấp theo mức tiền; cổng \"Lỗi thuộc Biti's?\" là quyết định theo nguyên nhân. Scripting và knowledge base cũng chưa có trong đồ án.","doan_goc":"Chương 9, giáo trình tr. 217–218; docs/quy-trinh-sop.md (K1)"},{"id":"Q08","phan":"ud","muc_tieu":"M3","loai":"mot_dap_an","cau_hoi":"Trong chạy thử, một khách nhận hàng cách đây 12 ngày và đã dùng; chính sách của Biti's cho đổi trong 7 ngày. Khách quá hạn bao nhiêu ngày, và quy trình đi nhánh nào?","dap_an":{"A":"12 ngày; nhánh Không của cổng \"Lỗi thuộc Biti's?\" rồi gửi trả hàng cũ cho khách","B":"7 ngày; nhánh Có của cổng \"Còn trong 7 ngày và còn tem nhãn?\" rồi hướng dẫn gửi hàng về","C":"5 ngày; nhánh Không của cổng \"Lỗi thuộc Biti's?\" rồi gửi trả hàng cũ cho khách","D":"5 ngày; nhánh Không của cổng \"Còn trong 7 ngày và còn tem nhãn?\" rồi từ chối đổi trả"},"dung":["D"],"loi_sai":{"A":"lấy cả 12 ngày làm số quá hạn và nhầm cổng","B":"nhầm hạn 7 ngày với số ngày quá hạn, và đi sai nhánh","C":"tính đúng 5 ngày nhưng nhầm sang cổng của làn Kho"},"giai_thich":"Quá hạn là 12 − 7 = 5 ngày. Vì không còn trong 7 ngày (và hết tem nhãn), quy trình đi nhánh Không của cổng đầu \"Còn trong 7 ngày và còn tem nhãn?\" rồi tới \"Từ chối đổi trả\". Cổng \"Lỗi thuộc Biti's?\" nằm sau khi kho kiểm tra hàng nhận về, nên không dùng cho ca này.","doan_goc":"docs/quy-trinh-sop.md (K7); evidence/A4-3/chay-thu.json (K7); scripts/gd2/quy-trinh.js (quy trình K)"},{"id":"Q09","phan":"ud","muc_tieu":"M3","loai":"mot_dap_an","cau_hoi":"Đơn online thành công (deal CRM-DEAL-2026-00036) có hai sản phẩm: Hunter X nam BT-006 giá 1.190.000 ₫ và Hunter Street nam BT-001 giá 890.000 ₫, mỗi loại một đôi, không giảm giá. Giá trị deal là bao nhiêu?","dap_an":{"A":"1.780.000 ₫","B":"1.830.400 ₫","C":"2.080.000 ₫","D":"2.380.000 ₫"},"dung":["C"],"loi_sai":{"A":"tính cả hai đôi theo giá thấp (890.000 × 2)","B":"áp chiết khấu 12% của quy trình chung cho đơn không giảm giá","D":"tính cả hai đôi theo giá cao (1.190.000 × 2)"},"giai_thich":"Hai sản phẩm khác giá: 1.190.000 + 890.000 = 2.080.000 ₫. A và D nhân đôi một mức giá. B là 2.080.000 × 0,88, chiết khấu 12% chỉ thuộc quy trình chung, đơn online này không giảm giá.","doan_goc":"scripts/gd2-01-chay-thu.py (khối T); scripts/gd1-06-du-lieu-demo.py (giá); evidence/A4-3/chay-thu.json (T3)"},{"id":"Q10","phan":"ud","muc_tieu":"M3","loai":"nhieu_dap_an","cau_hoi":"Quy trình Đơn hàng online có ba nhánh thất bại. Biết: đơn thanh toán lỗi chưa từng được chuyển thành deal; đơn hết hàng chưa từng được chốt Won; nhánh giao thất bại có nút \"Nhận hàng hoàn về kho\". Nhận định nào đúng? (chọn 2 đáp án)","dap_an":{"A":"Nhánh thanh toán lỗi chỉ có lead, không có deal nào ở trạng thái Lost","B":"Deal hết hàng đi từ Won sang Lost khi kho báo không còn hàng","C":"Nhánh giao thất bại có một CRM Task nhận hàng hoàn về kho kèm deal Lost","D":"Cả ba nhánh thất bại đều để lại một deal ở trạng thái Lost"},"dung":["A","C"],"loi_sai":{"B":"đảo trạng thái trước khi mất: deal hết hàng chưa từng Won","D":"bỏ qua việc nhánh thanh toán lỗi chỉ có lead"},"giai_thich":"Thanh toán lỗi dừng ở lead 00085 (A đúng). Giao thất bại có CRM Task 53 và deal 00038 Lost (C đúng). Deal 00037 đi từ Qualification sang Lost, chưa từng Won (B sai). Vì nhánh thanh toán lỗi chỉ có lead nên D sai.","doan_goc":"evidence/A4-3/chay-thu.json (T6, T7, T8); scripts/gd2-01-chay-thu.py (khối T)"},{"id":"Q11","phan":"ud","muc_tieu":"M3","loai":"mot_dap_an","cau_hoi":"Trên sơ đồ Đơn hàng online, ba cổng quyết định nằm theo thứ tự nào từ đầu đến cuối?","dap_an":{"A":"Thanh toán thành công? → Còn đủ hàng? → Giao hàng thành công?","B":"Còn đủ hàng? → Thanh toán thành công? → Giao hàng thành công?","C":"Thanh toán thành công? → Giao hàng thành công? → Còn đủ hàng?","D":"Giao hàng thành công? → Thanh toán thành công? → Còn đủ hàng?"},"dung":["A"],"loi_sai":{"B":"đảo thứ tự kiểm tra thanh toán và tồn kho","C":"đặt kiểm tra tồn kho sau khi đã giao hàng","D":"đặt giao hàng trước thanh toán và tồn kho"},"giai_thich":"Sơ đồ đi theo đời sống đơn hàng: khách thanh toán, rồi kiểm tồn kho, rồi giao hàng. Cổng thanh toán nằm ở làn Bán hàng Online ngay sau bước khách thanh toán; cổng tồn kho kế tiếp; cổng giao hàng ở làn Kho cuối cùng. Không thể kiểm tồn kho sau khi đã giao.","doan_goc":"scripts/gd2/quy-trinh.js (quy trình Đơn hàng online: g1, g2, g3)"},{"id":"Q12","phan":"da","muc_tieu":"M4","loai":"mot_dap_an","cau_hoi":"Vì sao nhóm ghi các bước đổi trả bằng CRM Task và ghi chú trên deal đã bán?","dap_an":{"A":"Frappe CRM 16.0.1 có đối tượng đổi trả nhưng nhóm chưa bật nó lên","B":"Frappe CRM 16.0.1 chưa có đối tượng đổi trả; gắn vào deal để truy về đơn gốc","C":"Chính sách của Biti's yêu cầu mỗi yêu cầu đổi trả phải ghi dưới dạng ghi chú","D":"Giáo trình yêu cầu mỗi ca khiếu nại phải được ghi thành một CRM Task"},"dung":["B"],"loi_sai":{"A":"tưởng Frappe có sẵn đối tượng đổi trả","C":"gán cho chính sách của Biti's một yêu cầu không có nguồn","D":"gán cho giáo trình một thuật ngữ của Frappe"},"giai_thich":"Nhật ký giai đoạn 2 ghi Frappe CRM 16.0.1 không có đối tượng đổi trả, nên nhóm dùng CRM Task và ghi chú, gắn vào deal đã bán để biết đơn gốc và khách. Chính sách của Biti's nói điều kiện đổi trả, không nói cách ghi trong phần mềm. CRM Task là khái niệm của Frappe, giáo trình không nói đến.","doan_goc":"docs/phase-report.md mục 2.3 (phát hiện a); docs/quy-trinh-sop.md (K1–K7)"},{"id":"Q13","phan":"da","muc_tieu":"M4","loai":"mot_dap_an","cau_hoi":"Thầy hỏi: \"Đơn hàng online vào CRM của các em bằng đường nào?\" Câu trả lời đúng với tình trạng đồ án là gì?","dap_an":{"A":"Tự động từ WooCommerce qua webhook order.created, đã chạy ở GĐ2; xác minh chữ ký chưa làm","B":"Frappe CRM đồng bộ với website bitis.com.vn khi khách đặt hàng; các đơn lỗi chưa kiểm","C":"Qua Email Account Gmail: hệ thống đọc thư xác nhận đơn rồi tạo deal, thư lỗi chưa xử lý","D":"Nhập tay ở GĐ2; nối WooCommerce bằng webhook là kế hoạch GĐ4, chưa làm"},"dung":["D"],"loi_sai":{"A":"nói đã làm điều thuộc kế hoạch GĐ4","B":"gán cho Frappe một khả năng đồng bộ không có","C":"bịa cơ chế đọc thư đơn hàng"},"giai_thich":"Đơn online ở giai đoạn 2 được nhập tay (lead nguồn \"Website Biti's\", địa bàn Online). Nối WooCommerce vào Frappe bằng webhook là kế hoạch của GĐ4 và chưa làm. Frappe không tự đồng bộ với website Biti's, và nhóm không có cơ chế đọc thư để tạo deal.","doan_goc":"docs/quy-trinh-sop.md (T1); docs/ke-hoach-tinh-chinh-gd1-6.md (GĐ4); evidence/A4-3/chay-thu.json (T1)"},{"id":"Q14","phan":"da","muc_tieu":"M4","loai":"nhieu_dap_an","cau_hoi":"Chọn 2 hạn chế đúng của hai quy trình dịch vụ trong đồ án.","dap_an":{"A":"Cổng đầu của đổi trả kiểm 7 ngày và tem nhãn, chưa kiểm \"chỉ đổi một lần\" và hóa đơn","B":"Hoàn tiền được thực hiện bằng một giao dịch trong Frappe nhưng chưa đối soát với ngân hàng","C":"Chính sách 7 ngày được đọc ngày 2026-11-14 từ trang của Biti's và chưa kiểm lại sau đó","D":"Sơ đồ có nút chuyển cấp theo mức tiền nhưng chưa có dữ liệu thử cho nút này"},"dung":["A","C"],"loi_sai":{"B":"tưởng hoàn tiền là một giao dịch; thực tế chỉ là ghi chú","D":"tưởng sơ đồ có nút chuyển cấp; thực tế không có"},"giai_thich":"A và C đúng theo hồ sơ: sơ đồ chỉ có cổng \"Còn trong 7 ngày và còn tem nhãn?\", và chính sách được đọc ngày 2026-11-14. B sai: hoàn tiền ở deal 00037 chỉ là một ghi chú, CRM không có giao dịch tiền. D sai: quy trình không có nút chuyển cấp nào.","doan_goc":"docs/nghien-cuu-bitis.md mục 3; docs/quy-trinh-sop.md (K2, T7); scripts/gd2/quy-trinh.js"},{"id":"Q15","phan":"da","muc_tieu":"M4","loai":"mot_dap_an","cau_hoi":"Muốn chứng minh nhánh khách xin đổi hàng khi đã quá hạn theo chính sách của Biti's đã được chạy thử thật trong Frappe, nên mở bản ghi nào?","dap_an":{"A":"Deal CRM-DEAL-2026-00035: ghi chú quá 7 ngày và CRM Task 48 \"Từ chối đổi trả\" đã Done","B":"Deal CRM-DEAL-2026-00031: CRM Task 47 \"Gửi hàng đổi miễn phí\" đã Done, hàng đổi được gửi đi","C":"Lead CRM-LEAD-2026-00085: ghi chú thanh toán thẻ bị từ chối, lead chuyển Unqualified","D":"Deal CRM-DEAL-2026-00032: trạng thái Lost với lý do \"Giá cao\" sau khi khách xem báo giá"},"dung":["A"],"loi_sai":{"B":"nhầm với nhánh đổi hàng","C":"nhầm với nhánh thanh toán lỗi của đơn online","D":"nhầm với nhánh deal thất bại của quy trình chung"},"giai_thich":"Nhánh từ chối vì quá hạn chạy trên deal 00035 (ghi chú và CRM Task 48). Deal 00031 là nhánh đổi hàng. Lead 00085 là thanh toán lỗi của đơn online. Deal 00032 là deal thất bại \"Giá cao\" của quy trình chung.","doan_goc":"evidence/A4-3/chay-thu.json (K7); evidence/A4-3/K07_deals_notes.png"},{"id":"Q16","phan":"da","muc_tieu":"M4","loai":"mot_dap_an","cau_hoi":"Thầy hỏi: \"Quy trình đổi trả giúp giữ chân khách thế nào và các em đã đo chưa?\" Câu trả lời đúng với hồ sơ là gì?","dap_an":{"A":"Đã đo sơ bộ: 4 deal Lost trên 8 deal chạy thử, tức giữ chân khoảng 50%, dù dữ liệu còn ít","B":"Đã đo tỉ lệ giữ chân thô trên các lead đã có; phần doanh số và lợi nhuận chưa đo","C":"Không liên quan trực tiếp: giữ chân thuộc về marketing, dịch vụ sau bán ít ảnh hưởng","D":"Giáo trình nói dịch vụ tốt thúc đẩy giữ chân; nhóm chưa đo vì chưa có dữ liệu thật"},"dung":["D"],"loi_sai":{"A":"coi dữ liệu thử là dữ liệu thật và nhầm deal Lost với khách bỏ đi","B":"nói đã làm điều chưa làm","C":"phủ nhận quan hệ giáo trình nêu giữa chất lượng dịch vụ và giữ chân"},"giai_thich":"Giáo trình viết chất lượng dịch vụ thúc đẩy giữ chân khách; đổi miễn phí hàng lỗi nhà sản xuất là cách làm theo hướng đó. Nhóm chưa đo tỉ lệ giữ chân vì chưa có dữ liệu thật của khách đầu và cuối kỳ; dữ liệu thử do script tạo không dùng được. Deal Lost là cơ hội bán không thành, không phải khách đã bỏ đi.","doan_goc":"Chương 9, giáo trình tr. 209; Chương 4, slide 3–4; docs/phase-report.md mục 2.3"}]}</script>
+<script src="../assets/manifest.js"></script>
+<script src="../assets/site.js"></script>
+</body>
+</html>

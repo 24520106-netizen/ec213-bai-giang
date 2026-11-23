@@ -1,0 +1,19 @@
+{
+  "id": "gd2-02",
+  "gd": "gd2",
+  "thu_tu": "2.2",
+  "tieu_de": "Quy tắc nghiệp vụ, ngoại lệ và quyết định trong quy trình",
+  "tom_tat": "Quy tắc nghiệp vụ là gì và khác yêu cầu phần mềm ra sao; cách viết, gắn mã, thử ở biên; rồi xem các quy tắc thật của Biti's và của nhóm nằm ở cổng nào trong năm sơ đồ, cái nào Frappe tự có, cái nào chỉ ghi bằng việc và ghi chú.",
+  "muc_tieu_bai": [
+    "Phân biệt được quy tắc nghiệp vụ với yêu cầu phần mềm và gọi đúng loại của một quy tắc (ràng buộc, kích hoạt hành động, tính toán…)",
+    "Viết được quy tắc rõ ràng, tránh phủ định, có mã, và phát hiện được chỗ hở ở giá trị biên",
+    "Chỉ ra từng quy tắc thật của đồ án nằm ở cổng nào trên sơ đồ, nguồn là [CHÍNH THỨC] hay [GIẢ ĐỊNH], tiền tính ra sao",
+    "Phân biệt quy tắc có sẵn trong Frappe CRM với quy tắc của nhóm, và nói thật quy tắc nào hệ thống chưa tự thực thi"
+  ],
+  "nguon": [
+    { "ten": "Wiegers & Hokanson (2024), Software Requirements Essentials", "chi_tiet": "Chương 5, thực hành #16 \"Identify and document business rules\", tr. 25–35 trong bản trích của chương (định nghĩa, các loại quy tắc, mẫu viết, tìm và ghi quy tắc, bảng quyết định, truy vết); Chương 4 tr. 9 (quy tắc là nguồn của chức năng)" },
+    { "ten": "Camunda docs", "chi_tiet": "18-camunda-ngoai-happy-path.txt (vẽ đường suôn sẻ trước, ngoại lệ sau; dùng cổng cho vấn đề tại một điểm); 16-camunda-quy-uoc-dat-ten.txt (cổng là câu hỏi)" },
+    { "ten": "Frappe CRM docs", "chi_tiet": "53-frappe-crm-deal.md (mục Marking a Deal as Lost); 60-frappe-crm-assignment-rule.md. Trong tai-lieu-chinh-thong/bpmn/" },
+    { "ten": "Tệp của nhóm", "chi_tiet": "docs/nghien-cuu-bitis.md (chính sách đổi trả, [CHÍNH THỨC] bitis.com.vn); docs/quy-trinh-sop.md; scripts/gd2/quy-trinh.js; scripts/gd2-01-chay-thu.py; docs/phase-report.md mục 1.4, 1.6, 2.3" }
+  ]
+}

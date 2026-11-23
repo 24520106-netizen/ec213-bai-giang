@@ -1,0 +1,185 @@
+<section class="part" id="kt">
+<h2><span class="n">1</span>Kiến thức tổng quát: cơ sở dữ liệu liên quan khách hàng</h2>
+
+<h3>Vì sao gọi là "liên quan khách hàng"</h3>
+<p>Giáo trình dùng cụm <b>customer-related database</b> (cơ sở dữ liệu liên quan khách hàng) thay vì "cơ sở dữ liệu khách hàng", vì dữ liệu phục vụ CRM không chỉ <i>về</i> khách mà còn <i>cho</i> khách: thông tin sản phẩm, cách xử lý sự cố để khách và đối tác tra cứu. Dữ liệu về khách nằm ở nhiều nơi: bộ phận marketing, bán hàng, dịch vụ, kế toán, và bên ngoài như công ty nghiên cứu thị trường hay mạng xã hội. Đây là nền cho cả CRM chiến lược, vận hành và phân tích.</p>
+<div class="src"><b class="t">Trong giáo trình</b>Chương 11, slide 2; sách tr. 265.</div>
+
+<h3>Cơ sở dữ liệu quan hệ: bảng, dòng, cột, khóa</h3>
+<p>Chuẩn của phần mềm CRM cho dữ liệu có cấu trúc là <b>cơ sở dữ liệu quan hệ</b> (relational database): dữ liệu nằm trong các bảng hai chiều như bảng tính. Giáo trình gọi cùng một thứ bằng hai bộ tên:</p>
+<div class="tablewrap"><table>
+<tr><th>Gọi kiểu cơ sở dữ liệu</th><th>Gọi kiểu bảng tính</th><th>Ví dụ</th></tr>
+<tr><td>File (bảng, table)</td><td>Một trang tính</td><td>Bảng "khách hàng"</td></tr>
+<tr><td>Record (bản ghi, dòng, row)</td><td>Một dòng</td><td>Một khách</td></tr>
+<tr><td>Field (trường, cột, column)</td><td>Một cột</td><td>Số điện thoại</td></tr>
+</table></div>
+<p>Mỗi dòng cần một giá trị nhận diện duy nhất, gọi là <b>khóa chính</b> (primary key), ví dụ mã khách. Các bảng khác (đơn hàng, dịch vụ, thanh toán) dùng chính mã đó để nối với khách, nên mới "quan hệ" được với nhau. Dữ liệu <b>phi cấu trúc</b> (unstructured) thì không khớp một khuôn bảng định sẵn: email, tài liệu Word, PDF, tin nhắn, ghi chú của nhân viên, ghi âm cuộc gọi, ảnh, video. Cách đưa chúng vào cơ sở dữ liệu thường là gán nhãn (tagging) hoặc gắn chúng vào bản ghi khách bằng các trường có cấu trúc.</p>
+<div class="src"><b class="t">Trong giáo trình</b>Chương 11, slide 3; sách tr. 266.</div>
+<div class="note"><b class="t">Phân biệt</b>Khóa chính là giá trị nhận diện một dòng trong bảng của nó. Giá trị đó xuất hiện ở bảng khác để nối lại. Giáo trình mô tả cơ chế này (dùng mã khách chung để nối các cơ sở dữ liệu), còn thuật ngữ "khóa ngoại" là cách gọi phổ biến của ngành, giáo trình không dùng riêng.</div>
+
+<h3>Sáu bước xây cơ sở dữ liệu</h3>
+<div class="tablewrap"><table>
+<tr><th>Bước</th><th>Việc làm</th><th>Câu hỏi chính</th></tr>
+<tr><td>1. Xác định chức năng</td><td>Xem lại tầm nhìn, chiến lược, mục tiêu của CRM</td><td>Vì sao cần dữ liệu khách?</td></tr>
+<tr><td>2. Xác định yêu cầu thông tin</td><td>Hỏi người tiếp xúc khách (bán hàng, marketing, dịch vụ) và người ra quyết định chiến lược</td><td>Cần thông tin gì?</td></tr>
+<tr><td>3. Tìm nguồn thông tin</td><td>Nguồn trong công ty và nguồn ngoài</td><td>Lấy ở đâu?</td></tr>
+<tr><td>4. Chọn công nghệ và hệ điều hành</td><td>Thường nhà cung cấp CRM đã hỗ trợ sẵn một danh sách</td><td>Chạy trên nền nào?</td></tr>
+<tr><td>5. Nạp dữ liệu</td><td>Kiểm chứng, xác thực, khử trùng, gộp và lọc</td><td>Dữ liệu đã đủ chính xác chưa?</td></tr>
+<tr><td>6. Bảo trì</td><td>Cập nhật, khử trùng định kỳ, kiểm tra, xóa khi khách yêu cầu</td><td>Giữ dữ liệu còn dùng được thế nào?</td></tr>
+</table></div>
+<p>Hai cách dùng dữ liệu cần tách bạch: dữ liệu <b>vận hành</b> nằm trong OLTP (online transaction processing, xử lý giao dịch trực tuyến), phải chính xác và mới; dữ liệu <b>phân tích</b> nằm trong OLAP (online analytical processing), thường là bản tóm tắt trích từ OLTP và có thể cũ hơn một chút. Nhân viên tổng đài tra hóa đơn của khách đang gọi cần dữ liệu OLTP; người phân tích doanh thu theo vùng dùng được dữ liệu OLAP.</p>
+<div class="src"><b class="t">Trong giáo trình</b>Chương 11, slide 4–9; sách tr. 266–275.</div>
+
+<h3>Loại và nguồn dữ liệu</h3>
+<ul>
+<li><b>Nguồn trong</b> (internal) là nền của hầu hết chương trình CRM: marketing, bán hàng, dịch vụ, tài chính, quản trị web đều giữ dữ liệu riêng. Công ty bán qua đại lý hay nhà phân phối thường biết rất ít về khách cuối.</li>
+<li><b>Nguồn ngoài</b> (external) để bổ sung khi dữ liệu trong chưa đủ, gồm ba dạng: danh sách do nhà cung cấp tổng hợp (compiled list), dữ liệu điều tra dân số (census), và dữ liệu đã được mô hình hóa (modelled).</li>
+<li><b>Dữ liệu thứ cấp</b> (secondary) đã có sẵn từ mục đích khác; <b>dữ liệu sơ cấp</b> (primary) phải thu thập mới. Cách thu rẻ cho dữ liệu sơ cấp gồm cuộc thi, đăng ký nhận bản tin, đăng ký sản phẩm, và chương trình khách hàng thân thiết.</li>
+</ul>
+<div class="src"><b class="t">Trong giáo trình</b>Chương 11, slide 6; sách tr. 270–272.</div>
+
+<h3>Làm sạch khi nạp dữ liệu</h3>
+<p>Bốn việc trong bước 5:</p>
+<ul>
+<li><b>Kiểm chứng</b> (verification): dữ liệu đã nhập có giống nguồn gốc không.</li>
+<li><b>Xác thực</b> (validation): dữ liệu có đúng không, ví dụ giá trị vượt khoảng cho phép, ô trống, đối chiếu mã bưu chính với danh sách của cơ quan bưu chính.</li>
+<li><b>Khử trùng</b> (de-duplication): bỏ bản ghi lặp. Có hai kiểu sai: xóa nhầm bản ghi lẽ ra phải giữ (hai người khác nhau cùng họ, cùng căn hộ), hoặc giữ lại bản ghi lẽ ra phải xóa (cùng một người nhưng ghi Mr và Dr thành hai bản ghi).</li>
+<li><b>Gộp và lọc</b> (merge-purge): khi hợp nhiều cơ sở dữ liệu thì gộp lại và bỏ phần trùng.</li>
+</ul>
+<div class="ex"><b class="t">Ví dụ số (tự đặt)</b>Một chuỗi nhà sách mua danh sách A có 5.000 người và danh sách B có 3.000 người, trong đó 1.200 người có mặt ở cả hai. Gộp và lọc xong còn 5.000 + 3.000 − 1.200 = 6.800 người. Nếu không lọc, gửi thư cho 8.000 địa chỉ và 1.200 người nhận hai lần.</div>
+
+<h3>Bảo trì và sáu thuộc tính mong muốn (STARTS)</h3>
+<p>Cơ sở dữ liệu xuống cấp nhanh vì khách thay đổi: sách nêu các con số của nước ngoài, ví dụ khoảng 8% người ở Mỹ đổi địa chỉ mỗi năm. Với 1.000 hồ sơ thì khoảng 0,08 × 1.000 = 80 địa chỉ có thể đã cũ sau một năm (số 8% là của Mỹ, không phải Việt Nam). Cách giữ dữ liệu: nhập ngay khi có giao dịch, khử trùng định kỳ, kiểm tra một phần mỗi năm, loại khách không hoạt động quá lâu, thu thêm dữ liệu mỗi lần tiếp xúc, cho khách tự cập nhật, xóa bản ghi khi khách yêu cầu.</p>
+<p>Sáu thuộc tính nhớ bằng từ <b>STARTS</b>: dùng chung được (<b>S</b>hareable), chuyển đến người dùng được (<b>T</b>ransportable), <b>A</b>ccurate (chính xác), <b>R</b>elevant (đúng mục đích), <b>T</b>imely (đúng lúc cần), <b>S</b>ecure (an toàn).</p>
+<div class="src"><b class="t">Trong giáo trình</b>Chương 11, slide 9–10; sách tr. 274–277.</div>
+
+<h3>Vấn đề khi quản lý dữ liệu</h3>
+<p>Giáo trình nói về ba vấn đề: chất lượng (không chính xác làm lãng phí chiến dịch và làm người dùng mất tin vào hệ thống, rồi dùng ít đi, dữ liệu càng tệ), tích hợp (nhiều cơ sở dữ liệu cần ghép thành một cái nhìn duy nhất về khách, gọi là SVOC, single view of the customer, và muốn ghép phải chuẩn hóa dữ liệu) và an ninh (bảo vệ dữ liệu khỏi mất, phá hoại, đánh cắp). Chương cũng nhắc kho dữ liệu (data warehouse) cho công ty lớn. <b>Chương 11 không có mục riêng về quyền riêng tư hay luật bảo vệ dữ liệu</b>; chỉ có an ninh dữ liệu và việc xóa bản ghi khi khách yêu cầu, nên bài này không nói thêm điều giáo trình không nói.</p>
+<div class="src"><b class="t">Trong giáo trình</b>Chương 11, sách tr. 276–280 (data integration, data warehousing).</div>
+</section>
+
+<section class="part" id="ud">
+<h2><span class="n">2</span>Ứng dụng trong đồ án: mô hình dữ liệu của Frappe CRM</h2>
+
+<h3>Khái niệm Chương 11 ↔ thành phần Frappe</h3>
+<div class="tablewrap"><table>
+<tr><th>Giáo trình</th><th>Trong Frappe CRM</th><th>Ví dụ</th></tr>
+<tr><td>File (bảng)</td><td>DocType (kiểu tài liệu); mỗi DocType là một bảng trong cơ sở dữ liệu, tên bảng có tiền tố <code>tab</code></td><td>CRM Lead ↔ <code>tabCRM Lead</code></td></tr>
+<tr><td>Record (dòng)</td><td>Một bản ghi (document)</td><td>Một lead</td></tr>
+<tr><td>Field (cột)</td><td>DocField (trường)</td><td><code>first_name</code>, <code>mobile_no</code></td></tr>
+<tr><td>Khóa chính</td><td>Trường <code>name</code>, cấp theo chuỗi đặt tên (naming series)</td><td>CRM-LEAD-2026-00073, CRM-DEAL-2026-00031</td></tr>
+<tr><td>Dùng mã để nối bảng</td><td>Trường kiểu Link, giữ <code>name</code> của bản ghi ở DocType khác</td><td><code>status</code> trỏ CRM Lead Status; <code>source</code> trỏ CRM Lead Source</td></tr>
+<tr><td>Nhiều dòng thuộc một bản ghi</td><td>Bảng con (child table), trường kiểu Table</td><td>Dòng sản phẩm của deal</td></tr>
+<tr><td>Dữ liệu phi cấu trúc</td><td>Ghi chú, nhật ký cuộc gọi, email, gắn vào lead hoặc deal bằng trường tham chiếu</td><td>FCRM Note, CRM Call Log</td></tr>
+</table></div>
+<p>Hai khái niệm trên (DocType và bảng con) là của Frappe Framework; xem tài liệu <code>frappe/03-doctypes.txt</code> và <code>03-child-doctype.txt</code>.</p>
+
+<h3>Các DocType chính và quan hệ</h3>
+<div class="tablewrap"><table>
+<tr><th>DocType</th><th>Là gì</th><th>Nối với</th></tr>
+<tr><td><b>CRM Lead</b></td><td>Khách tiềm năng chưa chốt</td><td>Link tới CRM Lead Status, CRM Lead Source, CRM Territory, CRM Industry, CRM Lost Reason. Có bảng con <code>products</code>. Trường <code>organization</code> là ô chữ (Data), không phải Link</td></tr>
+<tr><td><b>CRM Deal</b></td><td>Cơ hội bán hàng</td><td>Trường <code>lead</code> trỏ về lead gốc; <code>organization</code> trỏ CRM Organization; bảng con <code>contacts</code> (mỗi dòng có <code>contact</code> và <code>is_primary</code>); bảng con <code>products</code></td></tr>
+<tr><td><b>Contact</b></td><td>Người liên hệ (DocType có sẵn của Frappe, không riêng CRM)</td><td>Bảng con <code>email_ids</code>, <code>phone_nos</code>; <code>company_name</code> chứa tên tổ chức</td></tr>
+<tr><td><b>CRM Organization</b></td><td>Tổ chức: đại lý, cửa hàng, trường, câu lạc bộ</td><td>Link tới CRM Territory, CRM Industry</td></tr>
+<tr><td><b>CRM Product</b></td><td>Danh mục sản phẩm (master)</td><td>Dòng sản phẩm của deal ghi lại mã <code>product_code</code> và giá</td></tr>
+</table></div>
+<p>Chuỗi quan hệ: <b>Lead → Deal → Contact và Organization</b>. Theo mã nguồn <code>crm_lead.py</code> (bản develop, tải 2026-11-16), khi chuyển lead thành deal hệ thống tạo hoặc gắn một Contact, tạo hoặc gắn một CRM Organization theo tên, tạo Deal có <code>lead</code> trỏ về, rồi đặt <code>converted = 1</code> ở lead. Bài 1.1 đã bàn chi tiết.</p>
+
+<h3>Dữ liệu demo đã nhập (GĐ1)</h3>
+<div class="tablewrap"><table>
+<tr><th>Loại</th><th>Số lượng</th><th>Ghi chú</th></tr>
+<tr><td>Sản phẩm (CRM Product)</td><td>24</td><td>Mã BT-001 đến BT-024, giá là [GIẢ ĐỊNH]</td></tr>
+<tr><td>Tổ chức (CRM Organization)</td><td>20</td><td>Đại lý, cửa hàng, trường học, câu lạc bộ, đối tác xuất khẩu giả lập</td></tr>
+<tr><td>Liên hệ (Contact)</td><td>45 (+12)</td><td>45 do script tạo; 12 do hệ thống tự tạo cho tài khoản người dùng, tổng 57</td></tr>
+<tr><td>Lead</td><td>60</td><td>Xem bài 1.1</td></tr>
+<tr><td>Deal</td><td>30</td><td>Đánh giá nhu cầu 6, Tư vấn/Demo 5, Báo giá 6, Thương lượng 4, Sắp chốt 2, Thành công 4, Thất bại 3</td></tr>
+<tr><td>Việc / Ghi chú / Cuộc gọi</td><td>40 / 30 / 20</td><td>Gắn với lead và deal</td></tr>
+</table></div>
+<p>Kiểm: 6 + 5 + 6 + 4 + 2 + 4 + 3 = 30 deal. Theo phase-report, giá trị dự kiến của các deal đang mở là 803.190.280 ₫ và của các deal đã thành công là 147.866.500 ₫ (dữ liệu demo, không phải doanh thu thật).</p>
+<div class="ex"><b class="t">Một dòng sản phẩm của deal, tính lại</b>Script tính từng dòng: thành tiền = số lượng × đơn giá, rồi tiền sau chiết khấu = thành tiền × (100 − phần trăm chiết khấu) / 100. Ví dụ 12 đôi giày BT-001 (đơn giá 890.000 ₫) chiết khấu 10%: thành tiền 12 × 890.000 = 10.680.000 ₫; sau chiết khấu 10.680.000 × 0,9 = 9.612.000 ₫. Tổng các dòng được script ghi vào <code>total</code> và <code>net_total</code> của deal.</div>
+
+<h3>Sau GĐ2: dữ liệu thử có tiền tố [GĐ2]</h3>
+<p>Khi chạy thật 5 quy trình, <code>scripts/gd2-01-chay-thu.py</code> thêm 15 lead (CRM-LEAD-2026-00073 đến 00087) và 8 deal (CRM-DEAL-2026-00031 đến 00038), cộng việc, ghi chú, nhật ký cuộc gọi. Tổng sau đó: 75 lead (60 + 15), 38 deal (30 + 8), 53 việc. Tên lead và tiêu đề việc có tiền tố "[GĐ2]" để tách khỏi dữ liệu demo GĐ1.</p>
+
+<h3>Ví dụ đạt và chưa đạt</h3>
+<div class="ex"><b class="t">Đạt</b>Mỗi liên hệ demo có số điện thoại riêng (dải 0900 000 xxx) và email riêng (@example.com), nên không có hai liên hệ trùng số điện thoại do thiết kế. Tổ chức của deal được chọn từ danh sách tổ chức đã có, không gõ tay.</div>
+<div class="warn"><b class="t">Chưa đạt</b>Ô <code>organization</code> trên lead là ô chữ. Nếu nhân viên gõ một tên hơi khác tên tổ chức đã có (thừa dấu cách, sai chính tả), khi chuyển deal hệ thống tìm theo đúng tên, không khớp thì tạo thêm một CRM Organization mới. Đây là kiểu "giữ bản ghi lẽ ra phải gộp" mà Chương 11 cảnh báo. Mình chưa thử trên máy xem sai dấu cách hay sai dấu tiếng Việt có bị coi là khác hay không.</div>
+<div class="warn"><b class="t">Chưa đạt</b>Các số <code>total</code>, <code>net_total</code>, <code>expected_deal_value</code> của 30 deal demo do script tự tính rồi ghi vào, không phải Frappe tự cộng. Nếu ai sửa một dòng sản phẩm bằng tay, mình chưa kiểm xem tổng có tự cập nhật không.</div>
+
+<h3>STARTS nhìn vào đồ án</h3>
+<p>Shareable: nhiều người dùng cùng làm việc trên một site Frappe (3 tài khoản thành viên, 8 nhân viên demo). Transportable: truy cập qua trình duyệt ở <code>/crm</code> và Desk ở <code>/app</code>. Secure: sao lưu site trước khi chạy trình cài đặt (<code>phase-report</code> mục 1.2), phân vai trò người dùng. Accurate và Timely: dữ liệu demo là giả nên chỉ có nghĩa kiểm thử, xem phần 3.</p>
+</section>
+
+<section class="part" id="da">
+<h2><span class="n">3</span>Hiểu sâu đồ án: vì sao dữ liệu như vậy, ở đâu, của ai</h2>
+
+<h3>Vì sao dùng dữ liệu giả</h3>
+<ul>
+<li><b>Không có dữ liệu thật để dùng.</b> Số lead, số khách, doanh thu của Biti's không có nguồn công khai (<code>docs/nghien-cuu-bitis.md</code> mục 5). Đồ án cần đủ dữ liệu để chạy quy trình và làm báo cáo, nên nhóm tự sinh.</li>
+<li><b>Không động tới người thật.</b> Số điện thoại dải 0900 000 xxx, email @example.com, giá sản phẩm ghi [GIẢ ĐỊNH].</li>
+<li><b>Hạt ngẫu nhiên 213.</b> Script <code>gd1-06</code> khởi tạo bộ sinh số ngẫu nhiên với hạt 213, nên chạy lại ra đúng cùng bộ tên, số, trạng thái. Nhờ vậy bạn khác trong nhóm tái lập được dữ liệu y hệt.</li>
+<li><b>Chống nhân đôi.</b> Script từ chối chạy nếu đã có sản phẩm hoặc lead, để không nhập hai lần.</li>
+</ul>
+
+<h3>Vì sao lùi ngày tạo và sửa</h3>
+<p>Nhập dữ liệu hôm nay thì mọi bản ghi mang ngày hôm nay, và báo cáo "theo tháng" ở GĐ5 chỉ có một cột. Nên <code>gd1-06</code> chọn trước một ngày cho mỗi bản ghi và ghi vào <code>~/gd1-backdate.json</code> (khóa "DocType|tên" và giá trị thời điểm). Lead lùi 3 đến 170 ngày so với ngày 2026-11-14, tức khoảng từ 2026-05-28 đến 2026-11-11; tổ chức lùi 150 đến 200 ngày (2026-04-28 đến 2026-06-17) vì danh mục thường có trước giao dịch; người liên hệ 140 đến 190 ngày. Sau đó <code>gd1-07-lui-ngay.py</code> chạy trong <code>bench console</code>, dùng <code>frappe.db.set_value</code> sửa thẳng cột <code>creation</code> và <code>modified</code> với <code>update_modified=False</code>. Cách này sửa cơ sở dữ liệu trực tiếp, chỉ dùng cho dữ liệu demo.</p>
+<p>Nhật ký không ghi lý do chọn console thay vì REST. <b>[GIẢ ĐỊNH]</b> lý do là khi tạo qua REST, ngày tạo là lúc gọi; mình chưa kiểm điều này. Ngày dữ liệu demo vì thế <b>giả</b>: không phản ánh lịch sử thật của Biti's, và phải nói rõ với thầy.</p>
+
+<h3>Chuẩn hóa thuật ngữ tiếng Việt</h3>
+<div class="tablewrap"><table>
+<tr><th>Tiếng Anh</th><th>Hiển thị trong đồ án</th></tr>
+<tr><td>Lead</td><td>Khách hàng tiềm năng</td></tr>
+<tr><td>Deal</td><td>Cơ hội</td></tr>
+<tr><td>Won</td><td>Thành công</td></tr>
+<tr><td>Lost</td><td>Thất bại</td></tr>
+<tr><td>"đã thắng"</td><td>"chốt thành công"</td></tr>
+<tr><td>Call Logs</td><td>Nhật ký cuộc gọi</td></tr>
+</table></div>
+<p>Cách làm: <code>gd1-10-viet-hoa.py</code> đọc <code>crm/locale/vi.po</code> của CRM, áp bảng thuật ngữ trên, ghi phần khác biệt (khoảng 150 mục) thành bản ghi Translation, không sửa mã nguồn CRM, rồi xóa bộ nhớ đệm bằng <code>bench clear-cache</code>. Một số chuỗi viết cứng trong mã (chú giải biểu đồ như "Leads", "Deals") vẫn là tiếng Anh; nhóm ghi nhận là hạn chế.</p>
+<div class="note"><b class="t">Bài học MariaDB</b>MariaDB so sánh chuỗi không phân biệt hoa thường. Vì thế "Won deals" và "Won Deals" bị coi là cùng một bản ghi Translation khi lọc bằng dấu bằng. Muốn tìm đúng một bản ghi phải lọc lại theo đúng ký tự sau khi lấy kết quả.</div>
+
+<h3>Lỗi khi xóa lead</h3>
+<p>Khi thử phân công, nhóm tạo lead thử rồi xóa. Xóa lead trực tiếp thì báo lỗi vì còn bản ghi liên kết. Hàm <code>cleanup_lead</code> trong <code>gd1-04-pipeline.py</code> xóa trước các <b>CRM Notification</b> và <b>ToDo</b> có <code>reference_name</code> là lead đó, rồi mới xóa lead. Đây là phép "xóa bản ghi khi khách yêu cầu" (Chương 11, bước 6) làm trong thực tế: muốn xóa một dòng thì phải xử lý các dòng đang trỏ tới nó.</p>
+
+<h3>Script gọi REST API thế nào (<code>scripts/lib_frappe.py</code>)</h3>
+<ol>
+<li>Đăng nhập: gửi <code>POST /api/method/login</code> với <code>usr</code> và <code>pwd</code>. Frappe trả cookie phiên (<code>sid</code>) mà thư viện giữ bằng <code>CookieJar</code>. Mật khẩu đọc từ <code>~/.dev-secrets</code>, không có trong mã.</li>
+<li>Gửi tiêu đề <code>Host</code> bằng tên site (<code>nhom4.localhost</code>) vì địa chỉ là 127.0.0.1:8000.</li>
+<li>Tạo: <code>POST /api/resource/&lt;DocType&gt;</code> với JSON. Sửa: <code>PUT /api/resource/&lt;DocType&gt;/&lt;name&gt;</code>. Xóa: <code>DELETE</code>. Đọc danh sách: <code>GET</code> với <code>fields</code> và <code>filters</code> dạng JSON.</li>
+<li>Gọi hàm của CRM: <code>/api/method/&lt;đường dẫn hàm&gt;</code>, ví dụ <code>crm.fcrm.doctype.crm_lead.crm_lead.convert_to_deal</code>.</li>
+</ol>
+<p>Frappe mặc định trả 20 dòng mỗi trang; thư viện luôn truyền <code>limit_page_length</code> (mặc định 1000, script đếm dùng 5000) để lấy đủ.</p>
+
+<h3>Của Frappe / của nhóm</h3>
+<div class="tablewrap"><table>
+<tr><th>Thành phần</th><th>Của Frappe</th><th>Của nhóm</th></tr>
+<tr><td>DocType CRM Lead, CRM Deal, CRM Organization, CRM Product, Contact</td><td>Có sẵn khi cài CRM / Frappe</td><td>Không thêm DocType mới, chưa có custom app (GĐ3)</td></tr>
+<tr><td>Chuỗi đặt tên, bảng con, trường Link</td><td>Cơ chế của Framework</td><td>Chỉ dùng</td></tr>
+<tr><td>REST API <code>/api/resource</code>, <code>/api/method</code></td><td>Có sẵn</td><td>Thư viện <code>lib_frappe.py</code> bọc lại</td></tr>
+<tr><td>24 sản phẩm, 20 tổ chức, 45 liên hệ, 60 lead, 30 deal</td><td>Không</td><td>Script <code>gd1-06</code> (dữ liệu giả)</td></tr>
+<tr><td>Lùi ngày tạo/sửa</td><td><code>bench console</code>, <code>frappe.db.set_value</code></td><td>Script <code>gd1-07</code></td></tr>
+<tr><td>Bản dịch tiếng Việt (~150 mục)</td><td>Cơ chế Translation, tệp <code>vi.po</code> gốc</td><td>Script <code>gd1-10</code></td></tr>
+</table></div>
+
+<h3>Cách tự kiểm tra</h3>
+<ol>
+<li>Bật bench (<code>scripts\frappe-start.ps1</code>), rồi chạy <code>python3 scripts/gd1-dem-du-lieu.py</code> trong WSL: script chỉ đọc, in số lượng từng loại và số lead, deal theo trạng thái, theo tháng tạo.</li>
+<li>So kết quả với bảng ở phần 2 (chưa chạy lại trong bài này vì Frappe không bật lúc viết).</li>
+<li>Mở <code>/crm/leads</code>, xem một lead để thấy trường <code>source</code>, <code>status</code>, <code>territory</code>.</li>
+</ol>
+
+<h3>Hạn chế đã biết</h3>
+<ul>
+<li>Dữ liệu và ngày tháng đều giả; không dùng để rút kết luận về Biti's.</li>
+<li>Chưa kiểm trùng tên người trong dữ liệu sinh ngẫu nhiên (tên ghép từ danh sách họ, đệm, tên; số điện thoại và email thì không trùng).</li>
+<li>Chưa chạy bước khử trùng nào; dữ liệu giả không có nguồn ngoài để gộp và lọc.</li>
+<li>Giao diện CRM mới dịch một phần sang tiếng Việt.</li>
+</ul>
+
+<h3>Thầy sẽ hỏi</h3>
+<details><summary>1. Dữ liệu này thật hay giả? Sao không dùng dữ liệu thật?</summary><p>Giả. Biti's không công bố số khách và lead (<code>nghien-cuu-bitis.md</code> mục 5), và nhóm không muốn dùng thông tin cá nhân thật. Script <code>gd1-06</code> sinh dữ liệu với hạt 213 nên chạy lại ra cùng bộ; số điện thoại 0900 000 xxx, email @example.com, giá [GIẢ ĐỊNH].</p></details>
+<details><summary>2. Sao ngày tạo lead trải từ tháng 5 đến 11?</summary><p>Vì báo cáo theo tháng ở GĐ5 cần nhiều tháng. Ngày do <code>gd1-06</code> chọn ngẫu nhiên và <code>gd1-07</code> ghi lại bằng <code>bench console</code>. Đây là ngày giả, không phải lịch sử thật.</p></details>
+<details><summary>3. Lead, Deal, Contact, Organization nối với nhau thế nào? Cái nào của Frappe?</summary><p>Cả bốn là DocType có sẵn. Deal có trường <code>lead</code> trỏ lead gốc, <code>organization</code> trỏ tổ chức, bảng con <code>contacts</code> trỏ người liên hệ. Nhóm chỉ nhập dữ liệu và cấu hình, chưa thêm DocType hay custom app.</p></details>
+<details><summary>4. Script của em gọi API thế nào? Mở code cho thầy xem.</summary><p>Mở <code>scripts/lib_frappe.py</code>: hàm <code>__init__</code> đăng nhập lấy cookie, <code>call</code> gửi yêu cầu kèm <code>Host</code>, <code>insert</code>/<code>update</code>/<code>delete</code>/<code>list</code> ứng với POST/PUT/DELETE/GET tới <code>/api/resource</code>, <code>method</code> gọi <code>/api/method</code>.</p></details>
+<details><summary>5. Gặp lỗi gì khi nhập dữ liệu, xử lý ra sao?</summary><p>Xóa lead lỗi vì còn CRM Notification và ToDo liên kết, phải xóa chúng trước (<code>cleanup_lead</code>). Bản dịch "Won deals"/"Won Deals" bị coi là một vì MariaDB không phân biệt hoa thường. Junk phải có lý do thất bại nên bổ sung 3 lead Junk. Ghi ở <code>phase-report</code> mục 1.4, 1.6, 1.9.</p></details>
+</section>

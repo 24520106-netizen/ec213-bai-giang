@@ -1,0 +1,18 @@
+{
+  "id": "gd1-04",
+  "gd": "gd1",
+  "thu_tu": "1.4",
+  "tieu_de": "Thiết lập hệ thống: ngôn ngữ, người dùng, phân quyền, email và quyền riêng tư",
+  "tom_tat": "Quyền riêng tư và đạo đức theo giáo trình, rồi cách trình cài đặt, người dùng, vai trò, email Gmail và bản dịch tiếng Việt được thiết lập thật trong Frappe CRM của Biti's.",
+  "muc_tieu_bai": [
+    "Nêu được các nguyên tắc bảo vệ dữ liệu cá nhân mà giáo trình trình bày (OECD, GDPR) và phân biệt vai trò (Role) với quyền theo người dùng (User Permission)",
+    "Chỉ ra được từng thiết lập (ngôn ngữ, quốc gia, múi giờ, tiền tệ, người dùng, email, bản dịch) nằm ở đâu trong đồ án và đọc đúng số liệu, phần đã kiểm và phần chưa kiểm",
+    "Giải thích được vì sao ô ngày hiện sai, vì sao dùng Translation thay vì sửa mã nguồn, vì sao thư thử phải đẩy hàng đợi, và trả lời được câu thầy hỏi về phân quyền"
+  ],
+  "nguon": [
+    { "ten": "Prior, Buttle & Maklan (2024), Customer Relationship Management, 5th ed.", "chi_tiet": "Chương 14 (phần Privacy and ethics), trang 325-328, slide 8; Chương 9 (email response management), trang 216-217" },
+    { "ten": "Tài liệu chính thống Frappe và Frappe CRM", "chi_tiet": "tai-lieu-chinh-thong/frappe/: 02-setting-up.txt, 02-profile-preferences.txt, 02-general-defaults.txt, 02-email-communication.txt, 02-inviting-team.txt, 02-sales-hierarchy.txt, 05-users-permissions.txt, 02-translations.txt (đường dẫn gốc ghi trong INDEX.md)" },
+    { "ten": "Mã nguồn Frappe và Frappe CRM trên máy nhóm", "chi_tiet": "frappe/desk/page/setup_wizard/setup_wizard.py, frappe/geo/country_info.json, frappe/hooks.py (tác vụ định kỳ gửi thư), crm/fcrm/doctype/crm_lead/crm_lead.json (quyền theo Role)" },
+    { "ten": "Dự án đồ án EC213, nhóm 04", "chi_tiet": "scripts/gd1-01-setup-wizard.py, gd1-02-he-thong-nguoi-dung.py, gd1-09-email-account.py, gd1-10-viet-hoa.py, gd1-11-gui-thu.py, gd1-11b-flush-mail.sh; docs/phase-report.md mục 1.2, 1.3, 1.7-1.9 và mục cập nhật 2026-11-22; docs/huong-dan-gmail-smtp.md; docs/ghi-chu-phan-bien-thay.md" }
+  ]
+}

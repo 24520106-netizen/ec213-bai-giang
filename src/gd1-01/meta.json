@@ -1,0 +1,18 @@
+{
+  "id": "gd1-01",
+  "gd": "gd1",
+  "thu_tu": "1.1",
+  "tieu_de": "Hành trình khách hàng, lead và nguồn lead",
+  "tom_tat": "Từ lý thuyết thu hút khách hàng (Chương 3) đến cách đồ án Biti's cấu hình nguồn lead, trạng thái lead và địa bàn trong Frappe CRM.",
+  "muc_tieu_bai": [
+    "Phân biệt hai loại khách mới và đọc được nhóm khách theo mô hình Hofmeyr",
+    "Xếp một hoạt động tìm khách vào đúng nhóm phương pháp trong bảng nguồn lead và chọn chỉ số KPI tương ứng",
+    "Chỉ ra nguồn lead, 7 trạng thái lead, địa bàn và 8 lý do thất bại của đồ án, và nói chúng ứng với khái niệm nào của giáo trình",
+    "Trả lời được lead chuyển thành deal ở đâu, cái nào của Frappe, cái nào của nhóm, và xem chúng ở màn hình nào"
+  ],
+  "nguon": [
+    { "ten": "Prior, Buttle & Maklan (2024), Customer Relationship Management: Concepts, Applications and Technologies, 5th ed.", "chi_tiet": "Chương 3, slide 2–18 của thầy và trang 59–83 trong sách" },
+    { "ten": "Tài liệu Frappe CRM (đã tải về máy)", "chi_tiet": "tai-lieu-chinh-thong/frappe/02-setup-guide.txt, 02-lead.txt; mã nguồn crm_lead.py (tich-hop/83-src-crm-lead-py.txt)" },
+    { "ten": "Dự án đồ án", "chi_tiet": "scripts/gd1-04-pipeline.py, scripts/gd1-06-du-lieu-demo.py, docs/phase-report.md mục 1.4 và 1.6, docs/nghien-cuu-bitis.md" }
+  ]
+}

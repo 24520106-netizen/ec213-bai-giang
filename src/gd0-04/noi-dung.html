@@ -1,0 +1,168 @@
+<section class="part" id="kt">
+  <h2><span class="n">1</span>Kiến thức tổng quát: lập kế hoạch và triển khai một dự án CRM</h2>
+
+  <h3>Business case: tờ giấy để lãnh đạo quyết định</h3>
+  <p><b>Business case</b> (hồ sơ luận chứng kinh doanh) là tài liệu nêu kế hoạch triển khai CRM, liệt kê lợi ích và chi phí, thời gian và nguồn lực. Ban lãnh đạo dùng nó để quyết định có làm hay không (Chương 12, tr. 285–286; slide 3). Giáo trình nhấn mạnh CRM thành hay bại tùy chuyện xảy ra <b>trước</b> khi triển khai: kỳ vọng sai, văn hóa công ty không hợp, thiếu nguồn lực.</p>
+  <p>Khó nhất là con số. Khi xin tiền, bạn biết chắc chi phí, còn mức lợi nhuận tăng thêm thì chưa biết cho đến khi làm với khách thật (tr. 286). Chi phí cũng không chỉ là tiền mua phần mềm: còn tích hợp hệ thống, cấu hình, mô hình dữ liệu, đào tạo, quản lý dự án, quản lý thay đổi, và cả thời gian nhân viên bỏ việc thường ngày. Giáo trình dẫn một nghiên cứu: phần IT có thể chỉ chiếm từ một phần tư (dự án đơn giản) đến một phần mười (dự án phức tạp) tổng chi phí (Chương 13, tr. 304).</p>
+
+  <h3>Vì sao bài toán tiền khó với CRM</h3>
+  <p>Cách thông dụng để duyệt đầu tư là <b>NPV</b> (Net Present Value – giá trị hiện tại ròng): quy các khoản tiền thu về các năm sau về giá trị hôm nay bằng cách chia cho (1 + r) lũy thừa số năm, rồi trừ vốn bỏ ra. Ở đây r là tỉ lệ chiết khấu (cho rủi ro). NPV dương thì đáng làm (tr. 286–287).</p>
+  <div class="ex"><b class="t">Ví dụ có số (giả định, không thuộc đồ án)</b>
+    Một chuỗi bán lẻ chi 300 triệu đồng hôm nay cho CRM. Lợi ích dự kiến năm 1, 2, 3 là 80, 120, 160 triệu đồng; r = 10%.
+    <ul>
+      <li>Năm 1: 80/1,1 = 72,73. Năm 2: 120/1,1² = 99,17. Năm 3: 160/1,1³ = 120,21 (triệu đồng).</li>
+      <li>Tổng giá trị hiện tại 292,11; NPV = 292,11 − 300 = <b>−7,89</b> triệu: phép tính nói “không nên làm”.</li>
+      <li>Nhưng nếu nhờ dữ liệu khách tích lũy, năm 4 công ty mở thêm dòng sản phẩm mới đem về 100 triệu, giá trị hiện tại thêm 100/1,1⁴ = 68,30; NPV thành −7,89 + 68,30 = <b>+60,41</b> triệu.</li>
+    </ul>
+    <small class="kh">r: tỉ lệ chiết khấu 10% mỗi năm; số mũ là số năm kể từ hôm nay. Các phép tính đã kiểm bằng máy.</small>
+  </div>
+  <p>Giáo trình lập luận: lợi ích CRM đến theo hai đợt, đợt hai không tự đến sau đợt một, nên cách tính NPV một mạch dễ bỏ sót phần đợt hai. Giáo trình gợi ý mượn phương pháp “quyền chọn thực” (real options) của tài chính để định giá việc học được từ khách (tr. 287–288). Bạn chỉ cần nhớ ý: <b>đừng chỉ tính tiền thu sớm</b>.</p>
+
+  <h3>Lợi ích vận hành và lợi ích tương lai</h3>
+  <div class="tablewrap"><table>
+    <tr><th>Lợi ích tức thời (operational)</th><th>Lợi ích tiềm ẩn (latent)</th></tr>
+    <tr><td>Thêm khách mới nhờ quản lý khách tiềm năng; bán thêm cho khách cũ; biên lợi nhuận tốt hơn; chi phí bán hàng và chi phí tìm khách giảm; giữ được nhiều khách hơn</td><td>Sản phẩm, dịch vụ mới xuất phát từ hiểu biết sâu hơn về khách; quan hệ đối tác bền hơn; khách hài lòng nên trung thành, sẵn lòng trả, tốn ít chi phí phục vụ; sắp xếp lại nguồn lực theo nhu cầu khách; năng lực mới cho chiến lược chưa hình dung</td></tr>
+  </table></div>
+  <div class="src"><b class="t">Trong giáo trình</b>Bảng 13.1, Chương 13, tr. 304 (diễn đạt lại); Chương 12, tr. 287–288. Lợi ích tiềm ẩn chỉ xuất hiện sau khi công ty có thêm dữ liệu, kỹ năng và quan hệ mới.</div>
+  <p>Để theo dõi lợi ích, giáo trình dùng <b>BDN</b> (Benefit Dependency Network – mạng phụ thuộc lợi ích): vẽ chuỗi nối từ công nghệ, đến hoạt động, đến thay đổi nghiệp vụ, đến lợi ích; <b>mỗi lợi ích có một người chịu trách nhiệm</b> (tr. 289). Ví dụ: “tăng tỉ lệ chuyển lead thành đơn hàng” cần có người sở hữu, chứ phần mềm chỉ cho phép làm chứ không tự tạo ra kết quả.</p>
+
+  <h3>Công ty nên tổ chức thế nào để làm CRM?</h3>
+  <div class="tablewrap"><table>
+    <tr><th>Cấu trúc</th><th>Cách chia</th><th>Ý nghĩa với CRM (tr. 290–294)</th></tr>
+    <tr><td>Theo chức năng</td><td>Marketing, bán hàng, dịch vụ mỗi nơi một trưởng bộ phận</td><td>Làm tốt từng khâu nhưng khó quản lý hành trình khách thống nhất</td></tr>
+    <tr><td>Theo địa lý</td><td>Chia theo vùng</td><td>Gần khách; nhưng một vùng có nhiều loại khách, nhân viên khó giỏi sâu về một loại</td></tr>
+    <tr><td>Theo sản phẩm hoặc thương hiệu</td><td>Mỗi quản lý phụ trách một nhãn</td><td>Nhãn tranh nguồn lực và cạnh tranh nhau, khách gặp mức phục vụ khác nhau</td></tr>
+    <tr><td>Theo thị trường hoặc khách hàng (kể cả KAM – Key Account Management, quản lý khách hàng trọng yếu)</td><td>Mỗi nhóm khách có người phụ trách</td><td>Thường hợp CRM nhất, nhất là khi người mua có quyền lực lớn</td></tr>
+    <tr><td>Ma trận</td><td>Giao giữa quản lý khách và quản lý sản phẩm</td><td>Phối hợp ngang và dọc; phải thỏa thuận giá nội bộ</td></tr>
+  </table></div>
+  <p>Chọn cấu trúc nào tùy năm yếu tố (tr. 296; slide 12): mức cạnh tranh, quyền lực của người mua, độ phân tán địa lý, quyền lực của nhà cung cấp, và độ khác biệt của sản phẩm. Giáo trình còn lưu ý <b>tổ chức ảo</b> (nhân viên làm việc từ xa): khách không quan tâm cơ cấu nội bộ, và CRM giúp điều phối công việc dù nhân viên ở đâu (tr. 295).</p>
+
+  <h3>Năm giai đoạn triển khai CRM</h3>
+  <p>Một dự án triển khai CRM thường kéo dài từ 12 đến 24 tháng, một nghiên cứu cho trung bình 21 tháng, và người dùng cần trên 100 giờ làm quen mới thành thạo công nghệ mới (Chương 13, tr. 299; slide 3). Công nghệ một mình không tạo lợi ích; cần dữ liệu tốt, tái thiết quy trình, đào tạo nhân viên bán hàng.</p>
+  <div class="tablewrap"><table>
+    <tr><th>Giai đoạn</th><th>Làm gì</th><th>Công cụ nổi bật trong giáo trình</th></tr>
+    <tr><td><b>1. Xây chiến lược CRM</b> (tr. 300–304)</td><td>Phân tích hiện trạng, giáo dục về CRM, tầm nhìn, ưu tiên, mục tiêu, và đồng ý business case với ban lãnh đạo</td><td><b>Customer Strategy Cube</b> (khối chiến lược khách hàng): phân khúc × sản phẩm × kênh (ví dụ trong sách: 5 × 4 × 3 = 60 ô); bản đồ tương tác với khách; BDN</td></tr>
+    <tr><td><b>2. Dựng nền dự án</b> (tr. 305–310)</td><td>Cơ cấu quản trị, kế hoạch quản lý thay đổi, quản lý dự án, yếu tố sống còn, kế hoạch rủi ro</td><td>Ban chỉ đạo (Steering Committee), người bảo trợ cấp cao, quản lý dự án; 8 bước của Kotter; ma trận đồng thuận (Buy-in Matrix); biểu đồ Gantt, PERT; CSF (Critical Success Factors – yếu tố thành công then chốt)</td></tr>
+    <tr><td><b>3. Đặc tả nhu cầu và chọn đối tác</b> (tr. 310–315)</td><td>Thiết kế lại quy trình, rà soát dữ liệu và phân tích khoảng trống, đặc tả công nghệ, viết RFP, mời thầu, chọn đối tác</td><td>Phân loại quy trình (dọc/ngang, trước quầy/sau quầy, chính/phụ); vẽ hành trình khách; RFP (Request for Proposals – yêu cầu đề xuất) với 12 mục; thang chấm điểm có trọng số</td></tr>
+    <tr><td><b>4. Thực hiện dự án</b> (tr. 315–316)</td><td>Chỉnh kế hoạch với đối tác, xác định nhu cầu tùy biến, làm mẫu thử, thử nghiệm, sửa, rồi triển khai</td><td>Dữ liệu thử; triển khai theo từng đợt (ví dụ đưa cho nhóm “người ủng hộ” trước); phương pháp agile (làm theo các vòng ngắn)</td></tr>
+    <tr><td><b>5. Đánh giá kết quả</b> (tr. 316)</td><td>Đo kết quả dự án (đúng hạn, đúng ngân sách) và kết quả kinh doanh (đạt mục tiêu ban đầu chưa)</td><td>Quay lại mục tiêu và business case; đo định kỳ vì nhân viên cần vài tháng mới quen</td></tr>
+  </table></div>
+  <div class="src"><b class="t">Trong giáo trình</b>Chương 13, tr. 299–316; slide 4–8. Slide của thầy tóm gọn đúng năm giai đoạn này.</div>
+
+  <h3>Quản lý dự án và quản lý thay đổi</h3>
+  <p><b>Quản lý dự án</b> cho biết việc nào làm, thứ tự, thời gian, nguồn lực và sản phẩm bàn giao; có cột mốc để rà soát đúng hạn và đúng ngân sách (tr. 308). <b>Quản lý thay đổi</b> lo phần con người, vì dù dự án nhỏ vẫn có người e ngại. Giáo trình dẫn tám bước của Kotter (tr. 306): tạo cảm giác cấp bách; lập nhóm dẫn dắt; có tầm nhìn đúng; truyền thông để mọi người đồng thuận; gỡ rào cản để người ta hành động; tạo chiến thắng nhỏ sớm; không buông lỏng; làm cho thay đổi bám rễ vào văn hóa.</p>
+  <div class="ex"><b class="t">Ví dụ có số: ma trận đồng thuận</b>
+    Một công ty có 40 nhân viên bán hàng, đánh giá theo hai trục: hiểu lý do thay đổi (lý trí) và hào hứng (cảm xúc). Kết quả giả định: 10 “người ủng hộ” (đủ cả hai), 15 “người đứng ngoài” (hiểu nhưng không hào hứng), 5 “người bốc đồng” (hào hứng nhưng chưa hiểu), 10 “mắt xích yếu” (thiếu cả hai). Tổng 10 + 15 + 5 + 10 = 40. Người ủng hộ chiếm 10/40 = 25%, nên triển khai thử cho nhóm này trước, và ưu tiên thuyết phục 10 người mắt xích yếu nếu họ làm việc trực tiếp với khách (tr. 307–308, 316).
+  </div>
+  <div class="ex"><b class="t">Ví dụ có số: chấm điểm đối tác</b>
+    Hai nhà cung cấp A và B, bốn tiêu chí với trọng số 50%, 20%, 20%, 10% (chức năng, chi phí, tích hợp, hỗ trợ). Điểm A: 8, 6, 7, 5; B: 6, 9, 6, 8. Không trọng số: A trung bình 6,5, B 7,25, nên B hơn. Có trọng số: A = 0,5×8 + 0,2×6 + 0,2×7 + 0,1×5 = 7,10; B = 0,5×6 + 0,2×9 + 0,2×6 + 0,1×8 = 6,80, nên A hơn. Thang điểm có trọng số đổi kết luận, vì chức năng quan trọng hơn (tr. 315).
+  </div>
+  <div class="note"><b class="t">Cách hiểu dễ nhầm</b>Giáo trình chia dự án thành năm giai đoạn theo thứ tự logic, không có nghĩa mỗi giai đoạn gói trọn trong một lần rồi không quay lại. Chính giáo trình nói người làm “sẽ quay lại” các vấn đề này khi dự án tiến triển (tr. 304) và phần quy trình, dữ liệu được xem lại sau khi biết thêm.</div>
+</section>
+
+<section class="part" id="ud">
+  <h2><span class="n">2</span>Ứng dụng trong đồ án: kế hoạch 7 giai đoạn đặt cạnh năm giai đoạn của giáo trình</h2>
+
+  <h3>Kế hoạch 7 giai đoạn</h3>
+  <p><code>PLAN.md</code> (cập nhật 2026-11-14) chia đồ án thành 7 giai đoạn trong 7 ngày, mỗi giai đoạn gắn với một cụm tiêu chí và một cổng kiểm. Cột trạng thái lấy từ bảng tổng hợp của <code>docs/phase-report.md</code> tính đến 2026-11-23; mình không truy vấn lại hệ thống.</p>
+  <div class="tablewrap"><table>
+    <tr><th>GĐ</th><th>Nội dung chính</th><th>Tiêu chí</th><th>Trạng thái</th></tr>
+    <tr><td>0</td><td>Chốt nền: checklist, Frappe, Camunda, WordPress, mẫu report, case study</td><td>–</td><td>Xong</td></tr>
+    <tr><td>1</td><td>Case study, cài đặt, cấu hình, nhập liệu</td><td>A4.1, A4.2</td><td>Xong</td></tr>
+    <tr><td>2</td><td>5 quy trình BPMN và chạy thật trong Frappe</td><td>A4.3</td><td>Phần của Claude xong, chờ người duyệt</td></tr>
+    <tr><td>3</td><td>Custom app <code>biti_crm</code></td><td>A4.9</td><td>Chưa làm</td></tr>
+    <tr><td>4</td><td>API, webhook, WordPress/WooCommerce</td><td>A4.7, A4.8</td><td>Chưa làm</td></tr>
+    <tr><td>5</td><td>Chi phí, CLV, ABC, đọc báo cáo, đề xuất</td><td>A4.5, A4.6, A4.10, A4.11</td><td>Chưa làm</td></tr>
+    <tr><td>6</td><td>Video, đóng gói, sổ tay cài đặt</td><td>A4.4, nộp bài</td><td>Chưa làm</td></tr>
+  </table></div>
+
+  <h3>Ghép với năm giai đoạn của giáo trình</h3>
+  <p>Hai bộ giai đoạn <b>không</b> khớp một-một: giáo trình mô tả dự án cho một công ty thật, còn đồ án là bài tập dựng trên dữ liệu giả. Bảng ghép dưới đây là diễn giải của mình; nhóm không viết nó trong tài liệu nào.</p>
+  <div class="tablewrap"><table>
+    <tr><th>Giai đoạn giáo trình</th><th>Việc ứng với trong đồ án</th><th>Khác biệt cần nói thẳng</th></tr>
+    <tr><td>1. Chiến lược</td><td>GĐ0: hiến chương case study (<code>docs/case-study-hien-chuong.md</code>), nghiên cứu Biti's (<code>docs/nghien-cuu-bitis.md</code>), phạm vi làm và không làm. Hiện trạng kênh, sản phẩm, khách của Biti's là phần “situation analysis”</td><td>Không có business case bằng tiền: đồ án không bỏ vốn thật. Việc “đồng ý với ban lãnh đạo” ứng với nhóm và thầy duyệt kế hoạch (bản tinh chỉnh được duyệt 2026-11-22)</td></tr>
+    <tr><td>2. Dựng nền</td><td>PLAN: nguyên tắc (mục 0), phân công người duyệt (mục 3), rủi ro (mục 4); phase-report; cổng kiểm</td><td>Không có ban chỉ đạo chính thức; Diệu Anh điều phối, các bạn duyệt từng mảng</td></tr>
+    <tr><td>3. Đặc tả và chọn đối tác</td><td>Checklist tiêu chí (yêu cầu); GĐ2 vẽ 5 quy trình BPMN (thiết kế lại quy trình); rà dữ liệu và khoảng trống khi chạy thật</td><td>Không có RFP, không chọn đối tác: thầy chỉ định Frappe CRM</td></tr>
+    <tr><td>4. Thực hiện</td><td>GĐ1 cấu hình và nhập liệu; GĐ3 tùy biến bằng custom app; GĐ4 tích hợp; triển khai theo đợt: làm trước trên một máy, rồi ba bạn còn lại tự cài</td><td>GĐ3, 4 chưa làm</td></tr>
+    <tr><td>5. Đánh giá</td><td>GĐ5 (đọc báo cáo, đánh giá đề xuất) và GĐ6 (đối chiếu checklist 100%)</td><td>Có kết quả dự án (đủ checklist không); không đo kết quả kinh doanh vì không có doanh nghiệp thật</td></tr>
+  </table></div>
+  <div class="ex"><b class="t">Ví dụ có số: một phát hiện “khoảng trống” thật</b>
+    Khi chạy thử quy trình ở GĐ2 (48 bước qua API, 15 lead, 8 deal), nhóm phát hiện Frappe CRM 16.0.1 không có đối tượng đổi trả, đồng ý nhận tin, duyệt chiết khấu, nên ghi bằng việc cần làm và giao GĐ3. Điều này gần với “xác định nhu cầu tùy biến công nghệ” của giai đoạn 4 (tr. 315) và với việc rà khoảng trống ở giai đoạn 3; khác là nhóm chỉ thấy nó lúc đang chạy thật, không phát hiện được từ trước. Tổng sau chạy: 75 lead, 38 deal, 53 việc (nhật ký, mục 2.3).
+  </div>
+  <p>Một con số cho thấy khác biệt về quy mô: giáo trình nói dự án thật trung bình khoảng 21 tháng, tức khoảng 21 × 30 = 630 ngày; đồ án dự kiến 7 ngày, ít hơn khoảng 630/7 = 90 lần. Vì vậy đừng nói đồ án “triển khai CRM cho Biti's”; đúng hơn là một mô phỏng nhỏ có đủ các hạng mục chính.</p>
+
+  <h3>Cổng kiểm từng giai đoạn</h3>
+  <p><b>Cổng kiểm</b> (gate) là danh sách điều kiện phải đạt trước khi sang giai đoạn sau (PLAN, nguyên tắc 4). Nó giống một cột mốc rà soát của quản lý dự án (Chương 13, tr. 308). Hiện có hai cổng đã chạy:</p>
+  <ul>
+    <li><b>GĐ0: 7 điều kiện</b>, ví dụ “Frappe đăng nhập, tạo Lead thử, chạy lại được”, “WordPress mở được trang chủ”, “mẫu report xuất PDF đẹp”. Hai điều kiện ghi kèm chú thích thay vì Đạt trơn (khởi động lại Windows chưa thử; Camunda ban đầu chỉ Đạt một phần).</li>
+    <li><b>GĐ1: 8 điều kiện</b>, ví dụ “tiền tệ VNĐ, múi giờ, ngôn ngữ”, “nhập liệu master và giao dịch đủ nhiều”. Điều kiện gửi mail ghi Đạt kèm chú thích về việc gửi thử.</li>
+  </ul>
+
+  <h3>Nhật ký phase-report như tài liệu dự án</h3>
+  <p><code>docs/phase-report.md</code> đóng vai tài liệu theo dõi dự án (đối chiếu của mình, giáo trình không dùng tên này). Nó có: bảng tổng hợp trạng thái từng giai đoạn; bảng phiên bản đo thật ngày 2026-11-14 (Frappe 16.55.2, CRM 16.0.1, Python 3.14.4…); từng bước kèm lệnh; bảng sự cố gồm nguyên nhân và cách xử lý; mục quyết định; bảng cổng kiểm. Quy tắc của PLAN: ghi ngay sau mỗi bước, phiên bản lấy từ kết quả lệnh thật.</p>
+
+  <h3>Thay đổi được quản lý thế nào</h3>
+  <div class="tablewrap"><table>
+    <tr><th>Ngày</th><th>Thay đổi</th><th>Ghi ở đâu</th></tr>
+    <tr><td>2026-11-14</td><td>Reset làm lại: sao lưu 2 site cũ và mã <code>biti_crm</code> bản cũ (2,1 MB), gỡ, tạo site mới <code>nhom4.localhost</code>. Chốt cách làm: hoàn thành trên một máy, ba bạn còn lại tự cài và tự quay video theo quy trình thống nhất</td><td>phase-report mục 0.2 và “Quyết định bổ sung”; PLAN mục 0.5</td></tr>
+    <tr><td>2026-11-16</td><td>Thầy phản biện (tập trung vào quy trình), nhóm tải kho tài liệu chính thống và soạn kế hoạch tinh chỉnh GĐ1–6</td><td><code>docs/ghi-chu-phan-bien-thay.md</code>, <code>docs/ke-hoach-tinh-chinh-gd1-6.md</code></td></tr>
+    <tr><td>2026-11-22</td><td>Người duyệt duyệt bản tinh chỉnh</td><td>phase-report, mục “Cập nhật 2026-11-22”</td></tr>
+    <tr><td>2026-11-23</td><td>Bổ sung bài giảng GĐ2 (bài 6–10) sau góp ý “không thấy giảng về quy trình đã làm”</td><td>phase-report, mục 2.4</td></tr>
+  </table></div>
+  <p>Đối chiếu Kotter: reset có sao lưu trước là cách giữ “đường lui”; cổng kiểm cho chiến thắng nhỏ từng chặng (bước 6); bản duyệt tinh chỉnh là cách có đồng thuận (bước 4). Đây là liên hệ mình đặt ra để bạn dễ nhớ. Kế hoạch tinh chỉnh không trích Kotter.</p>
+  <div class="warn"><b class="t">Tiến độ thực tế so với kế hoạch</b>PLAN dự kiến làm liền 7 ngày. Nhật ký cho thấy GĐ0 và GĐ1 làm ngày 2026-11-14, GĐ2 xong ngày 2026-11-22, còn GĐ3 đến GĐ6 chưa bắt đầu tính đến 2026-11-23. Kế hoạch thực tế đã trượt so với dự kiến; hạn nộp chính xác vẫn ghi “chưa rõ”.</div>
+</section>
+
+<section class="part" id="da">
+  <h2><span class="n">3</span>Hiểu sâu đồ án: vì sao quy trình dự án được thiết kế như vậy</h2>
+
+  <h3>Vì sao chia 7 giai đoạn</h3>
+  <p>PLAN không có đoạn riêng giải thích con số 7. Điều tra được từ tài liệu:</p>
+  <ul>
+    <li><b>Thời gian:</b> thầy cho khoảng 1 tuần làm liên tục; PLAN coi ngày 7 là hạn nội bộ, dư thời gian sửa (mục 4).</li>
+    <li><b>Phủ tiêu chí:</b> mỗi giai đoạn gắn một cụm tiêu chí A4.x và đủ 11 mục A4.1 đến A4.11 (A4.12 bỏ vì không áp dụng năm 2025). Mình đã đối chiếu bảng PLAN: không mục nào bị bỏ sót.</li>
+    <li><b>Tách GĐ0 riêng:</b> để chốt nền và mọi quyết định dễ gây làm lại (bài giảng GĐ0 cũ). GĐ2 tách riêng vì thầy nhấn mạnh “đồ án tập trung vào quy trình”. GĐ3 chạy song song GĐ1, 2, 4 vì là phần nặng nhất.</li>
+  </ul>
+  <div class="note"><b class="t">Nói đúng mức</b>Câu “vì thế nên 7 giai đoạn” là suy ra từ các điểm trên, không phải một câu có sẵn trong PLAN. Nếu thầy hỏi, nêu ba căn cứ và nói rõ đó là lập luận của nhóm.</div>
+
+  <h3>Vì sao có cổng kiểm</h3>
+  <p>PLAN nguyên tắc 4: không qua cổng thì không sang giai đoạn sau. Lý do thực tế nằm trong nhật ký: một script cài WordPress dừng ở bước cuối vì tên biến trùng biến hệ thống nên chưa lưu mật khẩu vừa tạo (nhật ký, bảng sự cố), và bài giảng GĐ0 cũ ghi lần tạo database đầu thất bại âm thầm. Bài học nhóm ghi: “script báo xong không đồng nghĩa là xong”, nên mỗi cổng đòi bằng chứng kiểm tra thật (đăng nhập thử, mở trang thử), không chỉ báo cáo đã làm.</p>
+
+  <h3>Vì sao có bài giảng trước mỗi giai đoạn</h3>
+  <ul>
+    <li>Nguyên tắc 1 của PLAN: Claude làm phần chuyên môn, nhóm duyệt; người duyệt vẫn phải hiểu để trả lời thầy. Thầy sẽ mở code và hỏi “cái nào của Frappe, cái nào của tụi em”.</li>
+    <li><code>docs/ke-hoach-tinh-chinh-gd1-6.md</code> mục 1.2 đặt ba phần cho mỗi giai đoạn: bài giảng có câu hỏi trước khi làm, phần làm cùng vài thao tác then chốt, và danh sách “thầy sẽ hỏi”. Phần của Claude chỉ ghi Đạt khi người duyệt đã qua cả hai.</li>
+    <li>Giáo trình có việc tương ứng: “commence CRM education” ở giai đoạn 1: mọi bên liên quan phải hiểu CRM là gì (Chương 13, tr. 302; slide 4).</li>
+  </ul>
+
+  <h3>Sổ tay cài đặt thống nhất cho ba bạn còn lại</h3>
+  <p>Quyết định ngày 2026-11-14 (phase-report, “Quyết định bổ sung”): hoàn thành trên máy của Diệu Anh trước, sau đó ba bạn còn lại tự cài Frappe CRM và tự quay video. Hệ quả ghi trong checklist: hai sản phẩm N6 (sổ tay) và N7 (kịch bản video mẫu), đều trạng thái “Chưa”. Một lưu ý: tệp <code>docs/quy-trinh-cai-dat.md</code> mà kế hoạch tinh chỉnh dự định viết làm nền cho sổ tay hiện <b>chưa tồn tại</b>.</p>
+  <div class="tablewrap"><table>
+    <tr><th>Sổ tay phải có (tài liệu nhóm đã ghi)</th><th>Nằm ở đâu</th></tr>
+    <tr><td>Bảng phiên bản thật: Frappe 16.55.2, CRM 16.0.1, Ubuntu 26.04.1 trong WSL2, MariaDB 11.8.6, Redis 8.0.5, WordPress 7.1.4, Camunda Modeler 5.51.1</td><td>phase-report, bảng phiên bản</td></tr>
+    <tr><td>Từng bước kèm lệnh và script: <code>scripts/gd1-01</code> đến <code>gd1-11</code>, chạy trong WSL bằng <code>python3</code> khi bench đang chạy</td><td>phase-report giai đoạn 1; <code>scripts/</code></td></tr>
+    <tr><td>Tham số riêng của mỗi người: tên site đọc từ biến môi trường <code>FRAPPE_SITE</code> (mặc định <code>nhom4.localhost</code>); script setup wizard nhận họ tên và email của người cài, vì tiêu chí yêu cầu email admin là của sinh viên thực hiện</td><td><code>scripts/lib_frappe.py</code>, <code>gd1-01-setup-wizard.py</code>, checklist</td></tr>
+    <tr><td>Sự cố đã gặp và cách xử lý: Redis cổng 11000 khi chưa chạy <code>bench start</code>; cổng 3306 trùng giữa MariaDB trong WSL và MySQL của XAMPP (đổi XAMPP sang 3307); thiếu thư viện hệ thống cho Chromium khi xuất PDF; điều kiện Assignment Rule viết sai cú pháp</td><td>phase-report, các mục Sự cố</td></tr>
+    <tr><td>Cách kiểm sau mỗi bước, và không để mật khẩu trong sổ tay (mật khẩu lưu riêng ở tệp bí mật)</td><td>PLAN; phase-report</td></tr>
+  </table></div>
+  <p>Cổng kiểm riêng của GĐ6: “sổ tay đã được chạy thử từ đầu” (PLAN). Điều này chưa làm. Chỉ khi một người khác chạy theo sổ tay và ra đúng kết quả thì mới nói được là tái lập.</p>
+
+  <h3>Hạn chế đã biết</h3>
+  <ul>
+    <li>Bảng ghép năm giai đoạn với 7 giai đoạn là diễn giải; không có business case bằng tiền; không đo kết quả kinh doanh.</li>
+    <li>Tiến độ trượt so với kế hoạch 7 ngày; GĐ3 đến GĐ6 chưa làm; hạn nộp chưa rõ.</li>
+    <li>Sổ tay (N6) và tệp quy trình cài đặt chưa được viết; chưa có ai chạy thử trên máy sạch.</li>
+  </ul>
+
+  <h3>Thầy sẽ hỏi</h3>
+  <details><summary>1. Nhóm triển khai theo phương pháp nào? Có theo các giai đoạn của giáo trình không?</summary>
+    <p>Nhóm chia 7 giai đoạn theo cụm tiêu chí (<code>PLAN.md</code> mục 2), có thể ghép gần với năm giai đoạn của Chương 13: chiến lược (GĐ0), dựng nền (nguyên tắc và rủi ro trong PLAN), đặc tả (GĐ1–2), thực hiện (GĐ1, 3, 4), đánh giá (GĐ5–6). Nói rõ đây là ghép lại; không có RFP vì thầy chỉ định Frappe CRM.</p></details>
+  <details><summary>2. Cổng kiểm là gì? Cho ví dụ một cổng đã chạy.</summary>
+    <p>Danh sách điều kiện phải đạt trước khi sang giai đoạn sau. Ví dụ cổng GĐ0 có 7 điều kiện (phase-report, bảng “Cổng kiểm giai đoạn 0”), một điều kiện ghi rõ chưa thử khởi động lại Windows.</p></details>
+  <details><summary>3. Vì sao phải reset làm lại? Làm sao không mất dữ liệu cũ?</summary>
+    <p>Bản làm trước còn app và hai site cũ; PLAN mục rủi ro ghi giao diện bản trước bị chê. Nhóm sao lưu (2,1 MB) ra thư mục ngoài dự án, rồi mới gỡ; bench chuyển vào thư mục archived (<code>phase-report.md</code> mục 0.2).</p></details>
+  <details><summary>4. Thay đổi giữa chừng được ghi lại thế nào?</summary>
+    <p>Mỗi thay đổi có ngày và lý do trong phase-report và các tài liệu kế hoạch (bảng ngày ở phần 2). Ví dụ kế hoạch tinh chỉnh sau buổi phản biện 2026-11-16, được duyệt 2026-11-22.</p></details>
+  <details><summary>5. Ba bạn còn lại làm sao tự cài giống nhau?</summary>
+    <p>Qua sổ tay cài đặt thống nhất (checklist N6), dựa trên phase-report và các script. Thành thật: sổ tay chưa được viết và chưa chạy thử; hiện mới có nhật ký và script làm nền.</p></details>
+</section>

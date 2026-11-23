@@ -1,0 +1,121 @@
+/* Giao diện chung của trang bài giảng EC213. Không thư viện ngoài. Sáng/tối theo hệ thống, có nút đổi. */
+:root{
+  --bg:#faf8f4; --surface:#fff; --ink:#1f2330; --muted:#5c6273; --line:#e3ded3;
+  --accent:#b4412e; --accent-soft:#f6e3de; --ok:#1d7a4a; --ok-soft:#dff2e7; --bad:#b3261e; --bad-soft:#fae1de;
+  --code:#f1eee6; --note:#fff4d6; --note-line:#e5c766; --src:#eaf1f8; --src-line:#7aa2c9;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#16181f; --surface:#1f222b; --ink:#eceae4; --muted:#a3a7b5; --line:#33374a;
+    --accent:#ef8b78; --accent-soft:#3a2622; --ok:#6fcf9a; --ok-soft:#1c3328; --bad:#f2a199; --bad-soft:#40211f;
+    --code:#2a2d39; --note:#3a3220; --note-line:#8a7430; --src:#1d2a38; --src-line:#4d7aa6;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#16181f; --surface:#1f222b; --ink:#eceae4; --muted:#a3a7b5; --line:#33374a;
+  --accent:#ef8b78; --accent-soft:#3a2622; --ok:#6fcf9a; --ok-soft:#1c3328; --bad:#f2a199; --bad-soft:#40211f;
+  --code:#2a2d39; --note:#3a3220; --note-line:#8a7430; --src:#1d2a38; --src-line:#4d7aa6;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.7 "Segoe UI",system-ui,-apple-system,sans-serif}
+a{color:var(--accent)}
+.layout{display:grid;grid-template-columns:290px minmax(0,1fr);max-width:1240px;margin:0 auto}
+nav.side{position:sticky;top:0;align-self:start;height:100vh;overflow:auto;padding:22px 16px 28px 20px;border-right:1px solid var(--line);font-size:15px}
+nav.side .brand{display:block;font-weight:800;font-size:17px;color:var(--ink);text-decoration:none;margin-bottom:4px}
+nav.side .sub{color:var(--muted);font-size:13px;margin-bottom:14px}
+nav.side h2{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin:18px 0 6px}
+nav.side a.item{display:flex;justify-content:space-between;gap:8px;padding:6px 9px;margin:1px 0;border-radius:8px;color:var(--ink);text-decoration:none;line-height:1.35}
+nav.side a.item:hover{background:var(--accent-soft)}
+nav.side a.item.cur{background:var(--accent-soft);font-weight:700}
+nav.side a.item .sc{font-size:12px;color:var(--muted);white-space:nowrap}
+nav.side a.item .sc.done{color:var(--ok);font-weight:700}
+nav.side a.item.soon{color:var(--muted)}
+main{padding:34px 40px 110px;min-width:0}
+header.hero{border-bottom:2px solid var(--ink);padding-bottom:20px;margin-bottom:24px}
+.tag{font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);font-weight:700}
+header.hero h1{font-size:36px;line-height:1.15;margin:8px 0 10px}
+header.hero p{margin:0;color:var(--muted)}
+.top{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
+.top button,.top a.btn2{font:inherit;font-size:14px;background:var(--surface);color:var(--ink);border:1px solid var(--line);border-radius:8px;padding:6px 12px;cursor:pointer;text-decoration:none}
+.parts{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 22px;position:sticky;top:0;background:var(--bg);padding:8px 0;z-index:5}
+.parts a{font-size:14px;border:1px solid var(--line);background:var(--surface);border-radius:999px;padding:5px 14px;text-decoration:none;color:var(--ink)}
+.parts a .sc{color:var(--muted);margin-left:6px;font-size:12px}
+.parts a .sc.done{color:var(--ok);font-weight:700}
+section.part{margin:46px 0 0;padding-top:10px;border-top:1px solid var(--line)}
+section.part>h2{font-size:27px;line-height:1.25;margin:8px 0 6px}
+section.part>h2 .n{color:var(--accent);margin-right:8px}
+h3{font-size:20px;margin:28px 0 8px}
+h4{font-size:17px;margin:20px 0 6px}
+p{margin:0 0 14px}
+ul,ol{padding-left:22px;margin:0 0 16px}
+li{margin:4px 0}
+code{background:var(--code);padding:1px 6px;border-radius:5px;font:14.5px Consolas,"Cascadia Mono",monospace}
+pre{background:var(--code);padding:14px 16px;border-radius:10px;overflow:auto;font:14px/1.55 Consolas,"Cascadia Mono",monospace;margin:0 0 16px}
+pre code{background:none;padding:0}
+.goal,.note,.ex,.src,.warn{border-radius:10px;padding:14px 16px;margin:16px 0}
+.goal{background:var(--accent-soft);border-left:4px solid var(--accent)}
+.note{background:var(--note);border-left:4px solid var(--note-line)}
+.ex{background:var(--surface);border:1px solid var(--line)}
+.src{background:var(--src);border-left:4px solid var(--src-line);font-size:15px}
+.warn{background:var(--bad-soft);border-left:4px solid var(--bad)}
+.goal b.t,.note b.t,.ex b.t,.src b.t,.warn b.t{display:block;font-size:13px;letter-spacing:.06em;text-transform:uppercase;margin-bottom:4px}
+table{border-collapse:collapse;width:100%;margin:12px 0 20px;font-size:15.5px;background:var(--surface)}
+th,td{border:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top}
+th{background:var(--accent-soft)}
+.tablewrap{overflow-x:auto}
+figure{margin:16px 0}
+figure img{max-width:100%;border:1px solid var(--line);background:#fff}
+figure.wide{overflow-x:auto}
+figure.wide img{min-width:900px;width:100%}
+figcaption{font-size:14px;color:var(--muted);margin-top:4px}
+details{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:10px 14px;margin:14px 0}
+details summary{cursor:pointer;font-weight:600}
+small.kh{display:block;color:var(--muted);font-size:14px;margin:-6px 0 14px}
+/* trắc nghiệm */
+.quiz{border:2px solid var(--ink);border-radius:14px;padding:18px 20px;margin:30px 0 6px;background:var(--surface)}
+.quiz>h4{margin:0 0 4px;font-size:16px;letter-spacing:.05em;text-transform:uppercase}
+.quiz .qscore{color:var(--muted);font-size:14px;margin-bottom:10px}
+.q{margin:18px 0;padding-top:14px;border-top:1px dashed var(--line)}
+.q:first-of-type{border-top:0;padding-top:0}
+.q p.qt{font-weight:600;margin-bottom:8px}
+.q .multi{display:inline-block;font-size:12px;font-weight:700;background:var(--note);border:1px solid var(--note-line);border-radius:999px;padding:1px 9px;margin-left:6px;vertical-align:middle}
+.opt{display:flex;gap:10px;width:100%;text-align:left;font:inherit;font-size:16px;color:var(--ink);background:var(--bg);border:1.5px solid var(--line);border-radius:9px;padding:9px 12px;margin:6px 0;cursor:pointer}
+.opt .L{font-weight:700;color:var(--muted);min-width:1.2em}
+.opt:hover:not(:disabled){border-color:var(--accent)}
+.opt.sel{border-color:var(--accent);background:var(--accent-soft)}
+.opt.ok{border-color:var(--ok);background:var(--ok-soft)}
+.opt.bad{border-color:var(--bad);background:var(--bad-soft)}
+.opt.miss{border-color:var(--ok);border-style:dashed}
+.opt:disabled{cursor:default}
+.why{display:none;margin-top:8px;font-size:15px;color:var(--muted)}
+.why.show{display:block}
+.why b.v{color:var(--ink)}
+.why .loi{display:block;margin-top:4px;color:var(--bad)}
+button.btn{font:inherit;font-weight:700;background:var(--ink);color:var(--bg);border:0;border-radius:9px;padding:9px 16px;cursor:pointer;margin-top:6px}
+button.btn:hover{background:var(--accent);color:#fff}
+button.btn:disabled{opacity:.45;cursor:default}
+.diag{margin-top:14px;padding:12px 14px;border-radius:10px;background:var(--note);border-left:4px solid var(--note-line);font-size:15px;display:none}
+.diag.show{display:block}
+.progress{position:fixed;left:0;top:0;height:4px;background:var(--accent);width:0;z-index:50}
+.pager{display:flex;justify-content:space-between;gap:12px;margin:60px 0 0;padding-top:18px;border-top:1px solid var(--line);flex-wrap:wrap}
+.pager a{border:1px solid var(--line);background:var(--surface);border-radius:10px;padding:10px 14px;text-decoration:none;color:var(--ink);max-width:48%}
+.pager a small{display:block;color:var(--muted)}
+/* trang chủ */
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:14px;margin:12px 0 26px}
+.card{display:block;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:14px 16px;text-decoration:none;color:var(--ink)}
+.card:hover{border-color:var(--accent)}
+.card b{display:block;margin-bottom:4px}
+.card span{color:var(--muted);font-size:14px}
+.card .sc{display:block;margin-top:8px;font-size:13px;color:var(--muted)}
+.card.soon{opacity:.6;border-style:dashed}
+.bar{height:10px;background:var(--line);border-radius:999px;overflow:hidden}
+.bar>i{display:block;height:100%;background:var(--ok);width:0}
+@media (max-width:900px){
+  .layout{grid-template-columns:1fr}
+  nav.side{position:static;height:auto;border-right:0;border-bottom:1px solid var(--line);padding:14px}
+  main{padding:22px 16px 90px}
+  header.hero h1{font-size:28px}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+@media print{nav.side,.parts,.top,.quiz,.pager,.progress{display:none}.layout{display:block}}

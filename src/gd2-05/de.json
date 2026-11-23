@@ -1,0 +1,414 @@
+{
+  "tieu_de": "Dịch vụ khách hàng: khiếu nại, đổi trả và đơn hàng online (bài 2.5)",
+  "muc_dich": "tu_hoc",
+  "che_do_cham": "tung_phan",
+  "ghi_chu": "Ba phần kt, ud, da. kt có hai mục tiêu (3 câu mỗi mục tiêu).",
+  "muc_tieu": {
+    "M1": "Phân biệt dịch vụ khách hàng, ba thành phần chất lượng dịch vụ, tự động hóa dịch vụ và chuyển cấp trong quản lý ca",
+    "M2": "Tính và phân biệt tỉ lệ giữ chân khách theo số khách, theo doanh số và theo lợi nhuận",
+    "M3": "Ánh xạ nút và số liệu của hai quy trình đổi trả, đơn online với khái niệm dịch vụ khách hàng",
+    "M4": "Giải thích cách nhóm ghi đổi trả và đơn online, nhánh nào chưa có dữ liệu thử và cách kiểm bằng bản ghi"
+  },
+  "cau_hoi": [
+    {
+      "id": "Q01",
+      "phan": "kt",
+      "muc_tieu": "M1",
+      "muc_nhan_thuc": "van_dung",
+      "do_kho": "TB",
+      "loai": "mot_dap_an",
+      "cau_hoi": "Một khách mang đôi giày bị hở keo tới cửa hàng. Cửa hàng đổi đúng mẫu, đúng cỡ, nhưng nhân viên trả lời cộc lốc và để khách chờ 40 phút, nên khách đánh giá thấp. Theo ba thành phần chất lượng dịch vụ của Grönroos, nhận định nào đúng?",
+      "dap_an": {
+        "A": "Thành phần danh tiếng kém vì nhân viên cộc lốc; thành phần kỹ thuật đạt",
+        "B": "Kỹ thuật đạt vì kết quả đúng; chức năng kém vì cách thực hiện",
+        "C": "Thành phần kỹ thuật kém vì khách không hài lòng; thành phần chức năng đạt",
+        "D": "Cả kỹ thuật và chức năng đều kém, vì tổng đánh giá của khách thấp"
+      },
+      "dung": [
+        "B"
+      ],
+      "loi_sai": {
+        "A": "nhầm cách đối xử của nhân viên với danh tiếng của nhà cung cấp",
+        "C": "đảo vai trò kỹ thuật (kết quả) và chức năng (cách thực hiện)",
+        "D": "suy từng thành phần từ đánh giá chung"
+      },
+      "giai_thich": "Kỹ thuật là kết quả dịch vụ có đạt kỳ vọng không: đổi đúng mẫu, đúng cỡ nên đạt. Chức năng là dịch vụ được thực hiện thế nào: cộc lốc và để khách chờ 40 phút là chức năng kém. Danh tiếng là hình ảnh nhà cung cấp tác động lên đánh giá chất lượng, không phải thái độ trong một lần phục vụ. Đánh giá thấp chung không có nghĩa mọi thành phần đều kém.",
+      "doan_goc": "Chương 9, slide 4; giáo trình tr. 203"
+    },
+    {
+      "id": "Q02",
+      "phan": "kt",
+      "muc_tieu": "M1",
+      "muc_nhan_thuc": "van_dung",
+      "do_kho": "TB",
+      "loai": "mot_dap_an",
+      "cau_hoi": "Giáo trình ví dụ bảng chuyển cấp của một công ty bảo hiểm sức khỏe (đô la Mỹ): nhân viên dịch vụ xử lý ca dưới 50; trưởng nhóm dưới 100; trưởng đơn vị kinh doanh dưới 500; giám đốc điều hành trên 2.000. Một ca trị giá 300 thì thuộc cấp nào?",
+      "dap_an": {
+        "A": "Nhân viên dịch vụ khách hàng",
+        "B": "Trưởng nhóm dịch vụ khách hàng",
+        "C": "Trưởng đơn vị kinh doanh",
+        "D": "Giám đốc điều hành của công ty"
+      },
+      "dung": [
+        "C"
+      ],
+      "loi_sai": {
+        "A": "bỏ qua việc chuyển cấp khi mức tiền vượt hạn mức cấp thấp",
+        "B": "lấy hạn mức cấp trưởng nhóm (100) cho ca đã vượt hạn mức đó",
+        "D": "chuyển lên cấp cao nhất dù ca chưa tới mức 2.000"
+      },
+      "giai_thich": "300 lớn hơn hạn mức của nhân viên (50) và trưởng nhóm (100), nhỏ hơn hạn mức trưởng đơn vị (500), nên ca ở cấp trưởng đơn vị. Chuyển cấp (escalation) là đẩy ca chưa giải quyết lên cấp có thẩm quyền cao hơn theo luật định trước, mức tiền càng lớn cấp càng cao.",
+      "doan_goc": "Chương 9, giáo trình tr. 217 (escalation)"
+    },
+    {
+      "id": "Q03",
+      "phan": "kt",
+      "muc_tieu": "M1",
+      "muc_nhan_thuc": "hieu",
+      "do_kho": "TB",
+      "loai": "nhieu_dap_an",
+      "cau_hoi": "Theo giáo trình, đâu là lợi ích của tự động hóa dịch vụ (SA)? (chọn 2 đáp án)",
+      "dap_an": {
+        "A": "Công ty không còn cần nhân viên dịch vụ vì phần mềm xử lý được các yêu cầu",
+        "B": "Ghi chính xác yêu cầu của khách và chuyển đúng người, đúng bộ phận",
+        "C": "Quy trình trở nên linh hoạt hơn vì yêu cầu không còn đi qua hệ thống trung tâm",
+        "D": "Khách tự phục vụ qua ứng dụng hoặc web với chi phí xử lý thấp hơn khi qua nhân viên"
+      },
+      "dung": [
+        "B",
+        "D"
+      ],
+      "loi_sai": {
+        "A": "nhầm hỗ trợ nhân viên với thay thế hoàn toàn nhân viên",
+        "C": "đảo chiều: tập trung hóa quy trình là một chi phí của SA"
+      },
+      "giai_thich": "SA giúp dịch vụ hiệu quả hơn vì ghi đúng yêu cầu và chuyển đúng nơi (B), và hiệu quả chi phí hơn vì khách tự phục vụ rẻ hơn qua nhân viên (D). A sai: giáo trình nói bot xử lý các yêu cầu thường lệ để nhân viên lo việc giá trị cao, và có công ty còn coi nhân viên thật là lợi thế. C sai: SA đưa yêu cầu qua một hệ thống trung tâm và tập trung hóa quy trình được giáo trình liệt kê là một chi phí.",
+      "doan_goc": "Chương 9, slide 11–12; giáo trình tr. 208–209 và tr. 211"
+    },
+    {
+      "id": "Q04",
+      "phan": "kt",
+      "muc_tieu": "M2",
+      "muc_nhan_thuc": "van_dung",
+      "do_kho": "TB",
+      "loai": "mot_dap_an",
+      "cau_hoi": "Đầu năm cửa hàng có 400 khách đang hoạt động. Trong năm có thêm 100 khách mới. Cuối năm cửa hàng có 400 khách đang mua, trong đó 300 là khách cũ của đầu năm. Tỉ lệ giữ chân thô là bao nhiêu?",
+      "dap_an": {
+        "A": "25%",
+        "B": "60%",
+        "C": "75%",
+        "D": "100%"
+      },
+      "dung": [
+        "C"
+      ],
+      "loi_sai": {
+        "A": "lấy tỉ lệ khách bỏ đi thay vì tỉ lệ giữ chân",
+        "B": "chia khách cũ cho cả khách đầu năm lẫn khách mới (300 ÷ 500)",
+        "D": "đếm cả khách mới vào tử số (400 ÷ 400)"
+      },
+      "giai_thich": "Tỉ lệ giữ chân thô chỉ tính khách của đầu kỳ còn lại ở cuối kỳ, trên số khách đầu kỳ: 300 ÷ 400 = 75%. 25% là tỉ lệ khách bỏ đi (100 ÷ 400). 60% là 300 ÷ 500, đưa khách mới vào mẫu số. 100% là 400 ÷ 400, đếm khách mới như thể đã được giữ chân.",
+      "doan_goc": "Chương 4, slide 4; giáo trình tr. 89 (raw customer retention rate)"
+    },
+    {
+      "id": "Q05",
+      "phan": "kt",
+      "muc_tieu": "M2",
+      "muc_nhan_thuc": "van_dung",
+      "do_kho": "TB",
+      "loai": "mot_dap_an",
+      "cau_hoi": "Đầu năm có 100 khách hoạt động, tạo doanh số 500 triệu ₫. Cuối năm 80 người trong số đó còn mua, tạo doanh số 440 triệu ₫. Tỉ lệ giữ chân theo doanh số (sales-adjusted) là bao nhiêu?",
+      "dap_an": {
+        "A": "114%",
+        "B": "88%",
+        "C": "80%",
+        "D": "12%"
+      },
+      "dung": [
+        "B"
+      ],
+      "loi_sai": {
+        "A": "đảo tử số và mẫu số (500 ÷ 440)",
+        "C": "dùng tỉ lệ theo số khách (80 ÷ 100) thay vì theo doanh số",
+        "D": "lấy phần doanh số mất đi thay vì phần giữ lại"
+      },
+      "giai_thich": "Theo doanh số: doanh số từ khách còn lại ÷ doanh số của mọi khách đầu kỳ = 440 ÷ 500 = 88%. 80% là tỉ lệ giữ chân thô (80 ÷ 100). 12% là 100% − 88%, phần doanh số mất. 114% là 500 ÷ 440, đảo tử và mẫu.",
+      "doan_goc": "Chương 4, slide 4; giáo trình tr. 89 (sales-adjusted retention rate)"
+    },
+    {
+      "id": "Q06",
+      "phan": "kt",
+      "muc_tieu": "M2",
+      "muc_nhan_thuc": "phan_tich",
+      "do_kho": "Kho",
+      "loai": "mot_dap_an",
+      "cau_hoi": "Một tiệm cà phê tính được tỉ lệ giữ chân thô là 75% nhưng tỉ lệ giữ chân theo lợi nhuận là 90%. Cách hiểu nào đúng?",
+      "dap_an": {
+        "A": "Hai con số mâu thuẫn nhau, nên ít nhất một trong hai cách tính đã bị tính sai",
+        "B": "Công ty mất 10% số khách của đầu kỳ, vì 100% trừ 90% bằng 10%",
+        "C": "Những khách đã bỏ đi sinh lời nhiều hơn mức trung bình của nhóm khách đầu kỳ",
+        "D": "Khách còn lại sinh lời nhiều hơn mức trung bình của nhóm khách đầu kỳ"
+      },
+      "dung": [
+        "D"
+      ],
+      "loi_sai": {
+        "A": "tưởng các cách đo phải cho cùng kết quả",
+        "B": "nhầm tỉ lệ theo lợi nhuận với tỉ lệ theo số khách",
+        "C": "đảo chiều: nếu khách bỏ đi sinh lời cao thì tỉ lệ theo lợi nhuận phải thấp hơn tỉ lệ thô"
+      },
+      "giai_thich": "Ba cách đo trả lời ba câu hỏi khác nhau nên cho số khác nhau. Tỉ lệ theo lợi nhuận (90%) cao hơn tỉ lệ thô (75%) nghĩa là nhóm khách còn lại đóng góp lợi nhuận nhiều hơn phần của họ trong số khách, tức khách đã đi là nhóm sinh lời thấp hơn. B nhầm hai loại tỉ lệ. C đảo chiều. A không đúng vì không có mâu thuẫn.",
+      "doan_goc": "Chương 4, slide 4; giáo trình tr. 89"
+    },
+    {
+      "id": "Q07",
+      "phan": "ud",
+      "muc_tieu": "M3",
+      "muc_nhan_thuc": "van_dung",
+      "do_kho": "TB",
+      "loai": "mot_dap_an",
+      "cau_hoi": "Trong quy trình Khiếu nại và đổi trả, nút \"Ghi nhận khiếu nại\" (ghi chú trên deal đã bán) ứng với khái niệm nào của giáo trình, và ở mức nào?",
+      "dap_an": {
+        "A": "Phiếu sự cố (trouble ticket) mở đầu một ca, nhưng mới là ghi chú, chưa có đối tượng riêng",
+        "B": "Chuyển cấp (escalation) theo mức tiền, đã làm đầy đủ bằng chức năng có sẵn của Frappe",
+        "C": "Kịch bản hội thoại (scripting) cho nhân viên tổng đài, đã có sẵn trong Frappe CRM",
+        "D": "Cơ sở tri thức (knowledge base) giúp kỹ thuật viên chẩn đoán, đã có sẵn trong Frappe"
+      },
+      "dung": [
+        "A"
+      ],
+      "loi_sai": {
+        "B": "nhầm bước ghi nhận với chuyển cấp, và coi như đã làm",
+        "C": "nhầm với kịch bản cuộc gọi, và coi như đã có",
+        "D": "nhầm với cơ sở tri thức, và coi như đã có"
+      },
+      "giai_thich": "Giáo trình nói một ca thường bắt đầu bằng phiếu sự cố. Nhóm không có đối tượng \"ca\" hay \"yêu cầu đổi trả\", nên dùng ghi chú trên deal đã bán thay. Quy trình không có nút chuyển cấp theo mức tiền; cổng \"Lỗi thuộc Biti's?\" là quyết định theo nguyên nhân. Scripting và knowledge base cũng chưa có trong đồ án.",
+      "doan_goc": "Chương 9, giáo trình tr. 217–218; docs/quy-trinh-sop.md (K1)"
+    },
+    {
+      "id": "Q08",
+      "phan": "ud",
+      "muc_tieu": "M3",
+      "muc_nhan_thuc": "van_dung",
+      "do_kho": "TB",
+      "loai": "mot_dap_an",
+      "cau_hoi": "Trong chạy thử, một khách nhận hàng cách đây 12 ngày và đã dùng; chính sách của Biti's cho đổi trong 7 ngày. Khách quá hạn bao nhiêu ngày, và quy trình đi nhánh nào?",
+      "dap_an": {
+        "A": "12 ngày; nhánh Không của cổng \"Lỗi thuộc Biti's?\" rồi gửi trả hàng cũ cho khách",
+        "B": "7 ngày; nhánh Có của cổng \"Còn trong 7 ngày và còn tem nhãn?\" rồi hướng dẫn gửi hàng về",
+        "C": "5 ngày; nhánh Không của cổng \"Lỗi thuộc Biti's?\" rồi gửi trả hàng cũ cho khách",
+        "D": "5 ngày; nhánh Không của cổng \"Còn trong 7 ngày và còn tem nhãn?\" rồi từ chối đổi trả"
+      },
+      "dung": [
+        "D"
+      ],
+      "loi_sai": {
+        "A": "lấy cả 12 ngày làm số quá hạn và nhầm cổng",
+        "B": "nhầm hạn 7 ngày với số ngày quá hạn, và đi sai nhánh",
+        "C": "tính đúng 5 ngày nhưng nhầm sang cổng của làn Kho"
+      },
+      "giai_thich": "Quá hạn là 12 − 7 = 5 ngày. Vì không còn trong 7 ngày (và hết tem nhãn), quy trình đi nhánh Không của cổng đầu \"Còn trong 7 ngày và còn tem nhãn?\" rồi tới \"Từ chối đổi trả\". Cổng \"Lỗi thuộc Biti's?\" nằm sau khi kho kiểm tra hàng nhận về, nên không dùng cho ca này.",
+      "doan_goc": "docs/quy-trinh-sop.md (K7); evidence/A4-3/chay-thu.json (K7); scripts/gd2/quy-trinh.js (quy trình K)"
+    },
+    {
+      "id": "Q09",
+      "phan": "ud",
+      "muc_tieu": "M3",
+      "muc_nhan_thuc": "van_dung",
+      "do_kho": "TB",
+      "loai": "mot_dap_an",
+      "cau_hoi": "Đơn online thành công (deal CRM-DEAL-2026-00036) có hai sản phẩm: Hunter X nam BT-006 giá 1.190.000 ₫ và Hunter Street nam BT-001 giá 890.000 ₫, mỗi loại một đôi, không giảm giá. Giá trị deal là bao nhiêu?",
+      "dap_an": {
+        "A": "1.780.000 ₫",
+        "B": "1.830.400 ₫",
+        "C": "2.080.000 ₫",
+        "D": "2.380.000 ₫"
+      },
+      "dung": [
+        "C"
+      ],
+      "loi_sai": {
+        "A": "tính cả hai đôi theo giá thấp (890.000 × 2)",
+        "B": "áp chiết khấu 12% của quy trình chung cho đơn không giảm giá",
+        "D": "tính cả hai đôi theo giá cao (1.190.000 × 2)"
+      },
+      "giai_thich": "Hai sản phẩm khác giá: 1.190.000 + 890.000 = 2.080.000 ₫. A và D nhân đôi một mức giá. B là 2.080.000 × 0,88, chiết khấu 12% chỉ thuộc quy trình chung, đơn online này không giảm giá.",
+      "doan_goc": "scripts/gd2-01-chay-thu.py (khối T); scripts/gd1-06-du-lieu-demo.py (giá); evidence/A4-3/chay-thu.json (T3)"
+    },
+    {
+      "id": "Q10",
+      "phan": "ud",
+      "muc_tieu": "M3",
+      "muc_nhan_thuc": "phan_tich",
+      "do_kho": "TB",
+      "loai": "nhieu_dap_an",
+      "cau_hoi": "Quy trình Đơn hàng online có ba nhánh thất bại. Biết: đơn thanh toán lỗi chưa từng được chuyển thành deal; đơn hết hàng chưa từng được chốt Won; nhánh giao thất bại có nút \"Nhận hàng hoàn về kho\". Nhận định nào đúng? (chọn 2 đáp án)",
+      "dap_an": {
+        "A": "Nhánh thanh toán lỗi chỉ có lead, không có deal nào ở trạng thái Lost",
+        "B": "Deal hết hàng đi từ Won sang Lost khi kho báo không còn hàng",
+        "C": "Nhánh giao thất bại có một CRM Task nhận hàng hoàn về kho kèm deal Lost",
+        "D": "Cả ba nhánh thất bại đều để lại một deal ở trạng thái Lost"
+      },
+      "dung": [
+        "A",
+        "C"
+      ],
+      "loi_sai": {
+        "B": "đảo trạng thái trước khi mất: deal hết hàng chưa từng Won",
+        "D": "bỏ qua việc nhánh thanh toán lỗi chỉ có lead"
+      },
+      "giai_thich": "Thanh toán lỗi dừng ở lead 00085 (A đúng). Giao thất bại có CRM Task 53 và deal 00038 Lost (C đúng). Deal 00037 đi từ Qualification sang Lost, chưa từng Won (B sai). Vì nhánh thanh toán lỗi chỉ có lead nên D sai.",
+      "doan_goc": "evidence/A4-3/chay-thu.json (T6, T7, T8); scripts/gd2-01-chay-thu.py (khối T)"
+    },
+    {
+      "id": "Q11",
+      "phan": "ud",
+      "muc_tieu": "M3",
+      "muc_nhan_thuc": "hieu",
+      "do_kho": "De",
+      "loai": "mot_dap_an",
+      "cau_hoi": "Trên sơ đồ Đơn hàng online, ba cổng quyết định nằm theo thứ tự nào từ đầu đến cuối?",
+      "dap_an": {
+        "A": "Thanh toán thành công? → Còn đủ hàng? → Giao hàng thành công?",
+        "B": "Còn đủ hàng? → Thanh toán thành công? → Giao hàng thành công?",
+        "C": "Thanh toán thành công? → Giao hàng thành công? → Còn đủ hàng?",
+        "D": "Giao hàng thành công? → Thanh toán thành công? → Còn đủ hàng?"
+      },
+      "dung": [
+        "A"
+      ],
+      "loi_sai": {
+        "B": "đảo thứ tự kiểm tra thanh toán và tồn kho",
+        "C": "đặt kiểm tra tồn kho sau khi đã giao hàng",
+        "D": "đặt giao hàng trước thanh toán và tồn kho"
+      },
+      "giai_thich": "Sơ đồ đi theo đời sống đơn hàng: khách thanh toán, rồi kiểm tồn kho, rồi giao hàng. Cổng thanh toán nằm ở làn Bán hàng Online ngay sau bước khách thanh toán; cổng tồn kho kế tiếp; cổng giao hàng ở làn Kho cuối cùng. Không thể kiểm tồn kho sau khi đã giao.",
+      "doan_goc": "scripts/gd2/quy-trinh.js (quy trình Đơn hàng online: g1, g2, g3)"
+    },
+    {
+      "id": "Q12",
+      "phan": "da",
+      "muc_tieu": "M4",
+      "muc_nhan_thuc": "hieu",
+      "do_kho": "TB",
+      "loai": "mot_dap_an",
+      "cau_hoi": "Vì sao nhóm ghi các bước đổi trả bằng CRM Task và ghi chú trên deal đã bán?",
+      "dap_an": {
+        "A": "Frappe CRM 16.0.1 có đối tượng đổi trả nhưng nhóm chưa bật nó lên",
+        "B": "Frappe CRM 16.0.1 chưa có đối tượng đổi trả; gắn vào deal để truy về đơn gốc",
+        "C": "Chính sách của Biti's yêu cầu mỗi yêu cầu đổi trả phải ghi dưới dạng ghi chú",
+        "D": "Giáo trình yêu cầu mỗi ca khiếu nại phải được ghi thành một CRM Task"
+      },
+      "dung": [
+        "B"
+      ],
+      "loi_sai": {
+        "A": "tưởng Frappe có sẵn đối tượng đổi trả",
+        "C": "gán cho chính sách của Biti's một yêu cầu không có nguồn",
+        "D": "gán cho giáo trình một thuật ngữ của Frappe"
+      },
+      "giai_thich": "Nhật ký giai đoạn 2 ghi Frappe CRM 16.0.1 không có đối tượng đổi trả, nên nhóm dùng CRM Task và ghi chú, gắn vào deal đã bán để biết đơn gốc và khách. Chính sách của Biti's nói điều kiện đổi trả, không nói cách ghi trong phần mềm. CRM Task là khái niệm của Frappe, giáo trình không nói đến.",
+      "doan_goc": "docs/phase-report.md mục 2.3 (phát hiện a); docs/quy-trinh-sop.md (K1–K7)"
+    },
+    {
+      "id": "Q13",
+      "phan": "da",
+      "muc_tieu": "M4",
+      "muc_nhan_thuc": "van_dung",
+      "do_kho": "TB",
+      "loai": "mot_dap_an",
+      "cau_hoi": "Thầy hỏi: \"Đơn hàng online vào CRM của các em bằng đường nào?\" Câu trả lời đúng với tình trạng đồ án là gì?",
+      "dap_an": {
+        "A": "Tự động từ WooCommerce qua webhook order.created, đã chạy ở GĐ2; xác minh chữ ký chưa làm",
+        "B": "Frappe CRM đồng bộ với website bitis.com.vn khi khách đặt hàng; các đơn lỗi chưa kiểm",
+        "C": "Qua Email Account Gmail: hệ thống đọc thư xác nhận đơn rồi tạo deal, thư lỗi chưa xử lý",
+        "D": "Nhập tay ở GĐ2; nối WooCommerce bằng webhook là kế hoạch GĐ4, chưa làm"
+      },
+      "dung": [
+        "D"
+      ],
+      "loi_sai": {
+        "A": "nói đã làm điều thuộc kế hoạch GĐ4",
+        "B": "gán cho Frappe một khả năng đồng bộ không có",
+        "C": "bịa cơ chế đọc thư đơn hàng"
+      },
+      "giai_thich": "Đơn online ở giai đoạn 2 được nhập tay (lead nguồn \"Website Biti's\", địa bàn Online). Nối WooCommerce vào Frappe bằng webhook là kế hoạch của GĐ4 và chưa làm. Frappe không tự đồng bộ với website Biti's, và nhóm không có cơ chế đọc thư để tạo deal.",
+      "doan_goc": "docs/quy-trinh-sop.md (T1); docs/ke-hoach-tinh-chinh-gd1-6.md (GĐ4); evidence/A4-3/chay-thu.json (T1)"
+    },
+    {
+      "id": "Q14",
+      "phan": "da",
+      "muc_tieu": "M4",
+      "muc_nhan_thuc": "phan_tich",
+      "do_kho": "TB",
+      "loai": "nhieu_dap_an",
+      "cau_hoi": "Chọn 2 hạn chế đúng của hai quy trình dịch vụ trong đồ án.",
+      "dap_an": {
+        "A": "Cổng đầu của đổi trả kiểm 7 ngày và tem nhãn, chưa kiểm \"chỉ đổi một lần\" và hóa đơn",
+        "B": "Hoàn tiền được thực hiện bằng một giao dịch trong Frappe nhưng chưa đối soát với ngân hàng",
+        "C": "Chính sách 7 ngày được đọc ngày 2026-11-14 từ trang của Biti's và chưa kiểm lại sau đó",
+        "D": "Sơ đồ có nút chuyển cấp theo mức tiền nhưng chưa có dữ liệu thử cho nút này"
+      },
+      "dung": [
+        "A",
+        "C"
+      ],
+      "loi_sai": {
+        "B": "tưởng hoàn tiền là một giao dịch; thực tế chỉ là ghi chú",
+        "D": "tưởng sơ đồ có nút chuyển cấp; thực tế không có"
+      },
+      "giai_thich": "A và C đúng theo hồ sơ: sơ đồ chỉ có cổng \"Còn trong 7 ngày và còn tem nhãn?\", và chính sách được đọc ngày 2026-11-14. B sai: hoàn tiền ở deal 00037 chỉ là một ghi chú, CRM không có giao dịch tiền. D sai: quy trình không có nút chuyển cấp nào.",
+      "doan_goc": "docs/nghien-cuu-bitis.md mục 3; docs/quy-trinh-sop.md (K2, T7); scripts/gd2/quy-trinh.js"
+    },
+    {
+      "id": "Q15",
+      "phan": "da",
+      "muc_tieu": "M4",
+      "muc_nhan_thuc": "van_dung",
+      "do_kho": "TB",
+      "loai": "mot_dap_an",
+      "cau_hoi": "Muốn chứng minh nhánh khách xin đổi hàng khi đã quá hạn theo chính sách của Biti's đã được chạy thử thật trong Frappe, nên mở bản ghi nào?",
+      "dap_an": {
+        "A": "Deal CRM-DEAL-2026-00035: ghi chú quá 7 ngày và CRM Task 48 \"Từ chối đổi trả\" đã Done",
+        "B": "Deal CRM-DEAL-2026-00031: CRM Task 47 \"Gửi hàng đổi miễn phí\" đã Done, hàng đổi được gửi đi",
+        "C": "Lead CRM-LEAD-2026-00085: ghi chú thanh toán thẻ bị từ chối, lead chuyển Unqualified",
+        "D": "Deal CRM-DEAL-2026-00032: trạng thái Lost với lý do \"Giá cao\" sau khi khách xem báo giá"
+      },
+      "dung": [
+        "A"
+      ],
+      "loi_sai": {
+        "B": "nhầm với nhánh đổi hàng",
+        "C": "nhầm với nhánh thanh toán lỗi của đơn online",
+        "D": "nhầm với nhánh deal thất bại của quy trình chung"
+      },
+      "giai_thich": "Nhánh từ chối vì quá hạn chạy trên deal 00035 (ghi chú và CRM Task 48). Deal 00031 là nhánh đổi hàng. Lead 00085 là thanh toán lỗi của đơn online. Deal 00032 là deal thất bại \"Giá cao\" của quy trình chung.",
+      "doan_goc": "evidence/A4-3/chay-thu.json (K7); evidence/A4-3/K07_deals_notes.png"
+    },
+    {
+      "id": "Q16",
+      "phan": "da",
+      "muc_tieu": "M4",
+      "muc_nhan_thuc": "phan_tich",
+      "do_kho": "Kho",
+      "loai": "mot_dap_an",
+      "cau_hoi": "Thầy hỏi: \"Quy trình đổi trả giúp giữ chân khách thế nào và các em đã đo chưa?\" Câu trả lời đúng với hồ sơ là gì?",
+      "dap_an": {
+        "A": "Đã đo sơ bộ: 4 deal Lost trên 8 deal chạy thử, tức giữ chân khoảng 50%, dù dữ liệu còn ít",
+        "B": "Đã đo tỉ lệ giữ chân thô trên các lead đã có; phần doanh số và lợi nhuận chưa đo",
+        "C": "Không liên quan trực tiếp: giữ chân thuộc về marketing, dịch vụ sau bán ít ảnh hưởng",
+        "D": "Giáo trình nói dịch vụ tốt thúc đẩy giữ chân; nhóm chưa đo vì chưa có dữ liệu thật"
+      },
+      "dung": [
+        "D"
+      ],
+      "loi_sai": {
+        "A": "coi dữ liệu thử là dữ liệu thật và nhầm deal Lost với khách bỏ đi",
+        "B": "nói đã làm điều chưa làm",
+        "C": "phủ nhận quan hệ giáo trình nêu giữa chất lượng dịch vụ và giữ chân"
+      },
+      "giai_thich": "Giáo trình viết chất lượng dịch vụ thúc đẩy giữ chân khách; đổi miễn phí hàng lỗi nhà sản xuất là cách làm theo hướng đó. Nhóm chưa đo tỉ lệ giữ chân vì chưa có dữ liệu thật của khách đầu và cuối kỳ; dữ liệu thử do script tạo không dùng được. Deal Lost là cơ hội bán không thành, không phải khách đã bỏ đi.",
+      "doan_goc": "Chương 9, giáo trình tr. 209; Chương 4, slide 3–4; docs/phase-report.md mục 2.3"
+    }
+  ]
+}

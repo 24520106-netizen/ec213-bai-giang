@@ -1,0 +1,17 @@
+{
+  "id": "gd0-04",
+  "gd": "gd0",
+  "thu_tu": "0.4",
+  "tieu_de": "Kế hoạch và triển khai CRM theo giai đoạn",
+  "tom_tat": "Business case, cấu trúc công ty và năm giai đoạn triển khai CRM của giáo trình, đối chiếu với kế hoạch 7 giai đoạn, cổng kiểm và nhật ký của đồ án.",
+  "muc_tieu_bai": [
+    "Giải thích được business case cho CRM, lợi ích vận hành và lợi ích tương lai, và chọn được cấu trúc công ty hợp với CRM",
+    "Kể được năm giai đoạn triển khai CRM, công cụ của từng giai đoạn và vai trò của quản lý dự án, quản lý thay đổi",
+    "Đối chiếu được kế hoạch 7 giai đoạn của đồ án với năm giai đoạn của giáo trình, chỉ ra cổng kiểm và cách ghi nhận thay đổi",
+    "Giải thích được vì sao đồ án chia 7 giai đoạn, có cổng kiểm, bài giảng trước mỗi giai đoạn, và sổ tay cài đặt cho ba bạn còn lại"
+  ],
+  "nguon": [
+    { "ten": "Prior, Buttle & Maklan (2024), Customer Relationship Management, 5th ed.", "chi_tiet": "Chương 12 (tr. 285–297), Chương 13 (tr. 299–316); slide Chương 12 (slide 3–12) và Chương 13 (slide 3–8) của thầy" },
+    { "ten": "Tài liệu đồ án nhóm 4", "chi_tiet": "PLAN.md, docs/phase-report.md (mục Quyết định bổ sung, giai đoạn 0 đến 2), docs/ke-hoach-tinh-chinh-gd1-6.md, docs/checklist-tieu-chi.md, docs/nghien-cuu-bitis.md, docs/ghi-chu-phan-bien-thay.md" }
+  ]
+}

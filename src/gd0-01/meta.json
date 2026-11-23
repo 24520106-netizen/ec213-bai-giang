@@ -1,0 +1,19 @@
+{
+  "id": "gd0-01",
+  "gd": "gd0",
+  "thu_tu": "0.1",
+  "tieu_de": "CRM là gì và vì sao đồ án dùng Frappe CRM",
+  "tom_tat": "Từ định nghĩa CRM theo giáo trình, đặt Frappe CRM và Biti's vào đúng chỗ, rồi hiểu vì sao nhóm chọn nền này và phạm vi giai đoạn 0.",
+  "muc_tieu_bai": [
+    "Phân biệt được ba dạng CRM (chiến lược, vận hành, phân tích) và nói được Social CRM nằm ở đâu",
+    "Nhận ra bốn hiểu lầm hay gặp về CRM và nêu được định nghĩa CRM của giáo trình",
+    "Chỉ ra được Frappe CRM thuộc dạng nào và đồ án làm gì ứng với bốn bước IDIC",
+    "Giải thích được vì sao chọn Frappe CRM, giai đoạn 0 làm và không làm gì, cái nào của Frappe và cái nào của nhóm"
+  ],
+  "nguon": [
+    { "ten": "Prior, Buttle & Maklan (2024), Customer Relationship Management, 5th ed.", "chi_tiet": "Chương 1 (tr. 3–24), slide 3–17 của thầy" },
+    { "ten": "Giáo trình trên, Chương 13", "chi_tiet": "tr. 313 (xây từ đầu, mua giấy phép hay thuê dịch vụ) và tr. 315 (tùy biến phần mềm có sẵn)" },
+    { "ten": "Tài liệu đồ án nhóm 4", "chi_tiet": "PLAN.md, docs/phase-report.md (giai đoạn 0), docs/nghien-cuu-bitis.md, docs/case-study-hien-chuong.md, docs/ghi-chu-phan-bien-thay.md, docs/checklist-tieu-chi.md" },
+    { "ten": "Frappe CRM (README trên GitHub)", "chi_tiet": "bản lưu ở tai-lieu-chinh-thong/frappe/02-github-crm-readme.md, tải 2026-11-16" }
+  ]
+}

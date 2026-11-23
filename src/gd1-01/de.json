@@ -1,0 +1,429 @@
+{
+  "tieu_de": "Hành trình khách hàng, lead và nguồn lead",
+  "muc_dich": "tu_hoc",
+  "che_do_cham": "tung_phan",
+  "muc_tieu": {
+    "M1": "Phân biệt hai loại khách mới và đọc được nhóm khách theo mô hình chuyển đổi của Hofmeyr",
+    "M2": "Xếp hoạt động tìm khách vào nhóm phương pháp trong bảng nguồn lead, và chọn đúng khái niệm lead, chỉ số KPI",
+    "M3": "Đọc cấu hình lead của đồ án (nguồn, trạng thái, số liệu) và ghép vào khung của Chương 3",
+    "M4": "Giải thích lead chuyển thành deal ở đâu, cái nào của Frappe hay của nhóm, và xem ở màn hình nào"
+  },
+  "cau_hoi": [
+    {
+      "id": "Q01",
+      "phan": "kt",
+      "muc_tieu": "M1",
+      "muc_nhan_thuc": "van_dung",
+      "do_kho": "De",
+      "loai": "mot_dap_an",
+      "cau_hoi": "Một người mua giày thể thao của hãng X suốt nhiều năm. Sau khi thử cả hai, người đó chuyển sang mua giày của hãng Y. Với hãng Y, người này thuộc loại khách mới nào theo giáo trình?",
+      "dap_an": {
+        "A": "Mới với danh mục sản phẩm, vì người này vừa đổi sang một hãng khác",
+        "B": "Mới với công ty, vì người này đã dùng sản phẩm của đối thủ rồi chuyển sang",
+        "C": "Khách cam kết sâu, vì người này đã mua giày liên tục nhiều năm",
+        "D": "Không phải khách mới, vì người này đã từng mua giày trước đây"
+      },
+      "dung": [
+        "B"
+      ],
+      "loi_sai": {
+        "A": "nhầm đổi nhà cung cấp với đổi loại sản phẩm",
+        "C": "nhầm loại khách mới với mức cam kết của mô hình chuyển đổi",
+        "D": "tưởng khách mới là người chưa từng mua gì"
+      },
+      "giai_thich": "Khách mới có hai nghĩa: mới với danh mục (có nhu cầu mới hoặc giải pháp mới từ loại sản phẩm khác) và mới với công ty (đã dùng của đối thủ, nay chuyển sang). Người này vẫn mua giày, chỉ đổi hãng, nên là mới với công ty Y. Đáp án A nhầm hai khái niệm. Đáp án C lấy mức cam kết (của hãng X, và ở nhóm khách hiện tại) nhưng câu hỏi nói về hãng Y. Đáp án D hiểu sai từ 'mới': đã mua giày ở nơi khác không làm người đó thành khách cũ của Y.",
+      "doan_goc": "Chương 3, slide 6; sách tr. 62–63",
+      "do_chac": null
+    },
+    {
+      "id": "Q02",
+      "phan": "kt",
+      "muc_tieu": "M1",
+      "muc_nhan_thuc": "hieu",
+      "do_kho": "TB",
+      "loai": "nhieu_dap_an",
+      "cau_hoi": "Theo mô hình của Hofmeyr, chọn 2 nhóm khách hiện tại thuộc cụm khách cam kết thấp (uncommitted).",
+      "dap_an": {
+        "A": "Entrenched",
+        "B": "Shallow",
+        "C": "Average",
+        "D": "Convertible"
+      },
+      "dung": [
+        "B",
+        "D"
+      ],
+      "loi_sai": {
+        "A": "nhầm nhóm cam kết sâu với nhóm cam kết thấp",
+        "C": "nhầm nhóm mức trung bình với nhóm dưới trung bình"
+      },
+      "giai_thich": "Hofmeyr chia khách hiện tại thành hai cụm: cam kết (entrenched, average) và chưa cam kết (shallow, convertible). Shallow có cam kết thấp hơn mức trung bình; convertible là nhóm dễ bỏ đi nhất. Entrenched và average thuộc cụm cam kết.",
+      "doan_goc": "Chương 3, slide 8; sách tr. 64",
+      "do_chac": null
+    },
+    {
+      "id": "Q03",
+      "phan": "kt",
+      "muc_tieu": "M1",
+      "muc_nhan_thuc": "phan_tich",
+      "do_kho": "Kho",
+      "loai": "mot_dap_an",
+      "cau_hoi": "Một công ty đo thị trường của mình. Có 140 khách hiện tại thuộc nhóm cam kết thấp (shallow và convertible cộng lại). Có 190 người chưa mua nhưng đang mở cửa với lựa chọn khác (available và ambivalent cộng lại). Theo gợi ý của Hofmeyr, công ty nên ưu tiên gì?",
+      "dap_an": {
+        "A": "Tập trung thu hút khách mới, vì 190 người chưa mua đang mở cửa nhiều hơn 140 khách cam kết thấp",
+        "B": "Tập trung giữ khách hiện tại, vì 140 khách cam kết thấp có thể rời đi và làm mất doanh thu",
+        "C": "Tập trung thu hút khách mới, vì cộng hai nhóm được 330 người đều có thể đổi nhà cung cấp",
+        "D": "Chưa nên thu hút khách mới, vì nhóm chưa mua đang mở cửa vẫn sẽ ở lại nhà cung cấp hiện tại"
+      },
+      "dung": [
+        "A"
+      ],
+      "loi_sai": {
+        "B": "bỏ qua phép so sánh hai nhóm mà chỉ nhìn rủi ro mất khách",
+        "C": "cộng hai nhóm thay vì so sánh số người chưa mua mở cửa với số khách cam kết thấp",
+        "D": "nhầm nhóm 'mở cửa' (available, ambivalent) với nhóm 'đóng cửa' (unavailable)"
+      },
+      "giai_thich": "Quy tắc của Hofmeyr: nếu số người chưa mua đang mở cửa lớn hơn số khách hiện tại cam kết thấp thì tập trung mạnh vào thu hút. Ở đây 190 lớn hơn 140. B chỉ nhìn một vế. C cộng hai nhóm khác bản chất, không phải phép so sánh của quy tắc. D mô tả nhóm unavailable chứ không phải available hay ambivalent.",
+      "doan_goc": "Chương 3, slide 7–8; sách tr. 65",
+      "do_chac": null
+    },
+    {
+      "id": "Q04",
+      "phan": "kt",
+      "muc_tieu": "M2",
+      "muc_nhan_thuc": "van_dung",
+      "do_kho": "TB",
+      "loai": "nhieu_dap_an",
+      "cau_hoi": "Một công ty đồ uống cho khách nếm thử miễn phí tại siêu thị kèm phiếu giảm giá cho lần mua sau, đồng thời tự đăng video giới thiệu sản phẩm trên TikTok. Theo bảng nguồn lead của giáo trình, chọn 2 nhóm phương pháp mà hai hoạt động này thuộc về.",
+      "dap_an": {
+        "A": "Khuyến mãi (sales promotion)",
+        "B": "Tiếp thị trực tiếp (direct marketing) bằng email, thư, SMS",
+        "C": "Nguồn trực tuyến (online sources), mục mạng xã hội",
+        "D": "Quan hệ công chúng (public relations)"
+      },
+      "dung": [
+        "A",
+        "C"
+      ],
+      "loi_sai": {
+        "B": "nhầm phiếu giảm giá với kênh gửi thông điệp trực tiếp",
+        "D": "nhầm video tự đăng với nội dung miễn phí do báo chí đăng hộ"
+      },
+      "giai_thich": "Nếm thử (sampling) và phiếu giảm giá là các dạng khuyến mãi (A). Công ty tự đăng video trên TikTok là nguồn trực tuyến, mục mạng xã hội và nội dung (C). B là kênh email, thư, SMS, không có trong mô tả. D là nội dung miễn phí do cơ quan truyền thông đăng thay công ty, khác với video công ty tự đăng.",
+      "doan_goc": "Chương 3, slide 10, 12–14; sách tr. 69–74",
+      "do_chac": null
+    },
+    {
+      "id": "Q05",
+      "phan": "kt",
+      "muc_tieu": "M2",
+      "muc_nhan_thuc": "hieu",
+      "do_kho": "TB",
+      "loai": "mot_dap_an",
+      "cau_hoi": "Một khách điền biểu mẫu hỏi giá trên website và công ty ghi nhận họ là lead. Theo giáo trình, cần làm gì để lead này trở thành lead 'qualified'?",
+      "dap_an": {
+        "A": "Gọi điện chốt đơn ngay và gửi báo giá cuối cùng cho khách để khách ký",
+        "B": "Gửi thêm quảng cáo và ưu đãi cho khách cho đến khi khách tự quyết định mua",
+        "C": "Chuyển hồ sơ khách sang bộ phận chăm sóc sau bán hàng để theo dõi tiếp",
+        "D": "Xác nhận khách có khả năng, sẵn lòng mua và lời đề nghị hợp nhu cầu"
+      },
+      "dung": [
+        "D"
+      ],
+      "loi_sai": {
+        "A": "nhầm bước đánh giá điều kiện với bước chốt đơn",
+        "B": "nhầm đánh giá điều kiện với quảng cáo để nuôi sự chú ý",
+        "C": "nhầm giai đoạn thu hút với giai đoạn sau bán trong hành trình"
+      },
+      "giai_thich": "Lead chỉ là dấu hiệu khách có thể cần sản phẩm. Muốn thành qualified, công ty phải có bằng chứng khách có khả năng và sẵn lòng mua, và lời đề nghị hợp với nhu cầu của họ (khách tự xác nhận hoặc có bằng chứng khác). Chốt đơn (A) là bước sau. Gửi quảng cáo (B) không xác nhận được gì. Chăm sóc sau bán (C) thuộc giai đoạn sau khi đã có khách.",
+      "doan_goc": "Chương 3, sách tr. 66",
+      "do_chac": null
+    },
+    {
+      "id": "Q06",
+      "phan": "kt",
+      "muc_tieu": "M2",
+      "muc_nhan_thuc": "van_dung",
+      "do_kho": "TB",
+      "loai": "mot_dap_an",
+      "cau_hoi": "Một sự kiện lái thử có 400 người tham dự, và 36 người để lại thông tin quan tâm mua. Theo bảng KPI của giáo trình, chỉ số nào dùng để đánh giá sự kiện và giá trị là bao nhiêu?",
+      "dap_an": {
+        "A": "Số lead mới trên số người tham dự, bằng 400 / 36, xấp xỉ 11,1",
+        "B": "Số lead mới trên số người tham dự, bằng 36 / 400, tức 9%",
+        "C": "Tỷ lệ mở (open rate), bằng 36 / 400, tức 9%",
+        "D": "Số người tham dự, 400 người, vì sự kiện không có chỉ số lead"
+      },
+      "dung": [
+        "B"
+      ],
+      "loi_sai": {
+        "A": "đảo ngược tỷ số (lấy người tham dự chia cho lead)",
+        "C": "dùng nhầm chỉ số của email, khuyến mãi cho sự kiện",
+        "D": "cho rằng chỉ đếm người tham dự là đủ"
+      },
+      "giai_thich": "Table 3.2 gán cho sự kiện chỉ số 'số lead mới chia số người tham dự': 36 / 400 = 0,09 = 9%. A lấy tỷ số ngược, ra số không phải tỷ lệ. C có cùng con số nhưng open rate là chỉ số của email và khuyến mãi. D bỏ qua kết quả lead; chỉ đếm người đến mới thấy một phần kết quả.",
+      "doan_goc": "Chương 3, sách tr. 81–82 (Table 3.2)",
+      "do_chac": null
+    },
+    {
+      "id": "Q07",
+      "phan": "ud",
+      "muc_tieu": "M3",
+      "muc_nhan_thuc": "nho",
+      "do_kho": "De",
+      "loai": "nhieu_dap_an",
+      "cau_hoi": "Script gd1-04 thêm một số nguồn lead vào Frappe CRM cho Biti's. Chọn 2 nguồn do nhóm tự thêm bằng script, ngoài các nguồn có sẵn của bản cài.",
+      "dap_an": {
+        "A": "Facebook",
+        "B": "TikTok",
+        "C": "Instagram",
+        "D": "Walk In"
+      },
+      "dung": [
+        "B",
+        "C"
+      ],
+      "loi_sai": {
+        "A": "tưởng nguồn có sẵn là nguồn nhóm thêm",
+        "D": "tưởng nguồn có sẵn là nguồn nhóm thêm"
+      },
+      "giai_thich": "Nhật ký mục 1.4 và script gd1-04 liệt kê 6 nguồn nhóm thêm: Zalo, TikTok, Instagram, Website Biti's, Đại lý giới thiệu, Cửa hàng Biti's. Facebook và Walk In có trong dữ liệu demo nhưng script không tạo chúng.",
+      "doan_goc": "docs/phase-report.md mục 1.4; scripts/gd1-04-pipeline.py mục 2",
+      "do_chac": null
+    },
+    {
+      "id": "Q08",
+      "phan": "ud",
+      "muc_tieu": "M3",
+      "muc_nhan_thuc": "hieu",
+      "do_kho": "TB",
+      "loai": "mot_dap_an",
+      "cau_hoi": "Nguồn lead 'Đại lý giới thiệu' (đại lý của Biti's đưa khách tới) gần nhất với nhóm phương pháp nào trong bảng nguồn lead của giáo trình?",
+      "dap_an": {
+        "A": "Tele-marketing, vì đại lý báo khách cho Biti's qua điện thoại",
+        "B": "Advertising, vì đại lý quảng bá thương hiệu Biti's tới khách",
+        "C": "Sales promotion, vì đại lý được hưởng chiết khấu khi bán hàng",
+        "D": "Networking, vì khách đến qua các mối quan hệ đối tác của Biti's"
+      },
+      "dung": [
+        "D"
+      ],
+      "loi_sai": {
+        "A": "nhầm kênh liên lạc với nguồn tạo ra lead",
+        "B": "nhầm việc đại lý bán hàng với quảng cáo mua chỗ trên truyền thông",
+        "C": "nhầm chiết khấu đại lý với ưu đãi tạm thời dành cho khách"
+      },
+      "giai_thich": "Giáo trình nhắc mạng giới thiệu chéo (referral network) trong mục networking: các bên cam kết giới thiệu khách cho nhau. Đại lý đưa khách tới Biti's giống mô hình này. Tele-marketing là gọi điện có hệ thống theo kịch bản. Quảng cáo là mua thời gian hay chỗ trên truyền thông của người khác. Khuyến mãi là ưu đãi tạm thời nhằm kích hành vi mua. Lưu ý đây là cách xếp của bài giảng, vì bảng giáo trình không có hàng 'đại lý'.",
+      "doan_goc": "Chương 3, sách tr. 67; scripts/gd1-04-pipeline.py mục 2",
+      "do_chac": null
+    },
+    {
+      "id": "Q09",
+      "phan": "ud",
+      "muc_tieu": "M3",
+      "muc_nhan_thuc": "van_dung",
+      "do_kho": "De",
+      "loai": "mot_dap_an",
+      "cau_hoi": "Trong Frappe CRM của đồ án, một lead đã được tư vấn, xác nhận có nhu cầu và ngân sách thật, nhưng nhân viên chưa tạo deal. Trạng thái nào phù hợp nhất cho lead này?",
+      "dap_an": {
+        "A": "Đủ điều kiện (Qualified)",
+        "B": "Đang chăm sóc (Nurture)",
+        "C": "Đã chuyển thành deal (Converted)",
+        "D": "Đã liên hệ (Contacted)"
+      },
+      "dung": [
+        "A"
+      ],
+      "loi_sai": {
+        "B": "nhầm lead đã đủ điều kiện với lead cần nuôi tiếp",
+        "C": "nhầm lead chưa có deal với lead đã chuyển",
+        "D": "nhầm mới liên hệ lần đầu với đã xác nhận nhu cầu"
+      },
+      "giai_thich": "Qualified nghĩa là đã xác nhận khách có khả năng và sẵn lòng mua, khớp mô tả. Nurture dành cho lead chưa sẵn sàng, còn phải nuôi. Converted dành cho lead đã thành deal. Contacted mới chỉ là đã liên hệ, chưa xác nhận điều kiện. Trong dữ liệu demo, 6 lead đang ở Đủ điều kiện.",
+      "doan_goc": "docs/phase-report.md mục 1.4, 1.6; Chương 3, sách tr. 66",
+      "do_chac": null
+    },
+    {
+      "id": "Q10",
+      "phan": "ud",
+      "muc_tieu": "M3",
+      "muc_nhan_thuc": "van_dung",
+      "do_kho": "TB",
+      "loai": "mot_dap_an",
+      "cau_hoi": "Dữ liệu demo có 60 lead: Mới 20, Đã liên hệ 14, Đang chăm sóc 8, Đủ điều kiện 6, Đã chuyển 4, Không đủ điều kiện 5, Rác 3. Có bao nhiêu lead đã bị loại khỏi pipeline (không đủ điều kiện hoặc rác)?",
+      "dap_an": {
+        "A": "5",
+        "B": "8",
+        "C": "10",
+        "D": "12"
+      },
+      "dung": [
+        "B"
+      ],
+      "loi_sai": {
+        "A": "chỉ đếm trạng thái Không đủ điều kiện, quên Rác",
+        "C": "cộng nhầm hai nhóm đã vượt qua bước đánh giá (Đủ điều kiện và Đã chuyển)",
+        "D": "cộng cả lead Đã chuyển vào nhóm bị loại"
+      },
+      "giai_thich": "Bị loại là Không đủ điều kiện (5) cộng Rác (3) bằng 8. Số 5 quên nhóm Rác. Số 10 là 6 + 4, tức các lead đã vượt qua bước đánh giá. Số 12 là 8 + 4, cộng nhầm lead đã chuyển thành deal.",
+      "doan_goc": "docs/phase-report.md mục 1.6; scripts/gd1-06-du-lieu-demo.py (STATUS_POOL)",
+      "do_chac": null
+    },
+    {
+      "id": "Q11",
+      "phan": "ud",
+      "muc_tieu": "M3",
+      "muc_nhan_thuc": "phan_tich",
+      "do_kho": "Kho",
+      "loai": "nhieu_dap_an",
+      "cau_hoi": "So bảng nguồn lead của giáo trình với danh sách nguồn lead trong đồ án (kể cả nguồn có sẵn được dùng trong dữ liệu demo). Chọn 2 nhóm phương pháp chưa có nguồn lead riêng trong đồ án.",
+      "dap_an": {
+        "A": "Tiếp thị qua điện thoại (tele-marketing)",
+        "B": "Bán hàng cá nhân (personal selling)",
+        "C": "Quan hệ công chúng (public relations)",
+        "D": "Quảng cáo (advertising)"
+      },
+      "dung": [
+        "A",
+        "C"
+      ],
+      "loi_sai": {
+        "B": "quên nguồn Cửa hàng Biti's và Walk In (khách được nhân viên tư vấn trực tiếp)",
+        "D": "quên nguồn Advertisement trong dữ liệu demo"
+      },
+      "giai_thich": "Theo bảng ánh xạ ở phần 2: Cửa hàng Biti's và Walk In thuộc personal selling; Advertisement thuộc advertising. Đồ án chưa có nguồn riêng cho tele-marketing và PR (cũng như khuyến mãi, merchandising, email/SMS).",
+      "doan_goc": "scripts/gd1-04-pipeline.py mục 2; scripts/gd1-06-du-lieu-demo.py (SRC_BY_TERR)",
+      "do_chac": null
+    },
+    {
+      "id": "Q12",
+      "phan": "da",
+      "muc_tieu": "M4",
+      "muc_nhan_thuc": "hieu",
+      "do_kho": "TB",
+      "loai": "mot_dap_an",
+      "cau_hoi": "Theo mã nguồn crm_lead.py đã tải, khi bấm Convert to Deal cho một lead, hệ thống làm gì?",
+      "dap_an": {
+        "A": "Tạo CRM Deal mới, chép dữ liệu từ lead rồi xóa lead cũ, giữ nguyên Contact",
+        "B": "Đổi trạng thái lead thành Converted, tạo Contact nhưng không tạo Deal",
+        "C": "Tạo hoặc gắn Contact và Organization, tạo Deal trỏ về lead, đặt converted = 1",
+        "D": "Tạo CRM Deal mới, gắn Organization, để ghi chú và email ở lại lead cũ"
+      },
+      "dung": [
+        "C"
+      ],
+      "loi_sai": {
+        "A": "tưởng lead bị xóa hoặc thay thế khi thành deal",
+        "B": "tưởng deal chỉ là một trạng thái của lead",
+        "D": "tưởng lịch sử làm việc không đi theo sang deal"
+      },
+      "giai_thich": "Hàm convert_to_deal tạo hoặc gắn Contact, tạo hoặc gắn CRM Organization theo tên, tạo CRM Deal có trường lead trỏ về lead rồi đặt converted = 1. Lead vẫn còn nên A sai. B sai vì có tạo bản ghi mới (Deal, Contact). Hướng dẫn Frappe nói ghi chú, email, việc đi theo sang deal, nên D sai.",
+      "doan_goc": "tich-hop/83-src-crm-lead-py.txt; frappe/02-setup-guide.txt mục 5",
+      "do_chac": null
+    },
+    {
+      "id": "Q13",
+      "phan": "da",
+      "muc_tieu": "M4",
+      "muc_nhan_thuc": "phan_tich",
+      "do_kho": "Kho",
+      "loai": "mot_dap_an",
+      "cau_hoi": "Khi chạy thật quy trình ở GĐ2, nhóm thấy lead sau khi chuyển thành deal vẫn ở trạng thái Qualified, chỉ có converted = 1. Muốn đếm số lead đã chuyển cho KPI ở GĐ5, nên dựa vào đâu?",
+      "dap_an": {
+        "A": "Đếm lead có trạng thái 'Đã chuyển thành deal', vì tên trạng thái nói rõ điều đó",
+        "B": "Đếm lead có trạng thái Đủ điều kiện, vì lead đã chuyển vẫn giữ trạng thái này",
+        "C": "Đếm các CRM Deal đang có, vì mỗi deal tương ứng đúng một lead",
+        "D": "Đếm lead có cờ converted = 1, vì cờ này được đặt khi chuyển thành deal"
+      },
+      "dung": [
+        "D"
+      ],
+      "loi_sai": {
+        "A": "tin vào tên trạng thái thay vì hành vi thật của hệ thống",
+        "B": "gộp cả lead chưa chuyển vì trạng thái Qualified không phân biệt được",
+        "C": "quên 30 deal demo được tạo thẳng, không đi qua lead"
+      },
+      "giai_thich": "Sau khi chuyển, trạng thái giữ Qualified; dấu hiệu đáng tin là cờ converted (hoặc deal có trường lead trỏ tới). A sai vì trạng thái Converted chỉ có khi ai đó đặt tay. B sai vì lead Qualified chưa chuyển cũng ở trạng thái này. C sai vì 30 deal demo được script tạo trực tiếp, không từ lead. Lưu ý: cờ converted của 4 lead demo 'Đã chuyển' chưa kiểm trên máy.",
+      "doan_goc": "docs/phase-report.md mục 2.3 (phát hiện b); tich-hop/83-src-crm-lead-py.txt",
+      "do_chac": null
+    },
+    {
+      "id": "Q14",
+      "phan": "da",
+      "muc_tieu": "M4",
+      "muc_nhan_thuc": "hieu",
+      "do_kho": "TB",
+      "loai": "mot_dap_an",
+      "cau_hoi": "Thầy hỏi: trạng thái lead 'Nurture' và nhãn tiếng Việt 'Đang chăm sóc' hiển thị trên màn hình, cái nào của Frappe, cái nào của nhóm?",
+      "dap_an": {
+        "A": "Cả hai đều do nhóm tự thêm vào Frappe CRM bằng script gd1-04",
+        "B": "Nurture có sẵn của Frappe; nhãn Đang chăm sóc là Translation nhóm thêm",
+        "C": "Cả hai đều có sẵn trong bản Frappe CRM ngay từ lúc cài đặt",
+        "D": "Nurture do nhóm thêm; nhãn Đang chăm sóc là bản dịch Frappe có sẵn"
+      },
+      "dung": [
+        "B"
+      ],
+      "loi_sai": {
+        "A": "nhận hết cấu hình Frappe là công của nhóm",
+        "C": "quên bản dịch Việt do nhóm tự thêm (bản dịch gốc chưa có nhãn này)",
+        "D": "đảo ngược hai bên"
+      },
+      "giai_thich": "Hướng dẫn Frappe liệt kê Nurture trong các trạng thái có sẵn. Script gd1-04 thêm 14 bản dịch (Translation) như 'Nurture' thành 'Đang chăm sóc'. Khi thầy hỏi 'cái nào của mấy đứa', câu trả lời là phần cấu hình và bản dịch, không phải cơ chế trạng thái.",
+      "doan_goc": "frappe/02-setup-guide.txt; scripts/gd1-04-pipeline.py mục 5",
+      "do_chac": null
+    },
+    {
+      "id": "Q15",
+      "phan": "da",
+      "muc_tieu": "M4",
+      "muc_nhan_thuc": "nho",
+      "do_kho": "De",
+      "loai": "mot_dap_an",
+      "cau_hoi": "Muốn cho thầy xem trực tiếp 7 trạng thái lead (mỗi dòng một bản ghi CRM Lead Status) trong Desk, mở trang nào?",
+      "dap_an": {
+        "A": "/app/crm-lead-status",
+        "B": "/app/crm-lead-source",
+        "C": "/app/crm-lost-reason",
+        "D": "/app/crm-lead"
+      },
+      "dung": [
+        "A"
+      ],
+      "loi_sai": {
+        "B": "nhầm danh sách nguồn lead với danh sách trạng thái",
+        "C": "nhầm danh sách lý do thất bại với danh sách trạng thái",
+        "D": "nhầm danh sách các lead với danh sách trạng thái của lead"
+      },
+      "giai_thich": "Desk đặt đường dẫn danh sách theo tên DocType: CRM Lead Status thành /app/crm-lead-status. /app/crm-lead là danh sách lead, còn nguồn lead và lý do thất bại là cấu hình khác, không phải trạng thái.",
+      "doan_goc": "docs/bai-giang/gd1-cau-hinh-nhap-lieu.html (mục 5); frappe/02-lead.txt",
+      "do_chac": null
+    },
+    {
+      "id": "Q16",
+      "phan": "da",
+      "muc_tieu": "M4",
+      "muc_nhan_thuc": "phan_tich",
+      "do_kho": "TB",
+      "loai": "mot_dap_an",
+      "cau_hoi": "Vì sao nhóm giữ tên kỹ thuật tiếng Anh của trạng thái lead (Qualified, Converted...) và chỉ thêm bản dịch tiếng Việt, thay vì đổi tên bản ghi sang tiếng Việt?",
+      "dap_an": {
+        "A": "Báo cáo GĐ5 gộp số liệu theo tên tiếng Anh nên bắt buộc giữ nguyên tên",
+        "B": "Frappe CRM hiển thị theo ngôn ngữ trình duyệt nên đổi tên bản ghi không có tác dụng",
+        "C": "Mã CRM tham chiếu trạng thái theo tên, nên đổi tên làm sai logic xử lý",
+        "D": "Tên tiếng Anh giúp đối chiếu tài liệu Frappe, còn mã chạy không phụ thuộc tên"
+      },
+      "dung": [
+        "C"
+      ],
+      "loi_sai": {
+        "A": "đoán một ràng buộc của báo cáo không có trong nhật ký",
+        "B": "đoán một cơ chế hiển thị không có trong nhật ký",
+        "D": "cho rằng mã chạy không phụ thuộc tên, trái với mã nguồn mark_converted"
+      },
+      "giai_thich": "Nhật ký 1.4 ghi giữ tên kỹ thuật 'để CRM hoạt động đúng'. Mã nguồn chuyển lead sang deal tìm trạng thái bằng tên 'Qualified', nên mã có phụ thuộc tên (D sai). Nhật ký không nhắc ràng buộc của báo cáo GĐ5 (A) hay cơ chế theo ngôn ngữ trình duyệt (B).",
+      "doan_goc": "docs/phase-report.md mục 1.4; tich-hop/83-src-crm-lead-py.txt (mark_converted)",
+      "do_chac": null
+    }
+  ]
+}

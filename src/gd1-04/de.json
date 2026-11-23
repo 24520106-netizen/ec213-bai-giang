@@ -1,0 +1,483 @@
+{
+  "tieu_de": "Thiết lập hệ thống: ngôn ngữ, người dùng, phân quyền, email và quyền riêng tư",
+  "muc_dich": "tu_hoc",
+  "che_do_cham": "tung_phan",
+  "muc_tieu": {
+    "K1": "Nêu và áp dụng được các nguyên tắc bảo vệ dữ liệu cá nhân mà giáo trình trình bày (OECD, GDPR)",
+    "K2": "Phân biệt Role với User Permission, và giải thích mục đích của trình cài đặt ban đầu và của mật khẩu ứng dụng",
+    "U1": "Ghép thiết lập của giáo trình và tài liệu Frappe với cấu hình thật của đồ án (người dùng, Role, Email Account)",
+    "U2": "Đọc đúng giá trị cấu hình thật và tách điều đã kiểm với điều chưa kiểm",
+    "D1": "Giải thích nguyên nhân và lý do thiết kế của ba tình huống: bản dịch, định dạng ngày, hàng đợi thư",
+    "D2": "Chọn bằng chứng đúng và trả lời câu thầy hỏi về gửi mail, phân quyền, người cài đặt"
+  },
+  "cau_hoi": [
+    {
+      "id": "Q01",
+      "phan": "kt",
+      "muc_tieu": "K1",
+      "muc_nhan_thuc": "van_dung",
+      "do_kho": "De",
+      "loai": "mot_dap_an",
+      "cau_hoi": "Một công ty gửi ưu đãi nhầm cho nhiều khách vì địa chỉ và số điện thoại trong CRM đã cũ nhiều năm, không ai cập nhật. Nguyên tắc OECD nào bị vi phạm rõ nhất?",
+      "dap_an": {
+        "A": "Hạn chế thu thập: công ty thu nhiều thông tin hơn mức cần",
+        "B": "Chất lượng dữ liệu: dữ liệu phải chính xác và được cập nhật",
+        "C": "Bảo vệ an toàn: dữ liệu chưa được giữ kín khỏi người ngoài",
+        "D": "Trách nhiệm giải trình: chưa chỉ ra ai chịu trách nhiệm dữ liệu"
+      },
+      "dung": [
+        "B"
+      ],
+      "loi_sai": {
+        "A": "nhầm dữ liệu cũ với dữ liệu thu thừa",
+        "C": "nhầm dữ liệu sai lệch với dữ liệu bị lộ",
+        "D": "nhầm lỗi chất lượng dữ liệu với việc thiếu người chịu trách nhiệm"
+      },
+      "giai_thich": "Nguyên tắc chất lượng dữ liệu: dữ liệu cá nhân phải liên quan mục đích dùng và, trong phạm vi cần thiết, chính xác, đầy đủ, được cập nhật. Địa chỉ và điện thoại cũ vi phạm điều này. Hạn chế thu thập nói về cách và mức độ thu thập; bảo vệ an toàn nói về mất mát và truy cập trái phép; trách nhiệm giải trình nói về việc bên kiểm soát chịu trách nhiệm tuân thủ, không phải là điều bị vi phạm trực tiếp ở đây.",
+      "doan_goc": "Chương 14, trang 325-326 (các nguyên tắc OECD)",
+      "do_chac": null
+    },
+    {
+      "id": "Q02",
+      "phan": "kt",
+      "muc_tieu": "K1",
+      "muc_nhan_thuc": "hieu",
+      "do_kho": "TB",
+      "loai": "nhieu_dap_an",
+      "cau_hoi": "Theo giáo trình, hai phát biểu nào về GDPR (quy định chung về bảo vệ dữ liệu của châu Âu) là đúng? (chọn 2 đáp án)",
+      "dap_an": {
+        "A": "Áp dụng cho công ty xử lý dữ liệu của công dân châu Âu dù công ty đặt ở đâu",
+        "B": "Áp dụng cho công ty đặt trụ sở trong châu Âu, còn công ty ngoài châu Âu được miễn",
+        "C": "Có các quyền như được lãng quên và truy cập dữ liệu về mình",
+        "D": "Mức phạt tối đa là 20 triệu euro, không tính theo doanh thu"
+      },
+      "dung": [
+        "A",
+        "C"
+      ],
+      "loi_sai": {
+        "B": "nghĩ phạm vi theo nơi đặt trụ sở thay vì theo dữ liệu của công dân châu Âu",
+        "D": "bỏ sót vế 4% doanh thu toàn cầu của mức phạt"
+      },
+      "giai_thich": "Giáo trình nói GDPR áp dụng cho mọi công ty xử lý dữ liệu của công dân châu Âu bất kể vị trí công ty, và gồm quyền được lãng quên, quyền truy cập dữ liệu một cách rẻ, nhanh, dễ, bảo vệ từ khâu thiết kế. Mức phạt cho tổ chức lớn là 20 triệu euro hoặc 4% doanh thu toàn cầu, lấy số lớn hơn.",
+      "doan_goc": "Chương 14, trang 327",
+      "do_chac": null
+    },
+    {
+      "id": "Q03",
+      "phan": "kt",
+      "muc_tieu": "K1",
+      "muc_nhan_thuc": "van_dung",
+      "do_kho": "TB",
+      "loai": "mot_dap_an",
+      "cau_hoi": "Một tập đoàn có doanh thu toàn cầu 800 triệu euro vi phạm nghiêm trọng quy định bảo vệ dữ liệu của châu Âu. Theo giáo trình, mức phạt tối đa là bao nhiêu?",
+      "dap_an": {
+        "A": "8 triệu euro",
+        "B": "20 triệu euro",
+        "C": "32 triệu euro",
+        "D": "52 triệu euro"
+      },
+      "dung": [
+        "C"
+      ],
+      "loi_sai": {
+        "A": "lấy 1% thay vì 4% doanh thu",
+        "B": "lấy mức cố định mà quên so với 4% doanh thu",
+        "D": "cộng mức cố định với 4% doanh thu thay vì lấy số lớn hơn"
+      },
+      "giai_thich": "Mức phạt là 20 triệu euro hoặc 4% doanh thu toàn cầu, lấy số lớn hơn. 4% của 800 triệu là 32 triệu, lớn hơn 20 triệu, nên mức tối đa là 32 triệu euro. 8 triệu là 1%, 20 triệu quên phép so sánh, 52 triệu là cộng hai mức.",
+      "doan_goc": "Chương 14, trang 327",
+      "do_chac": null
+    },
+    {
+      "id": "Q04",
+      "phan": "kt",
+      "muc_tieu": "K2",
+      "muc_nhan_thuc": "van_dung",
+      "do_kho": "TB",
+      "loai": "mot_dap_an",
+      "cau_hoi": "Hai nhân viên cùng có Role Sales User, cùng được đọc và sửa khách hàng tiềm năng. Quản lý muốn nhân viên A chỉ thấy các khách thuộc địa bàn Miền Nam, còn nhân viên B vẫn thấy tất cả. Cơ chế nào của Frappe đáp ứng?",
+      "dap_an": {
+        "A": "Tạo User Permission cho A với trường địa bàn bằng Miền Nam",
+        "B": "Bỏ quyền đọc khách hàng khỏi Role Sales User trong Role Permission Manager",
+        "C": "Bật xác minh 2 bước cho tài khoản của nhân viên A",
+        "D": "Gán cho A thêm một Role thứ hai có tên là Miền Nam"
+      },
+      "dung": [
+        "A"
+      ],
+      "loi_sai": {
+        "B": "nhầm quyền theo Role (áp cả nhóm) với quyền theo từng người",
+        "C": "nhầm bảo mật đăng nhập với giới hạn dữ liệu được thấy",
+        "D": "nghĩ thêm Role có thể lọc bản ghi theo giá trị của một trường"
+      },
+      "giai_thich": "User Permission áp cho từng người để giới hạn bản ghi có một giá trị ở trường liên kết, nên A thấy khách Miền Nam còn B không bị giới hạn. Bỏ quyền đọc khỏi Role sẽ chặn cả A và B. Xác minh 2 bước bảo vệ việc đăng nhập, không lọc dữ liệu. Role quyết định hành động trên loại bản ghi, không lọc theo giá trị một trường.",
+      "doan_goc": "tai-lieu-chinh-thong/frappe/05-users-permissions.txt (mục User Permissions, User and Role)",
+      "do_chac": null
+    },
+    {
+      "id": "Q05",
+      "phan": "kt",
+      "muc_tieu": "K2",
+      "muc_nhan_thuc": "hieu",
+      "do_kho": "TB",
+      "loai": "mot_dap_an",
+      "cau_hoi": "Khi cấu hình CRM gửi thư qua Gmail, mật khẩu ứng dụng là gì và dùng để làm gì?",
+      "dap_an": {
+        "A": "Mật khẩu riêng cho một ứng dụng, mã hóa thư gửi đi mạnh hơn mật khẩu chính",
+        "B": "Mật khẩu dùng một lần, tự hết hạn sau mỗi lần ứng dụng gửi thư",
+        "C": "Mật khẩu riêng cho một ứng dụng, thu hồi được, lộ cũng không lộ mật khẩu chính",
+        "D": "Mật khẩu do Frappe sinh ra, thay cho mật khẩu Gmail khi gửi qua cổng 587"
+      },
+      "dung": [
+        "C"
+      ],
+      "loi_sai": {
+        "A": "nhầm loại mật khẩu với mã hóa đường truyền (TLS)",
+        "B": "nhầm với mật khẩu dùng một lần (OTP)",
+        "D": "nhầm bên sinh mật khẩu: Google sinh, không phải Frappe"
+      },
+      "giai_thich": "Mật khẩu ứng dụng do Google sinh cho một ứng dụng cụ thể, cần xác minh 2 bước, thu hồi riêng được; nếu ứng dụng bị lộ thì mật khẩu đăng nhập Gmail không bị lộ. Mã hóa đường truyền là việc của TLS. Nó không phải mật khẩu dùng một lần và không do Frappe sinh. Tài liệu Frappe chỉ nói Gmail có thể cần bật 2FA và dùng App Password.",
+      "doan_goc": "tai-lieu-chinh-thong/frappe/02-email-communication.txt; docs/huong-dan-gmail-smtp.md",
+      "do_chac": null
+    },
+    {
+      "id": "Q06",
+      "phan": "kt",
+      "muc_tieu": "K2",
+      "muc_nhan_thuc": "hieu",
+      "do_kho": "De",
+      "loai": "mot_dap_an",
+      "cau_hoi": "Lần đầu mở một site Frappe CRM mới, trình cài đặt ban đầu hỏi những gì và email nhập ở bước cuối dùng để làm gì?",
+      "dap_an": {
+        "A": "Ngôn ngữ, quốc gia, múi giờ, tiền tệ; email là tên đăng nhập của người dùng đầu tiên",
+        "B": "Ngôn ngữ, quốc gia, múi giờ, tiền tệ; email là hộp thư gửi mặc định của CRM",
+        "C": "Máy chủ SMTP, cổng gửi thư, tiền tệ; email là tên đăng nhập của người dùng đầu tiên",
+        "D": "Role của từng nhân viên, múi giờ; email là tên miền dùng cho Email Domain"
+      },
+      "dung": [
+        "A"
+      ],
+      "loi_sai": {
+        "B": "nhầm tài khoản đăng nhập với Email Account",
+        "C": "nhầm trình cài đặt với bước cấu hình Email Account",
+        "D": "nhầm trình cài đặt với việc phân quyền và tạo Email Domain"
+      },
+      "giai_thich": "Tài liệu Frappe CRM mô tả hai bước: chọn ngôn ngữ, xác nhận quốc gia, múi giờ, tiền tệ; rồi nhập họ tên và email, và email đó là tên đăng nhập sau này. Email Account (gửi thư) và Role là các việc cấu hình riêng làm sau.",
+      "doan_goc": "tai-lieu-chinh-thong/frappe/02-setting-up.txt",
+      "do_chac": null
+    },
+    {
+      "id": "Q07",
+      "phan": "ud",
+      "muc_tieu": "U1",
+      "muc_nhan_thuc": "van_dung",
+      "do_kho": "TB",
+      "loai": "mot_dap_an",
+      "cau_hoi": "Theo script và nhật ký của đồ án, tổng số tài khoản người dùng do nhóm tạo hoặc sử dụng (không tính tài khoản mặc định của hệ thống) là bao nhiêu và gồm những gì?",
+      "dap_an": {
+        "A": "11: 3 thành viên và 8 nhân viên demo",
+        "B": "12: 3 thành viên, người cài đặt và 8 nhân viên demo",
+        "C": "15: 4 thành viên, 8 nhân viên demo và 3 tài khoản quản trị",
+        "D": "10: 2 thành viên, người cài đặt và 7 nhân viên demo"
+      },
+      "dung": [
+        "B"
+      ],
+      "loi_sai": {
+        "A": "quên tài khoản của người cài đặt, tạo bởi trình cài đặt chứ không phải bởi script người dùng",
+        "C": "đếm trùng tài khoản người cài đặt và bịa thêm tài khoản quản trị",
+        "D": "nhớ sai số người trong nhóm và số nhân viên demo"
+      },
+      "giai_thich": "Script gd1-02 tạo 3 tài khoản thành viên và 8 nhân viên demo (11 tài khoản); trình cài đặt tạo thêm tài khoản của người cài đặt: 3 + 1 = 4 thành viên, cộng 8 demo là 12. Không có tài khoản quản trị nào khác do nhóm tạo, và các thành viên không dùng chung tài khoản.",
+      "doan_goc": "scripts/gd1-02-he-thong-nguoi-dung.py; docs/phase-report.md mục 1.2-1.3",
+      "do_chac": null
+    },
+    {
+      "id": "Q08",
+      "phan": "ud",
+      "muc_tieu": "U1",
+      "muc_nhan_thuc": "van_dung",
+      "do_kho": "TB",
+      "loai": "nhieu_dap_an",
+      "cau_hoi": "Hai phát biểu nào đúng về Email Account \"Biti's CRM (Gmail)\" trong đồ án? (chọn 2 đáp án)",
+      "dap_an": {
+        "A": "Máy chủ smtp.gmail.com, cổng 587, bật TLS",
+        "B": "Có bật nhận thư đến để CRM đọc thư trả lời của khách",
+        "C": "Được bật gửi đi và đặt làm mặc định sau khi người cài nhập mật khẩu ứng dụng",
+        "D": "Dùng mật khẩu chính của tài khoản Gmail của người cài đặt"
+      },
+      "dung": [
+        "A",
+        "C"
+      ],
+      "loi_sai": {
+        "B": "tưởng cấu hình có chiều nhận thư, trong khi enable_incoming đặt 0",
+        "D": "nhầm mật khẩu ứng dụng với mật khẩu chính"
+      },
+      "giai_thich": "Script gd1-09 tạo bản ghi với smtp.gmail.com, cổng 587, use_tls = 1, chưa bật gửi đi, enable_incoming = 0. Sau khi người cài nhập mật khẩu ứng dụng, script gd1-11 bật enable_outgoing và default_outgoing. Không dùng mật khẩu chính và không bật nhận thư.",
+      "doan_goc": "scripts/gd1-09-email-account.py, gd1-11-gui-thu.py",
+      "do_chac": null
+    },
+    {
+      "id": "Q09",
+      "phan": "ud",
+      "muc_tieu": "U1",
+      "muc_nhan_thuc": "phan_tich",
+      "do_kho": "Kho",
+      "loai": "mot_dap_an",
+      "cau_hoi": "Mở Role Permission Manager cho CRM Lead trên máy của nhóm, bảng quyền có sẵn ghi những Role nào có đủ quyền đọc, ghi, tạo, xóa?",
+      "dap_an": {
+        "A": "Sales User, Marketing Manager và System Manager; Sales Manager được đọc, không ghi",
+        "B": "Sales Manager, Marketing Manager và System Manager; Sales User được đọc, không ghi",
+        "C": "System Manager, Sales Manager và Marketing Manager; Sales User chưa có dòng quyền",
+        "D": "System Manager, Sales Manager và Sales User; Marketing Manager chưa có dòng quyền"
+      },
+      "dung": [
+        "D"
+      ],
+      "loi_sai": {
+        "A": "nhầm vai trò quản lý với vai trò chỉ đọc",
+        "B": "hạ quyền của Sales User và đưa Marketing Manager vào bảng",
+        "C": "đảo vai trò: cho Marketing Manager quyền thay cho Sales User"
+      },
+      "giai_thich": "Tệp crm_lead.json (và crm_deal.json) trên máy nhóm liệt kê ba Role: System Manager, Sales Manager, Sales User, mỗi Role đủ đọc, ghi, tạo, xóa. Marketing Manager không có dòng nào, nên trong đồ án người Marketing được gán thêm Sales User để làm việc với lead (suy luận từ bảng quyền).",
+      "doan_goc": "crm/fcrm/doctype/crm_lead.json (permissions); scripts/gd1-02-he-thong-nguoi-dung.py",
+      "do_chac": null
+    },
+    {
+      "id": "Q10",
+      "phan": "ud",
+      "muc_tieu": "U2",
+      "muc_nhan_thuc": "hieu",
+      "do_kho": "De",
+      "loai": "mot_dap_an",
+      "cau_hoi": "Cấu hình hệ thống của đồ án đặt định dạng ngày hiển thị nào cho CRM?",
+      "dap_an": {
+        "A": "mm/dd/yyyy",
+        "B": "yyyy-mm-dd",
+        "C": "dd/mm/yyyy",
+        "D": "d/m/yyyy"
+      },
+      "dung": [
+        "C"
+      ],
+      "loi_sai": {
+        "A": "đảo thứ tự ngày và tháng",
+        "B": "nhầm với thứ tự năm-tháng-ngày kiểu quốc tế",
+        "D": "nhầm với kiểu viết ngày, tháng không có số 0 đứng đầu"
+      },
+      "giai_thich": "Script gd1-02 đặt date_format là dd/mm/yyyy cùng tuần bắt đầu Thứ Hai. Giao diện tiếng Việt từng hiện nhãn sai \"đ/mm/năm\" do bản dịch, nhưng giá trị lưu vẫn là dd/mm/yyyy.",
+      "doan_goc": "docs/phase-report.md mục 1.2 và 1.9; scripts/gd1-02-he-thong-nguoi-dung.py",
+      "do_chac": null
+    },
+    {
+      "id": "Q11",
+      "phan": "ud",
+      "muc_tieu": "U2",
+      "muc_nhan_thuc": "phan_tich",
+      "do_kho": "TB",
+      "loai": "mot_dap_an",
+      "cau_hoi": "Nhật ký ghi định dạng số của đồ án là #.###,##, nhưng script gd1-02 không đặt trường này. Giá trị đó đến từ đâu?",
+      "dap_an": {
+        "A": "Bước cài đặt đầu tiên của Frappe tự đặt theo quốc gia đã chọn",
+        "B": "Nhóm đặt trong cài đặt hệ thống bằng một script khác",
+        "C": "Bản dịch tiếng Việt của Frappe CRM quy định",
+        "D": "Frappe CRM mặc định dùng định dạng này cho cả những quốc gia khác"
+      },
+      "dung": [
+        "A"
+      ],
+      "loi_sai": {
+        "B": "bịa ra một script đặt giá trị mà nhật ký không có",
+        "C": "nhầm bản dịch chuỗi với định dạng số",
+        "D": "coi định dạng là hằng số của CRM, không phụ thuộc quốc gia"
+      },
+      "giai_thich": "Mã setup_wizard.py lấy number_format từ thông tin quốc gia (Việt Nam là #.###) và đổi thành #.###,##. Vì nhóm chọn quốc gia Việt Nam nên có định dạng này. Mình đã đối chiếu mã nguồn; chưa mở trang System Settings để xem giá trị đang lưu.",
+      "doan_goc": "frappe/desk/page/setup_wizard/setup_wizard.py; frappe/geo/country_info.json",
+      "do_chac": null
+    },
+    {
+      "id": "Q12",
+      "phan": "ud",
+      "muc_tieu": "U2",
+      "muc_nhan_thuc": "phan_tich",
+      "do_kho": "Kho",
+      "loai": "mot_dap_an",
+      "cau_hoi": "Một bạn nói: \"Nhóm đã kiểm rằng Sales User chỉ thấy lead của mình.\" Theo script và nhật ký hiện có, nhận định nào đúng?",
+      "dap_an": {
+        "A": "Đã kiểm: script gd1-04 với --test cho thấy mỗi lead chỉ đến đúng người được giao",
+        "B": "Đã kiểm một phần: ảnh danh sách người dùng cho thấy Role Sales User, chưa thử đăng nhập",
+        "C": "Chưa kiểm: chưa đặt giới hạn xem lead, chưa thử bằng tài khoản Sales User",
+        "D": "Đã kiểm một phần: bật Sales Hierarchy và thử, nhưng chưa có ảnh minh chứng"
+      },
+      "dung": [
+        "C"
+      ],
+      "loi_sai": {
+        "A": "nhầm kiểm phân công lead với kiểm quyền xem lead",
+        "B": "nhầm ảnh liệt kê tài khoản với bằng chứng về quyền xem",
+        "D": "bịa cấu hình Sales Hierarchy mà nhóm chưa bật"
+      },
+      "giai_thich": "Script --test của gd1-04 kiểm việc giao lead, không kiểm quyền xem. Ảnh danh sách người dùng chỉ cho thấy tài khoản. Tìm trong scripts/ không thấy cấu hình User Permission hay Sales Hierarchy, và chưa có nhật ký thử bằng tài khoản Sales User. Vì vậy chưa thể nói đã kiểm; nhận định này là suy ra từ tệp, chưa thử trên Frappe đang chạy.",
+      "doan_goc": "scripts/gd1-04-pipeline.py; scripts/ (không có User Permission, Sales Hierarchy); docs/phase-report.md",
+      "do_chac": null
+    },
+    {
+      "id": "Q13",
+      "phan": "da",
+      "muc_tieu": "D1",
+      "muc_nhan_thuc": "phan_tich",
+      "do_kho": "TB",
+      "loai": "mot_dap_an",
+      "cau_hoi": "Nhóm chọn ghi bản dịch tiếng Việt thành bản ghi Translation thay vì sửa trực tiếp tệp dịch của mã nguồn Frappe CRM. Lý do nhật ký nêu là gì?",
+      "dap_an": {
+        "A": "Frappe cấm sửa các tệp trong thư mục locale của ứng dụng",
+        "B": "Cập nhật CRM vẫn giữ bản dịch vì không sửa mã nguồn",
+        "C": "Translation dịch được cả chuỗi viết cứng trong mã CRM",
+        "D": "Sửa tệp dịch làm mất quyền sử dụng phần mềm Frappe CRM"
+      },
+      "dung": [
+        "B"
+      ],
+      "loi_sai": {
+        "A": "bịa ra một lệnh cấm kỹ thuật",
+        "C": "nghĩ Translation sửa được chuỗi viết cứng; nhật ký ghi ngược lại",
+        "D": "bịa ra hệ quả về giấy phép"
+      },
+      "giai_thich": "Nhật ký 1.9: ghi phần khác biệt thành bản ghi Translation, không sửa mã nguồn CRM nên cập nhật phiên bản vẫn giữ. Chuỗi viết cứng trong mã CRM (chú giải biểu đồ) không đi qua hàm dịch nên Translation không sửa được: đó là hạn chế còn lại. Không có lệnh cấm sửa tệp dịch và không có hệ quả giấy phép nào được nhắc.",
+      "doan_goc": "docs/phase-report.md mục 1.9; scripts/gd1-10-viet-hoa.py",
+      "do_chac": null
+    },
+    {
+      "id": "Q14",
+      "phan": "da",
+      "muc_tieu": "D1",
+      "muc_nhan_thuc": "phan_tich",
+      "do_kho": "TB",
+      "loai": "mot_dap_an",
+      "cau_hoi": "Ô định dạng ngày hiện \"đ/mm/năm\". Nguyên nhân và cách sửa mà nhóm đã làm là gì?",
+      "dap_an": {
+        "A": "Giá trị lưu bị đặt nhầm; đặt lại cho đúng trong cài đặt hệ thống",
+        "B": "Trình duyệt lỗi font nên đổi ký tự; đổi sang trình duyệt khác",
+        "C": "Múi giờ cấu hình sai nên định dạng đổi; chỉnh lại múi giờ",
+        "D": "Bản dịch gốc dịch cả ký hiệu d và yyyy; thêm bản dịch giữ nguyên"
+      },
+      "dung": [
+        "D"
+      ],
+      "loi_sai": {
+        "A": "nhầm nhãn hiển thị với giá trị lưu",
+        "B": "đổ cho trình duyệt trong khi nguyên nhân nằm ở bản dịch",
+        "C": "nhầm định dạng ngày với múi giờ"
+      },
+      "giai_thich": "Giá trị lưu vẫn đúng dd/mm/yyyy; lỗi nằm ở bản dịch chuỗi nhãn. Nhóm thêm 6 bản dịch giữ nguyên (dd-mm-yyyy, dd/mm/yyyy, dd.mm.yyyy, mm/dd/yyyy, mm-dd-yyyy, yyyy-mm-dd). Múi giờ và trình duyệt không liên quan.",
+      "doan_goc": "docs/phase-report.md mục 1.9; scripts/gd1-10-viet-hoa.py (OVERRIDE)",
+      "do_chac": null
+    },
+    {
+      "id": "Q15",
+      "phan": "da",
+      "muc_tieu": "D1",
+      "muc_nhan_thuc": "van_dung",
+      "do_kho": "Kho",
+      "loai": "mot_dap_an",
+      "cau_hoi": "Sau khi gửi thư thử từ Frappe, thư chưa chuyển sang Sent. Nhóm làm gì để hoàn tất, và vì sao?",
+      "dap_an": {
+        "A": "Đẩy hàng đợi bằng bench execute frappe.email.queue.flush vì tác vụ nền chưa chạy",
+        "B": "Đổi cổng SMTP từ 587 sang cổng 465 và lưu lại Email Account, vì 587 bị chặn",
+        "C": "Tắt TLS trong Email Account và gửi lại thư, vì TLS làm thư bị giữ lại ở hàng đợi",
+        "D": "Nhập lại mật khẩu chính của Gmail vào bản ghi Email Account rồi lưu lại"
+      },
+      "dung": [
+        "A"
+      ],
+      "loi_sai": {
+        "B": "đổ cho cấu hình cổng khi nhật ký không ghi lỗi cổng",
+        "C": "nhầm TLS với bộ lập lịch gửi thư",
+        "D": "nhầm mật khẩu ứng dụng với mật khẩu chính"
+      },
+      "giai_thich": "Frappe đưa thư vào Email Queue rồi tác vụ định kỳ frappe.email.queue.flush gửi đi. Lần thử đó tác vụ chưa kịp chạy nên nhóm gọi hàm bằng lệnh bench execute (gd1-11b-flush-mail.sh); sau đó Email Queue báo Sent, không lỗi. Nhật ký không ghi lỗi cổng, TLS hay mật khẩu.",
+      "doan_goc": "scripts/gd1-11b-flush-mail.sh; docs/phase-report.md (cập nhật 2026-11-22); frappe/hooks.py",
+      "do_chac": null
+    },
+    {
+      "id": "Q16",
+      "phan": "da",
+      "muc_tieu": "D2",
+      "muc_nhan_thuc": "van_dung",
+      "do_kho": "TB",
+      "loai": "mot_dap_an",
+      "cau_hoi": "Muốn chứng minh với thầy rằng CRM thật sự gửi được thư, bằng chứng nào mạnh nhất?",
+      "dap_an": {
+        "A": "Ảnh Email Account có smtp.gmail.com, cổng 587 và đã bật gửi đi",
+        "B": "Script gd1-09 chạy xong và in dòng tạo Email Account không lỗi",
+        "C": "Email Queue trạng thái Sent, cùng thư đến hộp thư người cài",
+        "D": "Hộp thoại gửi trên giao diện báo thư đã vào hàng đợi thành công"
+      },
+      "dung": [
+        "C"
+      ],
+      "loi_sai": {
+        "A": "chứng minh cấu hình có chứ chưa chứng minh thư đi được",
+        "B": "chứng minh bản ghi được tạo chứ chưa chứng minh gửi",
+        "D": "chứng minh thư vào hàng đợi chứ chưa chứng minh đã gửi"
+      },
+      "giai_thich": "Cấu hình đúng, script chạy xong và thư vào hàng đợi đều chưa phải là thư đã đi. Trạng thái Sent không lỗi trong Email Queue cùng thư thật sự đến hộp thư của người cài mới là bằng chứng cuối cùng. Nhật ký ghi người cài đặt xác nhận thư đã đến hộp thư; ảnh Email Queue nằm ở evidence/A4-2.",
+      "doan_goc": "docs/phase-report.md (cập nhật 2026-11-22); evidence/A4-2/A4-2-1_13_email-queue.png",
+      "do_chac": null
+    },
+    {
+      "id": "Q17",
+      "phan": "da",
+      "muc_tieu": "D2",
+      "muc_nhan_thuc": "phan_tich",
+      "do_kho": "TB",
+      "loai": "mot_dap_an",
+      "cau_hoi": "Thầy mở Role Permission Manager và hỏi: \"Nhóm phân quyền thế nào?\" Trả lời nào đúng với đồ án?",
+      "dap_an": {
+        "A": "Phân theo User Permission cho từng nhân viên theo địa bàn của họ",
+        "B": "Do Assignment Rule quyết định, vì luật giao lead cũng quyết định ai xem",
+        "C": "Mỗi nhân viên có một bảng quyền riêng nằm trong Email Account của họ",
+        "D": "Phân theo Role đã gán cho từng tài khoản; chưa dùng User Permission"
+      },
+      "dung": [
+        "D"
+      ],
+      "loi_sai": {
+        "A": "bịa việc đã cấu hình User Permission",
+        "B": "nhầm luật phân công lead với phân quyền xem",
+        "C": "bịa ra nơi lưu quyền"
+      },
+      "giai_thich": "Đồ án gán Role cho tài khoản (script gd1-02) và dùng bảng quyền có sẵn của CRM Lead, CRM Deal; chưa có User Permission. Assignment Rule quyết định ai được giao lead, không quyết định ai được xem. Email Account là cấu hình gửi thư, không chứa quyền.",
+      "doan_goc": "scripts/gd1-02-he-thong-nguoi-dung.py; docs/ghi-chu-phan-bien-thay.md",
+      "do_chac": null
+    },
+    {
+      "id": "Q18",
+      "phan": "da",
+      "muc_tieu": "D2",
+      "muc_nhan_thuc": "phan_tich",
+      "do_kho": "Kho",
+      "loai": "mot_dap_an",
+      "cau_hoi": "Thầy hỏi: \"Email của quản trị hệ thống là của ai, và vì sao?\" Trả lời nào đúng với đồ án?",
+      "dap_an": {
+        "A": "Của cả nhóm dùng chung, vì một tài khoản quản trị phục vụ cả nhóm",
+        "B": "Của Biti's, vì CRM được cấu hình cho doanh nghiệp này",
+        "C": "Email giả như dữ liệu demo, vì hệ thống là bản thử nghiệm",
+        "D": "Của sinh viên cài đặt, theo tiêu chí; script nhận email qua tham số"
+      },
+      "dung": [
+        "D"
+      ],
+      "loi_sai": {
+        "A": "nhầm một máy làm trước với việc dùng chung tài khoản quản trị",
+        "B": "nhầm đối tượng nghiên cứu với người cài đặt",
+        "C": "nhầm dữ liệu demo với tài khoản quản trị thật"
+      },
+      "giai_thich": "Tiêu chí đồ án yêu cầu người cài đặt là người quay video và email admin là email của sinh viên thực hiện. Script gd1-01 nhận họ tên và email qua tham số; ba bạn còn lại tự cài và tự quay theo sổ tay. Email demo là địa chỉ giả cho nhân viên và thành viên, không phải tài khoản quản trị.",
+      "doan_goc": "docs/checklist-tieu-chi.md (lưu ý chung A4.2); scripts/gd1-01-setup-wizard.py",
+      "do_chac": null
+    }
+  ]
+}

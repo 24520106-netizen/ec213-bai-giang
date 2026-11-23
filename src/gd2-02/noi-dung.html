@@ -1,0 +1,142 @@
+<section class="part" id="kt">
+  <h2><span class="n">1</span>Kiến thức tổng quát: quy tắc nghiệp vụ, ngoại lệ và quyết định</h2>
+
+  <h3>Quy tắc nghiệp vụ là gì</h3>
+  <p><b>Quy tắc nghiệp vụ</b> (business rule, hay business logic) là một phát biểu xác định hoặc hạn chế một mặt hoạt động của tổ chức, hoặc chi phối hành vi của người và của phần mềm trong tổ chức đó. Điểm quan trọng: quy tắc thường có sẵn từ trước và nằm ngoài phạm vi một phần mềm cụ thể.</p>
+  <p>Wiegers và Hokanson kể một chuyện: một ngân hàng máu có chính sách không nhận hẹn trong cùng ngày, nhưng trang đặt hẹn của họ vẫn cho khách đặt giờ trong ngày. Khách tới nơi thì bị nhân viên từ chối. Chính sách đó <i>không phải yêu cầu phần mềm</i>, vì nó áp dụng cả khi khách gọi điện đặt hẹn. Nhưng nó là <i>nguồn</i> của yêu cầu phần mềm: trang đặt hẹn phải chặn đặt hẹn cùng ngày. Phần mềm bỏ sót quy tắc thì người làm việc phải tự chặn bằng tay.</p>
+  <div class="tablewrap"><table>
+    <tr><th></th><th>Quy tắc nghiệp vụ</th><th>Yêu cầu phần mềm</th></tr>
+    <tr><td>Nó là gì</td><td>Chính sách, luật, quy định của tổ chức</td><td>Điều phần mềm phải làm hoặc phải đạt</td></tr>
+    <tr><td>Có áp dụng khi làm thủ công không</td><td>Có</td><td>Không, chỉ nói về phần mềm</td></tr>
+    <tr><td>Quan hệ</td><td>Là nguồn của nhiều yêu cầu</td><td>Sinh ra từ quy tắc để phần mềm tuân thủ quy tắc</td></tr>
+    <tr><td>Ví dụ thư viện</td><td>"Sinh viên mượn tối đa 5 cuốn một lần"</td><td>"Hệ thống từ chối cho mượn cuốn thứ 6"</td></tr>
+  </table></div>
+  <div class="src"><b class="t">Trong sách Wiegers</b>Chương 5, thực hành #16, tr. 25–26 (định nghĩa và chuyện ngân hàng máu); Chương 4, tr. 9 (quy tắc ảnh hưởng chức năng và dữ liệu).</div>
+
+  <h3>Sáu loại quy tắc</h3>
+  <p>Sách dẫn cách phân loại của von Halle thành sáu loại. Mình diễn đạt lại bằng ví dụ thư viện, ngoài đồ án:</p>
+  <div class="tablewrap"><table>
+    <tr><th>Loại</th><th>Ý nghĩa</th><th>Ví dụ thư viện</th></tr>
+    <tr><td><b>Term</b> (thuật ngữ)</td><td>Định nghĩa một khái niệm của nghiệp vụ</td><td>"Sách trễ hạn là sách chưa trả sau ngày hẹn trả"</td></tr>
+    <tr><td><b>Fact</b> (sự kiện)</td><td>Điều đúng về nghiệp vụ</td><td>"Mỗi thẻ thư viện gắn với đúng một sinh viên"</td></tr>
+    <tr><td><b>Constraint</b> (ràng buộc)</td><td>Hạn chế, cấm hoặc bắt buộc hành vi của người làm việc</td><td>"Sinh viên chỉ được mượn tối đa 5 cuốn cùng lúc"</td></tr>
+    <tr><td><b>Action enabler</b> (kích hoạt hành động)</td><td>Điều kiện hoặc sự kiện làm một hoạt động xảy ra</td><td>"Nếu sách trả trễ thì thủ thư tính phí phạt"</td></tr>
+    <tr><td><b>Inference</b> (suy luận)</td><td>Kiến thức mới suy ra từ thông tin hoặc quy tắc khác</td><td>"Sinh viên có phí phạt chưa nộp trên 100.000 đ là sinh viên đang nợ phí"</td></tr>
+    <tr><td><b>Computation</b> (tính toán)</td><td>Công thức xác định cách tính</td><td>"Phí phạt = số ngày trễ × mức phạt mỗi ngày × số cuốn"</td></tr>
+  </table></div>
+  <p>Tính thử: trễ 6 ngày, 3 cuốn, mức 2.000 đ mỗi ngày mỗi cuốn: 6 × 2.000 × 3 = 36.000 đ (mình tính lại bằng lệnh).</p>
+
+  <h3>Cách viết quy tắc</h3>
+  <ul>
+    <li><b>Mẫu cho ràng buộc:</b> "&lt;chủ thể&gt; phải (hoặc chỉ được) &lt;ràng buộc&gt;". <b>Mẫu cho kích hoạt hành động:</b> "Nếu &lt;điều kiện&gt; thì &lt;hành động&gt;".</li>
+    <li><b>Tránh phủ định</b>, nhất là phủ định đôi và ba. Viết lại bằng chữ "chỉ": thay "Khách không được đặt lịch cắt tóc nếu chưa đặt cọc" bằng "Khách chỉ được đặt lịch cắt tóc sau khi đã đặt cọc".</li>
+    <li><b>Mỗi quy tắc một mã</b> (ví dụ LIB-3). Yêu cầu và test chỉ tới mã quy tắc thay vì chép lại nội dung, nên đổi quy tắc một chỗ là mọi nơi theo. Nên ghi riêng khỏi tài liệu của một dự án, kèm nguồn, ngày hiệu lực, người chịu trách nhiệm.</li>
+    <li><b>Chất lượng:</b> rõ, đủ, đúng, nhất quán, cần thiết, không mơ hồ, kiểm chứng được. Lỗi hay gặp: hai quy tắc mâu thuẫn, quy tắc lỗi thời, quy tắc hở ở giá trị biên.</li>
+  </ul>
+  <div class="ex"><b class="t">Ví dụ hở ở biên</b>Thư viện viết: "Trả trễ dưới 7 ngày phạt 2.000 đ mỗi ngày mỗi cuốn. Trả trễ trên 7 ngày phạt 5.000 đ mỗi ngày mỗi cuốn." Nếu sách trễ đúng 7 ngày thì sao? Hai câu không phủ trường hợp này, nên hai thủ thư có thể tính khác nhau (7 × 2.000 × 2 = 28.000 đ hay 7 × 5.000 × 2 = 70.000 đ cho hai cuốn). Sửa: "dưới 7 ngày" và "từ 7 ngày trở lên".</div>
+  <p><b>Tìm quy tắc ở đâu:</b> chính sách công ty, luật, quy định, bảng thuật ngữ, mô hình dữ liệu (quan hệ một-nhiều thường do quy tắc quy định). Khi nghe người ta nói "chỉ", "phải", "được", "không được" là có thể có quy tắc; hỏi "vì sao" vài lần để tới nguồn. Đừng hỏi thẳng "quy tắc nghiệp vụ của bạn là gì?", vì người được hỏi không phân loại thông tin theo cách đó.</p>
+  <p><b>Bảng quyết định</b> (decision table) gọn hơn văn bản khi nhiều điều kiện kết hợp với nhau. Ví dụ minh họa (số do mình đặt cho ví dụ, không phải của thư viện thật):</p>
+  <div class="tablewrap"><table>
+    <tr><th>Loại thẻ</th><th>Trễ dưới 7 ngày</th><th>Trễ từ 7 ngày trở lên</th></tr>
+    <tr><td>Sinh viên</td><td>2.000 đ mỗi ngày mỗi cuốn</td><td>5.000 đ mỗi ngày mỗi cuốn</td></tr>
+    <tr><td>Giảng viên</td><td>1.000 đ mỗi ngày mỗi cuốn</td><td>3.000 đ mỗi ngày mỗi cuốn</td></tr>
+  </table></div>
+  <p>Giảng viên trễ 10 ngày, 1 cuốn: 10 × 3.000 × 1 = 30.000 đ. Bảng làm lộ ngay ô nào chưa có giá trị, giúp tránh lỗi biên và thiếu tổ hợp. Mỗi quy tắc cũng nên truy vết tới các yêu cầu và test sinh ra từ nó (bài 2.6).</p>
+  <div class="src"><b class="t">Trong sách Wiegers</b>Chương 5, thực hành #16, tr. 26–35: loại quy tắc (tr. 26–27), mẫu viết (tr. 27–28), mã và nơi lưu (tr. 28–29), tìm quy tắc (tr. 29–31), chất lượng, bảng quyết định (tr. 32–33), truy vết và công cụ (tr. 33–35).</div>
+
+  <h3>Ngoại lệ và quyết định trong quy trình</h3>
+  <p>Quy tắc hiện trên sơ đồ BPMN theo ba kiểu: <b>cổng XOR</b> (câu hỏi chính là điều kiện của quy tắc), <b>task</b> (hành động mà quy tắc kích hoạt), <b>end event</b> (kết quả khi quy tắc không thỏa). Camunda khuyên vẽ đường suôn sẻ trước (chọn kết quả mong muốn, sự kiện bắt đầu, các hoạt động luôn phải làm), rồi thêm từng ngoại lệ một: với mỗi vấn đề, xác định kết quả không mong muốn (một end event mới), và nếu vấn đề phát sinh tại một điểm xác định thì dùng cổng XOR tại điểm đó (Camunda, 18-camunda-ngoai-happy-path). Chỉ vẽ ngoại lệ về nghiệp vụ.</p>
+  <p>Sách Wiegers thêm một ý: vi phạm một quy tắc khi đang chạy là một ngoại lệ mà hệ thống phải ngăn hoặc xử lý; người viết yêu cầu phải mô tả hệ thống làm gì khi quy tắc bị vi phạm (tr. 30). Cổng XOR chỉ rẽ đúng nếu các nhánh <b>phủ hết</b> trường hợp và <b>loại trừ nhau</b>; đó chính là bài kiểm giá trị biên ở trên. Một cổng gộp hai điều kiện vào cùng một câu hỏi thì nhánh Không không cho biết điều kiện nào trượt.</p>
+  <div class="ex"><b class="t">Ví dụ ngoài đồ án</b>Thư viện: cổng "Sách trả đúng hạn?". Nhánh Có dẫn tới end event "Sách đã nhận lại". Nhánh Không dẫn tới task "Tính phí phạt" (hành động mà quy tắc kích hoạt), rồi end event "Sách đã nhận lại và phí đã thu". Hai end event khác tên vì hai kết quả nghiệp vụ khác nhau.</div>
+  <div class="note"><b class="t">Hiểu nhầm hay gặp</b>(1) "Quy tắc nghiệp vụ là một loại yêu cầu phần mềm": quy tắc đứng ngoài phần mềm và áp dụng cả khi làm thủ công. (2) "Có quy tắc trên giấy là hệ thống tự tuân thủ": phải có yêu cầu, và việc thực thi có thể do người chứ không do máy. (3) "Quy tắc chỉ là công thức tính": công thức chỉ là một trong sáu loại.</div>
+</section>
+
+<section class="part" id="ud">
+  <h2><span class="n">2</span>Ứng dụng trong đồ án: quy tắc thật nằm ở đâu trên năm sơ đồ</h2>
+
+  <p>Bảng này gom các quy tắc thật trong năm quy trình. Mã QT-01 đến QT-07 là cách đặt của riêng bài giảng này cho dễ nói (<code>[ĐỀ XUẤT]</code>): tài liệu của nhóm hiện chưa gắn mã cho quy tắc. Nguồn chính sách đổi trả là <code>docs/nghien-cuu-bitis.md</code> (dòng 17), lấy từ bitis.com.vn/pages/chinh-sach-doi-tra, đánh dấu <code>[CHÍNH THỨC]</code>.</p>
+  <div class="tablewrap"><table>
+    <tr><th>Mã</th><th>Quy tắc (viết theo mẫu)</th><th>Loại</th><th>Nguồn</th><th>Nằm ở đâu trên sơ đồ</th></tr>
+    <tr><td>QT-01</td><td>Yêu cầu đổi trả chỉ được nhận trong 7 ngày kể từ ngày khách nhận hàng</td><td>Ràng buộc</td><td><code>[CHÍNH THỨC]</code></td><td>Cổng "Còn trong 7 ngày và còn tem nhãn?" (đổi trả)</td></tr>
+    <tr><td>QT-02</td><td>Sản phẩm đổi trả phải mới, chưa dùng, còn tem nhãn và bao bì</td><td>Ràng buộc</td><td><code>[CHÍNH THỨC]</code></td><td>Cùng cổng với QT-01 (gộp hai điều kiện)</td></tr>
+    <tr><td>QT-03</td><td>Mỗi yêu cầu chỉ được đổi một lần</td><td>Ràng buộc</td><td><code>[CHÍNH THỨC]</code></td><td>Không có cổng hay nút nào; chỉ nhắc ở mục "Mục đích" của quy trình viết</td></tr>
+    <tr><td>QT-04</td><td>Nếu lỗi do Biti's thì Biti's chịu phí vận chuyển đổi hàng</td><td>Kích hoạt hành động</td><td><code>[CHÍNH THỨC]</code></td><td>Cổng "Lỗi thuộc Biti's?", nhánh Có tới task "Gửi hàng đổi miễn phí"</td></tr>
+    <tr><td>QT-05</td><td>Nếu chiết khấu trên 10% thì Quản lý phải duyệt trước khi chốt deal</td><td>Kích hoạt hành động</td><td><code>[GIẢ ĐỊNH]</code> của nhóm</td><td>Cổng "Cần duyệt chiết khấu?" và task "Duyệt chiết khấu" (sơ đồ chung); ở sơ đồ đại lý chỉ có nhánh "Trả giá" tới task "Duyệt giá mới", không có cổng</td></tr>
+    <tr><td>QT-06</td><td>Tin quảng cáo chỉ được gửi cho khách đã đồng ý nhận tin</td><td>Ràng buộc</td><td>Nhóm tự đặt; căn cứ pháp lý chưa tra trong tài liệu đã tải, <b>chưa kiểm</b></td><td>Cổng "Khách tích ô đồng ý?"; nhánh "Rút đồng ý" tới task "Ngừng gửi tin cho khách"</td></tr>
+    <tr><td>QT-07</td><td>Thành tiền = số lượng × đơn giá × (1 − tỷ lệ chiết khấu)</td><td>Tính toán</td><td>Công thức số học; đơn giá là dữ liệu giả lập của nhóm</td><td>Không có cổng; nằm ở task "Gửi báo giá"</td></tr>
+  </table></div>
+
+  <h3>Số tiền thật, tính lại bằng lệnh</h3>
+  <div class="tablewrap"><table>
+    <tr><th>Tình huống</th><th>Phép tính</th><th>Kết quả</th><th>Có cần duyệt (QT-05)?</th></tr>
+    <tr><td>Chung: 12 đôi BT-001 và 12 đôi BT-002, mỗi đôi 890.000 đ, giảm 12%</td><td>24 × 890.000 × 0,88</td><td>18.796.800 đ (giá gốc 21.360.000 đ, giảm 2.563.200 đ)</td><td>Có, 12% &gt; 10%</td></tr>
+    <tr><td>Đại lý lần 1: 30 đôi BT-004 và 30 đôi BT-005, mỗi đôi 790.000 đ, giảm 8%</td><td>60 × 790.000 × 0,92</td><td>43.608.000 đ</td><td>Không, 8% ≤ 10%</td></tr>
+    <tr><td>Đại lý lần 2 (đại lý trả giá), giảm 12%</td><td>60 × 790.000 × 0,88</td><td>41.712.000 đ (giá gốc 47.400.000 đ, giảm 5.688.000 đ; thấp hơn lần 1 là 1.896.000 đ)</td><td>Có, 12% &gt; 10%</td></tr>
+    <tr><td>Online: 1 đôi BT-006 (1.190.000 đ) và 1 đôi BT-001 (890.000 đ), không giảm</td><td>1.190.000 + 890.000</td><td>2.080.000 đ</td><td>Không, 0%</td></tr>
+  </table></div>
+  <p>Các con số khớp với <code>docs/quy-trinh-sop.md</code> (dòng C6, B6, B9, T3) và <code>scripts/gd2-01-chay-thu.py</code>. Giá sản phẩm là dữ liệu demo ở GĐ1. Ghi chú về biên của QT-05: quy trình viết ghi "không cần duyệt (≤ 10%)", tức đúng 10% không cần duyệt, và 12% cần duyệt. Quy trình viết cũng ghi lần duyệt ở đại lý là "với đơn từ 60 đôi"; điều kiện số lượng này chưa được viết thành một quy tắc có mã.</p>
+
+  <h3>Đường suôn sẻ và ngoại lệ trên năm sơ đồ</h3>
+  <p>Mỗi kết quả khác nhau có một end event. Mình xếp mỗi sơ đồ một end là đường suôn sẻ, còn lại là ngoại lệ (cách xếp này là nhận định của mình, nhóm không ghi sẵn):</p>
+  <div class="tablewrap"><table>
+    <tr><th>Sơ đồ</th><th>End event suôn sẻ</th><th>End event ngoại lệ</th><th>Số ngoại lệ</th></tr>
+    <tr><td>Chung</td><td>Khách đã được chăm sóc sau bán</td><td>Lead bị loại; Deal thất bại; Đơn giao thất bại; Khiếu nại đã chuyển sang đổi trả</td><td>4</td></tr>
+    <tr><td>Đại lý</td><td>Deal đã chốt thành công</td><td>Lead bị loại; Deal thất bại</td><td>2</td></tr>
+    <tr><td>Đổi trả</td><td>Hàng đổi đã giao cho khách</td><td>Yêu cầu đổi trả bị từ chối; Hàng cũ đã trả lại khách</td><td>2</td></tr>
+    <tr><td>Marketing</td><td>Lead đã chuyển cho Bán hàng</td><td>Lead không nhận tin quảng cáo; Khách đã rút lại đồng ý; Lead chờ chăm sóc đợt sau</td><td>3</td></tr>
+    <tr><td>Online</td><td>Khách đã có lịch sử mua hàng</td><td>Đơn bị hủy; Đơn đã hoàn tiền; Đơn giao thất bại</td><td>3</td></tr>
+  </table></div>
+  <p>Tổng 19 end event, trong đó 5 suôn sẻ và 14 ngoại lệ (4 + 2 + 2 + 3 + 3).</p>
+
+  <div class="ex"><b class="t">Ví dụ đúng</b>Cổng "Khách tích ô đồng ý?" làm đúng nhiệm vụ của một ràng buộc: nhánh Không không dẫn tới task gửi tin, mà tới "Ghi nhận lead, không gửi tin quảng cáo" rồi end event "Lead không nhận tin quảng cáo". Quy tắc QT-06 hiện thành đường đi và kết quả có tên.</div>
+  <div class="warn"><b class="t">Ví dụ chưa đạt</b>(1) QT-03 (chỉ đổi một lần) không xuất hiện ở cổng nào: một khách đổi lần hai vẫn đi suôn qua sơ đồ. (2) Cổng "Còn trong 7 ngày và còn tem nhãn?" gộp QT-01 và QT-02: nhánh Không không nói điều kiện nào trượt; muốn rõ thì tách thành hai cổng. (3) Cổng đổi trả chưa nói rõ ngày thứ bảy có còn được tính hay không (biên của QT-01).</div>
+  <p><b>Cách bạn kiểm:</b> tính lại tiền bằng lệnh <code>node -e "console.log(24*890000*0.88, 60*790000*0.92, 60*790000*0.88, 1190000+890000)"</code> (ra 18796800, 43608000, 41712000, 2080000, có thể lệch vài chữ số thập phân cuối do làm tròn máy tính). Mở <code>docs/nghien-cuu-bitis.md</code> dòng 17 đọc chính sách đổi trả gốc. Mở ảnh <code>bpmn-doi-tra.png</code>, tìm cổng của QT-01, QT-02, QT-04, rồi tự hỏi chỗ nào của QT-03.</p>
+</section>
+
+<section class="part" id="da">
+  <h2><span class="n">3</span>Hiểu sâu đồ án: quy tắc của Frappe, của nhóm và chỗ chưa thực thi</h2>
+
+  <h3>Quy tắc nào của Frappe, quy tắc nào của nhóm</h3>
+  <div class="tablewrap"><table>
+    <tr><th>Quy tắc</th><th>Của ai</th><th>Bằng chứng</th></tr>
+    <tr><td>Mỗi trạng thái deal có một xác suất đi kèm</td><td><b>Frappe</b> (cơ chế)</td><td>Giá trị 10/25/50/70/90/100/0 do nhóm chỉnh ở GĐ1, <code>[GIẢ ĐỊNH]</code> (phase-report mục 1.4)</td></tr>
+    <tr><td>Chuyển deal sang Lost thì giao diện hỏi lý do</td><td><b>Frappe</b></td><td>Docs Frappe CRM, trang Deal, mục Marking a Deal as Lost (53-frappe-crm-deal.md). Danh sách 8 lý do tiếng Việt là của nhóm (GĐ1)</td></tr>
+    <tr><td>Lead Junk bắt buộc có lý do mất</td><td><b>Frappe</b></td><td>Nhật ký GĐ1 mục 1.6: nhóm phải bổ sung lead Junk có lý do vì CRM yêu cầu</td></tr>
+    <tr><td>Assignment Rule giao lead theo địa bàn</td><td>Cơ chế của <b>Frappe</b>; luật cụ thể của <b>nhóm</b></td><td>3 luật Round Robin (Miền Nam, Miền Bắc, Online); Miền Trung và Xuất khẩu không có luật nên giao tay</td></tr>
+    <tr><td>QT-01 đến QT-04 (đổi trả)</td><td><b>Biti's</b> (chính sách); nhóm vẽ vào sơ đồ</td><td><code>[CHÍNH THỨC]</code> bitis.com.vn, docs/nghien-cuu-bitis.md</td></tr>
+    <tr><td>QT-05 (ngưỡng duyệt 10%)</td><td><b>Nhóm</b></td><td><code>[GIẢ ĐỊNH]</code>, ghi ở quy trình viết dòng C8</td></tr>
+    <tr><td>QT-06 (chỉ gửi tin cho khách đồng ý)</td><td><b>Nhóm</b></td><td>Cổng ở sơ đồ marketing; căn cứ pháp lý chưa kiểm</td></tr>
+  </table></div>
+
+  <h3>CRM chưa có chỗ ghi quy tắc, nên ghi bằng việc và ghi chú</h3>
+  <p>Khi chạy thật (phase-report mục 2.3), nhóm thấy Frappe CRM 16.0.1 không có đối tượng riêng cho đổi trả, cho việc đồng ý nhận tin, cũng không có luồng duyệt chiết khấu. Vì vậy nhóm ghi các kết quả của quy tắc bằng <b>CRM Task</b> (việc giao cho một người, ví dụ Quản lý duyệt, kho gửi hàng đổi) và <b>ghi chú</b> (FCRM Note, ví dụ "Đồng ý nhận tin" kèm ngày, kết luận "quá 7 ngày"). Dự kiến ở GĐ3 xem xét bổ sung đối tượng hoặc trường riêng (hiến chương liệt kê "sổ đồng ý nhận tin" làm ứng viên cho module riêng); <b>đó là dự kiến, chưa làm</b>.</p>
+  <p>Frappe có cơ chế Workflow nói chung (tài liệu ERPNext 40–46 trong kho tài liệu) nhưng nhóm chưa thử áp lên CRM Deal trong GĐ2, nên mình không khẳng định được nó thay thế được CRM Task hay không.</p>
+
+  <h3>Ai thực thi quy tắc hiện nay</h3>
+  <div class="tablewrap"><table>
+    <tr><th>Quy tắc</th><th>Hiện thực thi bằng</th><th>Hệ thống có chặn không?</th></tr>
+    <tr><td>QT-01, QT-02</td><td>Nhân viên chăm sóc khách hàng đối chiếu ngày nhận và tem nhãn, ghi kết luận vào ghi chú (K2)</td><td>Không</td></tr>
+    <tr><td>QT-04</td><td>Kho kiểm hàng, ghi kết luận lỗi thuộc Biti's, tạo CRM Task gửi hàng đổi (K5, K6)</td><td>Không</td></tr>
+    <tr><td>QT-05</td><td>Quản lý nhận CRM Task, đặt trạng thái Done, ghi chú đã duyệt (C8, B8)</td><td>Không (suy ra: CRM Task chỉ là việc giao cho người; nhóm chưa thử bỏ qua bước duyệt)</td></tr>
+    <tr><td>QT-06</td><td>Marketing ghi chú đồng ý, chỉ gửi thư cho lead có ghi chú (M1, M2)</td><td>Không</td></tr>
+    <tr><td>Giao lead</td><td>Assignment Rule</td><td>Có, tự chạy</td></tr>
+  </table></div>
+  <p>Câu cuối của cột "chặn" cho QT-05 là suy ra từ việc CRM Task chỉ là việc giao cho người; nhóm chưa thử cố tình bỏ qua bước duyệt để xem Frappe có cản không. Tóm lại, trong GĐ2 chưa quy tắc nào của nhóm do hệ thống tự thực thi; mọi thứ dựa vào người làm theo sơ đồ và quy trình viết.</p>
+  <div class="note"><b class="t">Quy tắc của Frappe có thể chỉ hiệu lực qua giao diện</b>Khi chạy thật, nhóm đổi trạng thái deal sang Lost bằng API và thấy xác suất không tự về 0% (4 deal Lost bị sai, phải sửa bằng <code>scripts/gd2-04-sua-xac-suat.py</code>). Mình chưa thử đổi trạng thái qua giao diện để so sánh, nên chỉ nói được điều nhóm quan sát: qua API, quy tắc xác suất theo trạng thái không tự áp dụng. Chi tiết ở bài 2.6.</div>
+
+  <h3>Vì sao làm vậy, và phương án khác</h3>
+  <p>Chọn ghi quy tắc vào sơ đồ (cổng, nhánh, end event) và quy trình viết, rồi ghi kết quả bằng việc và ghi chú, vì đó là thứ có sẵn trong GĐ2 mà không cần viết mã. Phương án khác: dựng đối tượng riêng hoặc trường riêng trong ứng dụng tùy biến (GĐ3), hoặc thử Workflow của Frappe. Cái giá của lựa chọn hiện tại: quy tắc không tự bảo vệ được, dữ liệu đồng ý nhận tin nằm trong ghi chú tự do nên khó tìm và khó thống kê.</p>
+
+  <div class="warn"><b class="t">Hạn chế đã biết</b>(1) Mã quy tắc QT-xx là đề xuất của bài giảng, nhóm chưa có sổ quy tắc có mã. (2) QT-03 chưa nằm trên sơ đồ. (3) Ngưỡng 10% là giả định chưa được người có thẩm quyền xác nhận. (4) Biên 7 ngày chưa kiểm: nhóm chỉ chạy hai ca, nhận hàng 12 ngày (bị từ chối) và lỗi hở keo sau 5 ngày (được đổi). (5) Căn cứ pháp lý của QT-06 chưa tra.</div>
+
+  <h3>Thầy sẽ hỏi</h3>
+  <div class="tablewrap"><table>
+    <tr><th>Câu hỏi</th><th>Gợi ý trả lời, kèm bằng chứng</th></tr>
+    <tr><td>Quy tắc nghiệp vụ khác yêu cầu phần mềm chỗ nào?</td><td>Quy tắc là chính sách của tổ chức, áp dụng cả khi làm thủ công; yêu cầu là điều phần mềm phải làm để tuân thủ quy tắc. Ví dụ: "đổi trong 7 ngày" là quy tắc; "hệ thống ghi ngày nhận và cảnh báo quá hạn" là yêu cầu có thể sinh ra ở GĐ3 (dự kiến).</td></tr>
+    <tr><td>Quy tắc đổi trả em lấy ở đâu?</td><td>Từ chính sách đổi trả của Biti's, <code>[CHÍNH THỨC]</code> ở bitis.com.vn/pages/chinh-sach-doi-tra, ghi trong <code>docs/nghien-cuu-bitis.md</code> dòng 17. Điều kiện: 7 ngày từ ngày nhận, còn tem nhãn, chỉ đổi một lần, lỗi do Biti's miễn phí vận chuyển.</td></tr>
+    <tr><td>Ngưỡng duyệt 10% lấy từ đâu?</td><td>Nhóm đặt để có điểm rẽ cho quy trình, đánh dấu <code>[GIẢ ĐỊNH]</code> vì không có số công bố của Biti's. Khi có số thật chỉ cần đổi ở cổng, quy trình viết và dữ liệu thử.</td></tr>
+    <tr><td>Hệ thống có ngăn gửi tin cho khách chưa đồng ý không?</td><td>Chưa. Hiện dựa vào người làm theo sơ đồ: ghi chú đồng ý trước rồi mới gửi (dòng M1, M2). Chặn tự động cần trường hoặc đối tượng riêng, dự kiến xem ở GĐ3.</td></tr>
+    <tr><td>Quy tắc nào của Frappe, quy tắc nào của nhóm?</td><td>Của Frappe: xác suất theo trạng thái deal, hỏi lý do khi Lost, Assignment Rule (cơ chế). Của nhóm: ngưỡng 10%, đồng ý nhận tin, cách vẽ chính sách đổi trả vào sơ đồ. Bảng ở trên.</td></tr>
+    <tr><td>Khách trả hàng đúng ngày thứ bảy thì sao?</td><td>Quy tắc ghi "7 ngày kể từ ngày nhận" nhưng nhóm chưa làm rõ ngày thứ bảy có tính không và chưa chạy ca biên; nên hỏi lại chính sách Biti's hoặc ghi rõ cách hiểu.</td></tr>
+  </table></div>
+</section>

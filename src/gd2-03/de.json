@@ -1,0 +1,414 @@
+{
+  "tieu_de": "Marketing và đồng ý nhận tin (bài 2.3)",
+  "muc_dich": "tu_hoc",
+  "che_do_cham": "tung_phan",
+  "ghi_chu": "Ba phần kt, ud, da. Mỗi phần có mục tiêu riêng; kt có hai mục tiêu (3 câu mỗi mục tiêu).",
+  "muc_tieu": {
+    "M1": "Phân biệt ba thành phần, lợi ích và chi phí của marketing automation theo giáo trình",
+    "M2": "Vận dụng các nguyên tắc quyền riêng tư của giáo trình vào quyết định có gửi tin quảng cáo hay không",
+    "M3": "Ánh xạ nút, nhánh và lead thử của sơ đồ marketing trong đồ án với khái niệm marketing automation",
+    "M4": "Giải thích cách nhóm ghi sự đồng ý, bằng chứng kiểm tra và hạn chế của đồ án (của Frappe, của nhóm)"
+  },
+  "cau_hoi": [
+    {
+      "id": "Q01",
+      "phan": "kt",
+      "muc_tieu": "M1",
+      "muc_nhan_thuc": "van_dung",
+      "do_kho": "TB",
+      "loai": "mot_dap_an",
+      "cau_hoi": "Một tiệm sách online ghi trong quy định nội bộ: \"khách có tổng mua từ 500.000 đ trong 6 tháng thì nhận thư ưu đãi A; ai không mở thư sau 3 ngày thì nhận thư B\". Nội dung này tương ứng thành phần nào của marketing automation (MA)?",
+      "dap_an": {
+        "A": "Phần mềm: công cụ gom dữ liệu khách và điều phối nguồn lực",
+        "B": "Thuật toán: các bước đã mã hóa để hệ thống tự thực thi",
+        "C": "Quy tắc: điều kiện chọn đối tượng và trình tự hành động",
+        "D": "Báo cáo: số liệu kết quả chiến dịch gửi cho quản lý"
+      },
+      "dung": [
+        "C"
+      ],
+      "loi_sai": {
+        "A": "nhầm công cụ chạy với nội dung luật",
+        "B": "nhầm luật (điều gì xảy ra khi nào) với cách thực thi luật",
+        "D": "nhầm một chức năng của quản lý chiến dịch với thành phần của MA"
+      },
+      "giai_thich": "Câu đó nói ai nhận gì và theo trình tự nào, đúng là quy tắc (rules) theo giáo trình: nhắm khách nào, ưu đãi gì, lúc nào, và trình tự \"nếu chưa phản hồi thì đưa ưu đãi hai\". Công cụ gom dữ liệu là phần mềm, không phải nội dung luật. Thuật toán là các bước mã hóa để hệ thống chạy được luật đó lặp đi lặp lại, chưa phải bản thân luật. Báo cáo là một chức năng của quản lý chiến dịch (đo lường, báo cáo), không nằm trong ba thành phần.",
+      "doan_goc": "Chương 7, slide 4; giáo trình tr. 164"
+    },
+    {
+      "id": "Q02",
+      "phan": "kt",
+      "muc_tieu": "M1",
+      "muc_nhan_thuc": "hieu",
+      "do_kho": "TB",
+      "loai": "nhieu_dap_an",
+      "cau_hoi": "Theo giáo trình, đâu là chi phí hoặc rủi ro của marketing automation? (chọn 2 đáp án)",
+      "dap_an": {
+        "A": "Sau khi cài xong, nhà cung cấp lo phần bảo trì nên công ty hết phải giữ dữ liệu khách đúng và đủ",
+        "B": "Phí giấy phép của phần mềm, tính theo số người dùng đăng nhập vào hệ thống",
+        "C": "Phải chỉnh lại quy trình và chuyển dữ liệu cũ sang hệ thống mới, tốn thời gian",
+        "D": "Quyết định do thuật toán đưa ra là trách nhiệm của nhà cung cấp phần mềm, không phải công ty"
+      },
+      "dung": [
+        "B",
+        "C"
+      ],
+      "loi_sai": {
+        "A": "quên chi phí bảo trì và việc giữ chất lượng dữ liệu",
+        "D": "nhầm trách nhiệm với quyết định của hệ thống tự động"
+      },
+      "giai_thich": "B đúng: giấy phép thường tính theo số người dùng. C đúng: chi phí triển khai gồm cấu hình lại quy trình (đổi cách làm, đào tạo lại) và chuyển dữ liệu. A sai: bảo trì và việc giữ dữ liệu đúng, đủ là chi phí riêng của công ty. D sai: giáo trình nói quyết định do hệ thống tự động đưa ra vẫn là trách nhiệm của quản lý, không được viện cớ \"hệ thống quyết\".",
+      "doan_goc": "Chương 7, slide 6; giáo trình tr. 167–168"
+    },
+    {
+      "id": "Q03",
+      "phan": "kt",
+      "muc_tieu": "M1",
+      "muc_nhan_thuc": "van_dung",
+      "do_kho": "TB",
+      "loai": "mot_dap_an",
+      "cau_hoi": "Tiệm sách gửi 1.000 thư, 80 người bấm vào liên kết. Ở đợt kế tiếp họ đổi tiêu đề và 120 người bấm trên 1.000 thư. Quyết định giữ thay đổi đó cho các đợt sau, dựa trên việc so hai tỉ lệ, thuộc bước nào của vòng closed-loop marketing?",
+      "dap_an": {
+        "A": "Lập kế hoạch: đặt mục tiêu và chọn nhóm khách cho đợt gửi",
+        "B": "Thực hiện: gửi thư đến danh sách khách đã chọn",
+        "C": "Đo: tính số người bấm thành tỉ lệ phản hồi của mỗi đợt",
+        "D": "Học: biến kết quả đã đo thành điều chỉnh cho chiến dịch sau"
+      },
+      "dung": [
+        "D"
+      ],
+      "loi_sai": {
+        "A": "nhầm việc đặt mục tiêu ban đầu với việc rút kinh nghiệm sau khi có kết quả",
+        "B": "nhầm hành động gửi với quyết định điều chỉnh",
+        "C": "nhầm tính số liệu (đo) với rút kết luận để sửa (học)"
+      },
+      "giai_thich": "Vòng gồm lập kế hoạch, làm, đo, học. Tính 80/1.000 = 8% và 120/1.000 = 12% là bước đo. Kết luận \"tiêu đề mới tốt hơn\" rồi đưa vào các đợt sau là bước học. A là đầu vòng, B là khi gửi thư, C chỉ ra con số chứ chưa quyết định sửa gì.",
+      "doan_goc": "Chương 7, giáo trình tr. 166 (Figure 7.1, closed-loop marketing)"
+    },
+    {
+      "id": "Q04",
+      "phan": "kt",
+      "muc_tieu": "M2",
+      "muc_nhan_thuc": "van_dung",
+      "do_kho": "TB",
+      "loai": "mot_dap_an",
+      "cau_hoi": "Một phòng tập xin số điện thoại của hội viên với lý do \"để giữ lịch tập\". Ba tháng sau phòng muốn nhắn tin quảng cáo gói tập mới cho các số đó. Theo các nguyên tắc OECD trong giáo trình, cách làm nào phù hợp?",
+      "dap_an": {
+        "A": "Nhắn ngay cho các hội viên, vì số điện thoại đã nằm trong dữ liệu của phòng",
+        "B": "Xin thêm sự đồng ý của hội viên cho mục đích quảng cáo rồi mới nhắn",
+        "C": "Nhắn cho các hội viên đã từng mua gói tập, vì họ đã có quan hệ mua bán với phòng",
+        "D": "Xóa các số điện thoại vì nguyên tắc OECD cấm công ty lưu dữ liệu cá nhân"
+      },
+      "dung": [
+        "B"
+      ],
+      "loi_sai": {
+        "A": "coi dữ liệu đã có là được dùng cho mọi mục đích",
+        "C": "nhầm quan hệ mua bán với sự đồng ý dùng dữ liệu cho quảng cáo",
+        "D": "nhầm giới hạn sử dụng với việc cấm lưu dữ liệu"
+      },
+      "giai_thich": "Mục đích lúc thu thập là giữ lịch tập. Nguyên tắc nêu rõ mục đích và giới hạn sử dụng nói rằng dùng ngoài mục đích đã nêu cần sự đồng ý của chủ dữ liệu (hoặc luật cho phép). Vì vậy phải xin thêm đồng ý. A bỏ qua mục đích đã nêu. C dựa vào quan hệ mua bán, mà giáo trình không coi đó là sự đồng ý. D sai vì các nguyên tắc cho phép lưu dữ liệu có mục đích rõ và được bảo vệ, không cấm lưu.",
+      "doan_goc": "Chương 14, giáo trình tr. 325–326 (Purpose Specification, Use Limitation)"
+    },
+    {
+      "id": "Q05",
+      "phan": "kt",
+      "muc_tieu": "M2",
+      "muc_nhan_thuc": "nho",
+      "do_kho": "De",
+      "loai": "mot_dap_an",
+      "cau_hoi": "Khách hàng phản đối dữ liệu công ty giữ về mình và muốn công ty xóa, sửa hoặc bổ sung nếu phản đối thành công. Quyền này thuộc nguyên tắc OECD nào?",
+      "dap_an": {
+        "A": "Sự tham gia của cá nhân (Individual Participation)",
+        "B": "Giới hạn thu thập (Collection Limitation)",
+        "C": "Nêu rõ mục đích (Purpose Specification)",
+        "D": "Bảo đảm an ninh (Security Safeguards)"
+      },
+      "dung": [
+        "A"
+      ],
+      "loi_sai": {
+        "B": "nhầm quyền của cá nhân sau khi dữ liệu đã có với giới hạn lúc lấy dữ liệu",
+        "C": "nhầm quyền yêu cầu sửa xóa với nghĩa vụ công bố mục đích",
+        "D": "nhầm quyền của chủ dữ liệu với nghĩa vụ bảo vệ dữ liệu khỏi mất, rò rỉ"
+      },
+      "giai_thich": "Nguyên tắc sự tham gia của cá nhân cho cá nhân quyền biết công ty có dữ liệu gì về mình, được nhận lại dữ liệu đó, và phản đối rồi yêu cầu xóa, sửa, bổ sung. Giới hạn thu thập nói về cách lấy dữ liệu. Nêu rõ mục đích nói về lý do thu thập. Bảo đảm an ninh nói về việc bảo vệ dữ liệu khỏi mất mát và truy cập trái phép.",
+      "doan_goc": "Chương 14, giáo trình tr. 326 (nguyên tắc 7)"
+    },
+    {
+      "id": "Q06",
+      "phan": "kt",
+      "muc_tieu": "M2",
+      "muc_nhan_thuc": "hieu",
+      "do_kho": "TB",
+      "loai": "nhieu_dap_an",
+      "cau_hoi": "Giáo trình nói gì về GDPR, quy định bảo vệ dữ liệu của Liên minh châu Âu? (chọn 2 đáp án đúng)",
+      "dap_an": {
+        "A": "Không áp dụng cho công ty đặt ngoài Liên minh châu Âu, dù xử lý dữ liệu của công dân châu Âu",
+        "B": "Áp dụng cho việc xử lý dữ liệu của công dân châu Âu dù công ty ở nước nào",
+        "C": "Là bộ quy tắc tự nguyện của hiệp hội ngành, không kèm mức phạt nào",
+        "D": "Đòi điều kiện đồng ý rõ ràng hơn, không còn giấu trong điều khoản chữ nhỏ"
+      },
+      "dung": [
+        "B",
+        "D"
+      ],
+      "loi_sai": {
+        "A": "nhầm phạm vi theo nơi đặt công ty với phạm vi theo dữ liệu của công dân",
+        "C": "nhầm luật có mức phạt với quy tắc tự quản"
+      },
+      "giai_thich": "Giáo trình nói GDPR áp dụng cho mọi công ty xử lý dữ liệu của công dân châu Âu bất kể công ty ở đâu (B), và điều kiện đồng ý phải rõ ràng hơn, không thể giấu trong điều khoản nhỏ (D). A sai vì phạm vi không phụ thuộc nơi đặt trụ sở. C sai vì GDPR là pháp luật và giáo trình nêu mức phạt tối đa 20 triệu euro hoặc 4% doanh thu toàn cầu, tùy mức nào lớn hơn.",
+      "doan_goc": "Chương 14, giáo trình tr. 327"
+    },
+    {
+      "id": "Q07",
+      "phan": "ud",
+      "muc_tieu": "M3",
+      "muc_nhan_thuc": "van_dung",
+      "do_kho": "TB",
+      "loai": "mot_dap_an",
+      "cau_hoi": "Trên sơ đồ quy trình \"Chiến dịch marketing và đồng ý nhận tin\", phần nào thể hiện \"quy tắc\" (rules) theo nghĩa của giáo trình, tức điều kiện quyết định khách nào được nhận tin?",
+      "dap_an": {
+        "A": "Sự kiện bắt đầu \"Chiến dịch được duyệt\" ở làn Marketing",
+        "B": "Nút công việc \"Gửi tin ưu đãi\" ở làn Marketing",
+        "C": "Cổng \"Khách tích ô đồng ý?\"",
+        "D": "Nút \"Đăng bài kêu gọi để lại thông tin\" ở làn Marketing"
+      },
+      "dung": [
+        "C"
+      ],
+      "loi_sai": {
+        "A": "nhầm sự kiện kích hoạt với điều kiện lựa chọn",
+        "B": "nhầm hành động được phép với luật cho phép hành động",
+        "D": "nhầm bước thu lead với bước quyết định đối tượng"
+      },
+      "giai_thich": "Quy tắc là điều kiện chọn ai nhận gì. Trên sơ đồ đó là cổng \"Khách tích ô đồng ý?\": Có thì đi tiếp tới gửi tin, Không thì chỉ ghi lead. Sự kiện bắt đầu chỉ mở quy trình. \"Gửi tin ưu đãi\" là hành động mà luật cho phép. \"Đăng bài\" là bước thu lead, chưa chọn đối tượng nhận tin.",
+      "doan_goc": "docs/quy-trinh-sop.md mục Chiến dịch marketing; scripts/gd2/quy-trinh.js (quy trình M)"
+    },
+    {
+      "id": "Q08",
+      "phan": "ud",
+      "muc_tieu": "M3",
+      "muc_nhan_thuc": "van_dung",
+      "do_kho": "TB",
+      "loai": "mot_dap_an",
+      "cau_hoi": "Trong chạy thử, lead CRM-LEAD-2026-00081 đi qua nhánh nào của sơ đồ và để lại dấu vết gì trong Frappe?",
+      "dap_an": {
+        "A": "Nhánh Không của cổng đồng ý: một ghi chú không đồng ý, thẻ Email trống",
+        "B": "Nhánh Rút đồng ý: ghi chú rút đồng ý có ngày, lead chuyển Unqualified",
+        "C": "Nhánh Im lặng: lead chuyển Nurture, một CRM Task chờ đợt chiến dịch sau",
+        "D": "Nhánh Quan tâm: lead chuyển Contacted, một thư mẫu trạng thái đã gửi"
+      },
+      "dung": [
+        "A"
+      ],
+      "loi_sai": {
+        "B": "nhầm với lead 00082",
+        "C": "nhầm với lead 00083",
+        "D": "nhầm với lead 00080"
+      },
+      "giai_thich": "Bốn lead thử mỗi lead một nhánh: 00080 đồng ý rồi quan tâm (có thư mẫu, Contacted), 00081 không đồng ý (ghi chú, không có thư), 00082 đồng ý rồi rút (Unqualified), 00083 đồng ý rồi im lặng (Nurture, có CRM Task chờ đợt sau). B là 00082, C là 00083, D là 00080.",
+      "doan_goc": "evidence/A4-3/chay-thu.json (M4); docs/quy-trinh-sop.md"
+    },
+    {
+      "id": "Q09",
+      "phan": "ud",
+      "muc_tieu": "M3",
+      "muc_nhan_thuc": "phan_tich",
+      "do_kho": "Kho",
+      "loai": "mot_dap_an",
+      "cau_hoi": "So với định nghĩa marketing automation của giáo trình (phần mềm, quy tắc, thuật toán), nhận định nào mô tả đúng mức đạt của quy trình marketing trong đồ án?",
+      "dap_an": {
+        "A": "Đã đủ phần mềm, quy tắc và thuật toán, vì sơ đồ BPMN của nhóm chính là thuật toán",
+        "B": "Có phần mềm và quy tắc; chưa có thuật toán tự chạy vì các nút công việc đều do người làm",
+        "C": "Chưa có phần mềm, quy tắc hay thuật toán nào, vì Frappe CRM không phải phần mềm MA chuyên dụng",
+        "D": "Đã đủ phần mềm, quy tắc và thuật toán, vì Assignment Rule của Frappe tự giao lead ở quy trình này"
+      },
+      "dung": [
+        "B"
+      ],
+      "loi_sai": {
+        "A": "nhầm mô tả quy trình trên giấy với các bước đã mã hóa để chạy tự động",
+        "C": "phủ nhận vai trò của phần mềm CRM mà giáo trình coi là trung tâm",
+        "D": "đem tính năng của quy trình chung sang quy trình marketing"
+      },
+      "giai_thich": "Giáo trình coi phần mềm CRM giữ vai trò trung tâm nên Frappe CRM đủ làm thành phần phần mềm (loại C). Quy tắc có trên sơ đồ qua các cổng. Thuật toán là các bước được mã hóa để chạy không cần người; sơ đồ chỉ mô tả, và cả 8 nút công việc đều do người làm hoặc ngoài hệ thống, nên chưa có (loại A). Assignment Rule nằm ở quy trình chung chứ quy trình marketing không có nút giao lead (loại D).",
+      "doan_goc": "Chương 7, slide 3–4; scripts/gd2/quy-trinh.js (quy trình M: không có nút kiểu V)"
+    },
+    {
+      "id": "Q10",
+      "phan": "ud",
+      "muc_tieu": "M3",
+      "muc_nhan_thuc": "phan_tich",
+      "do_kho": "TB",
+      "loai": "nhieu_dap_an",
+      "cau_hoi": "Về dữ liệu chạy thử của quy trình marketing, đâu là nhận định đúng? (chọn 2 đáp án)",
+      "dap_an": {
+        "A": "Lead 00080 có việc \"Gọi lại khách quan tâm\" giao cho Bán hàng Online",
+        "B": "Cả bốn lead đều có ghi chú đồng ý kèm ngày cụ thể",
+        "C": "Lead 00083 mang nguồn \"Website Biti's\" thay vì Facebook",
+        "D": "Lead 00082 mang nguồn Facebook như các lead khác của chiến dịch"
+      },
+      "dung": [
+        "A",
+        "D"
+      ],
+      "loi_sai": {
+        "B": "bỏ qua việc lead 00081 không đồng ý và hai ghi chú đồng ý không có ngày",
+        "C": "nhầm nguồn lead của chiến dịch Facebook với nguồn của quy trình chung"
+      },
+      "giai_thich": "A đúng: lead 00080 (đồng ý, quan tâm) được tạo CRM Task \"Gọi lại khách quan tâm\" giao Bán hàng Online. D đúng: cả bốn lead thử của chiến dịch đều có nguồn Facebook. B sai: lead 00081 không đồng ý, và ghi chú đồng ý của 00082, 00083 không có ngày (chỉ 00080 có). C sai: nguồn \"Website Biti's\" thuộc quy trình chung và đơn online.",
+      "doan_goc": "scripts/gd2-01-chay-thu.py (khối LM1–LM4); evidence/A4-3/chay-thu.json (M1, M3)"
+    },
+    {
+      "id": "Q11",
+      "phan": "ud",
+      "muc_tieu": "M3",
+      "muc_nhan_thuc": "van_dung",
+      "do_kho": "TB",
+      "loai": "mot_dap_an",
+      "cau_hoi": "Nhóm muốn quy trình marketing tiến gần hơn tới định nghĩa MA của giáo trình, tức làm một số việc chạy không cần người. Thay đổi nào đi đúng hướng đó?",
+      "dap_an": {
+        "A": "Thêm làn \"Hệ thống\" vào sơ đồ và vẽ lại các mũi tên cho gọn, dễ nhìn hơn",
+        "B": "Giao một nhân viên chuyên trách gửi thư nhanh hơn cho từng lead",
+        "C": "Gửi thư cho cả lead không đồng ý để có nhiều người nhận hơn",
+        "D": "Chuyển bước gửi tin thành việc hệ thống tự làm khi lead có đồng ý"
+      },
+      "dung": [
+        "D"
+      ],
+      "loi_sai": {
+        "A": "nhầm trình bày sơ đồ với tự động hóa",
+        "B": "nhầm làm nhanh hơn bằng tay với tự động hóa",
+        "C": "đi ngược nguyên tắc đồng ý để tăng số lượng"
+      },
+      "giai_thich": "MA là để luật chạy qua phần mềm với rất ít can thiệp của người. D chuyển một bước từ người sang hệ thống, có điều kiện đồng ý đi kèm nên vẫn tôn trọng quyền riêng tư. A chỉ đổi cách vẽ. B vẫn là người làm. C vi phạm nguyên tắc dùng dữ liệu cho quảng cáo khi chưa có đồng ý.",
+      "doan_goc": "Chương 7, slide 3; Chương 14, tr. 326 (Use Limitation); docs/quy-trinh-sop.md"
+    },
+    {
+      "id": "Q12",
+      "phan": "da",
+      "muc_tieu": "M4",
+      "muc_nhan_thuc": "hieu",
+      "do_kho": "TB",
+      "loai": "mot_dap_an",
+      "cau_hoi": "Vì sao ở GĐ2 nhóm ghi sự đồng ý nhận tin bằng ghi chú trên lead, thay vì một trường riêng?",
+      "dap_an": {
+        "A": "Frappe CRM không cho thêm trường mới vào bản ghi Lead",
+        "B": "Làm trường riêng bắt buộc phải viết code, mà GĐ2 chưa có app tùy biến",
+        "C": "Frappe CRM 16.0.1 chưa có trường này; trường riêng dự định làm ở GĐ3",
+        "D": "Ghi chú có sẵn chức năng tự chặn gửi thư cho khách không đồng ý"
+      },
+      "dung": [
+        "C"
+      ],
+      "loi_sai": {
+        "A": "tin rằng Frappe cấm mở rộng trường dữ liệu",
+        "B": "tưởng thêm trường luôn cần viết code",
+        "D": "tưởng Frappe tự chặn gửi thư dựa trên ghi chú"
+      },
+      "giai_thich": "Nhật ký giai đoạn 2 ghi Frappe CRM 16.0.1 chưa có trường đồng ý nhận tin, nên nhóm ghi bằng ghi chú, và SOP ghi trường riêng sẽ làm ở GĐ3. A không đúng: Frappe cho tùy biến, nhóm chỉ chưa làm. B không phải lý do nhóm nêu trong nhật ký. D sai: ghi chú chỉ là văn bản, hệ thống không dựa vào nó để chặn gửi thư.",
+      "doan_goc": "docs/phase-report.md mục 2.3 (phát hiện a); docs/quy-trinh-sop.md dòng Dữ liệu chạy thử"
+    },
+    {
+      "id": "Q13",
+      "phan": "da",
+      "muc_tieu": "M4",
+      "muc_nhan_thuc": "phan_tich",
+      "do_kho": "Kho",
+      "loai": "mot_dap_an",
+      "cau_hoi": "Quy trình marketing hỏi sự đồng ý của khách trước khi gửi tin. Trong Frappe CRM, cơ chế nào bảo đảm lead không đồng ý không bị gửi tin quảng cáo?",
+      "dap_an": {
+        "A": "Người thực hiện đi theo thứ tự của quy trình; Frappe không tự chặn việc gửi thư",
+        "B": "Frappe tự từ chối gửi thư khi lead chưa có ghi chú đồng ý trong hồ sơ",
+        "C": "Frappe kiểm tra trạng thái lead và cho gửi thư khi lead đã ở trạng thái Contacted",
+        "D": "Email Account Gmail của nhóm tự lọc người nhận theo danh sách đồng ý của chiến dịch"
+      },
+      "dung": [
+        "A"
+      ],
+      "loi_sai": {
+        "B": "tưởng Frappe tự chặn dựa trên ghi chú",
+        "C": "tưởng trạng thái lead khóa việc gửi thư",
+        "D": "tưởng dịch vụ thư có danh sách đồng ý của nhóm"
+      },
+      "giai_thich": "Frappe CRM không có kiểm tra nào chặn gửi thư theo ghi chú hay trạng thái lead; nhóm chỉ ghi ghi chú đồng ý và đi theo thứ tự quy trình (hỏi đồng ý trước, gửi sau). Trong chạy thử, thẻ Email của lead không đồng ý (00081) trống còn của lead 00080 có một thư, nhưng đó là kết quả của việc người chạy thử làm đúng quy trình, không phải do Frappe từ chối. Muốn chặn bằng máy cần trường đồng ý và kiểm tra trong code, dự định ở GĐ3.",
+      "doan_goc": "docs/quy-trinh-sop.md (M2, M4); evidence/A4-3/chay-thu.json (M2, M4)"
+    },
+    {
+      "id": "Q14",
+      "phan": "da",
+      "muc_tieu": "M4",
+      "muc_nhan_thuc": "van_dung",
+      "do_kho": "TB",
+      "loai": "nhieu_dap_an",
+      "cau_hoi": "Chọn 2 đáp án mô tả thứ do nhóm tự đặt ra trong quy trình marketing, khác với thứ Frappe cung cấp sẵn.",
+      "dap_an": {
+        "A": "Luật \"chỉ gửi tin khi lead đã có ghi chú đồng ý\"",
+        "B": "Trạng thái lead như New, Contacted, Unqualified, Nurture",
+        "C": "Quy ước ghi \"đồng ý\", \"không đồng ý\", \"rút đồng ý\" bằng ghi chú",
+        "D": "Thẻ Email trên trang lead để gửi thư qua Email Account"
+      },
+      "dung": [
+        "A",
+        "C"
+      ],
+      "loi_sai": {
+        "B": "nhầm danh sách trạng thái có sẵn của CRM Lead với quy ước của nhóm",
+        "D": "nhầm chức năng gửi thư của Frappe với luật gửi của nhóm"
+      },
+      "giai_thich": "Luật gửi và quy ước ghi đồng ý bằng ghi chú là do nhóm đặt (A, C). Các trạng thái lead và thẻ Email gửi thư qua Email Account là chức năng có sẵn của Frappe CRM (B, D). Điều này đúng với câu thầy hay hỏi: \"cái nào của Frappe, cái nào của mấy đứa\".",
+      "doan_goc": "docs/quy-trinh-sop.md; docs/ghi-chu-phan-bien-thay.md"
+    },
+    {
+      "id": "Q15",
+      "phan": "da",
+      "muc_tieu": "M4",
+      "muc_nhan_thuc": "phan_tich",
+      "do_kho": "Kho",
+      "loai": "mot_dap_an",
+      "cau_hoi": "Thầy hỏi: \"Thư các em gửi đã tới khách thật chưa?\" Theo hồ sơ dự án, câu trả lời trung thực nhất là gì?",
+      "dap_an": {
+        "A": "Rồi; Frappe ghi trạng thái đã gửi và nhóm chưa thấy báo lỗi nào",
+        "B": "Rồi, tới các lead đồng ý; việc xác nhận ở hộp thư của họ nhóm chưa làm",
+        "C": "Chưa; Email Account Gmail của nhóm chưa được cấu hình xong nên thư chưa gửi được",
+        "D": "Chưa có khách thật; thư tới hộp thư người cài đặt, việc mở hộp thư xác nhận chưa làm"
+      },
+      "dung": [
+        "D"
+      ],
+      "loi_sai": {
+        "A": "coi trạng thái gửi của hệ thống là bằng chứng đã tới khách thật",
+        "B": "nhớ sai: chỉ lead 00080 có thư, và địa chỉ nhận không phải của khách",
+        "C": "nhớ sai tình trạng cấu hình email"
+      },
+      "giai_thich": "Chỉ lead 00080 có thư mẫu, và địa chỉ nhận là hộp thư của người cài đặt nên không có khách thật. Nhật ký còn ghi việc mở Gmail xem thư là việc chưa làm, nên chưa thể nói chắc thư đã đến. A kết luận vượt bằng chứng. B sai vì chỉ có một lead được gửi. C sai vì Frappe đã ghi nhận một thư trạng thái đã gửi qua Email Account của nhóm.",
+      "doan_goc": "docs/phase-report.md mục Còn lại của giai đoạn 2; evidence/A4-3/chay-thu.json (M2)"
+    },
+    {
+      "id": "Q16",
+      "phan": "da",
+      "muc_tieu": "M4",
+      "muc_nhan_thuc": "van_dung",
+      "do_kho": "TB",
+      "loai": "mot_dap_an",
+      "cau_hoi": "Thầy hỏi: \"Luật Việt Nam nào quy định chuyện đồng ý nhận tin?\" Câu trả lời nào đúng với tình trạng thật của đồ án?",
+      "dap_an": {
+        "A": "Nhóm đã áp dụng GDPR của châu Âu vì Biti's có bán cho khách ở châu Âu; luật Việt Nam đang tra thêm",
+        "B": "Chưa tra điều luật cụ thể; tạm dùng nguyên tắc OECD của giáo trình, ghi là giả định",
+        "C": "Áp dụng nghị định bảo vệ dữ liệu cá nhân của Việt Nam; nhóm đã đối chiếu các điều chính",
+        "D": "Chưa áp dụng luật nào, vì đồ án học tập chưa xử lý dữ liệu khách thật theo hiểu biết của nhóm"
+      },
+      "dung": [
+        "B"
+      ],
+      "loi_sai": {
+        "A": "gán cho đồ án một căn cứ không có nguồn",
+        "C": "nói đã làm điều chưa làm",
+        "D": "bỏ qua việc đồ án mô hình hóa quy trình của một doanh nghiệp"
+      },
+      "giai_thich": "Nhóm chưa tra điều luật cụ thể của Việt Nam, nên không được nêu số điều luật. Chuẩn tạm là nguyên tắc OECD và GDPR được giáo trình mô tả (Chương 14), và phần luật Việt Nam được ghi là giả định, chưa tra. A bịa ra dữ kiện (không có nguồn nói Biti's bán cho khách châu Âu trong đồ án). C nói đã làm điều chưa làm. D bỏ qua việc quy trình mô phỏng một doanh nghiệp phải tuân thủ.",
+      "doan_goc": "Chương 14, giáo trình tr. 325–327; docs/nghien-cuu-bitis.md mục 5 (khoảng trống thông tin)"
+    }
+  ]
+}

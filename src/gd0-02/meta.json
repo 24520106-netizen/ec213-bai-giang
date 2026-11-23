@@ -1,0 +1,18 @@
+{
+  "id": "gd0-02",
+  "gd": "gd0",
+  "thu_tu": "0.2",
+  "tieu_de": "Yêu cầu, phạm vi và bên liên quan của đồ án",
+  "tom_tat": "Yêu cầu là gì, ba tầng yêu cầu, cách vẽ ranh giới phạm vi và tìm bên liên quan; rồi đặt vào checklist tiêu chí, hiến chương case study và ghi chú phản biện của thầy.",
+  "muc_tieu_bai": [
+    "Phân biệt được yêu cầu nghiệp vụ, yêu cầu người dùng và yêu cầu chức năng khi gặp một câu yêu cầu cụ thể",
+    "Nói được thế nào là trong phạm vi, ngoài phạm vi, bên liên quan, người quyết định, và hỏi gì để khai thác yêu cầu",
+    "Chỉ ra được trong đồ án: checklist tiêu chí, hiến chương case study, các bên liên quan và phần nào là giả định",
+    "Giải thích được vì sao đồ án chốt phạm vi từ giai đoạn 0 và trả lời được các câu thầy hay hỏi về yêu cầu, phạm vi"
+  ],
+  "nguon": [
+    { "ten": "Wiegers & Hokanson, Software Requirements Essentials", "chi_tiet": "Chương 2 (Practice #1–#5: vấn đề, mục tiêu nghiệp vụ, ranh giới giải pháp, bên liên quan, người quyết định); Chương 3 (khai thác yêu cầu, Practice #6–#7); Bảng 1.1 ở Chương 1 cho định nghĩa các loại yêu cầu" },
+    { "ten": "Prior, Buttle & Maklan (2024), Customer Relationship Management, 5th ed.", "chi_tiet": "Chương 11, slide 4–5 (xác định chức năng và yêu cầu thông tin của cơ sở dữ liệu khách hàng)" },
+    { "ten": "Tài liệu của đồ án", "chi_tiet": "docs/checklist-tieu-chi.md, docs/case-study-hien-chuong.md, docs/ghi-chu-phan-bien-thay.md, docs/nghien-cuu-bitis.md, docs/ke-hoach-tinh-chinh-gd1-6.md, PLAN.md, docs/phase-report.md" }
+  ]
+}

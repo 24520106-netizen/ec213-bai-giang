@@ -1,0 +1,19 @@
+{
+  "id": "gd2-01",
+  "gd": "gd2",
+  "thu_tu": "2.1",
+  "tieu_de": "Mô hình hóa quy trình và BPMN",
+  "tom_tat": "Vì sao phải vẽ quy trình, đọc và vẽ được sơ đồ BPMN (pool, lane, task, event, cổng XOR), rồi xem năm sơ đồ của nhóm dùng các ký hiệu đó ra sao và vì sao được sinh bằng script.",
+  "muc_tieu_bai": [
+    "Giải thích được mô hình quy trình giúp phát hiện thiếu sót yêu cầu như thế nào, và vì sao vẽ đường suôn sẻ trước rồi mới thêm ngoại lệ",
+    "Đọc và đặt tên đúng các ký hiệu BPMN: pool, lane, task (user, service, manual), start và end event, cổng XOR, sequence flow",
+    "Chỉ ra được trong năm sơ đồ của nhóm từng ký hiệu và đánh giá được chỗ đúng, chỗ chưa đạt",
+    "Trả lời được vì sao file .bpmn được sinh bằng script, PNG xuất bằng gì, vì sao Khách hàng là một lane"
+  ],
+  "nguon": [
+    { "ten": "Wiegers & Hokanson (2024), Software Requirements Essentials", "chi_tiet": "Chương 4, thực hành #11 \"Create requirements models\", tr. 15–29 trong bản trích của chương (mô hình, process flow, nhắc tới BPMN)" },
+    { "ten": "OMG, Business Process Model and Notation 2.0.2 (ISO/IEC 19510:2013)", "chi_tiet": "tai-lieu-chinh-thong/bpmn/01-omg-bpmn-2.0.2.pdf: bảng tóm tắt phần tử (trang PDF 57); Service Task (PDF 186), User Task (PDF 190), Manual Task (PDF 191)" },
+    { "ten": "Camunda docs", "chi_tiet": "09-camunda-bpmn-primer.txt; 16-camunda-quy-uoc-dat-ten.txt (quy ước đặt tên); 17-camunda-mo-hinh-de-doc.txt (mô hình dễ đọc); 18-camunda-ngoai-happy-path.txt (đường suôn sẻ và ngoại lệ). Đều trong tai-lieu-chinh-thong/bpmn/, URL gốc ghi ở INDEX.md" },
+    { "ten": "Tệp của nhóm", "chi_tiet": "scripts/gd2/quy-trinh.js, sinh-bpmn.js, xuat-png.js; Nop-bai/Nhóm 04 - Đồ án CRM/ (5 file .bpmn và .png); docs/phase-report.md mục Giai đoạn 2; mau/mau-bpmn-2-lane.bpmn" }
+  ]
+}

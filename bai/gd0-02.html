@@ -1,0 +1,241 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>0.2 Yêu cầu, phạm vi và bên liên quan của đồ án · EC213</title>
+<meta name="description" content="Yêu cầu là gì, ba tầng yêu cầu, cách vẽ ranh giới phạm vi và tìm bên liên quan; rồi đặt vào checklist tiêu chí, hiến chương case study và ghi chú phản biện của thầy.">
+<link rel="stylesheet" href="../assets/site.css">
+</head>
+<body data-root="../" data-id="gd0-02">
+<div class="progress" id="bar"></div>
+<div class="layout">
+<nav class="side" aria-label="Mục lục"></nav>
+<main>
+<header class="hero">
+  <div class="tag">Giai đoạn 0 · Chốt nền · Bài 0.2</div>
+  <h1>Yêu cầu, phạm vi và bên liên quan của đồ án</h1>
+  <p>Yêu cầu là gì, ba tầng yêu cầu, cách vẽ ranh giới phạm vi và tìm bên liên quan; rồi đặt vào checklist tiêu chí, hiến chương case study và ghi chú phản biện của thầy.</p>
+  <div class="top"><button id="theme" type="button">Đổi sáng/tối</button><button id="reset" type="button">Xóa điểm đã làm</button><a class="btn2" href="../index.html">Trang chủ</a></div>
+</header>
+<div class="parts" aria-label="Các phần của bài"></div>
+<div class="goal"><b class="t">Học xong bài này bạn làm được</b><ul><li>Phân biệt được yêu cầu nghiệp vụ, yêu cầu người dùng và yêu cầu chức năng khi gặp một câu yêu cầu cụ thể</li><li>Nói được thế nào là trong phạm vi, ngoài phạm vi, bên liên quan, người quyết định, và hỏi gì để khai thác yêu cầu</li><li>Chỉ ra được trong đồ án: checklist tiêu chí, hiến chương case study, các bên liên quan và phần nào là giả định</li><li>Giải thích được vì sao đồ án chốt phạm vi từ giai đoạn 0 và trả lời được các câu thầy hay hỏi về yêu cầu, phạm vi</li></ul></div>
+<section class="part" id="kt">
+  <h2><span class="n">1</span>Kiến thức tổng quát: yêu cầu, phạm vi, bên liên quan</h2>
+
+  <h3>1.1. Yêu cầu là gì</h3>
+  <p><b>Yêu cầu (requirement)</b> là mô tả điều giải pháp phải làm, phải có hoặc phải tuân theo để đáp ứng nhu cầu của một người có liên quan. Wiegers và Hokanson dẫn lại cách nói của Sommerville và Sawyer: yêu cầu là đặc tả điều cần xây, gồm cách hệ thống ứng xử, một thuộc tính của hệ thống, hoặc một ràng buộc lên cách làm ra nó. Rồi hai tác giả bổ sung: điểm xuất phát thật của mọi yêu cầu là <i>nhu cầu của một bên liên quan</i>, không phải tính năng ai đó đã nghĩ sẵn.</p>
+  <div class="src"><b class="t">Trong sách</b>Wiegers &amp; Hokanson, <i>Software Requirements Essentials</i>, Chương 1, mục "Requirements Defined" và Bảng 1.1. Chương 1 không thuộc hai chương được giao cho bài này, nhưng định nghĩa các loại yêu cầu nằm ở đó.</div>
+
+  <h3>1.2. Ba tầng yêu cầu bạn phải phân biệt được</h3>
+  <p>Ví dụ dưới đây <b>không thuộc đồ án</b>: một tiệm bánh muốn nhận đơn đặt bánh qua website.</p>
+  <div class="tablewrap"><table>
+    <thead><tr><th>Loại</th><th>Trả lời câu hỏi</th><th>Ví dụ (tiệm bánh)</th></tr></thead>
+    <tbody>
+      <tr><td><b>Yêu cầu nghiệp vụ</b> (business requirement)</td><td>Vì sao làm dự án? Doanh nghiệp muốn đạt gì, đo bằng gì?</td><td>"Có 40 đơn đặt trước mỗi ngày vào 30/06; hiện chỉ 25 đơn/ngày."</td></tr>
+      <tr><td><b>Yêu cầu người dùng</b> (user requirement)</td><td>Người dùng cần làm được việc gì?</td><td>"Khách đặt bánh sinh nhật cho ngày mai và chọn giờ nhận."</td></tr>
+      <tr><td><b>Yêu cầu chức năng</b> (functional requirement)</td><td>Hệ thống ứng xử thế nào trong một tình huống cụ thể?</td><td>"Khi giờ nhận cách hiện tại dưới 24 giờ, hệ thống báo giờ sớm nhất còn nhận được."</td></tr>
+      <tr><td>Yêu cầu phi chức năng (nonfunctional), hay thuộc tính chất lượng</td><td>Hệ thống phải tốt đến mức nào: nhanh, an toàn, dễ dùng?</td><td>"Trang đặt bánh tải xong trong 3 giây."</td></tr>
+      <tr><td>Quy tắc nghiệp vụ (business rule), ràng buộc (constraint)</td><td>Chính sách nào phải theo? Giới hạn nào áp lên cách làm?</td><td>Quy tắc: "Bánh kem đặt trước ít nhất 24 giờ." Ràng buộc: "Dùng máy chủ đang thuê."</td></tr>
+    </tbody>
+  </table></div>
+  <p>Quy tắc "đặt trước 24 giờ" <i>sinh ra</i> yêu cầu chức năng "báo giờ sớm nhất". Sách nói rõ: lập trình viên không xây trực tiếp "yêu cầu nghiệp vụ" hay "yêu cầu người dùng"; họ xây <b>yêu cầu chức năng</b>, và tập chức năng đúng chỉ có khi hai tầng trên đã được hiểu rõ.</p>
+  <div class="note"><b class="t">Cách hiểu dễ nhầm</b>Sách cố ý không gọi "mọi thứ doanh nghiệp muốn, kể cả nút bấm" là yêu cầu nghiệp vụ. Ở đây nó chỉ trả lời "vì sao làm" và "đo thành công bằng gì".</div>
+
+  <h3>1.3. Bắt đầu từ vấn đề, rồi mục tiêu đo được (Chương 2, Practice #1–#2)</h3>
+  <p><b>Hiểu vấn đề trước khi chọn giải pháp.</b> Sách kể những dự án giao đúng hạn mà sản phẩm vẫn thất bại vì giải sai bài toán. Cách chống là <b>phân tích nguyên nhân gốc (root cause analysis)</b>, ví dụ kỹ thuật <b>5 Whys</b>: hỏi "vì sao?" lặp lại cho tới khi chạm vấn đề thật.</p>
+  <div class="ex"><b class="t">Ví dụ 5 Whys (tiệm bánh)</b>Chủ tiệm: "Làm cho tôi cái app." Vì sao? "Đơn đặt trước ít." Vì sao? "Khách phải gọi điện, mỗi cuộc khoảng 4 phút." Với 25 đơn/ngày, nhân viên nghe máy 25 × 4 = 100 phút mỗi ngày; muốn 40 đơn mà vẫn qua điện thoại thì 40 × 4 = 160 phút. Vấn đề thật là <i>đặt bánh qua điện thoại tốn công và hạn chế số đơn</i>. (4 phút và 25 đơn là giả định của bài giảng.)</div>
+  <p><b>Mục tiêu nghiệp vụ (business objective)</b> cho biết khi nào vấn đề coi như giải xong. Sách đòi cụ thể, thực tế, đo được, và khuyên nêu <i>giá trị tuyệt đối</i> thay vì phần trăm thay đổi. "Tăng 60% đơn đặt trước" khó kiểm vì mốc gốc dễ bị quên; "đạt 40 đơn/ngày vào 30/06" kiểm được (40/25 = 1,6, tức tăng 60%, cùng một con số nói theo cách khác). Mục tiêu dài hạn cần thêm <b>chỉ số thành công (success metric)</b> theo dõi giữa chừng, ví dụ số khách mới mỗi tuần.</p>
+
+  <h3>1.4. Phạm vi và ranh giới giải pháp (Practice #3)</h3>
+  <p><b>Phạm vi (scope)</b> là danh sách những gì <b>nằm trong</b> (in scope) và <b>nằm ngoài</b> (out of scope) giải pháp: quy trình, người dùng, hệ thống, dữ liệu nào thuộc về nó, trách nhiệm của mỗi hệ thống bắt đầu và dừng ở đâu. Sách gợi ý hai hình: <b>sơ đồ ngữ cảnh (context diagram)</b>, một hệ thống ở giữa cùng các thực thể ngoài và dòng dữ liệu; và <b>bản đồ hệ sinh thái (ecosystem map)</b>, gồm cả các hệ thống liên quan.</p>
+  <div class="ex"><b class="t">Ví dụ chia phạm vi theo lần phát hành (tiệm bánh)</b>Lần 1: form đặt bánh, nhân viên nhập đơn vào sổ hiện có. Lần 2: thêm thanh toán online. Lần 3: thêm giao hàng. Khi chủ tiệm đòi kết nối ứng dụng giao hàng bên thứ ba ngay từ lần 1, câu trả lời là <i>ngoài phạm vi hiện tại</i>: hoãn sang dự án khác, hoặc mở rộng phạm vi có chủ ý kèm thêm thời gian và nguồn lực. "Ngoài phạm vi" không có nghĩa là ý tưởng dở.</div>
+
+  <h3>1.5. Bên liên quan và người quyết định (Practice #4–#5)</h3>
+  <p><b>Bên liên quan (stakeholder)</b> là cá nhân hay nhóm đang tham gia dự án, bị dự án ảnh hưởng, hoặc có thể tác động tới hướng đi của nó. Ba từ hay bị gộp thành một:</p>
+  <ul>
+    <li><b>Bên liên quan</b>: ai quan tâm hoặc bị ảnh hưởng (rộng nhất).</li>
+    <li><b>Khách hàng (customer)</b>: bên liên quan đặt hàng, trả tiền hoặc đưa yêu cầu; không nhất thiết dùng sản phẩm.</li>
+    <li><b>Người dùng (user)</b>: người trực tiếp dùng; sách chia theo <b>lớp người dùng (user class)</b>. <b>Người dùng gián tiếp</b> chỉ đưa dữ liệu vào hoặc nhận kết quả ra mà không tự tương tác với hệ thống.</li>
+  </ul>
+  <div class="ex"><b class="t">Ví dụ (tiệm bánh)</b>Chủ tiệm là khách hàng và người quyết định; nhân viên quầy và khách đặt bánh là hai lớp người dùng trực tiếp; kế toán không bấm vào app nhưng nhận báo cáo doanh thu từ nó, nên là người dùng gián tiếp và vẫn là bên liên quan. Mỗi lớp cần một đại diện, gọi là <b>product champion</b> nếu được ủy quyền nói thay cho lớp đó.</div>
+  <p>Mỗi bên nên được ghi theo mẫu: vai trò, mối quan tâm, mức ảnh hưởng, nhu cầu. Ma trận <b>RACI</b> phân việc theo bốn vai: Responsible (người làm), Accountable (người chịu trách nhiệm cuối), Consulted (người được hỏi ý kiến), Informed (người được báo). <b>Người quyết định (decision maker)</b> phải được xác định <i>trước</i> khi gặp quyết định quan trọng đầu tiên, kèm quy tắc ra quyết định và lối ra khi không thống nhất; nếu không, nhóm chỉ là cơ quan tư vấn và ai đó vẫn có thể lật lại mọi thứ.</p>
+
+  <h3>1.6. Khai thác yêu cầu (Chương 3)</h3>
+  <p>Yêu cầu không "nằm sẵn trong đầu người dùng để thu thập". Sách dùng từ <b>khai thác (elicitation)</b>: kéo điều còn ẩn ra, gồm thu thập, khám phá và đôi khi sáng tạo. Nguồn gồm người dùng và bên liên quan, tài liệu về quy trình và hệ thống hiện có, luật và chính sách, hệ thống đang chạy, báo cáo sự cố. Câu mở đầu tốt nhất, theo sách, không phải "bạn muốn tính năng gì?" mà là <b>"bạn cần làm gì với giải pháp?"</b>: hỏi tính năng dễ ra danh sách rời rạc, hỏi việc cần làm cho ra <b>kịch bản (scenario)</b>, gồm luồng chính (happy path), luồng thay thế và ngoại lệ. Gom kịch bản thành <b>use case</b>; trong cách làm linh hoạt thì dùng <b>user story</b> dạng "Là &lt;loại người dùng&gt;, tôi muốn &lt;việc&gt; để &lt;mục đích&gt;".</p>
+
+  <h3>1.7. Hiểu nhầm hay gặp</h3>
+  <div class="tablewrap"><table>
+    <thead><tr><th>Hiểu nhầm</th><th>Thực ra</th></tr></thead>
+    <tbody>
+      <tr><td>Yêu cầu = danh sách tính năng</td><td>Có nhiều tầng; tính năng chỉ là một phần của tầng chức năng.</td></tr>
+      <tr><td>Bên liên quan = người dùng</td><td>Người nhận báo cáo, cơ quan đặt quy định cũng là bên liên quan.</td></tr>
+      <tr><td>Phạm vi = những gì sẽ làm</td><td>Phạm vi còn gồm những gì cố ý <i>không</i> làm.</td></tr>
+      <tr><td>Giải pháp người ta nêu chắc là đúng</td><td>Nên hỏi "nếu đây là câu trả lời thì câu hỏi là gì?".</td></tr>
+    </tbody>
+  </table></div>
+  <div class="src"><b class="t">Trong giáo trình CRM</b>Cùng ý "hỏi vì sao cần dữ liệu trước khi thiết kế" có ở Chương 11, slide 4–5: bước đầu khi xây cơ sở dữ liệu khách hàng là quay lại tầm nhìn, chiến lược và lý do kinh doanh của CRM (Step 1), rồi hỏi những người làm việc trực tiếp với khách hàng xem họ cần thông tin gì (Step 2).</div>
+  <p><b>Thuật ngữ Anh – Việt:</b> business requirement (yêu cầu nghiệp vụ), user requirement (yêu cầu người dùng), functional requirement (yêu cầu chức năng), scope (phạm vi), stakeholder (bên liên quan), user class (lớp người dùng), elicitation (khai thác yêu cầu).</p>
+<div class="quiz" data-quiz="kt"></div>
+</section>
+
+<section class="part" id="ud">
+  <h2><span class="n">2</span>Ứng dụng trong đồ án: checklist, hiến chương và các bên liên quan</h2>
+
+  <h3>2.1. Khái niệm ↔ thành phần của đồ án</h3>
+  <p>Đồ án CRM (Customer Relationship Management – quản trị quan hệ khách hàng) của nhóm 04 có <b>hai "khách hàng"</b> mà bạn phải tách bạch: <b>thầy</b> (đặt tiêu chí, chấm bài) và <b>Biti's</b> (doanh nghiệp được chọn làm bối cảnh). Yêu cầu từ hai phía thuộc hai tầng khác nhau. Trong bài này, GĐ là giai đoạn (đồ án chia 7 giai đoạn, GĐ0 đến GĐ6). Phần mềm đồ án dùng là Frappe CRM, chạy trên nền tảng Frappe; hai thứ đó được giải thích ở bài 0.3.</p>
+  <div class="tablewrap"><table>
+    <thead><tr><th>Khái niệm (Phần 1)</th><th>Trong đồ án</th><th>Nằm ở đâu</th></tr></thead>
+    <tbody>
+      <tr><td>Nguồn yêu cầu</td><td>(1) ghi chú trên lớp của thầy; (2) bảng tiêu chí năm 2025, viết cho Odoo, quy đổi sang Frappe. Kế hoạch ghi: "đây là toàn bộ yêu cầu hiện có".</td><td><code>PLAN.md</code> đầu trang</td></tr>
+      <tr><td>Yêu cầu người dùng / chức năng đã chuyển thành việc kiểm được</td><td>57 dòng của checklist, mỗi dòng có minh chứng và người duyệt</td><td><code>docs/checklist-tieu-chi.md</code></td></tr>
+      <tr><td>Ranh giới giải pháp (trong / ngoài phạm vi)</td><td>Hiến chương: mục 5 "Làm" và "Không làm"</td><td><code>docs/case-study-hien-chuong.md</code></td></tr>
+      <tr><td>Bên liên quan</td><td>Thầy, bốn thành viên nhóm, Biti's (giả định), khách hàng của Biti's, người dùng demo</td><td>Hiến chương mục 3–4, <code>PLAN.md</code> mục 3</td></tr>
+      <tr><td>Quy tắc nghiệp vụ</td><td>Chính sách đổi trả 7 ngày của Biti's, lấy từ trang công khai</td><td><code>docs/nghien-cuu-bitis.md</code> mục 3</td></tr>
+      <tr><td>Mục tiêu nghiệp vụ đo được của Biti's</td><td><b>Chưa có.</b> Đồ án không đặt chỉ tiêu doanh thu hay số lead cho Biti's (xem mục 3.7)</td><td>—</td></tr>
+    </tbody>
+  </table></div>
+
+  <h3>2.2. Checklist: tiêu chí A4.x thành dòng kiểm được</h3>
+  <p>"A4.x" là mã các mục trong bảng tiêu chí của thầy (A4.1 đến A4.12). Giai đoạn 0 tách mỗi mục thành dòng có/không. Mình đếm lại bằng script trên tệp ngày 2026-11-23:</p>
+  <div class="tablewrap"><table>
+    <thead><tr><th>Nhóm</th><th>Số dòng</th><th>Nhóm</th><th>Số dòng</th></tr></thead>
+    <tbody>
+      <tr><td>A4.1 case study</td><td>4</td><td>A4.7 API/webhook</td><td>6</td></tr>
+      <tr><td>A4.2 cài đặt, nhập liệu</td><td>13</td><td>A4.8 Lead Form, WooCommerce</td><td>3</td></tr>
+      <tr><td>A4.3 quy trình</td><td>9</td><td>A4.9 lập trình</td><td>4</td></tr>
+      <tr><td>A4.4 video</td><td>3</td><td>A4.10–11 đề xuất, đánh giá</td><td>3</td></tr>
+      <tr><td>A4.5–6 chi phí, báo cáo</td><td>5</td><td>Nộp bài N1–N7</td><td>7</td></tr>
+    </tbody>
+  </table></div>
+  <p>Tổng: 50 dòng tiêu chí + 7 dòng nộp bài = 57 dòng. Trạng thái trong tệp: 17 "Đạt" (tính cả N5), 9 "Đã làm, chờ duyệt" (toàn bộ A4.3), 1 dòng ghi chờ mật khẩu Gmail, 30 "Chưa". Cộng lại 17 + 9 + 1 + 30 = 57.</p>
+  <div class="tablewrap"><table>
+    <thead><tr><th>Dòng</th><th>Kiểm được không?</th><th>Vì sao</th></tr></thead>
+    <tbody>
+      <tr><td><b>2.2</b> Múi giờ đúng (Asia/Ho_Chi_Minh), minh chứng: ảnh System Settings</td><td>Được</td><td>Có giá trị cụ thể, có chỗ chụp, trả lời có/không.</td></tr>
+      <tr><td><b>2.13</b> Dữ liệu đủ nhiều để chứng minh đã dùng thực sự, minh chứng: thống kê số bản ghi</td><td>Mềm, nhưng cứu được</td><td>"Đủ nhiều" mơ hồ; thống kê cho ra số thật. Lead là khách hàng tiềm năng mới quan tâm, deal là cơ hội bán hàng đã được theo đuổi (sẽ làm rõ ở các bài giai đoạn 1). Sau GĐ1 có 60 lead và 30 deal; sau GĐ2 có 75 lead và 38 deal (60 + 15 và 30 + 8).</td></tr>
+      <tr><td><b>5.5</b> Loại biểu đồ phù hợp loại báo cáo</td><td>Mềm</td><td>"Phù hợp" là phán đoán; cần thêm quy tắc chọn biểu đồ nhóm tự đặt.</td></tr>
+    </tbody>
+  </table></div>
+  <p>Cột nhận xét là nhận định của bài giảng. Cách sửa một dòng mềm là thêm <i>con số</i> hoặc <i>vật chứng</i>.</p>
+
+  <h3>2.3. Hiến chương case study: làm gì, không làm gì</h3>
+  <div class="tablewrap"><table>
+    <thead><tr><th>Trong phạm vi (6 hạng mục)</th><th>Ngoài phạm vi</th></tr></thead>
+    <tbody><tr>
+      <td>Cấu hình Frappe CRM theo A4.2; 5 quy trình BPMN (Business Process Model and Notation – ký hiệu mô hình hóa quy trình) và chạy thật; custom app <code>biti_crm</code> (ứng dụng nhóm tự viết để mở rộng Frappe CRM); tích hợp WordPress (phần mềm làm website) và WooCommerce (phần bán hàng cho WordPress) qua API/webhook (cách hai phần mềm nhờ nhau làm việc, học ở giai đoạn 4); phân tích chi phí, CLV (customer lifetime value – giá trị vòng đời khách hàng), ABC (activity-based costing – tính chi phí theo hoạt động); đề xuất khác biệt.</td>
+      <td>Tích hợp thật với Zalo, ERP của Biti's, các sàn Shopee/Lazada (chỉ nêu trong đề xuất); dữ liệu khách hàng thật (dùng dữ liệu demo tự tạo); app di động.</td>
+    </tr></tbody>
+  </table></div>
+  <p>Hiến chương còn chốt <b>6 làn</b> cho sơ đồ quy trình (khái niệm "làn" sẽ làm rõ ở giai đoạn 2): Khách hàng, Marketing, Bán hàng, Kho – Giao hàng, Chăm sóc khách hàng, Quản lý; và tên <b>1 quy trình chung + 4 quy trình cá nhân</b>.</p>
+
+  <h3>2.4. Bên liên quan của đồ án</h3>
+  <div class="tablewrap"><table>
+    <thead><tr><th>Bên</th><th>Vai trò</th><th>Ảnh hưởng và nhu cầu</th></tr></thead>
+    <tbody>
+      <tr><td>Thầy</td><td>Đặt tiêu chí, chấm, phản biện</td><td>Cao nhất; muốn thấy quy trình làm kỹ, hiểu app của nhóm làm gì</td></tr>
+      <tr><td>Nhóm 04 (Diệu Anh, Hảo, Khánh Ngọc, Thanh Tuyền)</td><td>Thực hiện, mỗi người duyệt một mảng</td><td>Phải giải thích được mảng mình duyệt</td></tr>
+      <tr><td>Biti's (giả định)</td><td>Doanh nghiệp bối cảnh; không tham gia thật</td><td>Chỉ có thông tin công khai; phòng ban là mô hình do nhóm dựng [GIẢ ĐỊNH]</td></tr>
+      <tr><td>Khách hàng của Biti's</td><td>Làn "Khách hàng" trong quy trình</td><td>Người mua và người khiếu nại, dùng dữ liệu demo</td></tr>
+      <tr><td>Nhân viên demo</td><td>Người dùng trong Frappe</td><td>3 tài khoản thành viên và 8 nhân viên, 7 nhóm phòng ban (nhật ký GĐ1)</td></tr>
+    </tbody>
+  </table></div>
+  <p>Ai là người quyết định? Kế hoạch ghi nguyên tắc "Claude làm toàn bộ việc chuyên môn; nhóm duyệt", và cột <b>Duyệt</b> của checklist gán mỗi dòng cho một người, người đó chịu trách nhiệm kiểm lần cuối và giải thích được với thầy. Phân công này vẫn là đề xuất chờ nhóm xác nhận. Còn quy tắc ra quyết định khi nhóm bất đồng thì <b>chưa có văn bản</b>.</p>
+
+  <h3>2.5. Một câu yêu cầu tốt và một câu chưa đạt</h3>
+  <div class="ex"><b class="t">Tốt (có thể kiểm)</b>"Lead mới thuộc địa bàn Miền Nam được tự động giao cho nhân viên nhóm Bán hàng miền Nam theo vòng tròn." Nhật ký GĐ1 đã thử bằng 7 lead: 4 lead Miền Nam luân phiên hai nhân viên, 1 lead Miền Bắc về đúng người phụ trách, 2 lead Online luân phiên hai người (4 + 1 + 2 = 7).</div>
+  <div class="warn"><b class="t">Chưa đạt</b>"CRM phải dễ dùng với nhân viên bán hàng." Không có tình huống, không có ngưỡng; không ai chứng minh được là đạt hay chưa.</div>
+<div class="quiz" data-quiz="ud"></div>
+</section>
+
+<section class="part" id="da">
+  <h2><span class="n">3</span>Hiểu sâu đồ án: vì sao chốt phạm vi sớm và cách xử lý yêu cầu mơ hồ</h2>
+
+  <h3>3.1. Vì sao phải chốt phạm vi từ giai đoạn 0</h3>
+  <ul>
+    <li><b>Thời gian ngắn.</b> Kế hoạch ghi "Thời gian làm: 1 tuần liên tục", chia 7 giai đoạn.</li>
+    <li><b>Hiến chương nói thẳng mục đích:</b> chốt trước để các giai đoạn sau không phải tranh luận lại và không làm trùng việc.</li>
+    <li><b>Hạn nộp chính xác chưa rõ</b> nên kế hoạch coi ngày 7 là hạn nội bộ.</li>
+    <li><b>Theo sách (Practice #3):</b> ranh giới là thước đo khi có yêu cầu mới: có thuộc giải pháp này không, hoặc hoãn, hoặc đổi ranh giới có chủ ý.</li>
+  </ul>
+
+  <h3>3.2. "Làm / không làm" từng giai đoạn</h3>
+  <p>Cột "không làm" dưới đây do mình rút từ kế hoạch và nhật ký; kế hoạch không có bảng "không làm" riêng cho từng giai đoạn.</p>
+  <div class="tablewrap"><table>
+    <thead><tr><th>GĐ</th><th>Làm</th><th>Không làm ở giai đoạn này</th></tr></thead>
+    <tbody>
+      <tr><td>0</td><td>Chốt nền: checklist, môi trường, mẫu report, hiến chương</td><td>Nội dung của các mục A4.x</td></tr>
+      <tr><td>1</td><td>Case study, cài đặt, nhập liệu (A4.1, A4.2)</td><td>Quy trình BPMN, code app</td></tr>
+      <tr><td>2</td><td>5 quy trình BPMN, chạy thật (A4.3)</td><td>Làm đối tượng đổi trả, đồng ý nhận tin, duyệt chiết khấu: Frappe CRM 16.0.1 không có, ghi bằng CRM Task và giao GĐ3</td></tr>
+      <tr><td>3</td><td>Custom app <code>biti_crm</code> (A4.9)</td><td>Làm thay quy trình hay cấu hình của GĐ1–2</td></tr>
+      <tr><td>4</td><td>API, webhook, Lead Form, WooCommerce</td><td>Tích hợp Zalo, ERP, sàn (ngoài phạm vi)</td></tr>
+      <tr><td>5–6</td><td>Chi phí, CLV, ABC, đề xuất; video và đóng gói</td><td>A4.12 (không áp dụng năm 2025)</td></tr>
+    </tbody>
+  </table></div>
+
+  <h3>3.3. Năm câu hỏi cho thầy trong checklist</h3>
+  <div class="tablewrap"><table>
+    <thead><tr><th>Câu</th><th>Nội dung</th><th>Vì sao hỏi (yêu cầu mơ hồ ở đâu)</th><th>Tình trạng</th></tr></thead>
+    <tbody>
+      <tr><td>Q1</td><td>Cách làm trên máy ai</td><td>Ai cài, ai quay video</td><td>Đã tự quyết 2026-11-14, gạch bỏ</td></tr>
+      <tr><td>Q2</td><td>Tiêu chí có đổi cho Frappe và custom app không</td><td>Bảng viết cho Odoo (một phần mềm quản trị doanh nghiệp khác)</td><td>Chưa thấy câu trả lời được ghi</td></tr>
+      <tr><td>Q3</td><td>Camunda (phần mềm vẽ BPMN) dùng cấu hình bản 7 hay bản 8</td><td>Chọn chuẩn file BPMN</td><td>Chưa thấy câu trả lời được ghi</td></tr>
+      <tr><td>Q4</td><td>Hạn nộp và hình thức nộp</td><td>Hạn chưa rõ</td><td>Chưa thấy câu trả lời được ghi</td></tr>
+      <tr><td>Q5</td><td>Report tiếng Việt, Việt hóa đến đâu</td><td>Ngôn ngữ chưa ghi</td><td>Chưa thấy câu trả lời được ghi</td></tr>
+    </tbody>
+  </table></div>
+  <p>"Chưa thấy" nghĩa là mình không tìm được ghi chú trả lời trong thư mục dự án; nhóm có thể đã hỏi miệng. Việc gì không có trả lời thì đồ án dùng giả định và ghi rõ.</p>
+
+  <h3>3.4. Ghi chú phản biện của thầy là một thay đổi yêu cầu</h3>
+  <ol>
+    <li>2026-11-14: kế hoạch và checklist lập xong.</li>
+    <li>2026-11-16: lưu ghi chú phản biện nguyên văn; thầy nhấn "tập trung vào quy trình", app phải giải thích được "làm gì, code ở đâu", Frappe CRM không phải custom app của nhóm.</li>
+    <li>2026-11-16: soạn <code>docs/ke-hoach-tinh-chinh-gd1-6.md</code>: mỗi bước có nguồn chính thống, có "Thầy sẽ hỏi", có bảng Của Frappe / Của nhóm.</li>
+    <li>2026-11-22: người duyệt xác nhận kế hoạch tinh chỉnh (theo phase-report).</li>
+  </ol>
+  <div class="note"><b class="t">Đọc đúng ý thầy</b>Thầy nói đừng dồn sức vào "vibe code" (nhờ AI viết mã rồi không hiểu), không phải bỏ giai đoạn 3. Kế hoạch tinh chỉnh vẫn giữ GĐ3 và gọi nó là trọng tâm thầy hỏi nhiều nhất.</div>
+
+  <h3>3.5. Cách đồ án đối phó yêu cầu mơ hồ</h3>
+  <div class="tablewrap"><table>
+    <thead><tr><th>Điều mơ hồ</th><th>Cách xử lý</th><th>Bằng chứng</th></tr></thead>
+    <tbody>
+      <tr><td>Tiêu chí viết cho Odoo</td><td>Thêm cột "Quy đổi Frappe", ví dụ Sales teams thành Assignment Rule (quy tắc tự giao việc)</td><td>Checklist mục A4.2.1</td></tr>
+      <tr><td>Không có số liệu công khai của Biti's</td><td>Đánh dấu [GIẢ ĐỊNH]; dữ liệu demo do nhóm tạo</td><td><code>nghien-cuu-bitis.md</code> mục 5</td></tr>
+      <tr><td>Hạn nộp chưa rõ</td><td>Hạn nội bộ là ngày 7</td><td><code>PLAN.md</code> mục 4</td></tr>
+      <tr><td>Phần mềm thiếu chức năng tiêu chí cần</td><td>Ghi bằng CRM Task (bản ghi việc cần làm của Frappe CRM) và ghi chú, giao GĐ3</td><td>Nhật ký GĐ2, mục 2.3</td></tr>
+      <tr><td>Phân công quy trình cá nhân</td><td>Ghi là đề xuất, chờ nhóm xác nhận</td><td>Hiến chương mục 6</td></tr>
+    </tbody>
+  </table></div>
+
+  <h3>3.6. Của thầy, của nhóm, của Frappe</h3>
+  <p><b>Của thầy:</b> tiêu chí và ghi chú phản biện. <b>Của nhóm:</b> checklist, hiến chương, giả định về Biti's, kế hoạch. <b>Của Frappe:</b> chỉ hiện ra khi nói về tính năng: CRM 16.0.1 có hay không có đối tượng nào đó. Phạm vi và yêu cầu không phải việc của Frappe.</p>
+
+  <h3>3.7. Hạn chế đã biết</h3>
+  <div class="warn"><b class="t">Cần nói thật nếu thầy hỏi</b>
+    <ul>
+      <li>Chưa có mục tiêu nghiệp vụ đo được cho Biti's (ví dụ số lead mỗi tháng). Đồ án nặng về "làm đúng quy trình" hơn "đạt chỉ tiêu".</li>
+      <li>Tệp checklist đề "Cập nhật: 2026-11-14" và dòng 2.6 còn ghi chờ mật khẩu Gmail, trong khi nhật ký 2026-11-22 ghi đã gửi thử thư thành công. Hai tài liệu chưa đồng bộ.</li>
+      <li>Chưa có quy tắc ra quyết định khi nhóm bất đồng; phân công quy trình cá nhân chưa được xác nhận chính thức.</li>
+      <li>Câu trả lời của thầy cho Q2–Q5 chưa có trong thư mục dự án.</li>
+    </ul>
+  </div>
+
+  <h3>3.8. Thầy sẽ hỏi</h3>
+  <details><summary>"Đồ án này làm gì và không làm gì?"</summary><p>Mở hiến chương mục 5: 6 hạng mục làm; không làm tích hợp thật Zalo, ERP, sàn, không dùng dữ liệu khách thật, không làm app di động. Giải thích thêm: đó là ranh giới chốt từ GĐ0 để các giai đoạn sau không tranh luận lại.</p></details>
+  <details><summary>"Phòng ban của Biti's lấy ở đâu ra?"</summary><p><code>nghien-cuu-bitis.md</code> mục 5: không có nguồn công khai về cơ cấu phòng ban; 5 phòng ban cùng lane Khách hàng là mô hình giả định dựng từ chính sách công khai (đổi trả, bảo hành, giao hàng). Báo cáo ghi rõ là giả định.</p></details>
+  <details><summary>"Tiêu chí của năm ngoái viết cho Odoo, các em áp sang Frappe thế nào?"</summary><p>Checklist có cột "Quy đổi Frappe" cho A4.2 (ví dụ Pipeline thành CRM Lead Status và CRM Deal Status). Câu hỏi Q2 trong checklist là chỗ nhóm định hỏi thầy về việc tiêu chí có đổi không.</p></details>
+  <details><summary>"Ai quyết khi các em bất đồng, hoặc khi phạm vi đổi?"</summary><p>Trả lời thật: cột Duyệt gán người chịu trách nhiệm từng dòng; quy tắc ra quyết định chung chưa viết thành văn bản, đó là hạn chế (mục 3.7). Theo sách (Practice #5) nên chốt người quyết định trước quyết định lớn đầu tiên.</p></details>
+  <details><summary>"Sau phản biện của thầy, các em đổi gì?"</summary><p><code>ke-hoach-tinh-chinh-gd1-6.md</code>: nguyên tắc mới (có nguồn chính thống, phân biệt Frappe và nhóm, bài giảng và "Thầy sẽ hỏi" mỗi giai đoạn). Đồ án tập trung vào quy trình; GĐ2 là giai đoạn đã làm 5 quy trình chạy thật.</p></details>
+  <details><summary>"Số lead 75 là số thật của Biti's phải không?"</summary><p>Không. Đó là dữ liệu demo do nhóm tạo bằng script (hạt ngẫu nhiên 213), 60 lead từ GĐ1 cộng 15 lead chạy thử GĐ2. Biti's không công bố số lead.</p></details>
+<div class="quiz" data-quiz="da"></div>
+</section>
+
+<section class="refs"><h3>Tài liệu tham khảo của bài</h3><ul><li><b>Wiegers &amp; Hokanson, Software Requirements Essentials</b>: Chương 2 (Practice #1–#5: vấn đề, mục tiêu nghiệp vụ, ranh giới giải pháp, bên liên quan, người quyết định); Chương 3 (khai thác yêu cầu, Practice #6–#7); Bảng 1.1 ở Chương 1 cho định nghĩa các loại yêu cầu</li><li><b>Prior, Buttle &amp; Maklan (2024), Customer Relationship Management, 5th ed.</b>: Chương 11, slide 4–5 (xác định chức năng và yêu cầu thông tin của cơ sở dữ liệu khách hàng)</li><li><b>Tài liệu của đồ án</b>: docs/checklist-tieu-chi.md, docs/case-study-hien-chuong.md, docs/ghi-chu-phan-bien-thay.md, docs/nghien-cuu-bitis.md, docs/ke-hoach-tinh-chinh-gd1-6.md, PLAN.md, docs/phase-report.md</li></ul><p><small class="kh">Bài giảng diễn đạt lại bằng lời của nhóm, không sao chép giáo trình. Chương và trang ghi để bạn tra lại bản gốc.</small></p></section>
+<div class="pager"></div>
+</main>
+</div>
+<script type="application/json" id="quiz-data">{"muc_tieu":{"M1":"Phân biệt yêu cầu nghiệp vụ, yêu cầu người dùng và yêu cầu chức năng khi gặp một câu yêu cầu cụ thể","M2":"Xử lý đúng phạm vi, bên liên quan và cách khai thác yêu cầu trong một tình huống","M3":"Áp khái niệm yêu cầu, phạm vi, bên liên quan vào các tài liệu của đồ án (checklist, hiến chương, nghiên cứu Biti's)","M4":"Giải thích vì sao và chỉ ra bằng chứng cho các quyết định về yêu cầu và phạm vi của đồ án"},"cau_hoi":[{"id":"Q01","phan":"kt","muc_tieu":"M1","loai":"mot_dap_an","cau_hoi":"Chủ một tiệm bánh nói: \"Tôi muốn có 40 đơn đặt trước mỗi ngày vào 30/06; hiện mới 25 đơn mỗi ngày.\" Câu này thuộc loại yêu cầu nào?","dap_an":{"A":"Yêu cầu chức năng: mô tả hành vi mà hệ thống phải thể hiện","B":"Yêu cầu nghiệp vụ: nêu mục tiêu của doanh nghiệp, kèm mốc để đo","C":"Yêu cầu người dùng: nêu việc một nhóm người dùng cần làm được","D":"Quy tắc nghiệp vụ: nêu chính sách mà các bên liên quan phải theo"},"dung":["B"],"loi_sai":{"A":"nhầm mục tiêu kinh doanh với hành vi của hệ thống","C":"nhầm mục tiêu của doanh nghiệp với nhiệm vụ của người dùng","D":"nhầm mục tiêu cần đạt với chính sách phải tuân theo"},"giai_thich":"Câu nói cho biết doanh nghiệp muốn đạt gì (40 đơn mỗi ngày) và đo bằng gì (số đơn, mốc 30/06), nên đây là yêu cầu nghiệp vụ. Yêu cầu chức năng (đáp án A) phải mô tả hệ thống làm gì trong một tình huống, câu này không nói gì về hệ thống. Yêu cầu người dùng (C) nói người dùng cần làm việc gì, còn câu này nói về kết quả kinh doanh. Quy tắc nghiệp vụ (D) là chính sách phải theo, còn con số 40 là mục tiêu cần đạt chứ không phải luật chơi.","doan_goc":"Wiegers & Hokanson, Chương 1, Bảng 1.1; Chương 2, Practice #2"},{"id":"Q02","phan":"kt","muc_tieu":"M1","loai":"mot_dap_an","cau_hoi":"Tiệm bánh có quy tắc nghiệp vụ: đơn từ 2.000.000 đồng trở lên phải được chủ tiệm duyệt. Câu nào dưới đây là yêu cầu chức năng suy ra trực tiếp từ quy tắc đó?","dap_an":{"A":"Chủ tiệm cần xem và duyệt được các đơn trên 2.000.000 đồng ngay trong ngày","B":"Giảm số đơn trên 2.000.000 đồng bị hủy vì báo giá sai xuống dưới 2 đơn mỗi tuần","C":"Màn hình duyệt đơn trên 2.000.000 đồng phải mở xong trong vòng 2 giây","D":"Khi tổng đơn đạt 2.000.000 đồng, hệ thống giữ đơn ở trạng thái chờ duyệt"},"dung":["D"],"loi_sai":{"A":"nhầm việc người dùng cần làm với hành vi cụ thể của hệ thống","B":"nhầm mục tiêu kinh doanh với yêu cầu chức năng","C":"nhầm thuộc tính chất lượng (tốc độ) với yêu cầu chức năng"},"giai_thich":"Yêu cầu chức năng mô tả hành vi hệ thống thể hiện trong một tình huống cụ thể; D có điều kiện (tổng đơn đạt 2.000.000 đồng) và hành vi (giữ đơn ở trạng thái chờ duyệt). A là yêu cầu người dùng: nói việc con người cần làm. B là mục tiêu nghiệp vụ có chỉ số. C là yêu cầu phi chức năng (tốc độ), thuộc nhóm thuộc tính chất lượng.","doan_goc":"Wiegers & Hokanson, Chương 1, Bảng 1.1; Chương 3, Practice #6 (từ use case ra chức năng)"},{"id":"Q03","phan":"kt","muc_tieu":"M1","loai":"nhieu_dap_an","cau_hoi":"Theo cách phân loại của Wiegers và Hokanson, phát biểu nào dưới đây đúng? (chọn 2 đáp án)","dap_an":{"A":"Yêu cầu người dùng mô tả nhiệm vụ hay mục tiêu mà người dùng muốn thực hiện bằng giải pháp","B":"Yêu cầu nghiệp vụ bao gồm cả các chức năng mà phía doanh nghiệp đề xuất cho giải pháp","C":"Lập trình viên xây trực tiếp các yêu cầu chức năng, kể cả loại suy ra từ tầng yêu cầu khác","D":"Yêu cầu chức năng mô tả vẻ ngoài và bố cục của từng màn hình trong giải pháp"},"dung":["A","C"],"loi_sai":{"B":"dùng 'yêu cầu nghiệp vụ' theo nghĩa rộng mà sách cố ý không dùng","D":"nhầm yêu cầu chức năng (hành vi) với thiết kế giao diện"},"giai_thich":"A đúng: đây là định nghĩa yêu cầu người dùng trong Bảng 1.1. C đúng: sách nói lập trình viên không xây trực tiếp yêu cầu nghiệp vụ hay yêu cầu người dùng mà xây yêu cầu chức năng, kể cả loại được suy ra. B sai: sách nói rõ không gọi 'mọi thứ đến từ doanh nghiệp' là yêu cầu nghiệp vụ; nó chỉ trả lời vì sao làm và đo thành công thế nào. D sai: yêu cầu chức năng mô tả hành vi dưới điều kiện cụ thể, còn vẻ ngoài và bố cục màn hình là chuyện thiết kế giao diện.","doan_goc":"Wiegers & Hokanson, Chương 1, Bảng 1.1 và đoạn ngay sau bảng; Chương 2, Practice #2"},{"id":"Q04","phan":"kt","muc_tieu":"M2","loai":"mot_dap_an","cau_hoi":"Nhóm làm website đặt bánh đã chốt lần phát hành 1: chỉ có form đặt bánh, nhân viên tự nhập đơn vào sổ hiện có. Chủ tiệm đề nghị thêm ngay việc kết nối với ứng dụng giao hàng của một bên thứ ba. Cách xử lý nào đúng theo sách?","dap_an":{"A":"Đồng ý đưa vào lần 1, vì chủ tiệm là người trả tiền cho cả dự án này","B":"Từ chối hẳn, vì việc nằm ngoài phạm vi thì không đem lại giá trị gì","C":"Xếp ngoài phạm vi lần 1; hoãn sang dự án sau hoặc mở rộng có chủ ý kèm nguồn lực","D":"Đưa vào lần 1 nhưng giữ nguyên thời hạn và nguồn lực đã thỏa thuận từ đầu dự án"},"dung":["C"],"loi_sai":{"A":"cho rằng người trả tiền yêu cầu là tự động nằm trong phạm vi","B":"nhầm 'ngoài phạm vi' với 'vô giá trị'","D":"mở rộng phạm vi mà không điều chỉnh thời gian và nguồn lực"},"giai_thich":"Sách dùng ranh giới đã chốt để xét từng yêu cầu mới: yêu cầu ngoài ranh giới thì có thể được hoãn sang dự án riêng, hoặc người có thẩm quyền chủ động mở rộng phạm vi và cấp thêm thời gian, nguồn lực (đáp án C). A sai vì người trả tiền không làm phạm vi tự động thay đổi. B sai vì ngoài phạm vi không có nghĩa là ý tưởng dở. D sai vì mở rộng mà không thêm nguồn lực chính là cách làm phạm vi phình ra.","doan_goc":"Wiegers & Hokanson, Chương 2, Practice #3, mục 'Applying the Solution's Boundaries'"},{"id":"Q05","phan":"kt","muc_tieu":"M2","loai":"mot_dap_an","cau_hoi":"Kế toán của tiệm bánh không mở ứng dụng đặt bánh, nhưng cuối tuần nào cũng nhận báo cáo doanh thu do ứng dụng tạo ra. Về mặt khái niệm, kế toán là gì đối với dự án?","dap_an":{"A":"Bên liên quan, đồng thời là người dùng gián tiếp vì nhận kết quả ra","B":"Không phải bên liên quan, vì không tự thao tác trực tiếp trên hệ thống","C":"Khách hàng của dự án, vì dùng sản phẩm đầu ra của ứng dụng đặt bánh","D":"Bên liên quan nếu kế toán có quyền ra quyết định về phạm vi dự án"},"dung":["A"],"loi_sai":{"B":"đồng nhất bên liên quan với người trực tiếp dùng hệ thống","C":"nhầm người nhận kết quả với khách hàng đặt hàng và trả tiền","D":"đồng nhất bên liên quan với người có quyền quyết định"},"giai_thich":"Sách định nghĩa bên liên quan là người tham gia, bị ảnh hưởng hoặc có thể tác động tới dự án; người dùng gián tiếp là người đưa dữ liệu vào hoặc nhận kết quả ra mà không tự tương tác với hệ thống. Kế toán thuộc cả hai (A). B sai vì không dùng trực tiếp vẫn có thể là bên liên quan. C nhầm: 'khách hàng' trong sách là bên đặt yêu cầu hay trả tiền. D sai vì không cần quyền quyết định mới là bên liên quan.","doan_goc":"Wiegers & Hokanson, Chương 2, Practice #4, mục 'Stakeholders, Customers, and User Classes'"},{"id":"Q06","phan":"kt","muc_tieu":"M2","loai":"mot_dap_an","cau_hoi":"Bạn chuẩn bị buổi trao đổi với nhân viên quầy để khai thác yêu cầu cho hệ thống đặt bánh. Theo Wiegers và Hokanson, câu mở đầu nào hiệu quả nhất?","dap_an":{"A":"Bạn muốn hệ thống có những tính năng nào để việc đặt bánh nhanh hơn?","B":"Bạn muốn màn hình đặt bánh trông thế nào để làm việc dễ hơn?","C":"Bạn nghĩ hệ thống cần đáp ứng yêu cầu gì để hỗ trợ công việc của bạn?","D":"Trong một ca làm, bạn cần làm những việc gì với hệ thống?"},"dung":["D"],"loi_sai":{"A":"hỏi về tính năng thay vì việc người dùng cần làm","B":"bắt đầu từ giao diện trước khi hiểu nhiệm vụ","C":"đẩy người dùng tự nghĩ ra 'yêu cầu', điều họ khó diễn đạt"},"giai_thich":"Sách khuyên hỏi về việc người dùng cần làm, vì từ đó suy ra chức năng cần có và tránh danh sách tính năng rời rạc. Ba câu còn lại nghe cũng gắn với công việc, nhưng đều hỏi về giải pháp (tính năng, giao diện, 'yêu cầu') thay vì nhiệm vụ.","doan_goc":"Wiegers & Hokanson, Chương 3, Practice #6"},{"id":"Q07","phan":"ud","muc_tieu":"M3","loai":"mot_dap_an","cau_hoi":"Một dòng checklist kiểm được phải trả lời được bằng có/không nhờ giá trị hay vật chứng cụ thể. Dòng nào dưới đây KHÔNG kiểm được bằng có/không?","dap_an":{"A":"Múi giờ là Asia/Ho_Chi_Minh; minh chứng: ảnh chụp System Settings","B":"Dữ liệu demo đủ nhiều để dùng thực sự; minh chứng: ảnh chụp danh sách","C":"Có ít nhất 50 lead trong hệ thống; minh chứng: ảnh chụp danh sách Lead","D":"Đơn vị tiền tệ là VNĐ; minh chứng: ảnh chụp mục Currency"},"dung":["B"],"loi_sai":{"A":"cho rằng dòng có giá trị múi giờ cụ thể là mơ hồ","C":"cho rằng dòng có ngưỡng số lượng là mơ hồ","D":"cho rằng dòng có giá trị tiền tệ cụ thể là mơ hồ"},"giai_thich":"Dòng 'đủ nhiều để dùng thực sự' không có ngưỡng, nên hai người nhìn cùng một ảnh vẫn có thể kết luận khác nhau; checklist thật cứu dòng 2.13 bằng cách yêu cầu thống kê số bản ghi. Ba dòng còn lại có giá trị hoặc ngưỡng cụ thể ('Asia/Ho_Chi_Minh', 'ít nhất 50', 'VNĐ'). Con số 50 chỉ là ví dụ của bài giảng, không phải quy định của nhóm.","doan_goc":"docs/checklist-tieu-chi.md, mục A4.2.1 (dòng 2.1 đến 2.3)"},{"id":"Q08","phan":"ud","muc_tieu":"M3","loai":"mot_dap_an","cau_hoi":"Một thành viên đề nghị nhóm làm thêm ứng dụng di động cho nhân viên bán hàng. Theo hiến chương case study, xử lý nào đúng?","dap_an":{"A":"Ngoài phạm vi (mục 5, Không làm); hoãn sang dự án khác hoặc đổi hiến chương","B":"Trong phạm vi (mục 5, Làm), vì custom app ở tiêu chí A4.9 gồm cả giao diện di động","C":"Chưa quyết (mục 6, Ghi chú còn mở); xem lại ở giai đoạn 3 nếu còn thời gian","D":"Ngoài phạm vi (mục 5, Không làm), nhưng vẫn làm bản thử nhỏ ở giai đoạn 3"},"dung":["A"],"loi_sai":{"B":"mở rộng nghĩa của hạng mục đã chốt để lách ranh giới","C":"bỏ qua ranh giới đã chốt, để phạm vi trôi theo thời gian","D":"vừa công nhận ngoài phạm vi vừa làm, tức là âm thầm mở rộng"},"giai_thich":"Hiến chương mục 5 liệt kê 'app di động' trong phần không làm. Theo sách, yêu cầu ngoài ranh giới thì hoãn hoặc đổi ranh giới có chủ ý. Các phương án còn lại đều trích mục của hiến chương nhưng lách ranh giới: kéo giãn nghĩa của 'custom app', để ngỏ, hoặc làm thử trong khi gọi là ngoài phạm vi.","doan_goc":"docs/case-study-hien-chuong.md, mục 5; Wiegers & Hokanson, Chương 2, Practice #3"},{"id":"Q09","phan":"ud","muc_tieu":"M3","loai":"mot_dap_an","cau_hoi":"Hiến chương dùng 6 làn: Khách hàng, Marketing, Bán hàng, Kho – Giao hàng, Chăm sóc khách hàng, Quản lý. Năm làn phòng ban (không kể làn Khách hàng) có nguồn gốc nào?","dap_an":{"A":"Lấy từ sơ đồ tổ chức Biti's công bố trên website, có thể thiếu vài phòng nhỏ","B":"Lấy từ bài MISA AMIS (03/10/2024) về chiến lược marketing, có thể chưa đầy đủ","C":"Nhóm tự dựng thành mô hình có thể khác thực tế, vì Biti's không công bố phòng ban","D":"Lấy từ tài liệu nội bộ Biti's gửi cho nhóm, có thể đã lỗi thời"},"dung":["C"],"loi_sai":{"A":"tưởng phòng ban lấy từ nguồn chính thức","B":"nhầm bài báo về marketing với nguồn về cơ cấu nội bộ","D":"tưởng có sự tham gia của Biti's thật"},"giai_thich":"docs/nghien-cuu-bitis.md mục 5 xếp cơ cấu phòng ban vào 'khoảng trống thông tin': không có nguồn công khai, nên nhóm dựng mô hình từ chính sách công khai và đánh dấu [GIẢ ĐỊNH]. Bài MISA AMIS dùng cho quy mô phân phối, không nói về phòng ban; Biti's không tham gia đồ án.","doan_goc":"docs/nghien-cuu-bitis.md, mục 5; docs/case-study-hien-chuong.md, mục 3"},{"id":"Q10","phan":"ud","muc_tieu":"M3","loai":"nhieu_dap_an","cau_hoi":"Về quy tắc đổi trả 7 ngày của Biti's trong đồ án, chọn 2 phát biểu đúng.","dap_an":{"A":"Là quy tắc nghiệp vụ lấy từ trang chính sách công khai của Biti's","B":"Là yêu cầu nghiệp vụ của đồ án, vì nó giải thích vì sao Biti's cần một CRM","C":"Được dùng để dựng nhánh quá 7 ngày bị từ chối trong quy trình Khiếu nại và đổi trả","D":"Là số liệu Biti's công bố trên báo, nhóm trích để mô tả quy mô doanh nghiệp"},"dung":["A","C"],"loi_sai":{"B":"nhầm quy tắc nghiệp vụ với yêu cầu nghiệp vụ (lý do làm dự án)","D":"nhầm chính sách đổi trả với số liệu quy mô"},"giai_thich":"docs/nghien-cuu-bitis.md mục 3 ghi đổi trả trong 7 ngày kể từ ngày nhận hàng, nguồn là trang chính thức của Biti's; nhật ký giai đoạn 2 ghi một deal chạy theo nhánh quá 7 ngày, bị từ chối. Đây là quy tắc nghiệp vụ (chính sách phải theo), không phải yêu cầu nghiệp vụ (lý do làm dự án) và không phải số liệu quy mô; số liệu quy mô đến từ bài báo khác.","doan_goc":"docs/nghien-cuu-bitis.md, mục 3; docs/phase-report.md, mục 2.3"},{"id":"Q11","phan":"ud","muc_tieu":"M3","loai":"mot_dap_an","cau_hoi":"Trong checklist tiêu chí của đồ án, cột \"Duyệt\" ghi chữ viết tắt tên một thành viên cho từng dòng. Cột này có nghĩa gì?","dap_an":{"A":"Người chấm điểm dòng đó rồi ghi điểm vào bảng của thầy","B":"Người chuẩn bị minh chứng cho dòng đó và nộp thay cả nhóm","C":"Người phụ trách làm dòng đó, các thành viên khác không sửa","D":"Người kiểm lần cuối dòng đó và giải thích được với thầy"},"dung":["D"],"loi_sai":{"A":"nhầm người duyệt trong nhóm với người chấm điểm là thầy","B":"nhầm duyệt với chuẩn bị minh chứng","C":"nhầm duyệt với làm"},"giai_thich":"Phần đầu checklist ghi: người duyệt là người chịu trách nhiệm kiểm lần cuối và phải giải thích được với thầy. Việc làm do Claude thực hiện còn nhóm duyệt (PLAN.md mục 0), nên duyệt không phải làm; thầy mới là người chấm.","doan_goc":"docs/checklist-tieu-chi.md, phần mở đầu; PLAN.md, mục 0 và mục 3"},{"id":"Q12","phan":"da","muc_tieu":"M4","loai":"mot_dap_an","cau_hoi":"Vì sao đồ án chốt phạm vi ngay từ giai đoạn 0 trong hiến chương case study?","dap_an":{"A":"Để biết trước mỗi dòng tiêu chí được bao nhiêu điểm, vì phạm vi quyết định thang điểm","B":"Để các giai đoạn sau khỏi tranh luận lại và làm trùng việc khi thời gian là một tuần","C":"Để phần mềm không bị đổi, vì sau khi cài Frappe CRM thì không thể thêm bớt hạng mục","D":"Để Biti's xác nhận phạm vi trước, vì dữ liệu doanh nghiệp mới dùng được sau đó"},"dung":["B"],"loi_sai":{"A":"nhầm phạm vi với thang điểm","C":"cho rằng phạm vi bị khóa vĩnh viễn bởi phần mềm","D":"tưởng Biti's tham gia như khách hàng thật"},"giai_thich":"Hiến chương ghi mục đích là chốt trước để các giai đoạn sau không tranh luận lại và không làm trùng việc; kế hoạch ghi thời gian làm là một tuần liên tục. Thang điểm do thầy đặt; sách cho phép đổi ranh giới có chủ ý; Biti's không tham gia đồ án.","doan_goc":"docs/case-study-hien-chuong.md, đầu trang; PLAN.md, đầu trang"},{"id":"Q13","phan":"da","muc_tieu":"M4","loai":"mot_dap_an","cau_hoi":"Checklist có 5 câu hỏi dành cho thầy: Q1 làm trên máy ai (ai cài, ai quay video); Q2 tiêu chí có đổi cho Frappe không; Q3 dùng Camunda 7 hay 8; Q4 hạn nộp và hình thức nộp; Q5 báo cáo tiếng Việt và mức Việt hóa. Chỉ một câu được nhóm tự quyết ngày 2026-11-14 và gạch bỏ vì không cần thầy trả lời. Đó là câu nào?","dap_an":{"A":"Q3","B":"Q4","C":"Q1","D":"Q5"},"dung":["C"],"loi_sai":{"A":"cho rằng việc chọn phiên bản công cụ nhóm tự quyết được","B":"cho rằng coi ngày 7 là hạn nội bộ đã trả lời xong câu về hạn nộp","D":"cho rằng ngôn ngữ báo cáo nhóm tự quyết được"},"giai_thich":"Q1 chỉ phụ thuộc cách nhóm tổ chức công việc nên nhóm tự quyết được (làm trọn bộ trên máy Diệu Anh trước, ba bạn còn lại tự cài và tự quay). Q3, Q4, Q5 phụ thuộc quy định của thầy và vẫn mở; coi ngày 7 là hạn nội bộ chỉ là cách làm tạm khi chưa biết hạn thật. Q2 cũng còn mở.","doan_goc":"docs/checklist-tieu-chi.md, mục 'Câu hỏi cho thầy'; PLAN.md, mục 4"},{"id":"Q14","phan":"da","muc_tieu":"M4","loai":"mot_dap_an","cau_hoi":"Ngày 2026-11-16 thầy phản biện: đồ án tập trung vào quy trình, không tập trung vào vibe code. Nhóm xử lý thế nào theo tài liệu dự án?","dap_an":{"A":"Soạn kế hoạch tinh chỉnh với nguyên tắc mới, vẫn giữ giai đoạn 3, rồi chờ duyệt","B":"Giữ phần lớn kế hoạch cũ, đưa vài ý từ ghi chú của thầy vào bài thuyết trình","C":"Giảm giai đoạn 3 xuống mức tối thiểu để dồn thời gian cho quy trình, rồi chờ duyệt","D":"Chọn doanh nghiệp khác dễ mô tả quy trình hơn Biti's, rồi soạn kế hoạch mới"},"dung":["A"],"loi_sai":{"B":"coi phản biện của thầy là chuyện thuyết trình chứ không phải thay đổi yêu cầu","C":"đọc thái quá: giảm giai đoạn thay vì đổi cách làm","D":"đổi nhầm thứ: phản biện không nhằm vào việc chọn doanh nghiệp"},"giai_thich":"docs/ke-hoach-tinh-chinh-gd1-6.md được soạn ngày 2026-11-16 dựa trên ghi chú phản biện; kế hoạch gọi giai đoạn 3 là trọng tâm thầy hỏi nhiều nhất, và phase-report ghi người duyệt xác nhận ngày 2026-11-22. Các phương án còn lại bỏ qua thay đổi yêu cầu, hiểu thái quá lời thầy, hoặc đổi sai thứ.","doan_goc":"docs/ghi-chu-phan-bien-thay.md; docs/ke-hoach-tinh-chinh-gd1-6.md; docs/phase-report.md, mục 'Cập nhật 2026-11-22'"},{"id":"Q15","phan":"da","muc_tieu":"M4","loai":"mot_dap_an","cau_hoi":"Quy trình giai đoạn 2 cần ba thứ: nhánh đổi trả, ghi nhận đồng ý nhận tin, và duyệt chiết khấu. Khi chạy thật trong Frappe CRM 16.0.1, nhóm xử lý các bước này thế nào?","dap_an":{"A":"Bỏ các tiêu chí đó khỏi checklist quy trình và ghi lý do trong báo cáo","B":"Sửa mã nguồn trong apps/crm để thêm đối tượng, rồi ghi bản vá vào báo cáo","C":"Ghi tạm bằng trường tùy chỉnh trên Lead và Deal, rồi nhắc lại ở giai đoạn 3","D":"Tạo CRM Task và ghi chú thay cho các bước đó, rồi để giai đoạn 3 xem xét chức năng riêng"},"dung":["D"],"loi_sai":{"A":"bỏ yêu cầu khi gặp giới hạn của công cụ","B":"sửa mã gốc của CRM thay vì mở rộng bằng app riêng","C":"dùng trường tùy chỉnh thay cho bước quy trình, điều nhật ký không ghi"},"giai_thich":"Nhật ký giai đoạn 2, mục 2.3: các bước này không có đối tượng tương ứng trong Frappe CRM 16.0.1, nên nhóm ghi bằng CRM Task và ghi chú và giao giai đoạn 3. Bỏ tiêu chí là bỏ yêu cầu; sửa mã nguồn CRM ngược với cách mở rộng bằng app riêng; trường tùy chỉnh không phải điều nhật ký ghi.","doan_goc":"docs/phase-report.md, mục 2.3; PLAN.md, đầu trang"},{"id":"Q16","phan":"da","muc_tieu":"M4","loai":"mot_dap_an","cau_hoi":"Thầy hỏi: \"Biti's có bao nhiêu lead mỗi tháng?\". Câu trả lời nào khớp tài liệu dự án nhất?","dap_an":{"A":"Chưa có số công bố; tạm dùng 75 lead trong Frappe làm ước lượng và ghi là số của Biti's","B":"Biti's không công bố số này; 75 lead trong Frappe là dữ liệu demo nên chưa nói được gì về Biti's","C":"Số này lấy từ bài MISA AMIS năm 2024, nhưng chưa đối chiếu được với báo cáo của Biti's","D":"Chưa có số, vì nhóm mới nhập 60 lead demo vào Frappe và chưa tính các lead chạy thử"},"dung":["B"],"loi_sai":{"A":"nhầm dữ liệu demo với số liệu thật của doanh nghiệp","C":"gán cho nguồn báo một con số mà bài báo không nêu","D":"không nhớ rằng hệ thống đã có 75 lead sau giai đoạn 2"},"giai_thich":"docs/nghien-cuu-bitis.md mục 5 liệt kê số lead hàng tháng của Biti's là thông tin không có nguồn công khai. Số 75 lead là dữ liệu giả: 60 lead giai đoạn 1 (hạt ngẫu nhiên 213) cộng 15 lead chạy thử giai đoạn 2. Dùng nó làm ước lượng cho Biti's là nhầm dữ liệu demo với số thật; bài MISA AMIS không nêu số lead; và hệ thống thật đã có 75 lead chứ không phải 60.","doan_goc":"docs/nghien-cuu-bitis.md, mục 5; docs/phase-report.md, mục 1.6 và 2.3"}]}</script>
+<script src="../assets/manifest.js"></script>
+<script src="../assets/site.js"></script>
+</body>
+</html>

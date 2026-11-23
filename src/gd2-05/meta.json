@@ -1,0 +1,18 @@
+{
+  "id": "gd2-05",
+  "gd": "gd2",
+  "thu_tu": "2.5",
+  "tieu_de": "Dịch vụ khách hàng: khiếu nại, đổi trả và đơn hàng online",
+  "tom_tat": "Dịch vụ khách hàng, chất lượng dịch vụ, tự động hóa dịch vụ và giữ chân khách theo giáo trình, rồi áp vào hai quy trình của Biti's: Khiếu nại và đổi trả (chính sách 7 ngày) và Đơn hàng online với ba nhánh thất bại.",
+  "muc_tieu_bai": [
+    "Phân biệt được dịch vụ khách hàng, ba thành phần chất lượng dịch vụ, tự động hóa dịch vụ (SA) và quản lý ca (case management, escalation)",
+    "Tính và phân biệt được tỉ lệ giữ chân khách theo số khách, theo doanh số và theo lợi nhuận",
+    "Chỉ ra được nút nào của hai quy trình ứng với khái niệm dịch vụ khách hàng, và số liệu, bản ghi của các deal 00031, 00035, 00036–00038",
+    "Giải thích được vì sao nhóm ghi đổi trả bằng CRM Task và ghi chú, đơn online nhập tay, nhánh nào còn chưa có dữ liệu thử, và cách kiểm lại"
+  ],
+  "nguon": [
+    { "ten": "Prior, Buttle & Maklan (2024), Customer Relationship Management, 5th ed.", "chi_tiet": "Chương 9 (slide 3–12; giáo trình tr. 203–211, 217–218) và Chương 4 (slide 3–4, 8–10; giáo trình tr. 88–89, 93–94)" },
+    { "ten": "Chính sách đổi trả của Biti's [CHÍNH THỨC]", "chi_tiet": "bitis.com.vn/pages/chinh-sach-doi-tra, truy cập 2026-11-14 (ghi trong docs/nghien-cuu-bitis.md mục 3); chưa kiểm lại sau ngày đó" },
+    { "ten": "Dự án đồ án (nguồn sự thật của phần 2 và 3)", "chi_tiet": "docs/quy-trinh-sop.md (mục Khiếu nại và đổi trả, Đơn hàng online); evidence/A4-3/chay-thu.json (K1–K8, T1–T8); scripts/gd2-01-chay-thu.py; scripts/gd2/quy-trinh.js; docs/phase-report.md mục Giai đoạn 2; docs/nghien-cuu-bitis.md" }
+  ]
+}

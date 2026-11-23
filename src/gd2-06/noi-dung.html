@@ -1,0 +1,128 @@
+<section class="part" id="kt">
+  <h2><span class="n">1</span>Kiến thức tổng quát: kiểm chứng, truy vết và quản lý thay đổi</h2>
+
+  <h3>Xác minh và kiểm chứng khác nhau</h3>
+  <p>Wiegers và Hokanson tách hai việc hay bị gộp làm một. <b>Xác minh</b> (verification) hỏi: mình làm đúng cách chưa? Ví dụ: mã chạy qua các bài test, mã khớp thiết kế, thiết kế khớp tài liệu yêu cầu. <b>Kiểm chứng</b> (validation) hỏi: mình làm đúng việc chưa, tức là nếu làm theo bộ yêu cầu này thì người dùng có đạt mục tiêu và doanh nghiệp có đạt mục tiêu không. Đội phát triển tự xác minh được, nhưng không tự kiểm chứng được yêu cầu của chính mình; cần người cung cấp thông tin (đại diện người dùng, chuyên gia nghiệp vụ).</p>
+  <p>Hai ý nữa của sách. Một: "ký duyệt" tài liệu yêu cầu không phải kiểm chứng; ký là hành động phê duyệt dựa trên kỳ vọng rằng yêu cầu đúng, còn kiểm chứng mới cho các bên niềm tin rằng đội đi đúng hướng. Hai: kiểm chứng là việc liên tục, chạy xen với thu thập, phân tích, viết yêu cầu; sửa sớm rẻ hơn sửa muộn.</p>
+  <div class="src"><b class="t">Trong sách Wiegers</b>Chương 6, thực hành #18, tr. 1–3 (bản trích của chương).</div>
+
+  <h3>Cách kiểm chứng: soát xét và test yêu cầu</h3>
+  <p><b>Soát xét</b> (review) có bốn mức, từ nhẹ tới nặng: <i>deskcheck</i> (nhờ một đồng nghiệp đọc), <i>passaround</i> (gửi cho vài người đọc riêng rồi gộp góp ý), <i>team review</i> (người soát xét chuẩn bị riêng rồi họp gộp lỗi), <i>inspection</i> (nghiêm ngặt nhất, có vai trò và quy trình, dùng danh sách kiểm). Người soát xét phải gồm cả người cung cấp thông tin, vì đồng nghiệp cùng nghề chỉ bắt được lỗi kiểu mơ hồ hay thiếu, còn đúng nhu cầu hay không thì chỉ người dùng và chuyên gia nghiệp vụ mới biết (tr. 3–5).</p>
+  <p><b>Test yêu cầu</b> (tr. 5–15): viết các tình huống test từ một use case rồi so với yêu cầu rút ra từ cùng use case. Chỗ hai cách nghĩ lệch nhau là chỗ có lỗi: yêu cầu thiếu, sai, thừa hoặc hiểu được hai nghĩa. Test này ở mức khái niệm, không cần biết cách cài đặt.</p>
+  <ul>
+    <li><b>Tiêu chí chấp nhận</b> (acceptance criteria) hay viết theo mẫu <i>Given–When–Then</i>: Cho điều kiện ban đầu, Khi có hành động hoặc sự kiện, Thì xảy ra kết quả.</li>
+    <li><b>Test trên mô hình:</b> lấy một test, đi theo đường của nó trên sơ đồ bằng bút dạ. Nếu không đi được hoặc đi tới kết quả vô lý thì mô hình hoặc test sai; nếu có nhánh không ai đi qua thì thiếu test hoặc nhánh thừa.</li>
+    <li><b>Lớp tương đương và giá trị biên:</b> chia đầu vào thành các lớp mà hệ thống xử lý như nhau, mỗi lớp chọn một đại diện, rồi kiểm kỹ ở biên vì lỗi hay dồn ở đó.</li>
+  </ul>
+  <div class="ex"><b class="t">Ví dụ ngoài đồ án</b>Tiệm bánh nhận đặt online, sơ đồ quy trình có bước "Gửi báo giá". Test: <i>Cho</i> giỏ hàng trống, <i>Khi</i> khách từ chối thêm bánh, <i>Thì</i> quy trình dừng. Đi theo test này trên sơ đồ mà thấy vẫn đi tới "Gửi báo giá" cho giỏ trống thì sơ đồ sai. Yêu cầu "mỗi đơn từ 1 đến 20 chiếc" có các giá trị biên cần thử là 0, 1, 2, 19, 20, 21 (6 giá trị, tính bằng lệnh); thử mỗi giá trị trong khoảng 3 đến 18 cũng không thêm thông tin vì cùng một lớp tương đương.</div>
+  <div class="src"><b class="t">Trong sách Wiegers</b>Chương 6, thực hành #18, tr. 3–17: soát xét (tr. 3–5), test yêu cầu và mẫu Given–When–Then (tr. 5–10), test trên mô hình (tr. 11–14), lớp tương đương và giá trị biên (tr. 14–15), đẩy chất lượng lên sớm (tr. 15–16).</div>
+
+  <h3>Truy vết (traceability)</h3>
+  <p><b>Truy vết</b> là ghi lại và giữ được mối nối giữa các thứ liên quan: lần ngược về nguồn gốc của một yêu cầu, và lần xuôi tới thiết kế, mã, test và yêu cầu khác phụ thuộc vào nó. Công cụ thường dùng là <b>ma trận truy vết yêu cầu</b> (requirements traceability matrix): mỗi hàng là một yêu cầu, các cột là nguồn, bước quy trình, test, trạng thái. Sách nói ma trận đầy đủ tốn công, cần công cụ, quy trình và thời gian; nhiều dự án chỉ truy vết một phần (ví dụ test về yêu cầu), còn sản phẩm phải được cấp chứng nhận thì bắt buộc truy vết đủ (tr. 1–2 của chương 7).</p>
+  <div class="tablewrap"><table>
+    <tr><th>Yêu cầu (ví dụ tiệm bánh)</th><th>Nguồn</th><th>Bước trong quy trình</th><th>Test</th></tr>
+    <tr><td>Y1 Khách chọn bánh và số lượng</td><td>Chủ tiệm</td><td>Nhận đơn</td><td>T1</td></tr>
+    <tr><td>Y2 Tối đa 20 chiếc mỗi đơn</td><td>Quy tắc của tiệm</td><td>Nhận đơn</td><td>T2, T3</td></tr>
+    <tr><td>Y3 Khách thanh toán trước</td><td>Chủ tiệm</td><td>Nhận tiền</td><td>T4</td></tr>
+    <tr><td>Y4 Báo hết nguyên liệu</td><td>Thợ làm bánh</td><td>Kiểm nguyên liệu</td><td>T5</td></tr>
+    <tr><td>Y5 Gửi tin nhắc ngày nhận</td><td>Khách phản hồi</td><td>Giao bánh</td><td>chưa có</td></tr>
+  </table></div>
+  <p>Năm yêu cầu, bốn có test: độ phủ test 4/5 = 80%. Hàng Y5 chưa có test là chỗ hở nhìn thấy ngay. Ma trận cũng cho chiều ngược: một test mà không trỏ tới yêu cầu nào thì có thể thừa. Wiegers cũng nhắc nên truy vết yêu cầu chức năng tới từng phần tử của mô hình, ví dụ một bước của process flow (Chương 4, tr. 28).</p>
+
+  <h3>Baseline và quản lý thay đổi</h3>
+  <p><b>Baseline</b> là tập yêu cầu đã cam kết cho một chu kỳ phát triển hoặc một bản phát hành. Sách nhấn mạnh: đã chốt baseline không có nghĩa là đóng băng; thay đổi vẫn tới, và kháng cự thay đổi sinh ra tính năng vô dụng. Mục tiêu là xử lý thay đổi với ít tác động xấu nhất. Một quy trình thay đổi nhẹ nhưng có thật cần trả lời các câu hỏi: ai gửi đề nghị, đề nghị phải kèm thông tin gì, ai đánh giá tác động, ai duyệt, tiêu chí duyệt hay từ chối, lưu quyết định ở đâu, báo cho ai.</p>
+  <p>Vòng đời một đề nghị thay đổi theo sách: <i>submitted</i> (đã gửi) → được đánh giá tác động → duyệt hoặc từ chối → nếu duyệt thì được đưa vào giải pháp → được xác minh → đóng. Người gửi có thể hủy ở bất kỳ bước nào. Đánh giá tác động dùng chính ma trận truy vết, process flow, bản đồ hệ sinh thái để biết thay đổi lan tới đâu. Thay đổi chưa duyệt nên để tách khỏi baseline. Từ chối cũng nên ghi lý do để trả lời nhanh khi đề nghị đó quay lại.</p>
+  <div class="ex"><b class="t">Ví dụ ngoài đồ án</b>Tiệm bánh đổi "đặt trước 2 ngày" thành "đặt trước 3 ngày". Tra bảng truy vết: ảnh hưởng yêu cầu nào có số "2 ngày" (Y5 tin nhắc), bước nào trên sơ đồ (Nhận đơn, Giao bánh), test nào (T1 và T5) và trang web nào hiển thị ngày giao. Có bảng thì liệt kê được trong vài phút; không có bảng thì chỉ biết sau khi khách phàn nàn.</div>
+  <div class="src"><b class="t">Trong sách Wiegers</b>Chương 7, tr. 1–3 (các hoạt động quản lý yêu cầu, truy vết, baseline); thực hành #20, tr. 14–25 (quy trình thay đổi, vòng đời đề nghị, đánh giá tác động, sau khi quyết định).</div>
+  <div class="note"><b class="t">Hiểu nhầm hay gặp</b>(1) "Đã ký duyệt là đã kiểm chứng": ký là phê duyệt, chưa chứng minh đúng nhu cầu. (2) "Chạy qua hết test là xong": test cho biết làm đúng cách (xác minh) chứ không cho biết làm đúng việc. (3) "Baseline là bất biến": baseline là điểm chốt có kiểm soát, không phải cấm thay đổi.</div>
+</section>
+
+<section class="part" id="ud">
+  <h2><span class="n">2</span>Ứng dụng trong đồ án: bảng truy vết và 48 bước chạy thật</h2>
+
+  <h3>Bảng truy vết của nhóm</h3>
+  <p>Bảng truy vết của nhóm nằm trong <code>docs/quy-trinh-sop.md</code> (cũng là quy trình viết, và đưa vào Report chương 3). Mỗi hàng nối một nút BPMN với: ai làm, làm ở màn hình hoặc đối tượng Frappe nào, dữ liệu vào và ra, ngoại lệ, và mã ảnh minh chứng. Ví dụ vài hàng của quy trình chung (lead thử CRM-LEAD-2026-00073, deal CRM-DEAL-2026-00031):</p>
+  <div class="tablewrap"><table>
+    <tr><th>Bước</th><th>Nút BPMN</th><th>Bản ghi hoặc màn hình Frappe</th><th>Ảnh minh chứng</th></tr>
+    <tr><td>C1</td><td>Ghi nhận lead vào CRM</td><td>CRM Lead 00073, <code>/crm/leads/…</code>, nguồn Website, địa bàn Miền Nam</td><td><code>C01_leads_activity.png</code></td></tr>
+    <tr><td>C2</td><td>Giao lead cho nhân viên</td><td>Assignment Rule điền chủ sở hữu lead</td><td><code>C01_leads_activity.png</code></td></tr>
+    <tr><td>C5</td><td>Chuyển lead thành cơ hội</td><td>CRM Deal 00031; lead 00073 đánh dấu converted = 1</td><td><code>C05_deals_activity.png</code></td></tr>
+    <tr><td>C8</td><td>Cần duyệt chiết khấu? → Duyệt chiết khấu</td><td>CRM Task giao Quản lý, trạng thái Done, thẻ Nhiệm vụ của deal</td><td><code>C08_deals_tasks.png</code></td></tr>
+    <tr><td>C12</td><td>Lead bị loại</td><td>Lead 00074: Unqualified, lý do "Chưa có nhu cầu"</td><td><code>C12_leads_activity.png</code></td></tr>
+    <tr><td>C13</td><td>Deal thất bại</td><td>Deal 00032: Lost, lý do "Giá cao", xác suất 0%</td><td><code>C13_deals_activity.png</code></td></tr>
+  </table></div>
+  <p>Đường truy vết có hai chiều. <b>Xuôi:</b> chọn một nút trên sơ đồ, tìm hàng của nó, mở đúng bản ghi và ảnh. <b>Ngược:</b> chọn một lead hoặc deal thử, tìm nó thuộc nút nào. Hai chiều này cho phép bạn kiểm chứng bất kỳ hàng nào bằng cách làm lại đúng màn hình ghi trong bảng.</p>
+
+  <h3>Số liệu chạy thật</h3>
+  <div class="tablewrap"><table>
+    <tr><th>Quy trình</th><th>Số bước ghi nhận</th><th>Lead thử</th><th>Deal thử</th></tr>
+    <tr><td>Chung (C)</td><td>14</td><td>3 (00073 đến 00075)</td><td>2 (00031, 00032)</td></tr>
+    <tr><td>Đại lý (B)</td><td>12</td><td>3 (00076 đến 00078)</td><td>2 (00033, 00034)</td></tr>
+    <tr><td>Đổi trả (K)</td><td>8</td><td>1 (00079)</td><td>1 (00035) và dùng lại deal 00031</td></tr>
+    <tr><td>Marketing (M)</td><td>6</td><td>4 (00080 đến 00083)</td><td>0</td></tr>
+    <tr><td>Online (T)</td><td>8</td><td>4 (00084 đến 00087)</td><td>3 (00036 đến 00038)</td></tr>
+    <tr><td><b>Tổng</b></td><td><b>48</b></td><td><b>15</b></td><td><b>8</b></td></tr>
+  </table></div>
+  <p>Mình đếm bằng lệnh từ <code>evidence/A4-3/chay-thu.json</code> (14 + 12 + 8 + 6 + 8 = 48 bước). Số lead và số deal theo nhật ký <code>docs/phase-report.md</code> mục 2.3: 15 lead (CRM-LEAD-2026-00073 đến 00087), 8 deal (CRM-DEAL-2026-00031 đến 00038), 13 việc (CRM Task). Tổng sau khi chạy: 75 lead, 38 deal, 53 việc, tức là cộng thêm vào 60 lead, 30 deal, 40 việc của GĐ1 (60 + 15 = 75, 30 + 8 = 38, 40 + 13 = 53). Cột lead theo từng quy trình là mình suy từ thứ tự tạo trong script, chưa tra lại từng mã trong Frappe. Mọi lead và việc thử mang tiền tố <code>[GĐ2]</code> ở tên và tiêu đề để tách khỏi dữ liệu GĐ1; deal thử nhận ra qua lead gốc.</p>
+
+  <h3>Ảnh minh chứng và vì sao nhiều bước dùng chung một ảnh</h3>
+  <p>48 bước dùng 31 ảnh khác nhau (mình đếm trong <code>anh.json</code>: 48 khóa, 31 tên tệp). Ảnh chụp <b>sau khi chạy xong cả 5 quy trình</b> và chỉ chụp một lần cho mỗi màn hình cùng thẻ, nên có ảnh dùng chung nhiều bước: <code>C07_deals_notes.png</code> cho 6 bước (C7, C14, K1, K2, K4, K8), <code>C08_deals_tasks.png</code> cho 5 bước (C8, C10, K3, K5, K6), <code>B05_deals_activity.png</code> cho 4 bước, <code>C05_deals_activity.png</code> cho 3 bước. Hệ quả: ảnh cho thấy bản ghi tồn tại và liên quan tới nút đó, chứ không chứng minh thời điểm bước đó xảy ra; thẻ Ghi chú và Nhiệm vụ của deal dùng chung hiện bản ghi của nhiều bước cùng lúc.</p>
+
+  <h3>Độ phủ của bảng truy vết</h3>
+  <p>Mình kiểm bằng lệnh xem tên các phần tử trong <code>quy-trinh.js</code> có xuất hiện trong <code>quy-trinh-sop.md</code> không: 42 trong 42 task, 14 trong 14 cổng có tên, 19 trong 19 end event. Đây là so khớp chuỗi tên, tức là kiểm xuôi "nút có hàng". Nó chưa chứng minh hàng nào cũng có ảnh đúng, và chưa kiểm 5 start event. Về ngoại lệ: theo bảng đối chiếu của mình, 17 trong 19 end event có dữ liệu thử riêng; hai end event chưa có là "Đơn giao thất bại" của sơ đồ chung (ghi là "làm như quy trình Đơn hàng online, bước T8") và "Hàng cũ đã trả lại khách" của sơ đồ đổi trả (quy trình viết ghi rõ "chưa có dữ liệu thử riêng").</p>
+
+  <div class="ex"><b class="t">Ví dụ đúng</b>Hàng C12: nút "Lead bị loại" nối tới lead 00074 với trạng thái và lý do cụ thể, có ảnh riêng <code>C12_leads_activity.png</code>. Bạn mở đúng bản ghi là kiểm được.</div>
+  <div class="warn"><b class="t">Ví dụ chưa đạt</b>Hàng K2, K4, K8 cùng chỉ tới <code>C07_deals_notes.png</code>: ảnh chung với cả C7, C14, K1, nên người đọc phải tìm trong thẻ Ghi chú dòng ứng với bước mình cần. Cách sửa nếu có thời gian: chụp ảnh ngay sau từng bước hoặc đánh dấu khung đỏ quanh bản ghi liên quan.</div>
+  <p><b>Cách bạn kiểm:</b> mở <code>evidence/A4-3/anh.json</code> và <code>chay-thu.json</code>, chọn bừa một bước (ví dụ T8), tìm hàng T8 trong <code>quy-trinh-sop.md</code>, mở ảnh <code>T08_deals_tasks.png</code>, rồi đối chiếu với bản ghi CRM-DEAL-2026-00038 (đang chạy thì mở được tại <code>nhom4.localhost:8000/crm/deals/CRM-DEAL-2026-00038</code> khi bật bench bằng <code>scripts\frappe-start.ps1</code>).</p>
+</section>
+
+<section class="part" id="da">
+  <h2><span class="n">3</span>Hiểu sâu đồ án: chạy thật bằng script, sai sót tự phát hiện, việc còn lại</h2>
+
+  <h3>Chạy thật bằng script gọi REST</h3>
+  <p>Nhóm không bấm tay từng bước. <code>scripts/gd2-01-chay-thu.py</code> (khoảng 290 dòng, chạy trong WSL) gọi REST API của Frappe qua thư viện nội bộ <code>lib_frappe.py</code>: tạo lead, đổi trạng thái, gọi hàm Convert to Deal, thêm sản phẩm vào deal, xuất PDF Báo giá và Hóa đơn, tạo CRM Task, nhật ký cuộc gọi, ghi chú, gửi một thư mẫu. Mỗi bước gọi hàm <code>step(...)</code> ghi một mục vào <code>evidence/A4-3/chay-thu.json</code> gồm mã bước, nút BPMN, mô tả, đối tượng, mã bản ghi, đường dẫn màn hình. Script từ chối chạy lại nếu đã có lead "[GĐ2]", để khỏi tạo trùng.</p>
+  <div class="tablewrap"><table>
+    <tr><th>Script</th><th>Làm gì</th></tr>
+    <tr><td><code>gd2-01-chay-thu.py</code></td><td>Chạy 48 bước, ghi <code>chay-thu.json</code></td></tr>
+    <tr><td><code>gd2-02-chup.py</code></td><td>Đọc <code>chay-thu.json</code>, chụp ảnh bằng trình duyệt Edge chạy ẩn dùng phiên đăng nhập quản trị có sẵn, mỗi màn hình cùng thẻ chụp một lần, ghi bảng bước tới ảnh vào <code>anh.json</code>; ra 31 ảnh</td></tr>
+    <tr><td><code>gd2-03-kiem-tra.py</code></td><td>Chỉ đọc: in lại trạng thái từng lead và deal thử (trạng thái, converted, chủ sở hữu, lý do, xác suất) cùng tổng số lead, deal, việc để đối chiếu với kịch bản</td></tr>
+    <tr><td><code>gd2-04-sua-xac-suat.py</code></td><td>Đặt lại xác suất 0% cho deal Lost còn xác suất khác 0 (xem bên dưới)</td></tr>
+    <tr><td><code>gd2-05-cat-anh.py</code></td><td>Cắt PNG sơ đồ chung làm hai nửa có phần chồng 120 px để đọc được trong Report khổ A4 ngang</td></tr>
+  </table></div>
+  <p>Vì sao script mà không bấm tay: lặp lại được, mỗi bước để lại bản ghi và mã để truy vết, đếm được số bản ghi. Cái giá: API không luôn hành xử như giao diện (xem các sai sót), và ảnh chụp sau cùng chứ không chụp ngay từng bước. Phương án đã bỏ: bấm tay và chụp ngay từng bước, vì chậm và khó đối chiếu với số bản ghi.</p>
+
+  <h3>Sai sót nhóm tự phát hiện và sửa khi kiểm chứng</h3>
+  <div class="tablewrap"><table>
+    <tr><th>Điều dễ tưởng</th><th>Điều quan sát được</th><th>Cách xử lý</th></tr>
+    <tr><td>Convert to Deal đổi trạng thái lead thành Converted</td><td><code>convert_to_deal</code> đặt <code>converted = 1</code> và đặt trạng thái lead thành Qualified (hàm <code>mark_converted</code>), không đặt Converted</td><td>Ghi đúng thực tế vào mô tả bước C5 và vào bài giảng; xem như đặc điểm của Frappe CRM 16.0.1</td></tr>
+    <tr><td>Đổi deal sang Lost bằng API thì xác suất về 0%</td><td>Xác suất không tự đổi, deal Lost còn xác suất của trạng thái cũ</td><td><code>gd2-04-sua-xac-suat.py</code> đặt 0% cho 4 deal Lost</td></tr>
+    <tr><td>Lead được giao nằm trong trường <code>_assign</code></td><td><code>_assign</code> rỗng; Assignment Rule điền <code>lead_owner</code></td><td>Script đọc <code>lead_owner</code>; sửa mô tả ban đầu "tự giao: []" trong script và JSON</td></tr>
+    <tr><td>Ảnh chụp mỗi bước đúng thời điểm</td><td>Ảnh chụp sau khi chạy xong nên các thẻ dùng chung nhiều bước</td><td>Ghi rõ trong <code>quy-trinh-sop.md</code> và bài này; chưa chụp lại</td></tr>
+  </table></div>
+  <div class="note"><b class="t">Điều rút ra</b>Chính việc kiểm lại bằng <code>gd2-03-kiem-tra.py</code> (đọc trạng thái thật từ Frappe, đối chiếu với kịch bản) mới làm lộ các chỗ hiểu sai. Nếu chỉ tin vào mô tả viết trước thì các sai sót này đã nằm trong Report. Lưu ý thêm: script <code>gd2-04</code> lọc theo trạng thái Lost và xác suất khác 0, không lọc theo tiền tố [GĐ2], nên phạm vi tác động rộng hơn dữ liệu thử; nhật ký ghi kết quả là 4 deal.</div>
+
+  <h3>Nhóm đã kiểm chứng tới mức nào</h3>
+  <p>Theo sách Wiegers, kiểm chứng đúng nghĩa cần người cung cấp thông tin và chuyên gia nghiệp vụ. Nhóm không có đại diện Biti's thật. Việc nhóm làm là <b>chạy thử toàn bộ các nhánh bằng dữ liệu thử trong hệ thống thật</b> (gần với "đi theo test trên mô hình" và test yêu cầu) và <b>đối chiếu số liệu</b> (xác minh). Việc chưa làm: soát xét sơ đồ và quy tắc với người trong nghề (ngoài sự phản biện của thầy), chạy ca biên (đúng 7 ngày), chạy 2 end event còn thiếu dữ liệu thử, kiểm độ phủ nút tới ảnh cho từng hàng. Nói với thầy đúng như vậy thay vì gọi là "đã kiểm chứng đầy đủ".</p>
+
+  <h3>Truy vết khi có thay đổi: ví dụ đổi ngưỡng duyệt</h3>
+  <p>Giả sử nhóm đổi ngưỡng duyệt chiết khấu từ 10% sang 15%. Tìm chuỗi "10%" bằng lệnh: có ở <code>scripts/gd2/sop-du-lieu.js</code> (1 dòng, hàng C8), <code>scripts/gd2/report-ch3.js</code> (1 dòng), <code>scripts/gd2-01-chay-thu.py</code> (3 dòng, mô tả bước C7, tiêu đề và nội dung việc duyệt), và <code>docs/quy-trinh-sop.md</code> (1 dòng, file sinh ra từ <code>sop-du-lieu.js</code>); không có ở <code>quy-trinh.js</code> vì tên cổng "Cần duyệt chiết khấu?" không chứa số, nên sơ đồ .bpmn không đổi. Hệ quả sâu hơn: cả hai lần duyệt trong dữ liệu thử (deal chung giảm 12%, đại lý lần 2 giảm 12%) lúc này không còn cần duyệt (12% &lt; 15%), tức là kịch bản thử phải đổi (cần một ca 16% mới) và hai CRM Task duyệt hiện có trở thành thừa. Đó là lý do phải có bảng truy vết và quy tắc có mã (bài 2.2). Việc đổi này chỉ là giả định để làm ví dụ, nhóm không đổi gì.</p>
+
+  <h3>Việc còn lại của giai đoạn 2</h3>
+  <ul>
+    <li>Mở 5 file .bpmn bằng Camunda Modeler và xác nhận sơ đồ giống ảnh (chưa làm).</li>
+    <li>Xem hộp thư nhận thư mẫu chiến dịch "[Biti's] Ưu đãi Hunter mùa lễ (thư mẫu GĐ2)" (chưa xác nhận).</li>
+    <li>Tách file .docx riêng cho từng quy trình cá nhân (tiêu chí 3.5 đến 3.8): hiện nằm trong Report chương 3, tách khi đóng gói ở GĐ6.</li>
+    <li>Nhóm xác nhận phân công 4 quy trình cá nhân (đề xuất trong hiến chương).</li>
+  </ul>
+
+  <h3>Thầy sẽ hỏi</h3>
+  <div class="tablewrap"><table>
+    <tr><th>Câu hỏi</th><th>Gợi ý trả lời, kèm bằng chứng</th></tr>
+    <tr><td>Bước này trong Frappe làm ở đâu? Chứng minh.</td><td>Chỉ hàng trong bảng truy vết <code>docs/quy-trinh-sop.md</code> (ví dụ C8): đối tượng, màn hình, ảnh. Rồi mở đúng bản ghi (deal 00031, thẻ Nhiệm vụ).</td></tr>
+    <tr><td>Dữ liệu thử là thật hay em tự bịa? Có lẫn với dữ liệu khác không?</td><td>Dữ liệu giả lập, do script tạo, tiền tố [GĐ2] ở lead và việc; 15 lead, 8 deal, mã ghi ở <code>evidence/A4-3/chay-thu.json</code>; sau chạy tổng 75 lead, 38 deal, 53 việc.</td></tr>
+    <tr><td>Sao không bấm tay mà dùng script?</td><td>Lặp lại được và có mã bản ghi để truy vết; nhưng API không giống hệt giao diện (xác suất deal Lost, trạng thái lead sau Convert), nhóm đã phát hiện và ghi lại.</td></tr>
+    <tr><td>Em đã kiểm chứng quy trình chưa?</td><td>Mới chạy thử mọi nhánh bằng dữ liệu thử và đối chiếu số liệu (17 trên 19 end event có dữ liệu riêng); chưa soát xét với người của Biti's, chưa chạy ca biên 7 ngày. Nói rõ là chưa.</td></tr>
+    <tr><td>Ảnh này chụp lúc nào? Sao nhiều bước dùng chung ảnh?</td><td>Chụp sau khi chạy xong cả 5 quy trình, mỗi màn hình cùng thẻ chụp một lần nên dùng chung (31 ảnh cho 48 bước). Ảnh chứng minh bản ghi tồn tại, không chứng minh thời điểm.</td></tr>
+    <tr><td>Quy trình đổi, nhóm cập nhật thế nào?</td><td>Sửa dữ liệu nguồn (<code>quy-trinh.js</code> cho sơ đồ, <code>sop-du-lieu.js</code> cho quy trình viết), chạy lại bộ sinh; dùng bảng truy vết để biết chỗ nào bị ảnh hưởng (ví dụ ngưỡng 10% có ở 4 tệp). Quy trình thay đổi chính thức giữa các thành viên nhóm chưa viết thành văn bản.</td></tr>
+  </table></div>
+</section>

@@ -1,0 +1,9 @@
+[
+  { "id": "gd0", "ten": "Giai đoạn 0 · Chốt nền", "mo_ta": "Hiểu CRM là gì, đồ án cần gì, và nền kỹ thuật đang chạy ở dưới.", "sap_co": [] },
+  { "id": "gd1", "ten": "Giai đoạn 1 · Cấu hình và nhập liệu", "mo_ta": "Từ lý thuyết hành trình khách hàng, dữ liệu và bán hàng đến cấu hình Frappe CRM cho Biti's.", "sap_co": [] },
+  { "id": "gd2", "ten": "Giai đoạn 2 · Quy trình BPMN", "mo_ta": "Mô hình hóa quy trình, quy tắc nghiệp vụ, năm quy trình của nhóm và cách chạy thật trong Frappe.", "sap_co": [] },
+  { "id": "gd3", "ten": "Giai đoạn 3 · Ứng dụng tùy biến biti_crm", "mo_ta": "", "sap_co": ["Sẽ thêm khi làm xong giai đoạn 3"] },
+  { "id": "gd4", "ten": "Giai đoạn 4 · API, webhook, WordPress", "mo_ta": "", "sap_co": ["Sẽ thêm khi làm xong giai đoạn 4"] },
+  { "id": "gd5", "ten": "Giai đoạn 5 · Chi phí, CLV, ABC, báo cáo", "mo_ta": "", "sap_co": ["Sẽ thêm khi làm xong giai đoạn 5"] },
+  { "id": "gd6", "ten": "Giai đoạn 6 · Video và đóng gói", "mo_ta": "", "sap_co": ["Sẽ thêm khi làm xong giai đoạn 6"] }
+]

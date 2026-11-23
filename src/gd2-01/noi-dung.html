@@ -1,0 +1,131 @@
+<section class="part" id="kt">
+  <h2><span class="n">1</span>Kiến thức tổng quát: mô hình hóa quy trình và BPMN</h2>
+
+  <h3>Vì sao phải vẽ quy trình thay vì chỉ viết</h3>
+  <p>Một danh sách dài các câu "hệ thống phải…" rất khó soát. Wiegers và Hokanson nhắc tới giới hạn trí nhớ ngắn hạn "7 ± 2": một người đọc kiểm được đúng, đủ, nhất quán cho khoảng năm đến mười yêu cầu, chứ không phải hàng trăm. <b>Mô hình</b> (model) là sơ đồ gom chi tiết thành các khối ở mức cao hơn, nên người xem nhìn ra lỗi dễ hơn.</p>
+  <p>Sách nêu bốn lợi ích của mô hình: cho biết mỗi yêu cầu nằm ở đâu trong bức tranh chung; vi phạm quy tắc vẽ có thể lộ ra chỗ thiếu hoặc sai; mỗi phần tử trong sơ đồ (một bước, một trạng thái) phải có chức năng tương ứng, nếu chưa có thì là yêu cầu còn thiếu; và khi hai mô hình của cùng một thông tin không khớp nhau thì chỗ lệch cho thấy yêu cầu sai, thiếu hoặc thừa.</p>
+  <div class="src"><b class="t">Trong sách Wiegers</b>Chương 4, thực hành #11, tr. 15–17 (bản trích của chương). Sách cũng dặn: học ký hiệu chuẩn, đừng tự chế ký hiệu riêng; không cần mô hình hóa mọi thứ, chỉ cần phần mới lạ, phức tạp hoặc rủi ro (tr. 18–19); vẽ bản nháp "strawman" sớm để người liên quan chỉ ra chỗ sai (tr. 28); và mô hình được vẽ, soát, sửa nhiều lần chứ không làm một lần là xong (tr. 27).</div>
+
+  <h3>Process flow (sơ đồ luồng quy trình) và BPMN</h3>
+  <p>Loại mô hình cần cho bài này là <b>process flow</b>: các bước người hoặc tổ chức làm được vẽ thành hình chữ nhật, các quyết định thành hình thoi (Wiegers, tr. 23). Sách liệt kê BPMN là một trong nhiều ngôn ngữ mô hình hóa (cùng UML, SysML…) nhưng không dạy chi tiết ký hiệu. Phần ký hiệu mình lấy từ đặc tả và tài liệu Camunda.</p>
+  <p><b>BPMN</b> (Business Process Model and Notation – ký hiệu mô hình hóa quy trình nghiệp vụ) 2.0 là chuẩn mở do OMG (Object Management Group) công bố, cũng là chuẩn ISO/IEC 19510:2013. Một quy trình BPMN là một tệp XML có kèm hình vẽ. Camunda mô tả rằng tệp này vừa là tài liệu cho người đọc, vừa là dữ liệu cho phần mềm, nên có thể xem như "mã nguồn và tài liệu trong một tệp".</p>
+
+  <h3>Các ký hiệu cơ bản</h3>
+  <p>Ví dụ ngoài đồ án: quán trà sữa mang đi, nhận một ly từ lúc khách gọi đến lúc giao.</p>
+  <div class="tablewrap"><table>
+    <tr><th>Ký hiệu</th><th>Nghĩa</th><th>Trong ví dụ quán trà sữa</th></tr>
+    <tr><td><b>Pool</b> (khung lớn)</td><td>Khung của một quy trình. Đặt tên theo quy trình.</td><td>"Bán trà sữa mang đi"</td></tr>
+    <tr><td><b>Lane</b> (làn)</td><td>Dải chia pool theo vai trò hoặc hệ thống chịu trách nhiệm; dùng để sắp xếp và phân loại các hoạt động.</td><td>Hai làn: Thu ngân, Pha chế</td></tr>
+    <tr><td><b>Start event</b> (sự kiện bắt đầu, vòng tròn mảnh)</td><td>Cái làm quy trình chạy.</td><td>"Khách đặt một ly trà sữa"</td></tr>
+    <tr><td><b>Task</b> (việc, hình chữ nhật bo góc)</td><td>Một đơn vị công việc. Có ba loại thường gặp, xem bên dưới.</td><td>"Nhận tiền", "Pha trà sữa", "Báo hết nguyên liệu và hoàn tiền"</td></tr>
+    <tr><td><b>Gateway XOR</b> (cổng loại trừ, hình thoi có chữ X)</td><td>Chọn đúng một nhánh đi tiếp dựa trên dữ liệu.</td><td>"Còn đủ nguyên liệu?" với hai nhánh Có, Không</td></tr>
+    <tr><td><b>Sequence flow</b> (đường nối trình tự, mũi tên)</td><td>Thứ tự các bước.</td><td>Mũi tên từ "Nhận tiền" tới cổng</td></tr>
+    <tr><td><b>End event</b> (sự kiện kết thúc, vòng tròn đậm)</td><td>Kết quả cuối của một đường đi.</td><td>"Ly trà sữa đã giao khách", "Đơn đã hoàn tiền"</td></tr>
+  </table></div>
+  <p>Quán trà sữa này có 1 start, 3 task, 1 cổng, 2 end: tổng 7 nút và 6 đường nối. Cứ hình dung một "thẻ" đi từ start theo mũi tên, dừng ở mỗi task, qua cổng XOR thì chọn đúng một nhánh, tới end thì hết. Quy trình đúng khi mọi đường đi đều kết thúc ở một end event có nghĩa (cách hình dung này theo Camunda, 09-camunda-bpmn-primer).</p>
+
+  <h3>Ba loại task</h3>
+  <ul>
+    <li><b>User task</b> (việc của người dùng): người làm với sự trợ giúp của phần mềm, việc nằm trong một danh sách việc nào đó (OMG 2.0.2, trang PDF 190). Quán trà sữa: thu ngân nhập đơn trên máy tính tiền.</li>
+    <li><b>Service task</b> (việc của dịch vụ): dùng một dịch vụ hoặc ứng dụng tự động (trang PDF 186). Quán: máy tự in tem đơn.</li>
+    <li><b>Manual task</b> (việc thủ công): làm mà không cần phần mềm điều hành quy trình hay ứng dụng nào; đặc tả lấy ví dụ thợ điện thoại lắp máy tại nhà khách (trang PDF 191). Quán: pha trà bằng tay.</li>
+  </ul>
+
+  <h3>Quy ước đặt tên và cách bố trí</h3>
+  <p>Camunda khuyên đặt tên theo góc nhìn nghiệp vụ (16-camunda-quy-uoc-dat-ten). Mình tóm lại và diễn đạt lại:</p>
+  <div class="tablewrap"><table>
+    <tr><th>Phần tử</th><th>Cách đặt tên</th><th>Tên tốt</th><th>Tên chưa tốt</th></tr>
+    <tr><td>Task</td><td>Động từ nguyên mẫu + đối tượng; tránh động từ quá chung</td><td>"Nhận tiền"</td><td>"Xử lý đơn"</td></tr>
+    <tr><td>End event</td><td>Trạng thái đạt được (đối tượng + động từ ở thể đã xảy ra), nói rõ thành công hay thất bại</td><td>"Đơn đã hoàn tiền"</td><td>"Kết thúc", "Đơn đã xử lý"</td></tr>
+    <tr><td>Cổng XOR</td><td>Một câu hỏi; mỗi đường ra ghi câu trả lời</td><td>"Còn đủ nguyên liệu?" với "Có", "Không"</td><td>"Kiểm tra nguyên liệu"</td></tr>
+    <tr><td>Pool, lane</td><td>Pool theo tên quy trình; lane theo vai trò tổ chức hoặc hệ thống</td><td>Pool "Bán trà sữa mang đi"; lane "Pha chế"</td><td>Lane "Quận 1"</td></tr>
+  </table></div>
+  <p>Cổng gộp (nối các nhánh lại) và cổng song song thì không cần đặt tên. Ví dụ Camunda: "Invoice paid" cho biết trạng thái thành công rõ hơn "Invoice processed", và "Invoice rejected" nói rõ trạng thái thất bại; cùng chữ "processed" thì người đọc không biết là thành hay bại. Về bố cục (17-camunda-mo-hinh-de-doc): vẽ từ trái sang phải, luôn vẽ rõ start và end event, tránh đường nối chồng chéo hoặc quá dài.</p>
+
+  <h3>Vẽ đường suôn sẻ trước, ngoại lệ sau</h3>
+  <p>Camunda gọi đường đi mặc định có kết quả tốt là <b>happy path</b> (đường suôn sẻ). Thứ tự gợi ý (18-camunda-ngoai-happy-path): chọn kết quả cuối mong muốn, rồi sự kiện bắt đầu, rồi các hoạt động luôn phải làm. Sau đó thêm từng vấn đề một: với mỗi vấn đề, hỏi kết quả không mong muốn sẽ là gì (đó chính là một end event mới), rồi thêm cổng XOR đúng chỗ vấn đề có thể xảy ra. Chỉ vẽ ngoại lệ về nghiệp vụ; lỗi kỹ thuật như "không kết nối được máy chủ" không đưa vào sơ đồ nghiệp vụ.</p>
+  <div class="ex"><b class="t">Ví dụ ngoài đồ án</b>Quán trà sữa: happy path kết thúc ở "Ly trà sữa đã giao khách". Vấn đề đầu tiên: hết nguyên liệu. Kết quả không mong muốn: "Đơn đã hoàn tiền". Cổng "Còn đủ nguyên liệu?" đặt ngay sau "Nhận tiền", nhánh Không dẫn tới "Báo hết nguyên liệu và hoàn tiền" rồi tới end đó.</div>
+
+  <div class="note"><b class="t">Hiểu nhầm hay gặp</b>(1) "Pool là công ty, lane là phòng ban": pool là một quy trình, lane là vai trò chịu trách nhiệm; một công ty có nhiều pool. (2) "Kết thúc" là tên end event đủ dùng: không, nó không nói kết quả. (3) BPMN là phần mềm: BPMN là ký hiệu; phần mềm vẽ nó (Camunda Modeler, bpmn-js) là công cụ khác. (4) Có sơ đồ là hệ thống tự chạy: một tệp BPMN chỉ chạy được trên phần mềm điều hành quy trình khi có thêm thông tin kỹ thuật; sơ đồ để người đọc thì không cần.</div>
+</section>
+
+<section class="part" id="ud">
+  <h2><span class="n">2</span>Ứng dụng trong đồ án: năm sơ đồ BPMN của nhóm</h2>
+
+  <p>Nhóm vẽ 5 quy trình cho Biti's: 1 quy trình chung (cả nhóm) và 4 quy trình cá nhân. Số liệu dưới đây mình đếm bằng lệnh từ <code>scripts/gd2/quy-trinh.js</code> và đối chiếu với số phần tử trong chính các file <code>.bpmn</code> (khớp cả năm).</p>
+  <div class="tablewrap"><table>
+    <tr><th>Sơ đồ (pool)</th><th>Lane</th><th>Nút</th><th>Việc: người / hệ thống / thủ công</th><th>Cổng XOR có tên</th><th>End event</th><th>Đường nối</th></tr>
+    <tr><td>Từ lead trên website đến đơn hàng và chăm sóc sau bán (chung)</td><td>6</td><td>23</td><td>9 / 1 / 1</td><td>5 (+1 cổng gộp)</td><td>5</td><td>23</td></tr>
+    <tr><td>Bán hàng cho đại lý</td><td>3</td><td>14</td><td>7 / 1 / 0</td><td>2</td><td>3</td><td>14</td></tr>
+    <tr><td>Khiếu nại và đổi trả hàng</td><td>3</td><td>13</td><td>6 / 0 / 1</td><td>2</td><td>3</td><td>12</td></tr>
+    <tr><td>Chiến dịch marketing và đồng ý nhận tin</td><td>3</td><td>15</td><td>7 / 0 / 1</td><td>2</td><td>4</td><td>14</td></tr>
+    <tr><td>Đơn hàng online đến khách hàng</td><td>3</td><td>16</td><td>5 / 0 / 3</td><td>3</td><td>4</td><td>15</td></tr>
+    <tr><td><b>Tổng</b></td><td></td><td><b>81</b></td><td></td><td><b>14</b></td><td><b>19</b></td><td><b>78</b></td></tr>
+  </table></div>
+  <p>Mỗi nút trong bảng gồm start event (1 ở mỗi sơ đồ), các việc, cổng và end event. Sơ đồ chung có thêm 1 cổng gộp không tên (sau "Duyệt chiết khấu" và nhánh bỏ qua việc duyệt); đây là cổng "nối nhánh lại", theo quy ước không cần đặt tên.</p>
+
+  <h3>Ký hiệu ↔ ví dụ trong đồ án</h3>
+  <div class="tablewrap"><table>
+    <tr><th>Ký hiệu</th><th>Ví dụ trong sơ đồ của nhóm</th></tr>
+    <tr><td>Pool</td><td>"Khiếu nại và đổi trả hàng". Mỗi file có đúng 1 pool (participant) và 0 message flow (đường nối giữa hai pool).</td></tr>
+    <tr><td>Lane</td><td>Sơ đồ chung có 6: Khách hàng, Marketing, Bán hàng, Quản lý, Kho - Giao hàng, Chăm sóc khách hàng. Cơ cấu phòng ban của Biti's không có nguồn công khai nên danh sách này là <code>[GIẢ ĐỊNH]</code> của nhóm (hiến chương docs/case-study-hien-chuong.md).</td></tr>
+    <tr><td>Start event</td><td>"Khách gửi yêu cầu đổi trả" (đổi trả); "Chiến dịch được duyệt" (marketing)</td></tr>
+    <tr><td>User task</td><td>"Ghi nhận khiếu nại": người làm trên màn hình Frappe CRM</td></tr>
+    <tr><td>Service task</td><td>"Giao lead cho nhân viên": Assignment Rule của Frappe tự chạy (sơ đồ chung và sơ đồ đại lý)</td></tr>
+    <tr><td>Manual task</td><td>"Gửi hàng về kho" (khách tự làm), "Thanh toán đơn hàng", "Nhận hàng hoàn về kho": làm ngoài Frappe</td></tr>
+    <tr><td>Cổng XOR</td><td>"Còn trong 7 ngày và còn tem nhãn?" với nhánh Có, Không</td></tr>
+    <tr><td>End event</td><td>"Hàng đổi đã giao cho khách", "Yêu cầu đổi trả bị từ chối"</td></tr>
+  </table></div>
+
+  <figure class="wide"><img src="../anh/bpmn-doi-tra.png" alt="Sơ đồ BPMN quy trình Khiếu nại và đổi trả hàng, ba làn, hai cổng XOR, ba end event"><figcaption>Quy trình Khiếu nại và đổi trả hàng: ba làn, một start, sáu việc của người dùng, một việc thủ công (biểu tượng bàn tay), hai cổng, ba end event.</figcaption></figure>
+
+  <h3>Đúng và chưa đạt</h3>
+  <div class="ex"><b class="t">Đúng</b>Tên end event của cả năm sơ đồ là trạng thái ("Lead bị loại", "Deal thất bại", "Đơn đã hoàn tiền"). Không file nào có end event tên "Kết thúc" hay task tên "Xử lý" (mình tìm bằng lệnh, 0 kết quả ở cả 5 file). Cả 14 cổng XOR đều là câu hỏi, nhánh ra ghi câu trả lời.</div>
+  <div class="warn"><b class="t">Chưa đạt: file mẫu cũ của nhóm</b>Trong <code>mau/mau-bpmn-2-lane.bpmn</code>, cổng "Khách đồng ý?" có hai đường Có và Không cùng chảy vào một end event tên "Kết thúc". Người đọc không biết khách mua hay không. Cách sửa: hai end event khác tên, mỗi cái nêu một kết quả. Năm sơ đồ chính thức đã sửa như vậy: mỗi kết quả khác nhau có một end event riêng, tổng 19 end event.</div>
+  <div class="warn"><b class="t">Chỗ còn kém trong chính sơ đồ chính thức (nhìn ảnh)</b>(1) Cổng "Còn trong 7 ngày và còn tem nhãn?" gộp hai điều kiện vào một câu hỏi, nên nhánh Không không cho biết điều kiện nào trượt (bài 2.2 nói thêm). (2) Trong sơ đồ marketing, nhãn "Rút đồng ý" và "Im lặng" nằm sát nhau và một đường nối đi ngang vùng nhãn. (3) Khách hàng được vẽ là một lane trong cùng pool, không phải một pool riêng (xem phần 3).</div>
+  <p><b>Cách bạn kiểm:</b> mở file <code>Nop-bai/Nhóm 04 - Đồ án CRM/Cá nhân/Khiếu nại và đổi trả - Nhóm 04.png</code>, đếm: ba làn, hai hình thoi chữ X, ba vòng tròn đậm. Rồi đếm lại bằng lệnh: <code>node -e "const q=require('./scripts/gd2/quy-trinh.js'); q.forEach(p=&gt;console.log(p.pool, p.nodes.length, p.lanes.length))"</code>.</p>
+</section>
+
+<section class="part" id="da">
+  <h2><span class="n">3</span>Hiểu sâu đồ án: sơ đồ được làm ra thế nào và vì sao</h2>
+
+  <h3>Vì sao file .bpmn được sinh bằng script</h3>
+  <p>Nhóm không vẽ tay từng ô trong phần mềm vẽ. Dữ liệu thuần của năm quy trình nằm ở <code>scripts/gd2/quy-trinh.js</code>: mỗi nút là một dòng <code>[mã, kiểu, tên, lane, cột, độ lệch]</code> với kiểu S (start), E (end), U (user task), V (service task), M (manual task), X (cổng XOR), J (cổng gộp); mỗi đường nối là <code>[từ, đến, nhãn]</code>. Bộ sinh <code>scripts/gd2/sinh-bpmn.js</code> (Node, không dùng thư viện ngoài) đọc bảng đó rồi ghi ra file BPMN 2.0 có cả bố cục. Lý do chọn cách này:</p>
+  <ul>
+    <li><b>Lặp lại được:</b> đổi một tên hay thêm một nhánh ở bảng dữ liệu, chạy lại là có đủ năm file đồng bộ. Quy trình viết (SOP) sinh từ một tệp dữ liệu khác, <code>sop-du-lieu.js</code>, cùng thư mục; hai tệp phải khớp tên nút với nhau và đó là việc nhóm phải tự giữ khớp (bài 2.6).</li>
+    <li><b>Tự kiểm lỗi bố cục:</b> bộ sinh báo khi đường nối cắt ngang một nút, khi hai nút đè nhau, khi nhãn đè nút hoặc ra ngoài pool. Lần chạy cuối: 0 cảnh báo.</li>
+    <li><b>Quy ước ID có tiền tố loại</b> (<code>Task_</code>, <code>Gateway_</code>, <code>EndEvent_</code>, <code>Flow_</code>), theo gợi ý đặt ID kỹ thuật của Camunda (19-camunda-dat-id-ky-thuat).</li>
+  </ul>
+  <p>Phương án đã bỏ: vẽ tay trong Camunda Modeler. Chậm, khó lặp lại và không có kiểm tra đè nhau tự động. Cái giá của cách chọn: bố cục do thuật toán đơn giản (cột đều, lệch lên xuống ±45 px) nên không đẹp bằng người vẽ cẩn thận. Lỗi nhóm gặp lúc thiết kế: hai task cùng cột lệch 60 px thì đè nhau (task cao 80 px) nên đổi thành lệch ±45; tên task ba dòng đè biểu tượng nên rút gọn và mở rộng task lên 120 px.</p>
+
+  <h3>PNG xuất bằng gì, Camunda Modeler và "Camunda 7"</h3>
+  <ul>
+    <li><b>PNG</b> được xuất bằng <b>bpmn-js 18.33.1</b> (bộ vẽ mà Camunda Modeler cũng dùng) trong trình duyệt Edge chạy ẩn, chụp qua giao thức DevTools, hệ số phóng 1,5 (<code>scripts/gd2/xuat-png.js</code>). Ảnh có logo "bpmn.io" ở góc dưới phải vì giấy phép bpmn-js yêu cầu giữ. bpmn-js nạp cả 5 file với 0 cảnh báo.</li>
+    <li><b>Nói thật:</b> ảnh không xuất bằng menu File, Export của Camunda Modeler. Nhóm đã cài Camunda Modeler 5.51.1 bằng winget (docs/phase-report.md, mục 0.5) nhưng <b>chưa mở 5 file này trong Modeler thật để xác nhận</b>; đây là việc còn lại của giai đoạn 2. Tài liệu Camunda đã tải cũng không có hướng dẫn xuất PNG.</li>
+    <li><b>"Camunda 7" hay "Camunda 8"?</b> Camunda Modeler hỗ trợ cả hai loại engine (02-camunda-desktop-modeler). Khi tạo file mới, Modeler hỏi file nhắm engine nào; file mẫu của nhóm chọn "Camunda 7". Hình vẽ BPMN 2.0 như nhau cho cả hai. Năm file nhóm sinh ra không chứa thuộc tính riêng của Camunda (mình tìm <code>camunda:</code> và <code>zeebe:</code>, 0 kết quả) và ghi <code>isExecutable="false"</code>, tức là BPMN 2.0 thuần để đọc, chưa gắn engine nào.</li>
+  </ul>
+
+  <h3>Quyết định "Khách hàng là một lane"</h3>
+  <p>Khách không thuộc Biti's nhưng nhóm vẽ Khách hàng (và Đại lý) thành một lane trong cùng pool. Cách chuẩn khác theo đặc tả BPMN là cho khách một pool riêng, nối với pool của Biti's bằng message flow (đường đứt nét chỉ tin nhắn). Nhóm chọn cách đơn giản vì ít đường chéo hơn và vẫn đọc được. Đây là <b>quyết định của nhóm</b> (hiến chương liệt kê Khách hàng trong danh sách lane), không phải quy định của BPMN. Đổi lại, sơ đồ không phân biệt được "việc của một bên khác tổ chức" với "việc nội bộ" bằng ký hiệu.</p>
+
+  <h3>Cái nào của Frappe, cái nào của nhóm</h3>
+  <div class="tablewrap"><table>
+    <tr><th>Thành phần</th><th>Của ai</th><th>Ghi chú</th></tr>
+    <tr><td>Sơ đồ BPMN, file .bpmn, .png, bộ sinh</td><td>Nhóm</td><td>Frappe CRM không có bộ vẽ BPMN và không nạp file .bpmn. Frappe có cơ chế Workflow riêng (docs ERPNext 40–46) mà nhóm chưa dùng.</td></tr>
+    <tr><td>Assignment Rule (nút "Giao lead cho nhân viên")</td><td>Cơ chế của Frappe; luật theo địa bàn do nhóm cấu hình ở GĐ1</td><td>Đây là chỗ duy nhất "hệ thống tự làm" trong sơ đồ.</td></tr>
+    <tr><td>Danh sách 6 lane</td><td>Nhóm</td><td><code>[GIẢ ĐỊNH]</code>; ánh xạ sơ bộ sang các nhóm người dùng (User Group) đã tạo ở GĐ1.</td></tr>
+  </table></div>
+
+  <div class="warn"><b class="t">Hạn chế đã biết</b>Chưa mở 5 file bằng Camunda Modeler. Phân công 4 quy trình cá nhân là đề xuất trong hiến chương, nhóm cần xác nhận. Quy trình cá nhân hiện nằm trong Report chương 3; file .docx riêng cho từng quy trình (tiêu chí 3.5–3.8) tách ở GĐ6.</div>
+
+  <h3>Thầy sẽ hỏi</h3>
+  <div class="tablewrap"><table>
+    <tr><th>Câu hỏi</th><th>Gợi ý trả lời, kèm bằng chứng</th></tr>
+    <tr><td>Pool và lane khác nhau thế nào?</td><td>Pool là một quy trình; lane chia pool theo vai trò hoặc hệ thống. Nhóm để Khách hàng là một lane cho đơn giản; cách chuẩn hơn là pool riêng nối bằng message flow. Chỉ file <code>Khiếu nại và đổi trả - Nhóm 04.png</code>.</td></tr>
+    <tr><td>Sao end event đặt tên thế này?</td><td>Camunda: end event nêu trạng thái kết quả, không viết "Kết thúc" (16-camunda-quy-uoc-dat-ten). Mình đã tìm bằng lệnh trong cả 5 file, không còn tên "Kết thúc".</td></tr>
+    <tr><td>Sao không vẽ tay mà dùng script?</td><td>Lặp lại được, sửa một chỗ trong bảng dữ liệu là có lại đủ năm file, tự kiểm đè nhau. Mở <code>scripts/gd2/quy-trinh.js</code> và <code>sinh-bpmn.js</code>.</td></tr>
+    <tr><td>Ảnh này vẽ bằng Camunda Modeler à?</td><td>Không. Ảnh xuất bằng bpmn-js 18.33.1 trong Edge ẩn; nhóm chưa mở file trong Modeler thật. Nói thẳng, kèm nói đó là việc còn lại.</td></tr>
+    <tr><td>Camunda 7 hay 8?</td><td>File nhóm là BPMN 2.0 thuần (<code>isExecutable="false"</code>, không thuộc tính camunda:/zeebe:), chưa gắn engine. File mẫu chọn "Camunda 7" khi tạo.</td></tr>
+    <tr><td>6 lane lấy từ đâu?</td><td>Cơ cấu phòng ban của Biti's không công khai nên là <code>[GIẢ ĐỊNH]</code> trong hiến chương; còn ngoại lệ như đổi trả 7 ngày thì có nguồn bitis.com.vn (bài 2.2).</td></tr>
+  </table></div>
+</section>

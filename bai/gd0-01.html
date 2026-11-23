@@ -1,0 +1,223 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>0.1 CRM là gì và vì sao đồ án dùng Frappe CRM · EC213</title>
+<meta name="description" content="Từ định nghĩa CRM theo giáo trình, đặt Frappe CRM và Biti's vào đúng chỗ, rồi hiểu vì sao nhóm chọn nền này và phạm vi giai đoạn 0.">
+<link rel="stylesheet" href="../assets/site.css">
+</head>
+<body data-root="../" data-id="gd0-01">
+<div class="progress" id="bar"></div>
+<div class="layout">
+<nav class="side" aria-label="Mục lục"></nav>
+<main>
+<header class="hero">
+  <div class="tag">Giai đoạn 0 · Chốt nền · Bài 0.1</div>
+  <h1>CRM là gì và vì sao đồ án dùng Frappe CRM</h1>
+  <p>Từ định nghĩa CRM theo giáo trình, đặt Frappe CRM và Biti's vào đúng chỗ, rồi hiểu vì sao nhóm chọn nền này và phạm vi giai đoạn 0.</p>
+  <div class="top"><button id="theme" type="button">Đổi sáng/tối</button><button id="reset" type="button">Xóa điểm đã làm</button><a class="btn2" href="../index.html">Trang chủ</a></div>
+</header>
+<div class="parts" aria-label="Các phần của bài"></div>
+<div class="goal"><b class="t">Học xong bài này bạn làm được</b><ul><li>Phân biệt được ba dạng CRM (chiến lược, vận hành, phân tích) và nói được Social CRM nằm ở đâu</li><li>Nhận ra bốn hiểu lầm hay gặp về CRM và nêu được định nghĩa CRM của giáo trình</li><li>Chỉ ra được Frappe CRM thuộc dạng nào và đồ án làm gì ứng với bốn bước IDIC</li><li>Giải thích được vì sao chọn Frappe CRM, giai đoạn 0 làm và không làm gì, cái nào của Frappe và cái nào của nhóm</li></ul></div>
+<section class="part" id="kt">
+  <h2><span class="n">1</span>Kiến thức tổng quát: CRM là gì</h2>
+
+  <h3>Hai cách hiểu, và vì sao dễ nhầm</h3>
+  <p>CRM là viết tắt của <b>Customer Relationship Management</b> (quản trị quan hệ khách hàng). Chữ này có từ đầu thập niên 1990. Giáo trình nói có hai cách hiểu cùng tồn tại.</p>
+  <ul>
+    <li><b>Cách của giới công nghệ:</b> CRM là phần mềm hỗ trợ marketing, bán hàng và chăm sóc khách hàng. Hiểu theo cách này thì CRM bằng công nghệ.</li>
+    <li><b>Cách của người quản lý:</b> CRM là một cách làm có kỷ luật để dẫn khách đi từ lúc mới quen đến lúc mua nhiều, có lợi nhuận và giới thiệu cho người khác. Phần mềm chỉ là công cụ.</li>
+  </ul>
+  <div class="src"><b class="t">Trong giáo trình</b>Chương 1, tr. 3–5; slide 3. Phần liên quan đến trải nghiệm khách hàng (CX, customer experience) nói rằng CRM làm trải nghiệm tốt lên hoặc tệ đi tùy cách triển khai (tr. 5).</div>
+
+  <h3>Ba dạng CRM</h3>
+  <p>Giáo trình giải quyết chuyện hai cách hiểu trên bằng cách chia CRM thành ba dạng (Bảng 1.2, tr. 6; slide 4–8).</p>
+  <div class="tablewrap"><table>
+    <tr><th>Dạng</th><th>Cốt lõi</th><th>Hình dung ở một chuỗi cà phê</th></tr>
+    <tr><td><b>Chiến lược</b> (strategic)</td><td>Văn hóa và chiến lược lấy khách hàng làm trung tâm: tìm, giành, phát triển và giữ khách có lợi nhuận.</td><td>Ban lãnh đạo quyết định ưu tiên khách quen, thưởng nhân viên theo mức hài lòng của khách chứ không chỉ theo doanh số.</td></tr>
+    <tr><td><b>Vận hành</b> (operational)</td><td>Tự động hóa và nối các quy trình hướng ra khách: marketing, bán hàng, dịch vụ.</td><td>Hệ thống tự gửi ưu đãi sinh nhật; nhân viên thấy lịch sử mua khi khách gọi; khiếu nại được giao đúng người.</td></tr>
+    <tr><td><b>Phân tích</b> (analytical)</td><td>Biến dữ liệu khách hàng thành hiểu biết để phục vụ hai dạng trên.</td><td>Báo cáo cho biết nhóm khách nào chi nhiều nhất và nhóm nào sắp bỏ đi.</td></tr>
+  </table></div>
+  <p>CRM vận hành lại chia ba nhánh (tr. 7–12; slide 7):</p>
+  <ul>
+    <li><b>MA</b> (Marketing Automation – tự động hóa marketing): phần mềm chạy các hoạt động marketing theo quy tắc, ít cần người can thiệp.</li>
+    <li><b>SFA</b> (Sales Force Automation – tự động hóa lực lượng bán hàng): quản lý khách tiềm năng, cơ hội, báo giá, lịch liên hệ.</li>
+    <li><b>SA</b> (Service Automation – tự động hóa dịch vụ): nhận yêu cầu, giao người xử lý, theo dõi mức dịch vụ.</li>
+  </ul>
+  <div class="note"><b class="t">Cách hiểu dễ nhầm</b>Ba dạng không phải ba phần mềm khác nhau. Một công ty có thể có đủ cả ba mà chỉ dùng một phần mềm. Giáo trình còn nói CRM vận hành khó đạt hiệu quả đầy đủ nếu thiếu thông tin phân tích về khách (tr. 13).</div>
+
+  <h3>Social CRM nằm ở đâu?</h3>
+  <p>Social CRM (CRM mạng xã hội) xuất hiện từ đầu những năm 2000 khi các hãng phần mềm làm công cụ quản lý sự hiện diện trên mạng xã hội. Giáo trình <b>không</b> coi nó là dạng thứ tư. Mạng xã hội là thêm một nguồn dữ liệu khách hàng, thường là dữ liệu phi cấu trúc (văn bản, hình, video), rồi nguồn đó được dùng cho CRM vận hành và CRM phân tích (tr. 14–15, 23).</p>
+
+  <h3>CRM 1.0 và CRM 2.0</h3>
+  <div class="tablewrap"><table>
+    <tr><th>Tiêu chí</th><th>CRM 1.0 (từ khoảng 1990)</th><th>CRM 2.0 (từ khoảng 2010)</th></tr>
+    <tr><td>Nguồn dữ liệu</td><td>Chủ yếu nội bộ, tách theo từng phòng</td><td>Nội bộ cộng dữ liệu lớn bên ngoài</td></tr>
+    <tr><td>Nơi lưu</td><td>Máy chủ của công ty</td><td>Đám mây (cloud)</td></tr>
+    <tr><td>Mô hình phổ biến</td><td>On-premises: cài và chạy tại công ty, có giấy phép</td><td>SaaS (Software-as-a-Service – phần mềm thuê bao qua trình duyệt)</td></tr>
+    <tr><td>Tương tác với khách</td><td>Lên kế hoạch trước</td><td>Thời gian thực</td></tr>
+  </table></div>
+  <div class="src"><b class="t">Trong giáo trình</b>Bảng 1.4, Chương 1, tr. 15–16; slide 9–10. Giáo trình nêu khoảng 75% dữ liệu CRM đã nằm trên đám mây (tr. 15), kèm chú thích nguồn ở cuối chương.</div>
+
+  <h3>Định nghĩa CRM</h3>
+  <p>Giáo trình định nghĩa (tr. 16–17; slide 11): CRM là một <b>năng lực của tổ chức</b>, xoay quanh việc tạo ra và duy trì quan hệ khách hàng <b>có lợi nhuận</b>, bằng cách thiết kế và trao <b>giá trị vượt trội</b>, dựa trên hiểu biết rút ra từ <b>dữ liệu khách hàng</b>. Đọc chậm bốn cụm đậm, mỗi cụm là một ý:</p>
+  <ul>
+    <li>“Năng lực của tổ chức”: gồm hệ thống, quy trình, thủ tục và nguồn lực cùng chạy, không chỉ IT.</li>
+    <li>“Có lợi nhuận”: có khách không đáng để theo đuổi hoặc giữ, vì tốn kém hơn họ mang lại.</li>
+    <li>“Giá trị vượt trội”: hơn đối thủ ở chỗ khách thật sự cảm nhận.</li>
+    <li>“Từ dữ liệu”: quyết định dựa trên bằng chứng, nên chất lượng dữ liệu rất quan trọng.</li>
+  </ul>
+
+  <h3>Bốn hiểu lầm hay gặp</h3>
+  <div class="tablewrap"><table>
+    <tr><th>Hiểu lầm</th><th>Giáo trình sửa thế nào (tr. 17–18; slide 12)</th></tr>
+    <tr><td>CRM là một hệ thống IT</td><td>IT cần thiết nhưng đây là hiểu lầm nghiêm trọng nhất. Coi CRM là dự án IT làm người ta bàn về thời gian, ngân sách thay vì giá trị cho khách.</td></tr>
+    <tr><td>CRM chỉ là việc của marketing và bán hàng</td><td>Nếu bán hàng chạy nhanh hơn mà phần phục vụ không kịp, khách thất vọng. CRM là trách nhiệm của cả công ty.</td></tr>
+    <tr><td>CRM tự động hóa mọi thứ</td><td>Phần mềm cần được chỉnh, cần nhân viên nhập dữ liệu đều đặn, và không thay được người bán hàng giỏi.</td></tr>
+    <tr><td>CRM là chương trình khách hàng thân thiết</td><td>Tích điểm chỉ là một phần nhỏ trong CRM và chủ yếu giúp giữ khách.</td></tr>
+  </table></div>
+
+  <h3>Các bên liên quan</h3>
+  <p>Giáo trình liệt kê sáu nhóm có lợi ích gắn với CRM (tr. 18–19; slide 13): (1) công ty triển khai, (2) khách hàng và đối tác của họ, (3) các hãng phần mềm CRM, (4) hãng phần cứng và hạ tầng IT, (5) công ty mạng xã hội, (6) công ty tư vấn quản lý. Cùng một dự án CRM, mỗi nhóm muốn một thứ khác nhau: hãng phần mềm muốn bán gói, khách muốn trải nghiệm trơn tru.</p>
+
+  <h3>Ba mô hình tổng quát</h3>
+  <p>Giáo trình giới thiệu ba mô hình (tr. 21–23; slide 14–17). Lưu ý: slide 2 và slide 18 của thầy ghi “bốn mô hình”, nhưng trang giáo trình và slide 14 chỉ nêu ba mô hình dưới đây; mình theo ba.</p>
+  <div class="tablewrap"><table>
+    <tr><th>Mô hình</th><th>Ý chính</th></tr>
+    <tr><td><b>IDIC</b> (Peppers và Rogers)</td><td>Bốn việc để xây quan hệ gần gũi với từng khách: <b>I</b>dentify (nhận diện khách), <b>D</b>ifferentiate (phân biệt khách theo giá trị hiện tại và tương lai), <b>I</b>nteract (tương tác, hiểu kỳ vọng), <b>C</b>ustomize (cá biệt hóa ưu đãi và liên lạc).</td></tr>
+    <tr><td><b>CRM Value Chain</b> (chuỗi giá trị CRM, Buttle, Jones, Stone)</td><td>Ba quy trình lõi: nhận ra cơ hội, phát triển lời đề nghị, quản lý hành trình khách. Năm điều kiện hỗ trợ: dữ liệu và phân tích, quy trình marketing–bán hàng–dịch vụ, quan hệ mạng lưới, văn hóa tổ chức, con người.</td></tr>
+    <tr><td><b>Five-Process</b> (năm quy trình, Payne và Frow)</td><td>Năm quy trình: xây chiến lược, tạo giá trị, tích hợp đa kênh, đánh giá kết quả, quản lý thông tin. Hai quy trình đầu thuộc CRM chiến lược, tích hợp đa kênh thuộc CRM vận hành, quản lý thông tin thuộc CRM phân tích.</td></tr>
+  </table></div>
+
+  <h3>Ví dụ có số: IDIC ở một chuỗi cà phê giả định</h3>
+  <div class="ex"><b class="t">Ví dụ (tình huống tưởng tượng, không thuộc đồ án)</b>
+    Chuỗi “Nắng Coffee” có 1.000 khách thành viên, doanh thu tháng 500 triệu đồng.
+    <ul>
+      <li><b>Identify:</b> có đủ tên và số điện thoại của 1.000 người, biết ai mua gì.</li>
+      <li><b>Differentiate:</b> 200 khách chi nhiều nhất đóng góp 300 triệu, tức 300/500 = 60% doanh thu. Mỗi khách nhóm này trung bình 300/200 = 1,5 triệu; 800 khách còn lại trung bình 200/800 = 0,25 triệu. Chênh nhau 1,5/0,25 = 6 lần, nên đáng đối xử khác nhau.</li>
+      <li><b>Interact:</b> tháng sau chỉ 250 trong 1.000 khách quay lại, 250/1.000 = 25%. Gọi hỏi 30 khách bỏ đi để biết vì sao.</li>
+      <li><b>Customize:</b> gửi riêng nhóm 200 khách ưu đãi món họ hay gọi, thay vì giảm giá đại trà.</li>
+    </ul>
+  </div>
+  <p>Các phép tính trên đã kiểm lại bằng máy tính. Nếu bạn nhớ được hai điều từ phần này: CRM là năng lực của tổ chức (không phải phần mềm), và có ba dạng, thì đã nắm phần cốt lõi của Chương 1.</p>
+<div class="quiz" data-quiz="kt"></div>
+</section>
+
+<section class="part" id="ud">
+  <h2><span class="n">2</span>Ứng dụng trong đồ án: Frappe CRM và Biti's nằm ở đâu trong bức tranh CRM</h2>
+
+  <h3>Frappe CRM là CRM dạng nào?</h3>
+  <p><b>Frappe CRM</b> là phần mềm, nên trước hết nó là công cụ của <b>CRM vận hành</b>, và nặng về nhánh <b>SFA</b>. README của chính Frappe CRM tự mô tả là công cụ CRM mã nguồn mở cho nhóm bán hàng (tệp <code>tai-lieu-chinh-thong/frappe/02-github-crm-readme.md</code>). Nó <b>không</b> tự mang đến CRM chiến lược (văn hóa của doanh nghiệp), và chỉ có phần phân tích ở mức biểu đồ trên trang tổng quan.</p>
+  <p>Bảng dưới ghép các chức năng vận hành của giáo trình (Bảng 1.3, tr. 8) với thứ nhóm đã làm trong giai đoạn 1 và 2. Thông tin lấy từ <code>docs/phase-report.md</code> (các mục 1.x và 2.3).</p>
+  <div class="tablewrap"><table>
+    <tr><th>Chức năng (giáo trình)</th><th>Trong đồ án</th><th>Tình trạng</th></tr>
+    <tr><td>Lead management (quản lý khách tiềm năng)</td><td><code>CRM Lead</code>, nguồn lead, 3 Assignment Rule (chia lead luân phiên theo địa bàn)</td><td>Đã làm, thử bằng lead thật</td></tr>
+    <tr><td>Opportunity và pipeline management (cơ hội, đường ống)</td><td><code>CRM Deal</code> với 7 trạng thái, xác suất mỗi trạng thái là [GIẢ ĐỊNH]</td><td>Đã làm</td></tr>
+    <tr><td>Contact management</td><td>Contact, Organization, nhật ký cuộc gọi, ghi chú, việc cần làm</td><td>Đã làm</td></tr>
+    <tr><td>Quotation generation (tạo báo giá)</td><td>Mẫu in <code>Báo giá Bitis</code> và <code>Hóa đơn Bitis</code> xuất PDF từ deal</td><td>Đã làm</td></tr>
+    <tr><td>Case management (xử lý khiếu nại, SA)</td><td>Frappe CRM 16.0.1 không có đối tượng đổi trả; nhóm ghi bằng <code>CRM Task</code> và ghi chú</td><td>Làm tạm, giao giai đoạn 3</td></tr>
+    <tr><td>Campaign management (MA)</td><td>Email Account Gmail, thư mẫu; không có đối tượng “đồng ý nhận tin”</td><td>Làm tạm, giao giai đoạn 3</td></tr>
+    <tr><td>Phân tích (CRM phân tích)</td><td>Trang tổng quan của Frappe CRM; CLV, ABC để giai đoạn 5</td><td>Chưa làm phần của nhóm</td></tr>
+  </table></div>
+  <div class="warn"><b class="t">Đây chính là hiểu lầm “CRM tự động hóa mọi thứ”</b>Frappe CRM không có sẵn mọi thứ nhóm cần: đổi trả, đồng ý nhận tin và duyệt chiết khấu đều phải ghi tay bằng việc cần làm. Vì vậy mới có custom app ở giai đoạn 3.</div>
+
+  <h3>Biti's là doanh nghiệp case study</h3>
+  <p>Nhóm chọn Biti's vì đã làm bài tập về Biti's trước đó, có đủ kênh để chạy quy trình, và có website bán hàng phù hợp cho phần tích hợp WordPress sau này (<code>docs/case-study-hien-chuong.md</code>, mục 2). Số liệu công khai nhóm đã thu thập (<code>docs/nghien-cuu-bitis.md</code>), mỗi mục có mức tin cậy:</p>
+  <div class="tablewrap"><table>
+    <tr><th>Thông tin</th><th>Số liệu</th><th>Mức tin cậy</th></tr>
+    <tr><td>Quy mô phân phối</td><td>Khoảng 156 cửa hàng, hơn 1.500 đại lý (bài MISA AMIS, 03/10/2024)</td><td>Báo; số khác năm khác (bài 2017 ghi 130 cửa hàng, 1.200 trung gian)</td></tr>
+    <tr><td>Đổi trả</td><td>7 ngày kể từ ngày nhận hàng, đổi một lần</td><td>Chính thức (bitis.com.vn)</td></tr>
+    <tr><td>Giao hàng</td><td>TP.HCM 1–2 ngày; Hà Nội và miền Bắc 4–5 ngày</td><td>Chính thức</td></tr>
+    <tr><td>Biti's Loyalty</td><td>10.000 đồng được 1 điểm; 50 điểm đổi 1 coupon; hạng Bạc, Vàng, Bạch kim</td><td>Chính thức; điều kiện lên hạng trang không nêu</td></tr>
+  </table></div>
+  <p>Phép tính nhỏ: 50 điểm × 10.000 đồng mỗi điểm = 500.000 đồng chi tiêu cho mỗi coupon (đã kiểm). Điều không tìm được nguồn công khai: cơ cấu phòng ban, số lead, tỉ lệ chuyển đổi, doanh thu theo kênh, hệ thống CRM Biti's đang dùng. Các phòng ban Marketing, Bán hàng, Kho – Giao hàng, Chăm sóc khách hàng, Quản lý là <b>mô hình giả định</b> nhóm dựng từ chính sách công khai.</p>
+
+  <h3>IDIC ánh xạ vào việc Biti's làm</h3>
+  <div class="tablewrap"><table>
+    <tr><th>Bước IDIC</th><th>Biti's làm gì (nguồn công khai)</th><th>Đồ án làm gì (số liệu thật của dữ liệu demo)</th></tr>
+    <tr><td><b>Identify</b></td><td>Đăng ký thành viên Loyalty qua ứng dụng bằng số điện thoại hoặc tài khoản; đặt hàng online không bắt buộc đăng ký</td><td>Dữ liệu giả tự tạo (hạt ngẫu nhiên 213): 60 lead, 45 liên hệ, 20 tổ chức, 24 sản phẩm; thêm 6 nguồn lead (Zalo, TikTok, Instagram, Website, Đại lý giới thiệu, Cửa hàng)</td></tr>
+    <tr><td><b>Differentiate</b></td><td>Phân hạng thành viên Bạc, Vàng, Bạch kim</td><td>Chia theo 5 địa bàn (Territory) và 7 trạng thái deal. <b>Chưa làm</b> phân khách theo giá trị (CLV để giai đoạn 5)</td></tr>
+    <tr><td><b>Interact</b></td><td>Hotline, Zalo tư vấn, tiếp nhận bảo hành tại cửa hàng</td><td>20 nhật ký cuộc gọi, 30 ghi chú, 40 việc; gửi thử một thư qua Gmail, hàng đợi báo Sent</td></tr>
+    <tr><td><b>Customize</b></td><td>Mã giảm 15% sinh nhật qua SMS; dòng Hunter hướng người trẻ, dòng Biti's cho mọi lứa tuổi (theo báo 2017)</td><td>Mẫu báo giá và hóa đơn riêng của Biti's; thư mẫu “Ưu đãi Hunter mùa lễ” ở giai đoạn 2</td></tr>
+  </table></div>
+  <p>Theo <code>docs/phase-report.md</code>, sau khi chạy thử quy trình ở giai đoạn 2, tổng số là 75 lead (60 + 15), 38 deal (30 + 8) và 53 việc (40 + 13). Mình đã cộng lại các số này nhưng <b>chưa truy vấn lại hệ thống đang chạy</b>, nên coi là số theo nhật ký.</p>
+
+  <h3>Một câu đúng và một câu chưa đạt</h3>
+  <div class="ex"><b class="t">Đúng</b>“Frappe CRM là phần mềm CRM vận hành, mạnh ở bán hàng. Nhóm dùng nó để chạy quy trình marketing – bán hàng – chăm sóc của Biti's trên dữ liệu giả.”</div>
+  <div class="warn"><b class="t">Chưa đạt</b>“Đồ án triển khai CRM chiến lược cho Biti's.” Chiến lược CRM là văn hóa và quyết định của lãnh đạo doanh nghiệp, nhóm không thay đổi gì ở Biti's thật. Cũng không nên nói “Biti's dùng Frappe CRM”: Biti's không dùng, đây là bài tập dựng trên dữ liệu giả.</div>
+<div class="quiz" data-quiz="ud"></div>
+</section>
+
+<section class="part" id="da">
+  <h2><span class="n">3</span>Hiểu sâu đồ án: vì sao Frappe CRM, và giai đoạn 0 làm gì</h2>
+
+  <h3>Vì sao chọn Frappe CRM</h3>
+  <ol>
+    <li><b>Đề bài thầy.</b> Ghi chú trên lớp (đầu <code>PLAN.md</code>): triển khai CRM cho doanh nghiệp, <b>không làm từ đầu</b> mà dựa trên Frappe CRM, và học viết custom app. Đây là lý do số một, không phải nhóm tự so sánh rồi chọn.</li>
+    <li><b>Mã nguồn mở.</b> README của Frappe CRM tự mô tả là mã nguồn mở. Kho tải tài liệu ghi giấy phép AGPL-3.0 theo báo cáo của tác tử tải, <b>chưa tự đối chiếu</b> từng kho mã.</li>
+    <li><b>Tự cài được trên máy.</b> Giai đoạn 0 đã dựng Frappe 16.55.2 và CRM 16.0.1 trong WSL Ubuntu (<code>docs/phase-report.md</code>, bảng phiên bản), có script bật và tắt (<code>scripts/frappe-start.ps1</code>, <code>frappe-stop.ps1</code>). Điều này cần cho quyết định cho ba bạn còn lại tự cài.</li>
+    <li><b>Mở rộng bằng custom app.</b> README nói Frappe CRM làm để dễ điều chỉnh theo quy trình riêng. Phần mở rộng của nhóm sẽ là app <code>biti_crm</code> ở giai đoạn 3. Frappe còn có REST API và webhook (checklist mục N5 ghi “Đạt”), cần cho phần tích hợp WordPress.</li>
+  </ol>
+  <div class="note"><b class="t">Phương án khác đã cân nhắc?</b>Nhật ký <b>không ghi</b> nhóm đã so sánh Frappe CRM với phần mềm khác. Bảng tiêu chí gốc viết cho Odoo, thầy cho quy đổi sang Frappe. Đừng nói với thầy là nhóm “đã so sánh nhiều CRM” vì tài liệu không có. Nếu thầy hỏi, trả lời đúng: đề bài chỉ định Frappe CRM.</div>
+  <p>Giáo trình giúp đặt lựa chọn này vào khung chung. Khi chọn công nghệ, công ty có ba đường: xây từ đầu (có thể tận dụng mô-đun mã nguồn mở), mua giấy phép cài tại công ty, hoặc thuê bao dịch vụ đám mây (Chương 13, tr. 313). Giáo trình cũng nói hầu như luôn cần tùy biến thêm phần mềm có sẵn (tr. 315). Cách đồ án làm, dùng nền mã nguồn mở có sẵn rồi viết thêm app, nằm giữa xây từ đầu và dùng nguyên bản. Cách ghép này là diễn giải của mình, không phải kết luận của nhật ký.</p>
+
+  <h3>Giai đoạn 0 làm gì, không làm gì</h3>
+  <div class="tablewrap"><table>
+    <tr><th>Làm</th><th>Không làm</th></tr>
+    <tr><td>Sao lưu 2 site cũ và mã <code>biti_crm</code> bản cũ (2,1 MB), gỡ, tạo site mới <code>nhom4.localhost</code>, cài app <code>crm</code></td><td>Cấu hình CRM (giai đoạn 1); viết app mới (giai đoạn 3)</td></tr>
+    <tr><td>XAMPP đổi MySQL sang cổng 3307; cài WordPress 7.1.4</td><td>WooCommerce, form lead (giai đoạn 4)</td></tr>
+    <tr><td>Camunda Modeler 5.51.1; file BPMN mẫu 2 lane</td><td>Vẽ quy trình thật (giai đoạn 2)</td></tr>
+    <tr><td>Mẫu report, checklist tiêu chí, hiến chương case study</td><td>Viết đầy đủ mục A4.1</td></tr>
+  </table></div>
+  <p>Phạm vi case study (hiến chương mục 5). <b>Làm:</b> cấu hình theo A4.2, 5 quy trình BPMN chạy thật, custom app, tích hợp WordPress/WooCommerce, phân tích chi phí và CLV. <b>Không làm:</b> tích hợp thật Zalo, ERP của Biti's, Shopee/Lazada; dữ liệu khách hàng thật; ứng dụng di động.</p>
+  <p>Cổng kiểm giai đoạn 0 có 7 điều kiện, theo nhật ký đều Đạt, nhưng có hai chỗ cần nói thẳng: chưa thử khởi động lại cả máy Windows (mới thử tắt bật WSL), và điều kiện Camunda lúc đầu chỉ “Đạt một phần” cho đến khi người duyệt mở file bằng mắt (đã xác nhận ở bản cập nhật 2026-11-22).</p>
+
+  <h3>Của Frappe hay của nhóm?</h3>
+  <div class="tablewrap"><table>
+    <tr><th>Thành phần</th><th>Của ai</th></tr>
+    <tr><td>Frappe Framework 16.55.2 và Frappe CRM 16.0.1</td><td>Frappe. Giao diện <code>/crm</code> là app CRM, không phải app của nhóm</td></tr>
+    <tr><td>Site <code>nhom4.localhost</code></td><td>Một site (bản triển khai) của nhóm. Đường dẫn trên trình duyệt là tên site, không phải tên app</td></tr>
+    <tr><td>Script <code>frappe-start.ps1</code>, <code>frappe-stop.ps1</code>, file phase-report</td><td>Nhóm (công cụ hỗ trợ, không phải app Frappe)</td></tr>
+    <tr><td>App <code>biti_crm</code></td><td>Nhóm, nhưng bản cũ đã gỡ ở giai đoạn 0 (lưu ở thư mục archived) và bản mới <b>chưa tồn tại</b> cho đến giai đoạn 3</td></tr>
+    <tr><td>WordPress, Camunda Modeler</td><td>Phần mềm bên thứ ba, nhóm chỉ cài và dùng</td></tr>
+  </table></div>
+  <p>Ghi chú phản biện của thầy (<code>docs/ghi-chu-phan-bien-thay.md</code>) nói thẳng: Frappe CRM không phải custom app của nhóm, <code>/crm</code> là app <code>crm</code>. Thầy cũng hỏi đi hỏi lại “màn hình này của Frappe hay của tụi em”, nên phải phân biệt được từng thành phần.</p>
+
+  <h3>Cách tự kiểm tra</h3>
+  <ul>
+    <li>Phiên bản: <code>bench version</code> trong WSL phải ra frappe 16.55.2 và crm 16.0.1 (số đo ngày 2026-11-14).</li>
+    <li>Site chạy: bật bằng <code>scripts\frappe-start.ps1</code>, mở <code>http://nhom4.localhost:8000/login</code>.</li>
+    <li>Biti's: mỗi số trong bảng ở phần 2 truy được tới URL trong <code>docs/nghien-cuu-bitis.md</code>.</li>
+  </ul>
+
+  <h3>Hạn chế đã biết</h3>
+  <ul>
+    <li>Số liệu quy mô Biti's lấy từ báo (2017 và 2024), không phải trang chính thức; phòng ban là giả định.</li>
+    <li>Chưa so sánh chính thức với CRM khác; chưa tự đối chiếu giấy phép.</li>
+    <li>Chưa thử khởi động lại cả máy Windows với Frappe.</li>
+  </ul>
+
+  <h3>Thầy sẽ hỏi</h3>
+  <details><summary>1. CRM là gì? Frappe CRM là dạng CRM nào?</summary>
+    <p>CRM là năng lực của tổ chức (giáo trình Chương 1, tr. 16–17), không chỉ phần mềm. Frappe CRM là công cụ thuộc CRM vận hành, mạnh về SFA. Bằng chứng: bảng ở phần 2; Frappe CRM 16.0.1 thiếu đối tượng đổi trả nên nhóm phải làm tạm (<code>docs/phase-report.md</code>, mục 2.3).</p></details>
+  <details><summary>2. Vì sao chọn Frappe CRM? Có cân nhắc cái khác không?</summary>
+    <p>Vì đề bài thầy chỉ định (đầu <code>PLAN.md</code>), và Frappe CRM mã nguồn mở, tự cài được, mở rộng được bằng custom app. Không nói đã so sánh phần mềm khác vì nhật ký không có.</p></details>
+  <details><summary>3. Cái nào của Frappe, cái nào của nhóm? Frappe CRM có phải custom app của em?</summary>
+    <p>Không. <code>/crm</code> là app <code>crm</code> của Frappe. Ở giai đoạn 0 nhóm chưa có app nào, chỉ có site <code>nhom4.localhost</code> và script. App <code>biti_crm</code> sẽ làm ở giai đoạn 3.</p></details>
+  <details><summary>4. Số liệu Biti's từ đâu? Phòng ban là thật à?</summary>
+    <p>Từ <code>docs/nghien-cuu-bitis.md</code>, mỗi mục có URL và mức tin cậy. Phòng ban là mô hình giả định của nhóm, ghi rõ trong tệp đó (mục 5).</p></details>
+  <details><summary>5. Vì sao giai đoạn 0 làm lại từ đầu (reset)?</summary>
+    <p>Bản làm trước còn app <code>biti_crm</code> cũ và hai site; <code>PLAN.md</code> mục rủi ro ghi giao diện bản trước bị chê. Nhóm sao lưu 2,1 MB rồi gỡ, tạo site mới. Lệnh và thứ tự nằm ở <code>docs/phase-report.md</code>, mục 0.2.</p></details>
+<div class="quiz" data-quiz="da"></div>
+</section>
+
+<section class="refs"><h3>Tài liệu tham khảo của bài</h3><ul><li><b>Prior, Buttle &amp; Maklan (2024), Customer Relationship Management, 5th ed.</b>: Chương 1 (tr. 3–24), slide 3–17 của thầy</li><li><b>Giáo trình trên, Chương 13</b>: tr. 313 (xây từ đầu, mua giấy phép hay thuê dịch vụ) và tr. 315 (tùy biến phần mềm có sẵn)</li><li><b>Tài liệu đồ án nhóm 4</b>: PLAN.md, docs/phase-report.md (giai đoạn 0), docs/nghien-cuu-bitis.md, docs/case-study-hien-chuong.md, docs/ghi-chu-phan-bien-thay.md, docs/checklist-tieu-chi.md</li><li><b>Frappe CRM (README trên GitHub)</b>: bản lưu ở tai-lieu-chinh-thong/frappe/02-github-crm-readme.md, tải 2026-11-16</li></ul><p><small class="kh">Bài giảng diễn đạt lại bằng lời của nhóm, không sao chép giáo trình. Chương và trang ghi để bạn tra lại bản gốc.</small></p></section>
+<div class="pager"></div>
+</main>
+</div>
+<script type="application/json" id="quiz-data">{"muc_tieu":{"M1":"Phân biệt ba dạng CRM, nhánh của CRM vận hành, vị trí của Social CRM và CRM 2.0 theo giáo trình","M2":"Nhận ra hiểu lầm về CRM, đọc đúng định nghĩa CRM và áp bốn bước IDIC vào số liệu","M3":"Đặt Frappe CRM và dữ liệu Biti's của đồ án vào đúng khái niệm CRM","M4":"Giải thích lựa chọn Frappe CRM, phạm vi giai đoạn 0 và ranh giới giữa Frappe với nhóm"},"cau_hoi":[{"id":"Q01","phan":"kt","muc_tieu":"M1","loai":"mot_dap_an","cau_hoi":"Một chuỗi nhà sách quyết định thưởng nhân viên theo mức hài lòng của khách, và mỗi quý lãnh đạo họp bàn về khách hàng thay vì chỉ bàn doanh số. Việc này là biểu hiện của dạng CRM nào?","dap_an":{"A":"CRM vận hành, vì liên quan đến cách nhân viên làm việc với khách hằng ngày","B":"CRM phân tích, vì cần đo mức hài lòng của khách để tính tiền thưởng","C":"CRM chiến lược, vì nói về văn hóa và thứ tự ưu tiên của cả công ty","D":"Social CRM, vì mục tiêu là cải thiện cảm nhận của khách về thương hiệu"},"dung":["C"],"loi_sai":{"A":"nhầm văn hóa công ty với tự động hóa quy trình hằng ngày","B":"thấy có đo lường là cho rằng thuộc dạng phân tích","D":"coi Social CRM là một dạng CRM riêng"},"giai_thich":"Thay đổi cách thưởng và cách lãnh đạo ưu tiên là chuyện văn hóa lấy khách làm trung tâm của cả công ty, tức CRM chiến lược. A sai vì CRM vận hành là tự động hóa và nối các quy trình bán hàng, marketing, dịch vụ. B sai vì việc đo mức hài lòng chỉ là công cụ, còn quyết định thưởng là chiến lược; CRM phân tích biến dữ liệu thành hiểu biết. D sai vì Social CRM không phải dạng riêng của giáo trình.","doan_goc":"Chương 1, tr. 6, Bảng 1.2; slide 4–5"},{"id":"Q02","phan":"kt","muc_tieu":"M1","loai":"mot_dap_an","cau_hoi":"Một công ty giày dùng phần mềm tự chia khách mới cho từng nhân viên và soạn thư chào giá từ mẫu có sẵn. Chức năng này thuộc nhánh nào của CRM vận hành?","dap_an":{"A":"MA (tự động hóa marketing), vì phần mềm chạy các tác vụ theo quy tắc, ít cần người can thiệp","B":"SFA (tự động hóa lực lượng bán hàng), vì hỗ trợ quản lý quá trình bán hàng","C":"SA (tự động hóa dịch vụ), vì phần mềm giao việc cho người xử lý yêu cầu","D":"CRM phân tích, vì phần mềm xử lý dữ liệu về khách để quyết định ai sẽ nhận khách mới"},"dung":["B"],"loi_sai":{"A":"nhầm tự động hóa theo quy tắc nói chung với marketing","C":"nhầm giao việc xử lý yêu cầu của khách với giao khách để bán","D":"nhầm việc dùng dữ liệu với dạng CRM phân tích"},"giai_thich":"Giao khách tiềm năng và tạo báo giá là việc điển hình của SFA: quản lý lead, cơ hội và báo giá. A sai vì MA chạy các hoạt động marketing như chiến dịch và email theo quy tắc. C sai vì SA lo yêu cầu, khiếu nại sau khi khách đã mua. D sai vì CRM phân tích tạo hiểu biết từ dữ liệu; ở đây phần mềm chỉ thực hiện việc giao và tạo báo giá.","doan_goc":"Chương 1, tr. 7–10, Bảng 1.3; slide 7"},{"id":"Q03","phan":"kt","muc_tieu":"M1","loai":"nhieu_dap_an","cau_hoi":"Theo giáo trình, phát biểu nào về Social CRM và CRM 2.0 là đúng? (chọn 2 đáp án)","dap_an":{"A":"Social CRM là dạng CRM thứ tư, ngang hàng với chiến lược, vận hành và phân tích","B":"Dữ liệu từ mạng xã hội là thêm một nguồn dữ liệu cho CRM vận hành và CRM phân tích","C":"CRM 2.0 là bản nâng cấp của phần mềm cài tại công ty, dữ liệu vẫn nằm trên máy chủ nội bộ","D":"Mô hình SaaS phổ biến ở CRM 2.0: phần mềm thuê bao dùng qua trình duyệt, dữ liệu trên đám mây"},"dung":["B","D"],"loi_sai":{"A":"coi Social CRM là dạng CRM riêng","C":"nhầm CRM 2.0 với mô hình cài tại công ty (CRM 1.0)"},"giai_thich":"B đúng: giáo trình nói mạng xã hội là một dòng dữ liệu thêm, dùng cho CRM vận hành và phân tích. D đúng: CRM 2.0 gắn với SaaS và đám mây. A sai vì giáo trình nói rõ không coi Social CRM ngang hàng ba dạng kia. C sai vì cài tại công ty, dữ liệu trên máy chủ nội bộ là đặc điểm của CRM 1.0.","doan_goc":"Chương 1, tr. 14–16, Bảng 1.4; slide 9–10"},{"id":"Q04","phan":"kt","muc_tieu":"M2","loai":"mot_dap_an","cau_hoi":"Giám đốc một chuỗi spa tuyên bố: “CRM là phần mềm. Phòng kỹ thuật cài xong, chạy ổn định là dự án đã đạt mục tiêu.” Cách nghĩ này rơi vào hiểu lầm nào trong bốn hiểu lầm của giáo trình?","dap_an":{"A":"Hiểu lầm “CRM là việc của riêng marketing và bán hàng”","B":"Hiểu lầm “CRM tự động hóa toàn bộ công việc”","C":"Hiểu lầm “CRM là chương trình khách hàng thân thiết”","D":"Hiểu lầm “CRM là một hệ thống IT”"},"dung":["D"],"loi_sai":{"A":"nhầm hiểu lầm về người chịu trách nhiệm với hiểu lầm về bản chất","B":"nhầm hiểu lầm về mức độ tự động với hiểu lầm về bản chất","C":"nhầm CRM với một công cụ tích điểm"},"giai_thich":"Coi CRM là dự án phần mềm và đo thành công bằng việc chạy ổn định là hiểu lầm nghiêm trọng nhất theo giáo trình, vì làm mọi người bàn tiến độ, ngân sách thay vì giá trị cho khách. A là hiểu lầm về ai chịu trách nhiệm, B về chuyện tự động hóa hết việc, C về tích điểm; nhận định của giám đốc không nói tới những điều đó.","doan_goc":"Chương 1, tr. 17, hiểu lầm số 1; slide 12"},{"id":"Q05","phan":"kt","muc_tieu":"M2","loai":"mot_dap_an","cau_hoi":"Một công ty tính ra nhóm khách mà chi phí chinh phục và giữ khách cao hơn lợi nhuận họ mang lại. Cụm nào trong định nghĩa CRM của giáo trình giải thích vì sao không nên cố giữ nhóm khách này?","dap_an":{"A":"“năng lực của tổ chức”","B":"“quan hệ khách hàng có lợi nhuận”","C":"“giá trị vượt trội so với đối thủ”","D":"“hiểu biết rút ra từ dữ liệu khách hàng”"},"dung":["B"],"loi_sai":{"A":"hiểu CRM là việc của tổ chức nhưng bỏ qua tiêu chí chọn khách","C":"nhầm giá trị trao cho khách với việc chọn khách đáng giữ","D":"nhầm nguồn của quyết định với tiêu chí của quyết định"},"giai_thich":"Định nghĩa nói CRM tạo và duy trì quan hệ khách hàng có lợi nhuận; vì thế khách tốn nhiều hơn lợi họ mang lại có thể không đáng theo đuổi. A nói về bản chất của CRM là năng lực tổ chức, C nói về chất lượng lời đề nghị so với đối thủ, D nói về chỗ dựa của quyết định là dữ liệu. Cả ba đúng là các thành phần của định nghĩa nhưng không trả lời câu hỏi về chọn khách.","doan_goc":"Chương 1, tr. 16–17; slide 11"},{"id":"Q06","phan":"kt","muc_tieu":"M2","loai":"mot_dap_an","cau_hoi":"Chuỗi trà sữa có 2.000 khách, doanh thu tháng 400 triệu đồng. Nhóm phân tích tính 300 khách chi nhiều nhất đóng góp 180 triệu (180/400 = 45%), rồi so mức chi bình quân của 300 khách này (0,6 triệu) với 1.700 khách còn lại (khoảng 0,13 triệu). Việc này thuộc bước nào của IDIC?","dap_an":{"A":"Identify, vì bước này nhận biết khách là ai và ghi lại thông tin của họ","B":"Interact, vì bước này tìm hiểu kỳ vọng của từng khách qua những lần trao đổi","C":"Differentiate, vì bước này xếp khách theo giá trị hiện tại và tương lai","D":"Customize, vì bước này chuẩn bị ưu đãi riêng cho từng nhóm khách"},"dung":["C"],"loi_sai":{"A":"nhầm việc có dữ liệu khách với việc so giá trị khách","B":"nhầm so sánh con số với việc hỏi khách","D":"nhầm bước phân nhóm với bước làm ưu đãi riêng"},"giai_thich":"So nhóm khách theo mức đóng góp doanh thu (45% từ 300 khách; bình quân 0,6 triệu so với 0,13 triệu, gấp khoảng 4,6 lần) là Differentiate. A là bước có dữ liệu để biết khách là ai, nhưng chưa so giá trị. B là hỏi và hiểu kỳ vọng của khách. D là làm ưu đãi riêng, xảy ra sau khi đã phân nhóm.","doan_goc":"Chương 1, tr. 21; slide 15"},{"id":"Q07","phan":"ud","muc_tieu":"M3","loai":"mot_dap_an","cau_hoi":"Ở giai đoạn 2, nhóm thấy Frappe CRM 16.0.1 không có sẵn đối tượng đổi trả hay ghi nhận đồng ý nhận tin, nên tạm ghi bằng việc cần làm (CRM Task) và ghi chú. Kết luận nào phù hợp với giáo trình?","dap_an":{"A":"Nên ghi nhận hạn chế trong báo cáo rồi giữ nguyên, vì CRM vận hành không bao gồm đổi trả","B":"Nên chọn CRM khác có sẵn đối tượng này, vì đổi trả là chức năng cốt lõi của CRM vận hành","C":"Nên chờ hãng ra bản mới rồi nâng cấp, vì thiếu đối tượng cho thấy bản 16.0.1 đã lỗi thời","D":"Phần mềm CRM cần được tùy biến thêm, không nên kỳ vọng có sẵn đầy đủ chức năng nghiệp vụ"},"dung":["D"],"loi_sai":{"B":"nhầm thiếu một chức năng với lý do đổi phần mềm","C":"nhầm giới hạn của phần mềm với việc phiên bản cũ","A":"nhầm phạm vi CRM vận hành (có dịch vụ khách hàng) với việc không cần xử lý đổi trả"},"giai_thich":"Giáo trình sửa hiểu lầm “CRM tự động hóa mọi thứ”: phần mềm cần chỉnh và thường phải tùy biến thêm (Chương 13, tr. 315). Nhật ký ghi thiếu đối tượng là hạn chế của bản 16.0.1 và giao giai đoạn 3. B đổi phần mềm chỉ vì thiếu một chức năng. C coi đó là lỗi thời của phiên bản. A sai vì dịch vụ khách hàng (xử lý khiếu nại, đổi trả) thuộc CRM vận hành.","doan_goc":"Chương 1, tr. 18; Chương 13, tr. 315; docs/phase-report.md mục 2.3"},{"id":"Q08","phan":"ud","muc_tieu":"M3","loai":"mot_dap_an","cau_hoi":"Người duyệt hỏi: “Bước Differentiate của IDIC trong đồ án đã làm đến đâu?” Câu trả lời đúng với nhật ký là gì?","dap_an":{"A":"Đã chia khách theo 5 địa bàn và 3 hạng giá trị; việc đo CLV đã xong ở giai đoạn 1","B":"Đã chia khách theo 3 hạng thành viên và 5 địa bàn; việc chấm CLV thuộc giai đoạn sau","C":"Đã chia khách theo 5 địa bàn và 7 trạng thái deal; việc phân theo giá trị thuộc giai đoạn sau","D":"Đã chia khách theo 7 địa bàn và 5 trạng thái deal; việc phân theo giá trị thuộc giai đoạn sau"},"dung":["C"],"loi_sai":{"B":"nhầm hạng thành viên Loyalty của Biti's với việc đã làm trong đồ án","A":"nhầm CLV (giai đoạn 5) với việc đã làm","D":"đảo số địa bàn và số trạng thái deal"},"giai_thich":"Nhật ký ghi nhóm chia khách theo 5 địa bàn (Territory) và 7 trạng thái deal; CLV nằm ở giai đoạn 5, chưa làm. B lấy hạng Bạc, Vàng, Bạch kim của Biti's làm việc của đồ án. A nói CLV đã xong. D đảo số địa bàn với số trạng thái.","doan_goc":"docs/phase-report.md mục 1.4, 1.6; docs/nghien-cuu-bitis.md mục 3"},{"id":"Q09","phan":"ud","muc_tieu":"M3","loai":"nhieu_dap_an","cau_hoi":"Phát biểu nào về dữ liệu trong đồ án là đúng? (chọn 2 đáp án)","dap_an":{"A":"Năm phòng ban Marketing, Bán hàng, Kho – Giao hàng, CSKH, Quản lý là mô hình nhóm dựng từ chính sách công khai","B":"Con số khoảng 156 cửa hàng lấy từ trang hệ thống cửa hàng trên bitis.com.vn, có ghi ngày truy cập","C":"Tỉ lệ chuyển đổi lead sang deal của Biti's lấy từ báo cáo thường niên, nhóm đã ghi URL trong nghiên cứu","D":"Các lead, liên hệ, deal trong Frappe CRM do nhóm tạo bằng script với hạt ngẫu nhiên 213, không phải khách thật"},"dung":["A","D"],"loi_sai":{"B":"nhầm nguồn báo (MISA AMIS 2024) với trang chính thức","C":"tin rằng có số liệu công khai mà nguồn không có"},"giai_thich":"A đúng: cơ cấu phòng ban không có nguồn công khai nên là giả định. D đúng: dữ liệu demo tạo bằng script (hạt ngẫu nhiên 213). B sai vì trang cửa hàng tải bằng JavaScript nên chưa đọc được; số 156 lấy từ bài MISA AMIS ngày 03/10/2024. C sai vì tỉ lệ chuyển đổi nằm trong danh sách khoảng trống thông tin.","doan_goc":"docs/nghien-cuu-bitis.md mục 1 và 5; docs/phase-report.md mục 1.6"},{"id":"Q10","phan":"ud","muc_tieu":"M3","loai":"mot_dap_an","cau_hoi":"Chương trình Biti's Loyalty: mua 10.000 đồng được 1 điểm, và 50 điểm đổi được 1 coupon. Một khách muốn đổi 2 coupon thì cần chi tiêu tối thiểu bao nhiêu đồng?","dap_an":{"A":"100.000","B":"500.000","C":"1.000.000","D":"5.000.000"},"dung":["C"],"loi_sai":{"A":"nhầm 1 điểm ứng với 1.000 đồng","B":"chỉ tính cho 1 coupon","D":"nhầm 1 điểm ứng với 50.000 đồng"},"giai_thich":"2 coupon cần 2 × 50 = 100 điểm; mỗi điểm ứng với 10.000 đồng nên cần 100 × 10.000 = 1.000.000 đồng. B là số cho 1 coupon (50 × 10.000 = 500.000). A và D lệch vì dùng sai giá trị một điểm.","doan_goc":"docs/nghien-cuu-bitis.md mục 3 (bitis.com.vn/pages/bitis-loyalty)"},{"id":"Q11","phan":"da","muc_tieu":"M4","loai":"mot_dap_an","cau_hoi":"Thầy hỏi vì sao nhóm dùng Frappe CRM. Lý do nào khớp với tài liệu của đồ án?","dap_an":{"A":"Đề bài yêu cầu dựa trên Frappe CRM; ngoài ra nó mã nguồn mở, tự cài được, mở rộng được bằng custom app","B":"Nhóm so sánh Frappe CRM với hai phần mềm CRM khác theo bảng điểm, rồi chọn Frappe vì cân bằng chi phí và chức năng","C":"Biti's đang dùng Frappe CRM cho bán hàng nên nhóm chọn cùng phần mềm để bài làm sát với thực tế","D":"Bảng tiêu chí của thầy viết sẵn cho Frappe CRM nên nhóm chọn phần mềm này để khỏi phải quy đổi"},"dung":["A"],"loi_sai":{"B":"bịa một quá trình so sánh mà nhật ký không ghi","C":"nhầm phần mềm của case study với phần mềm doanh nghiệp thật đang dùng","D":"nhầm bảng tiêu chí cho Odoo với bảng cho Frappe"},"giai_thich":"Đầu PLAN.md ghi yêu cầu của thầy: dựa trên Frappe CRM, không làm từ đầu. README nói đây là CRM mã nguồn mở, và giai đoạn 0 đã tự cài được. B sai vì nhật ký không có so sánh. C sai vì Biti's không dùng Frappe CRM, hệ thống CRM của họ chưa có nguồn công khai. D sai vì bảng tiêu chí năm 2025 viết cho Odoo và được quy đổi sang Frappe.","doan_goc":"PLAN.md dòng 4; docs/checklist-tieu-chi.md; tai-lieu-chinh-thong/frappe/02-github-crm-readme.md"},{"id":"Q12","phan":"da","muc_tieu":"M4","loai":"mot_dap_an","cau_hoi":"Thầy mở trang http://nhom4.localhost:8000/crm rồi hỏi: “Đây có phải app của tụi em không?” Ở thời điểm kết thúc giai đoạn 0, trả lời nào đúng?","dap_an":{"A":"Có: nhóm đã tùy biến /crm bằng bản dịch và mẫu in nên coi đó là app của nhóm mình","B":"Không: nhom4.localhost là tên site, /crm là giao diện do nhóm tạo bằng cấu hình site; nhóm chưa viết app","C":"Một phần: /crm là app crm của Frappe, còn nhom4.localhost là app nhóm đã cài thêm vào bên trong","D":"Không: nhom4.localhost là tên site, /crm là giao diện của app crm do Frappe làm; nhóm chưa có app riêng"},"dung":["D"],"loi_sai":{"B":"coi cấu hình site là việc tạo ra giao diện CRM","C":"nhầm site với app","A":"coi bản dịch và mẫu in (cấu hình) là app"},"giai_thich":"Site (nhom4.localhost) là bản triển khai của nhóm; /crm là giao diện của app crm do Frappe làm. Giai đoạn 0 đã gỡ app biti_crm cũ và chưa có app mới. B cho rằng giao diện CRM do cấu hình site tạo ra. C đảo vai trò site và app. A coi Translation và Print Format (cấu hình trên site) là app.","doan_goc":"docs/ghi-chu-phan-bien-thay.md (các dòng về /crm); docs/phase-report.md mục 0.2"},{"id":"Q13","phan":"da","muc_tieu":"M4","loai":"nhieu_dap_an","cau_hoi":"Việc nào dưới đây thuộc phạm vi giai đoạn 0 của đồ án? (chọn 2 đáp án)","dap_an":{"A":"Sao lưu hai site cũ, tạo site nhom4.localhost và cài app crm","B":"Tạo 3 Assignment Rule Round Robin chia lead theo địa bàn, thử bằng 7 lead","C":"Đổi cổng MySQL của XAMPP sang 3307 để tránh trùng MariaDB trong WSL","D":"Thêm khoảng 150 bản ghi Translation để Việt hóa nhãn giao diện CRM"},"dung":["A","C"],"loi_sai":{"B":"nhầm cấu hình giai đoạn 1 với nền giai đoạn 0","D":"nhầm Việt hóa giai đoạn 1 với nền giai đoạn 0"},"giai_thich":"A và C nằm trong giai đoạn 0 (mục 0.2 và 0.4 của phase-report). B (mục 1.4) và D (mục 1.9) là cấu hình ở giai đoạn 1.","doan_goc":"docs/phase-report.md mục 0.2, 0.4, 1.4; docs/bai-giang/gd0-chot-nen.html bài 0"},{"id":"Q14","phan":"da","muc_tieu":"M4","loai":"mot_dap_an","cau_hoi":"Thầy hỏi: “Nhóm đã chứng minh Frappe chạy ổn định chưa?” Trả lời nào trung thực với nhật ký giai đoạn 0?","dap_an":{"A":"Đã khởi động lại cả máy Windows rồi bật script, vẫn đăng nhập và tạo, xóa Lead được; chưa thử tắt hẳn WSL","B":"Đã tắt hẳn WSL rồi bật lại bằng script, vẫn đăng nhập và tạo, xóa Lead được; chưa thử khởi động lại Windows","C":"Đã tắt hẳn WSL rồi bật lại bằng script, vẫn đăng nhập được; chưa thử tạo, xóa Lead sau khi bật lại","D":"Đã chạy liên tục hai ngày không tắt, đăng nhập và tạo, xóa Lead đều ổn; chưa thử tắt bật lại lần nào"},"dung":["B"],"loi_sai":{"A":"đảo điều đã thử với điều chưa thử","C":"khai thiếu: nhật ký có thử tạo, xóa Lead sau khi bật lại","D":"bịa phép thử chạy liên tục"},"giai_thich":"Nhật ký ghi: chạy frappe-stop.ps1 (dừng bench và wsl --terminate) rồi frappe-start.ps1; sau đó đăng nhập và tạo, xóa Lead vẫn được; chưa thử khởi động lại cả Windows. A đảo hai việc. C bỏ phần đã kiểm với Lead. D không có trong nhật ký.","doan_goc":"docs/phase-report.md mục 0.3 và bảng Cổng kiểm giai đoạn 0"},{"id":"Q15","phan":"da","muc_tieu":"M4","loai":"mot_dap_an","cau_hoi":"Một bạn trong nhóm định nói với thầy rằng nhóm đã cân nhắc nhiều lựa chọn CRM trước khi dùng Frappe. Nên làm gì?","dap_an":{"A":"Nên bỏ câu đó: tài liệu chỉ ghi đề bài chỉ định Frappe CRM, chưa thấy ghi việc so sánh phần mềm khác","B":"Nên giữ câu đó: giáo trình khuyên so sánh vài nhà cung cấp, và nhóm đã cân nhắc Odoo vì bảng tiêu chí gốc","C":"Nên sửa thành “so sánh hai phương án”: Frappe CRM và Odoo, vì tài liệu có nhắc cả hai, dù chưa có bảng điểm","D":"Nên giữ câu đó nhưng bỏ chữ “nhiều”: tài liệu ghi nhóm đã xem một phương án thay thế, dù chưa lưu kết quả"},"dung":["A"],"loi_sai":{"B":"dùng giáo trình để biện minh cho việc không có trong nhật ký","C":"nhầm việc nhắc tới Odoo (bảng tiêu chí) với việc so sánh","D":"bịa việc đã xem phương án thay thế"},"giai_thich":"Không tài liệu nào của nhóm ghi việc so sánh phần mềm: nên nói đúng là đề bài chỉ định. B dùng giáo trình để biện minh. C nhầm bảng tiêu chí viết cho Odoo với một lần so sánh. D bịa việc đã xem phương án khác.","doan_goc":"PLAN.md dòng 4; docs/phase-report.md giai đoạn 0; docs/checklist-tieu-chi.md dòng 3"}]}</script>
+<script src="../assets/manifest.js"></script>
+<script src="../assets/site.js"></script>
+</body>
+</html>

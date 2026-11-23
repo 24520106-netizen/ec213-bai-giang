@@ -1,0 +1,233 @@
+<section class="part" id="kt">
+  <h2><span class="n">1</span>Kiến thức tổng quát: ứng dụng web, máy chủ nội bộ so với đám mây, Frappe</h2>
+
+  <h3>1.1. Một ứng dụng web là nhiều chương trình phối hợp</h3>
+  <p>Khi bạn mở một trang đặt hàng, không có "một chương trình" làm hết. Có nhiều thành phần, mỗi thành phần một việc. Hình dung một quán trà sữa bán online (ví dụ <b>không thuộc đồ án</b>): khách ngồi ở bàn, nhân viên quầy nhận order, kho sổ ghi mọi đơn, một bảng nhắc nhanh trên quầy, và bếp làm đồ uống theo phiếu.</p>
+  <div class="tablewrap"><table>
+    <thead><tr><th>Thành phần</th><th>Việc của nó</th><th>Ví dụ (quán trà sữa)</th></tr></thead>
+    <tbody>
+      <tr><td><b>Máy khách</b> (client), thường là trình duyệt</td><td>Gửi yêu cầu, hiển thị kết quả</td><td>Khách mở trang web, bấm "Đặt"</td></tr>
+      <tr><td><b>Máy chủ ứng dụng</b> (application server)</td><td>Chạy mã nghiệp vụ: nhận yêu cầu, quyết định làm gì</td><td>Kiểm tra món còn hàng, tính tiền</td></tr>
+      <tr><td><b>Hệ quản trị cơ sở dữ liệu</b> (DBMS – database management system)</td><td>Lưu dữ liệu bền, tra cứu và cập nhật</td><td>Sổ ghi các đơn đã đặt</td></tr>
+      <tr><td><b>Bộ nhớ đệm</b> (cache)</td><td>Giữ tạm kết quả hay dùng ở nơi truy cập nhanh; mất đi vẫn tạo lại được</td><td>Menu hôm nay</td></tr>
+      <tr><td><b>Hàng đợi</b> (queue) và <b>tiến trình nền</b> (worker)</td><td>Nhận việc chậm, xử lý riêng, không bắt người dùng chờ</td><td>Gửi thư xác nhận đơn</td></tr>
+      <tr><td><b>Bộ lập lịch</b> (scheduler)</td><td>Kích hoạt việc theo giờ hoặc định kỳ</td><td>Nhắc đơn chưa thanh toán sau 30 phút</td></tr>
+    </tbody>
+  </table></div>
+  <div class="ex"><b class="t">Ví dụ số</b>Menu được xem 300 lần mỗi giờ. Nếu mỗi lần đều hỏi cơ sở dữ liệu thì 300 truy vấn; nếu giữ menu trong bộ nhớ đệm một giờ thì chỉ 1 truy vấn, đỡ 300 − 1 = 299 lần. Mỗi thư xác nhận mất 2 giây để gửi; 200 thư gửi ngay trong lúc khách chờ là 200 × 2 = 400 giây, khoảng 6,7 phút. Đưa vào hàng đợi cho tiến trình nền gửi dần thì trang trả lời ngay. (Các con số do bài giảng giả định.)</div>
+  <div class="note"><b class="t">Hiểu nhầm hay gặp</b>Bộ nhớ đệm không phải nơi cất dữ liệu chính: mất cache thì dữ liệu vẫn còn trong cơ sở dữ liệu. Hàng đợi cũng không lưu hồ sơ khách; nó chỉ giữ danh sách việc chờ làm.</div>
+
+  <h3>1.2. Cổng và localhost</h3>
+  <p>Một máy có một địa chỉ nhưng nhiều <b>cổng (port)</b>, giống một tòa nhà một địa chỉ nhiều số phòng. <b>localhost</b> nghĩa là "chính máy này". Mỗi cổng, tại một thời điểm, chỉ một chương trình được lắng nghe. Hai chương trình cùng đòi một cổng thì chương trình chạy sau báo lỗi cổng đã bị chiếm. Quy ước phổ biến: 80 cho HTTP (giao thức truyền trang web), 443 cho HTTPS (bản mã hóa của HTTP), 3306 cho MySQL và MariaDB. Cách xử lý bình thường: đổi một bên sang cổng khác.</p>
+  <div class="ex"><b class="t">Ví dụ</b>Một lập trình viên chạy cơ sở dữ liệu cho dự án A ở cổng 3306. Dự án B cũng muốn 3306 nên bị lỗi; anh đặt B sang 3307. Địa chỉ kết nối của B phải ghi rõ 3307, nếu không nó vẫn gõ cửa nhầm vào dự án A.</div>
+  <div class="src"><b class="t">Nguồn</b>Kiến thức chung về mạng máy tính; không từ giáo trình CRM và không có trong kho tài liệu Frappe đã tải.</div>
+
+  <h3>1.3. CRM trên máy chủ nội bộ so với đám mây</h3>
+  <p>Giáo trình chia CRM theo nơi đặt phần mềm và dữ liệu. Ở Chương 1, slide 9–10, <b>CRM 1.0</b> (từ khoảng 1990) có dữ liệu lưu trên máy chủ của chính công ty và mô hình chủ đạo là <b>on-premises</b> (đặt tại cơ sở của công ty). <b>CRM 2.0</b> (từ khoảng 2010) có dữ liệu lưu trên <b>đám mây</b> và mô hình chủ đạo là <b>SaaS (Software-as-a-Service – phần mềm như một dịch vụ)</b>. Phụ lục "CRM hosting options" bổ sung: bản nội bộ thì mua giấy phép, tự cài và giữ dữ liệu trong công ty, nên toàn quyền truy cập nhưng tốn phí giấy phép, phải tự theo kịp công nghệ, và nếu sao lưu không tốt thì có nguy cơ mất dữ liệu. Bản đám mây thì trả thuê bao theo số người dùng, nhà cung cấp lo vận hành, cập nhật. Sách nêu khoảng 75% dữ liệu CRM hiện nằm trên đám mây (theo Gartner mà sách trích).</p>
+  <div class="ex"><b class="t">Ví dụ số (giả định, không phải giá thật)</b>Công ty A thuê CRM đám mây 25 USD mỗi người mỗi tháng cho 20 người: 20 × 25 = 500 USD/tháng, tức 6.000 USD mỗi năm. Công ty B mua bản nội bộ giá 8.000 USD, rồi tốn thêm 150 USD/tháng cho máy chủ và bảo trì. Hai cách ngang nhau khi 500 × t = 8.000 + 150 × t, tức t = 8.000 / 350 ≈ 22,9 tháng. Đến tháng 22, A tốn 11.000 USD còn B 11.300; sang tháng 23, A tốn 11.500 còn B 11.450. Nhưng còn công sức tự vận hành, rủi ro mất dữ liệu: không chỉ có giá.</div>
+  <div class="note"><b class="t">Hiểu nhầm hay gặp</b>"Dùng qua trình duyệt" không có nghĩa là đám mây. Một ứng dụng đặt trong máy chủ công ty vẫn mở bằng trình duyệt. Điều quyết định là <i>ai vận hành và dữ liệu nằm ở đâu</i>.</div>
+  <div class="src"><b class="t">Trong giáo trình</b>Chương 1, slide 9–10; Phụ lục "CRM hosting options", mục "On-premise versus cloud-based".</div>
+
+  <h3>1.4. Cơ sở dữ liệu quan hệ</h3>
+  <p>Chương 11, slide 3 và đoạn mở đầu mục "Developing a customer-related database" nói cơ sở dữ liệu quan hệ là kiến trúc tiêu chuẩn cho ứng dụng CRM dùng dữ liệu có cấu trúc. Nó lưu dữ liệu trong bảng hai chiều gồm <b>hàng</b> (record) và <b>cột</b> (field), như một bảng tính. Mỗi bản ghi có một mã định danh duy nhất gọi là <b>khóa chính (primary key)</b>; sách nói công ty dùng mã khách duy nhất để nối dữ liệu giữa các cơ sở dữ liệu của marketing, dịch vụ, thanh toán. Ở slide 7, bước chọn công nghệ cơ sở dữ liệu thường bị giới hạn bởi danh sách mà nhà cung cấp CRM hỗ trợ.</p>
+  <div class="tablewrap"><table>
+    <thead><tr><th colspan="3">Bảng KHÁCH</th><th colspan="3">Bảng ĐƠN</th></tr>
+    <tr><th>mã_khách</th><th>tên</th><th>thành phố</th><th>mã_đơn</th><th>mã_khách</th><th>tổng</th></tr></thead>
+    <tbody>
+      <tr><td>K01</td><td>Lan</td><td>Hà Nội</td><td>D1</td><td>K01</td><td>300.000</td></tr>
+      <tr><td>K02</td><td>Minh</td><td>Đà Nẵng</td><td>D2</td><td>K01</td><td>450.000</td></tr>
+      <tr><td>K03</td><td>Hà</td><td>Hà Nội</td><td>D3</td><td>K02</td><td>120.000</td></tr>
+    </tbody>
+  </table></div>
+  <p>Cột <i>mã_khách</i> xuất hiện ở cả hai bảng nên nối được đơn với khách. Khách K01 có 2 đơn: 300.000 + 450.000 = 750.000 đồng. Khách K03 chưa có đơn nào. Cũng ở Chương 11 (mục Step 1), dữ liệu vận hành (OLTP, online transaction processing) cần chính xác và mới nhất, còn dữ liệu phân tích (OLAP, online analytical processing) thường là bản tóm tắt chiết ra từ bản vận hành.</p>
+
+  <h3>1.5. WSL là gì</h3>
+  <p><b>WSL (Windows Subsystem for Linux – hệ con Linux trên Windows)</b> cho chạy một bản Linux thật, ví dụ Ubuntu, ngay trong Windows mà không cần cài song song hai hệ điều hành. WSL2 chạy một nhân Linux thật trong máy ảo nhẹ do Windows quản lý, và Windows có thể truy cập cổng của chương trình trong WSL qua localhost. Nhiều framework web được thiết kế và kiểm thử trên Linux, nên chạy trong WSL ít trục trặc hơn chạy thẳng trên Windows.</p>
+  <div class="src"><b class="t">Nguồn</b>Kiến thức chung về WSL; kho tài liệu đã tải của dự án không có trang về WSL. Ở phần 2 bạn sẽ thấy bằng chứng đo trên máy đồ án.</div>
+
+  <h3>1.6. Frappe: framework, app, site, bench, DocType</h3>
+  <p>Các định nghĩa sau theo tài liệu Frappe (bản latest, tải 2026-11-16, xem <code>tai-lieu-chinh-thong/frappe/INDEX.md</code>), không phải theo giáo trình.</p>
+  <div class="tablewrap"><table>
+    <thead><tr><th>Thuật ngữ</th><th>Nghĩa</th><th>Tệp tài liệu</th></tr></thead>
+    <tbody>
+      <tr><td><b>Frappe Framework</b></td><td>Framework web "đủ bộ", viết bằng Python: cơ sở dữ liệu, bộ nhớ đệm, việc nền, thông báo thời gian thực được cấu hình sẵn khi dựng một site. Bản thân framework cũng là một app tên <code>frappe</code>.</td><td><code>03-arch.txt</code></td></tr>
+      <tr><td><b>App</b></td><td>Một gói Python dùng nền Frappe, nằm trong thư mục <code>apps</code> của bench và có tên trong <code>apps.txt</code>.</td><td><code>01-basics-apps.txt</code>, <code>01-guide-apps.txt</code></td></tr>
+      <tr><td><b>Site</b></td><td>Một "bên thuê" (tenant) của nền tảng: một thư mục trong <code>sites</code> với cơ sở dữ liệu và cấu hình riêng (<code>site_config.json</code>). Frappe chọn site theo tên máy (Host) trong yêu cầu HTTP.</td><td><code>01-guide-sites.txt</code></td></tr>
+      <tr><td><b>Bench</b></td><td>Bộ công cụ dòng lệnh (CLI – command-line interface) và cũng là thư mục gốc chứa <code>apps</code>, <code>sites</code>, <code>env</code>, <code>config</code>, <code>logs</code>, <code>Procfile</code>.</td><td><code>01-directory-structure.txt</code>, <code>01-bench-commands.txt</code></td></tr>
+      <tr><td><b>DocType</b></td><td>Khối dựng cơ bản của ứng dụng Frappe: mô tả dữ liệu (trường, quy tắc, cách hiển thị). Tạo DocType thì sinh một đối tượng JSON (định dạng văn bản mô tả dữ liệu) và một bảng cơ sở dữ liệu có tên bắt đầu bằng <code>tab</code>, ví dụ DocType "ToDo" thành bảng <code>tabToDo</code>.</td><td><code>03-doctypes.txt</code></td></tr>
+    </tbody>
+  </table></div>
+  <p>Tài liệu mô tả các tiến trình của bench (tệp <code>Procfile</code>): ba Redis cho bộ nhớ đệm, hàng đợi và liên lạc thời gian thực; <code>web</code> là máy chủ Python; <code>socketio</code> là máy chủ Node cho thời gian thực; <code>schedule</code> là bộ lập lịch; các <code>worker</code> chạy việc nền với giới hạn thời gian 300 giây hoặc 1500 giây tùy hàng đợi. Trang tài liệu chỉ là ví dụ, bản thật có thể khác (xem phần 2).</p>
+  <div class="note"><b class="t">Hiểu nhầm hay gặp</b>(1) Site = app: sai; một app có thể cài vào nhiều site, và một bench chứa nhiều site. (2) DocType = app hay site: sai; DocType là một loại dữ liệu bên trong app. (3) Frappe CRM = Frappe: sai; CRM là một app chạy <i>trên</i> framework Frappe. (4) <code>localhost:8000</code> là tên app: sai; đó là địa chỉ máy cộng cổng.</div>
+</section>
+
+<section class="part" id="ud">
+  <h2><span class="n">2</span>Ứng dụng trong đồ án: các thành phần thật, phiên bản và cổng</h2>
+
+  <h3>2.1. Khái niệm ↔ thành phần của đồ án</h3>
+  <div class="tablewrap"><table>
+    <thead><tr><th>Khái niệm (Phần 1)</th><th>Trong đồ án</th></tr></thead>
+    <tbody>
+      <tr><td>Máy khách</td><td>Trình duyệt trên Windows 11 mở <code>http://nhom4.localhost:8000/crm</code></td></tr>
+      <tr><td>Máy chủ ứng dụng</td><td>Tiến trình <code>web</code> của bench (<code>bench serve --port 8000</code>), chạy trong WSL</td></tr>
+      <tr><td>Thời gian thực</td><td>Tiến trình <code>socketio</code> (<code>bench socketio</code>), cổng 9000</td></tr>
+      <tr><td>Hệ quản trị cơ sở dữ liệu</td><td>MariaDB 11.8.6 trong WSL, cổng 3306. Cơ sở dữ liệu của site <code>nhom4.localhost</code> có 316 bảng; trong đó bảng <code>tabCRM Lead</code> có 75 dòng và <code>tabCRM Deal</code> có 38 dòng (đếm bằng <code>bench mariadb</code> ngày 2026-11-23)</td></tr>
+      <tr><td>Bộ nhớ đệm và hàng đợi</td><td>Hai tiến trình Redis của bench: <code>redis_cache</code> ở cổng 13000, <code>redis_queue</code> ở cổng 11000</td></tr>
+      <tr><td>Tiến trình nền và lập lịch</td><td><code>worker</code> (cấu hình <code>background_workers: 1</code>) và <code>schedule</code></td></tr>
+      <tr><td>WSL</td><td>Ubuntu 26.04.1 LTS, WSL phiên bản 2, trạng thái Running (<code>wsl -l -v</code>, 2026-11-23)</td></tr>
+      <tr><td>Máy chủ nội bộ so với đám mây</td><td>Đồ án chạy trên máy cá nhân của nhóm: giống on-premises thu nhỏ. Frappe cũng có dịch vụ đám mây riêng (thầy nhắc "frappe.cloud" trong ghi chú) mà đồ án không dùng</td></tr>
+    </tbody>
+  </table></div>
+  <div class="ex"><b class="t">Nhật ký thật khớp với hàng đợi</b>Ngày 2026-11-22 nhóm gửi thư thử bằng Frappe. Thư vào bảng Email Queue nhưng bộ lập lịch chưa kịp gửi, nên nhóm đẩy hàng đợi bằng lệnh <code>bench execute frappe.email.queue.flush</code>; kết quả Email Queue chuyển "Sent". Đây đúng là mẫu "việc chậm đi qua hàng đợi" ở mục 1.1.</div>
+
+  <h3>2.2. Bảng phiên bản</h3>
+  <p>Nguồn là <code>docs/phase-report.md</code> (đo ngày 2026-11-14). Mình chạy lại những lệnh dưới đây ngày 2026-11-23; cột cuối ghi kết quả đối chiếu.</p>
+  <div class="tablewrap"><table>
+    <thead><tr><th>Thành phần</th><th>Phiên bản trong nhật ký</th><th>Kiểm lại 2026-11-23</th></tr></thead>
+    <tbody>
+      <tr><td>WSL / Ubuntu</td><td>Ubuntu 26.04.1 LTS (WSL2)</td><td>Khớp (<code>/etc/os-release</code>, <code>wsl -l -v</code>)</td></tr>
+      <tr><td>Frappe Framework</td><td>16.55.2</td><td>Khớp (<code>bench version</code>)</td></tr>
+      <tr><td>Frappe CRM</td><td>16.0.1</td><td>Khớp (<code>bench version</code>)</td></tr>
+      <tr><td>bench CLI</td><td>5.31.1</td><td>Khớp (<code>bench --version</code>)</td></tr>
+      <tr><td>Python (WSL)</td><td>3.14.4</td><td>Khớp</td></tr>
+      <tr><td>Node (WSL)</td><td>24.22.2; Yarn 1.22.22</td><td>Node khớp; Yarn chưa kiểm lại</td></tr>
+      <tr><td>MariaDB (WSL)</td><td>11.8.6</td><td>Khớp</td></tr>
+      <tr><td>Redis</td><td>8.0.5</td><td>Khớp</td></tr>
+      <tr><td>XAMPP</td><td>8.2.12-0 (PHP 8.2.12, Apache 2.4.58, MariaDB 10.4.32)</td><td>XAMPP 8.2.12-0 khớp (<code>properties.ini</code>); PHP, Apache, MariaDB của XAMPP chưa kiểm lại</td></tr>
+      <tr><td>WordPress</td><td>7.1.4</td><td>Khớp (<code>wp-includes/version.php</code>)</td></tr>
+      <tr><td>Camunda Modeler</td><td>5.51.1</td><td>Khớp (tệp VERSION)</td></tr>
+      <tr><td>Windows / Node Windows / Git</td><td>11 Home SL 10.0.26300 / 24.20.0 / 2.55.0</td><td>Node và Git khớp; Windows báo 10.0.26300.10075 (cùng bản 26300)</td></tr>
+    </tbody>
+  </table></div>
+  
+  <h3>2.3. Các cổng và địa chỉ</h3>
+  <div class="tablewrap"><table>
+    <thead><tr><th>Cổng</th><th>Ai nghe</th><th>Bằng chứng</th></tr></thead>
+    <tbody>
+      <tr><td>8000</td><td>Web của bench (Frappe)</td><td><code>Procfile</code>, <code>webserver_port</code> trong <code>common_site_config.json</code></td></tr>
+      <tr><td>9000</td><td>Socket.IO (thời gian thực)</td><td><code>socketio_port</code></td></tr>
+      <tr><td>11000</td><td>Redis hàng đợi</td><td><code>redis_queue</code></td></tr>
+      <tr><td>13000</td><td>Redis bộ nhớ đệm (socketio cũng trỏ tới đây)</td><td><code>redis_cache</code>, <code>redis_socketio</code></td></tr>
+      <tr><td>3306</td><td>MariaDB trong WSL</td><td>Nhật ký 0.4; <code>netstat</code> thấy 127.0.0.1:3306 do tiến trình <code>wslrelay</code> giữ</td></tr>
+      <tr><td>3307</td><td>MySQL của XAMPP (cho WordPress)</td><td><code>my.ini</code> hai dòng <code>port=3307</code></td></tr>
+      <tr><td>80</td><td>Apache của XAMPP</td><td><code>properties.ini</code>: <code>apache_server_port=80</code></td></tr>
+    </tbody>
+  </table></div>
+  <p>Địa chỉ <code>http://nhom4.localhost:8000/crm</code> gồm ba phần: <b>nhom4.localhost</b> là tên site (Frappe chọn site theo Host của yêu cầu); <b>8000</b> là cổng của web bench; <b>/crm</b> là đường dẫn vào giao diện của app <code>crm</code>.</p>
+
+  <h3>2.4. Site và app thật của đồ án</h3>
+  <div class="tablewrap"><table>
+    <thead><tr><th>Thứ</th><th>Giá trị thật</th></tr></thead>
+    <tbody>
+      <tr><td>Thư mục bench</td><td><code>~/frappe-bench</code> trong WSL</td></tr>
+      <tr><td>Các app có trong <code>apps/</code></td><td><code>frappe</code>, <code>crm</code> (hai app; app <code>biti_crm</code> bản cũ đã gỡ, nằm ở <code>archived/apps/biti_crm-2026-11-14</code>)</td></tr>
+      <tr><td>Các site trong <code>sites/</code></td><td><code>nhom4.localhost</code> (site đang dùng); <code>default_site</code> của <code>common_site_config.json</code> là <code>nhom4.localhost</code></td></tr>
+      <tr><td>App đã cài vào site</td><td><code>frappe</code> 16.55.2 và <code>crm</code> 16.0.1 (<code>bench --site nhom4.localhost list-apps</code>)</td></tr>
+      <tr><td>Số DocType của module FCRM</td><td>40 (nhật ký 0.3 và đếm lại bằng truy vấn ngày 2026-11-23)</td></tr>
+      <tr><td>Nguồn mã app CRM</td><td>kho Git <code>github.com/frappe/crm</code> (kiểm bằng <code>git remote -v</code> trong <code>apps/crm</code>)</td></tr>
+    </tbody>
+  </table></div>
+
+  <h3>2.5. Hai ngăn xếp phần mềm chạy song song</h3>
+  <div class="tablewrap"><table>
+    <thead><tr><th></th><th>Frappe CRM</th><th>WordPress</th></tr></thead>
+    <tbody>
+      <tr><td>Chạy ở</td><td>WSL Ubuntu</td><td>Windows (XAMPP trong <code>C:\xampp</code>)</td></tr>
+      <tr><td>Ngôn ngữ</td><td>Python, JavaScript</td><td>PHP</td></tr>
+      <tr><td>Web server</td><td>bench serve, cổng 8000</td><td>Apache, cổng 80</td></tr>
+      <tr><td>Cơ sở dữ liệu</td><td>MariaDB 11.8.6, cổng 3306</td><td>MySQL (MariaDB 10.4.32) của XAMPP, cổng 3307; database <code>wp_nhom4</code></td></tr>
+      <tr><td>Để làm gì</td><td>CRM chính của đồ án</td><td>Website cho Lead Form và đơn WooCommerce (giai đoạn 4)</td></tr>
+    </tbody>
+  </table></div>
+
+  <h3>2.6. Nói đúng và nói chưa đạt</h3>
+  <div class="ex"><b class="t">Đúng (có thể kiểm từng vế)</b>"Site <code>nhom4.localhost</code> chạy trong bench ở cổng 8000. Nó dùng cơ sở dữ liệu MariaDB 11.8.6 ở cổng 3306 và hai Redis ở cổng 11000 và 13000. App <code>crm</code> 16.0.1 được cài trong site đó. WordPress dùng MySQL của XAMPP ở cổng 3307." Đếm lại: đồ án có 7 cổng lắng nghe khác nhau trong bảng 2.3 (8000, 9000, 11000, 13000, 3306, 3307, 80), mỗi cổng một chương trình.</div>
+  <div class="warn"><b class="t">Chưa đạt (hay gặp)</b>"Frappe CRM là app của nhóm, địa chỉ của nó là nhom4.localhost." Sai hai chỗ: CRM là app của Frappe, và nhom4.localhost là tên site. Hoặc: "WordPress và Frappe dùng chung một MariaDB." Sai: hai cơ sở dữ liệu tách biệt, một ở WSL (3306), một ở XAMPP (3307).</div>
+</section>
+
+<section class="part" id="da">
+  <h2><span class="n">3</span>Hiểu sâu đồ án: cổng 3307, quy trình dựng site, scripts và cách kiểm</h2>
+
+  <h3>3.1. Vì sao đổi cổng MySQL của XAMPP sang 3307</h3>
+  <p><b>Chuyện gì xảy ra.</b> Nhật ký 0.4: cổng 3306 trên Windows đang do WSL giữ (WSL chuyển tiếp localhost), nên MySQL của XAMPP, vốn cũng mặc định 3306, sẽ đụng nhau. Ngày 2026-11-23 mình thấy đúng hiện tượng: <code>netstat</code> báo <code>127.0.0.1:3306 LISTENING</code> và tiến trình giữ là <code>wslrelay</code>.</p>
+  <p><b>Đã sửa những đâu</b> (nhật ký 0.4, kiểm lại trên máy): <code>C:\xampp\mysql\bin\my.ini</code> hai dòng <code>port=3307</code>; <code>phpMyAdmin\config.inc.php</code> thêm <code>port = '3307'</code>; <code>wp-config.php</code> của WordPress đặt <code>DB_HOST</code> là <code>127.0.0.1:3307</code>. Hai tệp gốc đã sao lưu thành <code>*.bak-gd0</code>.</p>
+  <div class="tablewrap"><table>
+    <thead><tr><th>Phương án</th><th>Hệ quả</th><th>Đánh giá</th></tr></thead>
+    <tbody>
+      <tr><td><b>Đổi XAMPP sang 3307 (đã chọn)</b></td><td>Sửa 3 chỗ, có sao lưu; Frappe giữ cổng quy ước</td><td>Nhóm đã chọn</td></tr>
+      <tr><td>Đổi MariaDB trong WSL sang cổng khác</td><td>Phải đổi cấu hình kết nối của mọi site Frappe</td><td>Lập luận của bài giảng; nhật ký không ghi phương án này</td></tr>
+      <tr><td>Tắt bên này khi dùng bên kia</td><td>Không chạy đồng thời được, mà giai đoạn 4 cần WordPress gọi Frappe</td><td>Lập luận của bài giảng [GIẢ ĐỊNH]</td></tr>
+    </tbody>
+  </table></div>
+  <p>Lý do "vì sao chọn XAMPP để đổi" không được nhật ký ghi; nhật ký chỉ ghi quyết định và việc đã sửa. Phần so sánh phương án ở bảng trên là suy luận của bài giảng.</p>
+
+  <h3>3.2. Quy trình sao lưu, drop-site, new-site, install-app (mục 0.2)</h3>
+  <div class="tablewrap"><table>
+    <thead><tr><th>Bước</th><th>Lệnh</th><th>Vì sao</th><th>Nguồn</th></tr></thead>
+    <tbody>
+      <tr><td>1. Sao lưu</td><td><code>bench --site &lt;site&gt; backup --with-files</code>, rồi chép ra <code>C:\Users\<tên-bạn>\Backups\frappe-cu-2026-11-14</code></td><td>Không xóa thứ chưa có bản sao; bản sao nằm ngoài thư mục bench</td><td><code>01-bench-ref-backup.txt</code></td></tr>
+      <tr><td>2. Gỡ site cũ</td><td><code>bench drop-site &lt;site&gt; --no-backup</code></td><td>Đã sao lưu rồi nên bỏ bước sao lưu tự động; drop-site xóa cơ sở dữ liệu và chuyển thư mục site đi</td><td><code>01-bench-ref-drop-site.txt</code></td></tr>
+      <tr><td>3. Gỡ app cũ</td><td><code>bench remove-app biti_crm --force</code></td><td>Tài liệu mô tả remove-app kèm điều kiện "không cài ở site nào"; gỡ site trước rồi mới gỡ app là thứ tự hợp lý (nhật ký không ghi lý do chọn thứ tự)</td><td><code>01-bench-commands.txt</code></td></tr>
+      <tr><td>4. Site mới</td><td><code>bench new-site nhom4.localhost</code>, rồi <code>bench use nhom4.localhost</code></td><td>Tạo thư mục site và cơ sở dữ liệu mới; đặt làm site mặc định</td><td><code>01-bench-ref-new-site.txt</code>, <code>01-guide-sites.txt</code></td></tr>
+      <tr><td>5. Cài CRM</td><td><code>bench --site nhom4.localhost install-app crm</code></td><td>Cài app vào site nghĩa là tạo bảng của app trong cơ sở dữ liệu của site</td><td><code>01-basics-apps.txt</code></td></tr>
+    </tbody>
+  </table></div>
+  <p>Kiểm lại ngày 2026-11-23: <code>archived/sites</code> chứa <code>biti.localhost</code> và <code>biti-test.localhost</code>; <code>archived/apps</code> chứa <code>biti_crm-2026-11-14</code>; thư mục sao lưu ngoài bench nặng 2,1 MB, gồm hai thư mục site, <code>biti_crm-app.tar.gz</code>, <code>apps.txt</code>, <code>common_site_config.json</code>.</p>
+  <div class="warn"><b class="t">Tài liệu và máy thật khác nhau</b>Tài liệu drop-site nói thư mục site chuyển vào <code>archived_sites</code>; máy đồ án dùng <code>archived/sites</code>. Tài liệu <code>bench use</code> nói ghi vào <code>currentsite.txt</code>; trên máy đồ án không có tệp đó và site mặc định nằm ở <code>default_site</code> trong <code>common_site_config.json</code>. Procfile thật có hai Redis và một worker, không phải ba Redis và ba worker như ví dụ. Lỗi lúc <code>install-app</code> (Redis cổng 11000) xảy ra vì khi đó chưa chạy <code>bench start</code>: cổng 11000 là Redis hàng đợi.</div>
+
+  <h3>3.3. Vì sao site và app khác nhau (câu thầy hỏi)</h3>
+  <p>Ghi chú phản biện có các câu: "Đường dẫn là tên app mấy đứa? Ko, đó là site thôi", "Frappe crm KO PHẢI custom app của tụi em", "/crm là app crm". Trả lời bằng bằng chứng:</p>
+  <div class="tablewrap"><table>
+    <thead><tr><th>Câu hỏi</th><th>Bằng chứng thật</th></tr></thead>
+    <tbody>
+      <tr><td><code>nhom4.localhost</code> là gì?</td><td>Tên một site: thư mục <code>sites/nhom4.localhost</code> có <code>site_config.json</code>, <code>private</code>, <code>public</code>, và một cơ sở dữ liệu riêng</td></tr>
+      <tr><td><code>/crm</code> là gì?</td><td>Đường dẫn vào giao diện của app <code>crm</code> (app này cài trong site)</td></tr>
+      <tr><td>CRM có phải app của nhóm?</td><td>Không. Mã nằm ở <code>apps/crm</code>, nguồn <code>github.com/frappe/crm</code>. Nhóm cài và cấu hình nó</td></tr>
+      <tr><td>App của nhóm đâu?</td><td>Hiện <code>apps/</code> chỉ có <code>frappe</code> và <code>crm</code>. <code>biti_crm</code> bản cũ đã gỡ; app mới làm ở giai đoạn 3, <b>chưa làm</b></td></tr>
+    </tbody>
+  </table></div>
+  <div class="tablewrap"><table>
+    <thead><tr><th>Của Frappe</th><th>Của nhóm</th></tr></thead>
+    <tbody>
+      <tr><td>Framework <code>frappe</code>, bench CLI, tiến trình trong Procfile, DocType của module FCRM (40), app <code>crm</code></td><td>Tên và việc tạo site <code>nhom4.localhost</code>; cấu hình qua script <code>scripts/gd1-*.py</code> gọi REST API; dữ liệu demo; hai script khởi động và dừng; sửa cổng XAMPP; WordPress <code>wp_nhom4</code></td></tr>
+    </tbody>
+  </table></div>
+  <p>Script <code>gd1-*.py</code> không phải một Frappe app: chúng chạy bên ngoài và gọi API, nên tạo cấu hình mà không thêm mã vào Frappe.</p>
+
+  <h3>3.4. Hai script <code>frappe-start.ps1</code> và <code>frappe-stop.ps1</code></h3>
+  <ol>
+    <li><b>frappe-start.ps1</b>: (a) với tài khoản root trong WSL chạy <code>service mariadb start; service redis-server start</code>; (b) với tài khoản <code>frappe</code> chạy <code>bash /home/frappe/wenv.sh 'bench start'</code>. Tệp <code>wenv.sh</code> nằm trong WSL, đặt PATH tới <code>~/.bench-venv</code>, nạp Node, chuyển vào <code>~/frappe-bench</code> rồi chạy lệnh được truyền. Đóng cửa sổ là tắt Frappe.</li>
+    <li><b>frappe-stop.ps1</b>: tắt tiến trình <code>bench start</code>, <code>honcho</code> (chương trình chạy các tiến trình trong Procfile) và hai Redis ở cổng 11000, 13000; chờ 1 giây; rồi <code>wsl --terminate Ubuntu</code> để tắt cả bản Ubuntu.</li>
+  </ol>
+  <div class="warn"><b class="t">Điều chưa chắc</b>MariaDB trong WSL đã được bật tự động theo hệ (kiểm: <code>mariadb.service ... enabled</code>), nên dòng khởi động MariaDB là dự phòng (lúc mình mở WSL để kiểm, MariaDB đã tự chạy). Dòng <code>service redis-server start</code> bật Redis của hệ thống; bench tự bật hai Redis riêng ở 11000/13000 theo Procfile, nên dòng đó có thể thừa (chưa kiểm). Script dừng không có bước tắt MariaDB riêng; nhật ký 0.3 ghi đã thử tắt rồi bật lại, đăng nhập và tạo Lead vẫn được, nhưng chưa thử khởi động lại cả Windows.</div>
+
+  <h3>3.5. Cách kiểm từng thành phần đang chạy</h3>
+  <div class="tablewrap"><table>
+    <thead><tr><th>Thành phần</th><th>Lệnh</th><th>Kết quả mong đợi</th><th>Đã chạy 2026-11-23?</th></tr></thead>
+    <tbody>
+      <tr><td>WSL</td><td><code>wsl -l -v</code> (PowerShell)</td><td>Ubuntu, Running, 2</td><td>Có</td></tr>
+      <tr><td>MariaDB</td><td><code>service mariadb status</code> trong WSL</td><td>active (running)</td><td>Có</td></tr>
+      <tr><td>Cổng 3306 trên Windows</td><td><code>netstat -ano</code>, lọc <code>:3306</code></td><td>LISTENING, tiến trình <code>wslrelay</code></td><td>Có</td></tr>
+      <tr><td>Phiên bản app</td><td><code>bench version</code>; <code>bench --site nhom4.localhost list-apps</code></td><td>frappe 16.55.2, crm 16.0.1</td><td>Có</td></tr>
+      <tr><td>Cơ sở dữ liệu của site</td><td><code>bench --site nhom4.localhost mariadb</code>, rồi đếm dòng <code>tabCRM Lead</code></td><td>75</td><td>Có</td></tr>
+      <tr><td>Redis, web, worker</td><td>Mở <code>bench start</code> rồi <code>redis-cli -p 11000 ping</code>; mở <code>http://nhom4.localhost:8000/login</code></td><td>PONG; trang đăng nhập</td><td>Chưa (bench đang tắt)</td></tr>
+      <tr><td>XAMPP MySQL</td><td>Bảng điều khiển XAMPP; <code>netstat</code> lọc <code>:3307</code></td><td>LISTENING ở 3307</td><td>Chưa (XAMPP đang tắt)</td></tr>
+    </tbody>
+  </table></div>
+
+  <h3>3.6. Hạn chế đã biết</h3>
+  <div class="warn"><ul>
+    <li>Chưa thử khởi động lại cả Windows rồi bật Frappe (nhật ký 0.3).</li>
+    <li>Chưa có custom app <code>biti_crm</code> mới: câu "app của nhóm làm gì" hiện chưa trả lời bằng code được.</li>
+    <li>Yarn 1.22.22, Apache 2.4.58, PHP 8.2.12 chưa kiểm lại; bài giảng lấy theo nhật ký.</li>
+    <li>Tài liệu Frappe là bản latest chứ không ghim đúng 16.55.2, nên có chỗ lệch giữa tài liệu và máy thật.</li>
+  </ul></div>
+
+  <h3>3.7. Thầy sẽ hỏi</h3>
+  <details><summary>"Site khác app chỗ nào? Đường dẫn <code>/crm</code> là gì?"</summary><p>Site là một "bên thuê": thư mục <code>sites/nhom4.localhost</code> với cơ sở dữ liệu riêng. App là gói mã nằm ở <code>apps/</code>, cài vào site. Trong URL, <code>nhom4.localhost</code> là tên site, <code>/crm</code> là giao diện của app crm. Bằng chứng: <code>bench --site nhom4.localhost list-apps</code>.</p></details>
+  <details><summary>"Frappe CRM có phải app của tụi em không? App của tụi em đâu?"</summary><p>Không: <code>apps/crm</code> lấy từ <code>github.com/frappe/crm</code>. Hiện <code>apps/</code> chỉ có <code>frappe</code> và <code>crm</code>; app <code>biti_crm</code> của nhóm là việc giai đoạn 3, chưa làm. Nhóm đã cấu hình CRM bằng script gọi API, đó không phải app.</p></details>
+  <details><summary>"Vì sao đổi cổng XAMPP sang 3307? Đổi ở đâu?"</summary><p>Cổng 3306 trên Windows do WSL giữ (<code>wslrelay</code>) nên MySQL của XAMPP xung đột. Sửa ở <code>my.ini</code> (hai dòng), <code>phpMyAdmin/config.inc.php</code>, và <code>wp-config.php</code> (<code>127.0.0.1:3307</code>); gốc đã sao lưu <code>*.bak-gd0</code>.</p></details>
+  <details><summary>"Chạy trên máy các em hay trên cloud? Vì sao WSL?"</summary><p>Trên máy cá nhân, trong WSL Ubuntu: giống on-premises thu nhỏ; không dùng Frappe Cloud. Lý do dùng WSL là Frappe thiết kế cho Linux; nhật ký không ghi lý do chính thức, đây là suy luận.</p></details>
+  <details><summary>"Làm lại từ đầu thế nào? Mất dữ liệu thì khôi phục ra sao?"</summary><p>Quy trình ở mục 3.2: sao lưu có file, gỡ site, gỡ app, site mới, cài crm. Bản sao lưu 2,1 MB nằm ở <code>C:\Users\<tên-bạn>\Backups\frappe-cu-2026-11-14</code>; các script <code>gd1-*.py</code> dựng lại cấu hình và dữ liệu demo.</p></details>
+  <details><summary>"Dữ liệu lead nằm ở đâu trong cơ sở dữ liệu?"</summary><p>Trong MariaDB của site, bảng <code>tabCRM Lead</code> (DocType CRM Lead, tiền tố <code>tab</code>), hiện 75 dòng; site có 316 bảng.</p></details>
+</section>

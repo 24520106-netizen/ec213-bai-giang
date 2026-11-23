@@ -1,0 +1,18 @@
+{
+  "id": "gd2-03",
+  "gd": "gd2",
+  "thu_tu": "2.3",
+  "tieu_de": "Marketing và đồng ý nhận tin",
+  "tom_tat": "Tự động hóa marketing theo giáo trình (ba thành phần, lợi ích, chi phí, chiến dịch), quyền riêng tư khi dùng dữ liệu khách, và cách quy trình \"Chiến dịch marketing và đồng ý nhận tin\" của Biti's đặt cổng đồng ý trước bước gửi tin.",
+  "muc_tieu_bai": [
+    "Phân biệt được ba thành phần của marketing automation (phần mềm, quy tắc, thuật toán) và chỉ ra lợi ích, chi phí của nó",
+    "Vận dụng được các nguyên tắc quyền riêng tư của giáo trình để quyết định có được gửi tin quảng cáo cho một khách hay không",
+    "Chỉ ra được nút nào của sơ đồ marketing trong đồ án ứng với thành phần nào của MA, và bốn lead thử đi qua bốn nhánh nào",
+    "Giải thích được vì sao nhóm ghi sự đồng ý bằng ghi chú, bằng chứng nào cho thấy khách không đồng ý thì không bị gửi tin, và hạn chế còn lại"
+  ],
+  "nguon": [
+    { "ten": "Prior, Buttle & Maklan (2024), Customer Relationship Management, 5th ed.", "chi_tiet": "Chương 7 (slide 3–8; giáo trình tr. 164–173) và Chương 14 (slide 8; giáo trình tr. 325–327)" },
+    { "ten": "Tài liệu Frappe CRM, Assignment Rule và Lead", "chi_tiet": "tai-lieu-chinh-thong/frappe (bản latest, tải 2026-11-16); chỉ dùng để nói Frappe có gì, không dùng để trích điều luật" },
+    { "ten": "Dự án đồ án (nguồn sự thật của phần 2 và 3)", "chi_tiet": "docs/quy-trinh-sop.md mục Chiến dịch marketing; evidence/A4-3/chay-thu.json (bước M1–M6); scripts/gd2-01-chay-thu.py; scripts/gd2/quy-trinh.js; docs/phase-report.md mục Giai đoạn 2" }
+  ]
+}

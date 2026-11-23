@@ -1,0 +1,429 @@
+{
+  "tieu_de": "Dữ liệu khách hàng và cơ sở dữ liệu CRM",
+  "muc_dich": "tu_hoc",
+  "che_do_cham": "tung_phan",
+  "muc_tieu": {
+    "M1": "Nêu được khái niệm bảng, khóa, dữ liệu phi cấu trúc và phân biệt dữ liệu vận hành với dữ liệu phân tích theo Chương 11",
+    "M2": "Phân biệt và áp dụng các bước làm sạch dữ liệu: kiểm chứng, xác thực, khử trùng, gộp và lọc",
+    "M3": "Ghép khái niệm cơ sở dữ liệu của giáo trình vào DocType, khóa, bảng con và số liệu của Frappe CRM trong đồ án",
+    "M4": "Giải thích vì sao dùng dữ liệu giả, lùi ngày, cách script gọi REST API và các lỗi đã gặp"
+  },
+  "cau_hoi": [
+    {
+      "id": "Q01",
+      "phan": "kt",
+      "muc_tieu": "M1",
+      "muc_nhan_thuc": "hieu",
+      "do_kho": "De",
+      "loai": "mot_dap_an",
+      "cau_hoi": "Phòng marketing và phòng dịch vụ của một công ty giữ danh sách khách trong hai cơ sở dữ liệu riêng. Theo giáo trình, dùng giá trị nào để nối đúng khách của hai bên?",
+      "dap_an": {
+        "A": "Họ tên đầy đủ của khách, vì tên là thứ nhân viên đọc dễ nhất",
+        "B": "Email chính của khách, vì mỗi khách thường có một email",
+        "C": "Mã bưu chính của khách, vì khách cùng khu vực thường giống nhau",
+        "D": "Mã khách duy nhất (khóa chính), dùng chung ở cả hai nơi"
+      },
+      "dung": [
+        "D"
+      ],
+      "loi_sai": {
+        "A": "dùng tên làm khóa nên hai khách trùng tên bị nhập làm một",
+        "B": "tin rằng email giống nhau ở mọi bộ phận (sách nói email các nơi có thể khác nhau)",
+        "C": "nhầm thuộc tính nhóm khách theo khu vực với mã nhận diện một khách"
+      },
+      "giai_thich": "Giáo trình mô tả mỗi khách có một số định danh duy nhất (khóa chính) và các cơ sở dữ liệu khác dùng đúng số đó để nối dữ liệu. Tên (A) có thể trùng giữa nhiều người. Email (B): sách nêu rằng sales, marketing, service có thể giữ email khác nhau cho cùng một khách. Mã bưu chính (C) chỉ nhận ra khu vực, không nhận ra một khách.",
+      "doan_goc": "Chương 11, slide 3; sách tr. 266 và 270",
+      "do_chac": null
+    },
+    {
+      "id": "Q02",
+      "phan": "kt",
+      "muc_tieu": "M1",
+      "muc_nhan_thuc": "van_dung",
+      "do_kho": "TB",
+      "loai": "nhieu_dap_an",
+      "cau_hoi": "Theo giáo trình, chọn 2 mục là dữ liệu phi cấu trúc (unstructured data) trong số các mục sau.",
+      "dap_an": {
+        "A": "Bảng khách hàng có các cột mã khách, họ tên, số điện thoại",
+        "B": "File ghi âm các cuộc gọi của khách vào tổng đài",
+        "C": "Ghi chú của nhân viên về lịch sử xử lý khiếu nại của khách",
+        "D": "Bảng đơn hàng có các cột mã đơn, mã khách, số lượng"
+      },
+      "dung": [
+        "B",
+        "C"
+      ],
+      "loi_sai": {
+        "A": "nhầm dữ liệu nằm trong bảng có cột cố định với dữ liệu phi cấu trúc",
+        "D": "nhầm dữ liệu nằm trong bảng có cột cố định với dữ liệu phi cấu trúc"
+      },
+      "giai_thich": "Dữ liệu phi cấu trúc là dữ liệu không khớp một khuôn bảng định sẵn: email, tài liệu, PDF, tin nhắn, ghi chú của nhân viên về lịch sử dịch vụ, ghi âm cuộc gọi, ảnh, video. Bảng khách và bảng đơn hàng có cột cố định nên là dữ liệu có cấu trúc.",
+      "doan_goc": "Chương 11, slide 3; sách tr. 266",
+      "do_chac": null
+    },
+    {
+      "id": "Q03",
+      "phan": "kt",
+      "muc_tieu": "M1",
+      "muc_nhan_thuc": "van_dung",
+      "do_kho": "TB",
+      "loai": "mot_dap_an",
+      "cau_hoi": "Nhân viên tổng đài đang nghe một khách hỏi về hóa đơn tháng này của chính khách đó. Loại dữ liệu nào phù hợp nhất để nhân viên dùng trả lời?",
+      "dap_an": {
+        "A": "Dữ liệu vận hành (OLTP), chính xác và cập nhật đến lúc khách gọi",
+        "B": "Dữ liệu phân tích (OLAP), bản tóm tắt đã được trích sẵn từ hôm trước",
+        "C": "Dữ liệu điều tra dân số, thống kê thu nhập theo khu vực của khách",
+        "D": "Dữ liệu mô hình hóa, phân nhóm khách do một bên thứ ba cung cấp"
+      },
+      "dung": [
+        "A"
+      ],
+      "loi_sai": {
+        "B": "nhầm dữ liệu tóm tắt dùng để phân tích với dữ liệu tra từng khách",
+        "C": "nhầm dữ liệu tổng hợp theo khu vực với dữ liệu của một khách",
+        "D": "nhầm dữ liệu mua từ ngoài với dữ liệu giao dịch của chính công ty"
+      },
+      "giai_thich": "Dữ liệu vận hành nằm trong OLTP và phải rất chính xác, cập nhật. Khách hỏi về hóa đơn riêng của mình thì cần số liệu của chính khách đó, không phải số tóm tắt. OLAP là bản tóm tắt dùng phân tích, có thể cũ hơn. Dữ liệu điều tra dân số và dữ liệu mô hình hóa là nguồn ngoài dùng bổ sung thông tin, không chứa hóa đơn của khách.",
+      "doan_goc": "Chương 11, sách tr. 268, 271",
+      "do_chac": null
+    },
+    {
+      "id": "Q04",
+      "phan": "kt",
+      "muc_tieu": "M2",
+      "muc_nhan_thuc": "van_dung",
+      "do_kho": "TB",
+      "loai": "mot_dap_an",
+      "cau_hoi": "Công ty chạy phần mềm khử trùng. Phần mềm xóa một hồ sơ vì trùng họ tên và địa chỉ, nhưng thực tế đó là hai người khác nhau cùng sống trong một căn hộ. Đây là kiểu sai nào của khử trùng?",
+      "dap_an": {
+        "A": "Giữ lại bản ghi lẽ ra phải xóa",
+        "B": "Xóa bản ghi lẽ ra phải giữ",
+        "C": "Dữ liệu nhập khác với nguồn gốc ban đầu",
+        "D": "Giá trị nằm ngoài khoảng cho phép của trường"
+      },
+      "dung": [
+        "B"
+      ],
+      "loi_sai": {
+        "A": "đảo hai kiểu sai của khử trùng",
+        "C": "nhầm với lỗi ở bước kiểm chứng",
+        "D": "nhầm với kiểm tra khoảng giá trị ở bước xác thực"
+      },
+      "giai_thich": "Khi khử trùng có hai kiểu sai: xóa nhầm bản ghi lẽ ra phải giữ (như hai cư dân cùng căn hộ) và giữ lại bản ghi lẽ ra phải xóa (như cùng một khách ghi Mr và Dr thành hai bản ghi). Đề mô tả kiểu đầu. C là lỗi kiểm chứng; D là một cách xác thực (range validation); cả hai thuộc bước khác.",
+      "doan_goc": "Chương 11, slide 8; sách tr. 274",
+      "do_chac": null
+    },
+    {
+      "id": "Q05",
+      "phan": "kt",
+      "muc_tieu": "M2",
+      "muc_nhan_thuc": "van_dung",
+      "do_kho": "TB",
+      "loai": "mot_dap_an",
+      "cau_hoi": "Một chuỗi nhà sách mua hai danh sách khách: danh sách A có 5.000 người, danh sách B có 3.000 người, trong đó 1.200 người có mặt ở cả hai. Sau khi gộp và lọc trùng (merge-purge), còn bao nhiêu người?",
+      "dap_an": {
+        "A": "3.800",
+        "B": "5.600",
+        "C": "6.800",
+        "D": "8.000"
+      },
+      "dung": [
+        "C"
+      ],
+      "loi_sai": {
+        "A": "lấy danh sách A trừ phần trùng và bỏ cả danh sách B",
+        "B": "trừ 1.200 hai lần, tức xóa cả hai bản của người trùng",
+        "D": "chỉ cộng hai danh sách, không lọc phần trùng"
+      },
+      "giai_thich": "Người trùng chỉ nên còn một bản: 5.000 + 3.000 − 1.200 = 6.800. Số 8.000 là cộng thẳng, không lọc. Số 5.600 là 8.000 − 2 × 1.200, tức xóa luôn cả hai bản của người trùng. Số 3.800 là 5.000 − 1.200, bỏ hẳn danh sách B.",
+      "doan_goc": "Chương 11, sách tr. 274 (merge-purge)",
+      "do_chac": null
+    },
+    {
+      "id": "Q06",
+      "phan": "kt",
+      "muc_tieu": "M2",
+      "muc_nhan_thuc": "hieu",
+      "do_kho": "TB",
+      "loai": "mot_dap_an",
+      "cau_hoi": "Sau khi nhập, nhân viên đối chiếu mã bưu chính trong hồ sơ khách với danh sách mã bưu chính chính thức của cơ quan bưu chính. Đây là bước nào khi nạp dữ liệu?",
+      "dap_an": {
+        "A": "Xác thực (validation), kiểm tra dữ liệu đúng với nguồn ngoài",
+        "B": "Kiểm chứng (verification), so dữ liệu đã nhập với tài liệu gốc ban đầu",
+        "C": "Khử trùng (de-duplication), bỏ những hồ sơ ghi lặp cùng một khách",
+        "D": "Gộp và lọc (merge-purge), hợp hai danh sách rồi bỏ phần bị trùng"
+      },
+      "dung": [
+        "A"
+      ],
+      "loi_sai": {
+        "B": "nhầm xác thực với kiểm chứng (kiểm chứng so với nguồn gốc của chính dữ liệu đó)",
+        "C": "nhầm kiểm tra tính đúng với kiểm tra tính lặp",
+        "D": "nhầm bước làm sạch một danh sách với bước hợp nhiều danh sách"
+      },
+      "giai_thich": "Xác thực là kiểm tra dữ liệu có đúng không: giá trị ngoài khoảng, ô trống, đối chiếu với nguồn ngoài như danh sách mã bưu chính. Kiểm chứng là xem dữ liệu nhập có giống tài liệu gốc không. Khử trùng và gộp-lọc xử lý bản ghi trùng chứ không kiểm tra tính đúng của mã bưu chính.",
+      "doan_goc": "Chương 11, slide 8; sách tr. 273–274",
+      "do_chac": null
+    },
+    {
+      "id": "Q07",
+      "phan": "ud",
+      "muc_tieu": "M3",
+      "muc_nhan_thuc": "van_dung",
+      "do_kho": "TB",
+      "loai": "mot_dap_an",
+      "cau_hoi": "Trong Frappe CRM, muốn từ một CRM Deal truy ngược về lead đã sinh ra nó thì dùng trường nào?",
+      "dap_an": {
+        "A": "Trường converted của CRM Lead, vì cờ này cho biết deal nào tương ứng",
+        "B": "Trường organization của CRM Deal, vì tổ chức cho biết lead gốc",
+        "C": "Trường lead của CRM Deal, giữ mã của lead như CRM-LEAD-2026-00073",
+        "D": "Bảng con contacts của CRM Deal, vì mỗi liên hệ là một lead cũ"
+      },
+      "dung": [
+        "C"
+      ],
+      "loi_sai": {
+        "A": "nhầm cờ đánh dấu đã chuyển với liên kết tới một deal cụ thể",
+        "B": "nhầm liên kết tới tổ chức với liên kết tới lead",
+        "D": "nhầm người liên hệ của deal với bản ghi lead"
+      },
+      "giai_thich": "Mã nguồn crm_lead.py khi tạo deal đặt trường lead của deal bằng tên lead. Đó là một trường kiểu Link, tức khóa nối về bảng CRM Lead. converted chỉ là cờ 0/1, không nói deal nào. organization trỏ tới CRM Organization, và contacts trỏ tới Contact.",
+      "doan_goc": "tich-hop/83-src-crm-lead-py.txt (create_deal)",
+      "do_chac": null
+    },
+    {
+      "id": "Q08",
+      "phan": "ud",
+      "muc_tieu": "M3",
+      "muc_nhan_thuc": "hieu",
+      "do_kho": "De",
+      "loai": "mot_dap_an",
+      "cau_hoi": "Mã CRM-DEAL-2026-00031 của một deal đóng vai trò gì theo khung bảng và khóa của Chương 11?",
+      "dap_an": {
+        "A": "Khóa chính, giá trị nhận diện một deal trong bảng CRM Deal",
+        "B": "Một cột mô tả như họ tên khách, lưu thêm thông tin về deal",
+        "C": "Khóa nối sang bảng CRM Lead, trỏ về lead gốc của deal đó",
+        "D": "Một dòng của bảng con, thuộc về một deal khác trong hệ thống"
+      },
+      "dung": [
+        "A"
+      ],
+      "loi_sai": {
+        "B": "nhầm khóa nhận diện với một trường mô tả dữ liệu",
+        "C": "nhầm mã của chính deal với liên kết sang lead",
+        "D": "nhầm bản ghi chính với bản ghi con"
+      },
+      "giai_thich": "Trường name của DocType được cấp theo chuỗi đặt tên (CRM-DEAL-.YYYY.-...), nên mã này nhận diện duy nhất một deal: khóa chính. Liên kết về lead nằm ở trường lead, giữ mã CRM-LEAD-.... Dòng sản phẩm của deal mới là bản ghi con.",
+      "doan_goc": "frappe/03-naming.txt; phase-report mục 1.5 (CRM-DEAL-2026-00024), 2.3",
+      "do_chac": null
+    },
+    {
+      "id": "Q09",
+      "phan": "ud",
+      "muc_tieu": "M3",
+      "muc_nhan_thuc": "van_dung",
+      "do_kho": "TB",
+      "loai": "mot_dap_an",
+      "cau_hoi": "Một CRM Deal có ba dòng sản phẩm, mỗi dòng gồm mã sản phẩm, số lượng, đơn giá, chiết khấu. Frappe lưu ba dòng này ở đâu?",
+      "dap_an": {
+        "A": "Ba nhóm cột riêng (sản phẩm 1, 2, 3) nằm ngay trong bảng CRM Deal",
+        "B": "Ba bản ghi mới trong bảng CRM Product, mỗi bản ghi đại diện cho một deal",
+        "C": "Ba ghi chú FCRM Note, gắn vào deal bằng trường tham chiếu",
+        "D": "Ba dòng của bảng con (child table) CRM Products, thuộc về deal đó"
+      },
+      "dung": [
+        "D"
+      ],
+      "loi_sai": {
+        "A": "nhầm bảng con với việc nhân đôi cột trong bảng cha",
+        "B": "nhầm danh mục sản phẩm với dòng sản phẩm của một deal",
+        "C": "nhầm dữ liệu có cấu trúc với ghi chú phi cấu trúc"
+      },
+      "giai_thich": "Nhiều dòng thuộc một bản ghi được lưu bằng trường kiểu Table trỏ tới một child DocType (ở đây CRM Products); mỗi dòng có parent, parenttype, parentfield trỏ về deal. CRM Product (số ít) là danh mục dùng chung, không phải dòng của deal. Ghi chú FCRM Note dành cho dữ liệu phi cấu trúc.",
+      "doan_goc": "frappe/03-child-doctype.txt; tich-hop/84-src-crm-lead-json.txt (trường products)",
+      "do_chac": null
+    },
+    {
+      "id": "Q10",
+      "phan": "ud",
+      "muc_tieu": "M3",
+      "muc_nhan_thuc": "van_dung",
+      "do_kho": "TB",
+      "loai": "mot_dap_an",
+      "cau_hoi": "Một dòng của deal demo: 20 đôi sản phẩm BT-003 đơn giá 1.050.000 ₫, chiết khấu 15%. Theo công thức script (thành tiền = số lượng × đơn giá; sau chiết khấu = thành tiền × (100 − %) / 100), tiền sau chiết khấu là bao nhiêu?",
+      "dap_an": {
+        "A": "3.150.000 ₫",
+        "B": "17.850.000 ₫",
+        "C": "21.000.000 ₫",
+        "D": "24.150.000 ₫"
+      },
+      "dung": [
+        "B"
+      ],
+      "loi_sai": {
+        "A": "lấy số tiền được giảm thay vì số tiền còn phải trả",
+        "C": "quên áp chiết khấu",
+        "D": "cộng chiết khấu vào thay vì trừ"
+      },
+      "giai_thich": "Thành tiền 20 × 1.050.000 = 21.000.000. Sau chiết khấu: 21.000.000 × 85 / 100 = 17.850.000. Số 3.150.000 là phần được giảm (15%). Số 21.000.000 chưa áp chiết khấu. Số 24.150.000 là cộng thêm 15%.",
+      "doan_goc": "scripts/gd1-06-du-lieu-demo.py (mục 6, lines)",
+      "do_chac": null
+    },
+    {
+      "id": "Q11",
+      "phan": "ud",
+      "muc_tieu": "M3",
+      "muc_nhan_thuc": "van_dung",
+      "do_kho": "De",
+      "loai": "mot_dap_an",
+      "cau_hoi": "Dữ liệu demo GĐ1 có 30 deal ở các giai đoạn: Đánh giá nhu cầu 6, Tư vấn/Demo 5, Báo giá 6, Thương lượng 4, Sắp chốt 2, Thành công 4, Thất bại 3. Có bao nhiêu deal đang mở (chưa Thành công và chưa Thất bại)?",
+      "dap_an": {
+        "A": "7",
+        "B": "23",
+        "C": "26",
+        "D": "27"
+      },
+      "dung": [
+        "B"
+      ],
+      "loi_sai": {
+        "A": "đếm các deal đã đóng thay vì deal đang mở",
+        "C": "chỉ trừ deal Thành công, quên deal Thất bại",
+        "D": "chỉ trừ deal Thất bại, quên deal Thành công"
+      },
+      "giai_thich": "Deal đã đóng là Thành công (4) cộng Thất bại (3) bằng 7; đang mở là 30 − 7 = 23 (cũng bằng 6 + 5 + 6 + 4 + 2). Số 7 là deal đã đóng. 26 và 27 chỉ trừ một nhóm đã đóng.",
+      "doan_goc": "docs/phase-report.md mục 1.6; Report mục 2.3",
+      "do_chac": null
+    },
+    {
+      "id": "Q12",
+      "phan": "da",
+      "muc_tieu": "M4",
+      "muc_nhan_thuc": "hieu",
+      "do_kho": "De",
+      "loai": "mot_dap_an",
+      "cau_hoi": "Trong script gd1-06, hạt ngẫu nhiên 213 dùng để làm gì?",
+      "dap_an": {
+        "A": "Quy định số bản ghi của mỗi loại dữ liệu cần tạo",
+        "B": "Để mỗi lần chạy lại ra đúng cùng bộ dữ liệu giả",
+        "C": "Để mỗi lần chạy ra một bộ dữ liệu khác, cho phong phú",
+        "D": "Để mã hóa số điện thoại của các khách demo"
+      },
+      "dung": [
+        "B"
+      ],
+      "loi_sai": {
+        "A": "nhầm hạt ngẫu nhiên với số lượng bản ghi",
+        "C": "hiểu ngược: hạt cố định cho kết quả lặp lại",
+        "D": "nhầm hạt sinh số với khóa mã hóa"
+      },
+      "giai_thich": "Khởi tạo bộ sinh số ngẫu nhiên bằng cùng một hạt (213) thì dãy số sinh ra luôn như nhau, nên tên, số, trạng thái của dữ liệu demo tái lập được. Số lượng bản ghi do các hằng số trong script quy định (ví dụ 22, 14, 14, 6, 4 lead theo địa bàn). Hạt không mã hóa gì.",
+      "doan_goc": "scripts/gd1-06-du-lieu-demo.py (rng = random.Random(213))",
+      "do_chac": null
+    },
+    {
+      "id": "Q13",
+      "phan": "da",
+      "muc_tieu": "M4",
+      "muc_nhan_thuc": "phan_tich",
+      "do_kho": "TB",
+      "loai": "mot_dap_an",
+      "cau_hoi": "Thầy hỏi vì sao nhóm lùi ngày tạo và ngày sửa của các bản ghi demo bằng script gd1-07. Câu trả lời đúng theo nhật ký là gì?",
+      "dap_an": {
+        "A": "Để lịch sử tháng 5 đến 11 trông giống số liệu thật của Biti's khi nộp bài",
+        "B": "Để danh sách lead sắp theo ngày sửa không đưa lead demo lên đầu mỗi lần xem",
+        "C": "Để dữ liệu demo không lẫn với dữ liệu thử của giai đoạn 2 khi lọc theo ngày",
+        "D": "Để báo cáo theo tháng ở giai đoạn sau có dữ liệu trải nhiều tháng, không dồn một ngày"
+      },
+      "dung": [
+        "D"
+      ],
+      "loi_sai": {
+        "A": "nhầm dữ liệu giả có ngày giả với số liệu thật của Biti's",
+        "B": "đoán một mục đích về thứ tự hiển thị không có trong nhật ký",
+        "C": "nhầm mục đích với tiền tố [GĐ2], vốn là cách tách dữ liệu thử"
+      },
+      "giai_thich": "Nhật ký 1.6 ghi: lùi ngày 'để báo cáo theo tháng có ý nghĩa'. Ngày đó vẫn là ngày giả, không phản ánh lịch sử thật. Dữ liệu GĐ2 được tách bằng tiền tố [GĐ2] ở tên lead và tiêu đề việc, không bằng ngày.",
+      "doan_goc": "docs/phase-report.md mục 1.6; scripts/gd1-07-lui-ngay.py",
+      "do_chac": null
+    },
+    {
+      "id": "Q14",
+      "phan": "da",
+      "muc_tieu": "M4",
+      "muc_nhan_thuc": "van_dung",
+      "do_kho": "TB",
+      "loai": "nhieu_dap_an",
+      "cau_hoi": "Khi xóa lead thử, nhóm gặp lỗi và phải xóa trước các bản ghi liên kết. Chọn 2 DocType mà hàm cleanup_lead trong gd1-04 xóa trước khi xóa lead.",
+      "dap_an": {
+        "A": "CRM Call Log",
+        "B": "CRM Notification",
+        "C": "FCRM Note",
+        "D": "ToDo"
+      },
+      "dung": [
+        "B",
+        "D"
+      ],
+      "loi_sai": {
+        "A": "nghĩ nhật ký cuộc gọi cũng phải xóa trong hàm này",
+        "C": "nghĩ ghi chú cũng phải xóa trong hàm này"
+      },
+      "giai_thich": "Hàm cleanup_lead xóa các CRM Notification và ToDo có reference_name là lead đó (thông báo và việc được giao tự sinh khi lead được phân công), rồi mới xóa lead. Lead thử chỉ phát sinh hai loại này nên hàm không đụng tới nhật ký cuộc gọi hay ghi chú (suy ra từ mã, chưa thử xóa lead có ghi chú).",
+      "doan_goc": "scripts/gd1-04-pipeline.py (cleanup_lead); docs/phase-report.md mục 1.4",
+      "do_chac": null
+    },
+    {
+      "id": "Q15",
+      "phan": "da",
+      "muc_tieu": "M4",
+      "muc_nhan_thuc": "phan_tich",
+      "do_kho": "Kho",
+      "loai": "mot_dap_an",
+      "cau_hoi": "Khi lọc bản ghi Translation theo source_text bằng dấu bằng, nhóm thấy 'Won deals' và 'Won Deals' bị xem là một. Nguyên nhân là gì?",
+      "dap_an": {
+        "A": "MariaDB so sánh chuỗi không phân biệt hoa thường nên coi là một",
+        "B": "Frappe tự gộp hai bản dịch có nghĩa giống nhau thành một bản ghi",
+        "C": "Script gd1-10 đã chạy hai lần nên tạo ra bản ghi trùng",
+        "D": "Script gd1-10 viết hoa lại source_text trước khi lưu nên hai mục thành một"
+      },
+      "dung": [
+        "A"
+      ],
+      "loi_sai": {
+        "B": "bịa một tính năng gộp bản dịch của Frappe",
+        "C": "đoán lỗi do chạy lặp thay vì tìm trong cách so sánh chuỗi",
+        "D": "đoán script chuẩn hóa chữ hoa, trong khi nguyên nhân nằm ở cách so sánh của cơ sở dữ liệu"
+      },
+      "giai_thich": "Nhật ký 1.9: MariaDB so sánh không phân biệt hoa thường, nên lọc bằng dấu bằng coi hai chuỗi là một; phải lọc lại theo đúng ký tự. Đây là đặc tính của cơ sở dữ liệu, không do Frappe hay do chạy script hai lần.",
+      "doan_goc": "docs/phase-report.md mục 1.9",
+      "do_chac": null
+    },
+    {
+      "id": "Q16",
+      "phan": "da",
+      "muc_tieu": "M4",
+      "muc_nhan_thuc": "van_dung",
+      "do_kho": "TB",
+      "loai": "mot_dap_an",
+      "cau_hoi": "Theo scripts/lib_frappe.py, trình tự nào thêm một CRM Lead mới qua REST API?",
+      "dap_an": {
+        "A": "Gửi PUT tới /api/resource/CRM Lead rồi đăng nhập sau để xác nhận",
+        "B": "Chạy INSERT thẳng vào bảng tabCRM Lead bằng SQL trong bench console",
+        "C": "Đăng nhập lấy cookie, rồi POST JSON tới /api/resource/CRM Lead",
+        "D": "Gửi GET tới /api/resource/CRM Lead kèm dữ liệu lead ở phần query của URL"
+      },
+      "dung": [
+        "C"
+      ],
+      "loi_sai": {
+        "A": "nhầm PUT (sửa bản ghi có sẵn) với POST (tạo mới), và đảo thứ tự đăng nhập",
+        "B": "nhầm cách sửa ngày bằng console ở gd1-07 với cách thêm bản ghi",
+        "D": "nhầm GET (đọc) với POST (tạo)"
+      },
+      "giai_thich": "lib_frappe.py đăng nhập bằng POST /api/method/login, giữ cookie phiên (sid) trong CookieJar rồi dùng POST /api/resource/<DocType> với JSON để tạo (hàm insert). PUT dùng để sửa (hàm update), GET để đọc danh sách. gd1-07 dùng bench console chỉ để sửa ngày tạo, không dùng để tạo bản ghi.",
+      "doan_goc": "scripts/lib_frappe.py; frappe/06-rest-simple-auth.txt",
+      "do_chac": null
+    }
+  ]
+}

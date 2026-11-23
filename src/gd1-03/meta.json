@@ -1,0 +1,18 @@
+{
+  "id": "gd1-03",
+  "gd": "gd1",
+  "thu_tu": "1.3",
+  "tieu_de": "Tổ chức bán hàng: pipeline, địa bàn, phân công và báo giá",
+  "tom_tat": "Từ chương SFA của giáo trình đến 7 giai đoạn deal, 5 địa bàn, 3 luật phân công và 2 mẫu in trong Frappe CRM của Biti's.",
+  "muc_tieu_bai": [
+    "Phân biệt được chức năng SFA dành cho nhân viên bán hàng với chức năng dành cho quản lý bán hàng, và giải thích pipeline cùng xác suất theo giai đoạn",
+    "Chỉ ra được khái niệm SFA nào đã nằm ở đâu trong đồ án (giai đoạn deal, địa bàn, luật phân công, mẫu in) và đọc đúng số liệu thật kèm phần [GIẢ ĐỊNH]",
+    "Giải thích được vì sao luật phân công phải viết điều kiện không có tiền tố doc., vì sao PDF từng lỗi, và tự kiểm được việc phân công trong Desk"
+  ],
+  "nguon": [
+    { "ten": "Prior, Buttle & Maklan (2024), Customer Relationship Management, 5th ed.", "chi_tiet": "Chương 8 (Sales force automation), trang 183-199, slide 3-13; Chương 6 (Customer portfolio management), trang 145-150, slide 3-11" },
+    { "ten": "Tài liệu chính thống Frappe CRM", "chi_tiet": "tai-lieu-chinh-thong/frappe/02-assignment-rule.txt (https://docs.frappe.io/crm/assignment-rule) và 02-setup-guide.txt" },
+    { "ten": "Mã nguồn Frappe trên máy nhóm", "chi_tiet": "frappe/automation/doctype/assignment_rule/assignment_rule.py (hàm safe_eval, các kiểu luật) và frappe/model/naming.py (hàm validate_name)" },
+    { "ten": "Dự án đồ án EC213, nhóm 04", "chi_tiet": "scripts/gd1-04-pipeline.py, scripts/gd1-05-mau-in.py, docs/phase-report.md mục 1.4-1.6, scripts/build-report.js (Report mục 2.2.6-2.3)" }
+  ]
+}

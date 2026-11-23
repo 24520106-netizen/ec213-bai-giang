@@ -1,0 +1,18 @@
+{
+  "id": "gd1-02",
+  "gd": "gd1",
+  "thu_tu": "1.2",
+  "tieu_de": "Dữ liệu khách hàng và cơ sở dữ liệu CRM",
+  "tom_tat": "Từ Chương 11 (xây và quản lý cơ sở dữ liệu liên quan khách hàng) đến mô hình dữ liệu thật của đồ án trong Frappe CRM: Lead, Deal, Contact, Organization, Product và bộ dữ liệu demo.",
+  "muc_tieu_bai": [
+    "Nêu được các bước xây cơ sở dữ liệu khách hàng, các khái niệm bảng, khóa và dữ liệu phi cấu trúc theo giáo trình",
+    "Giải thích các bước làm sạch dữ liệu: kiểm chứng, xác thực, khử trùng, gộp và lọc",
+    "Chỉ ra DocType nào của Frappe CRM đóng vai bảng, khóa, bảng con, và quan hệ giữa Lead, Deal, Contact, Organization, Product",
+    "Trả lời được vì sao dùng dữ liệu giả, vì sao lùi ngày, script gọi REST API ra sao, và lỗi nào đã gặp"
+  ],
+  "nguon": [
+    { "ten": "Prior, Buttle & Maklan (2024), Customer Relationship Management: Concepts, Applications and Technologies, 5th ed.", "chi_tiet": "Chương 11, slide 2–11 của thầy và trang 265–280 trong sách" },
+    { "ten": "Tài liệu Frappe Framework và Frappe CRM (đã tải về máy)", "chi_tiet": "frappe/03-doctypes.txt, 03-docfield.txt, 03-child-doctype.txt, 06-rest-listing.txt, 06-rest-simple-auth.txt; tich-hop/83-src-crm-lead-py.txt, 84-src-crm-lead-json.txt" },
+    { "ten": "Dự án đồ án", "chi_tiet": "scripts/gd1-06-du-lieu-demo.py, gd1-07-lui-ngay.py, gd1-dem-du-lieu.py, gd1-04-pipeline.py, lib_frappe.py; docs/phase-report.md mục 1.6, 1.9, 2.3" }
+  ]
+}
